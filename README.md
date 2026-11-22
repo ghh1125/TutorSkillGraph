@@ -2,7 +2,9 @@
 
 English · [中文](README.zh-CN.md)
 
-**When a student corrects an answer, what should an AI tutor learn from that success?** TutorSkillGraph is a research proposal about how a tutor revises the teaching strategies it reuses with future learners. Its target is a student who can take the key reasoning step on a new problem after the help is gone.
+**Can an AI tutor learn from students’ later independent work when a combination of teaching moves is worth repeating?** A learner’s correction gives the tutor a success to learn from. To decide what deserves the credit, the tutor needs to trace the idea the learner brought, the clues or examples it supplied, and the reasoning the learner still had to do.
+
+**Starting here in a new chat?** The brief walks through one teaching decision, the evidence that could change it and the first artifact to build with a model API and an ordinary CPU. The project is at the research-design stage. [Research and implementation brief](RESEARCH_BRIEF.md)
 
 ## The problem with learning from a successful lesson
 
@@ -23,7 +25,7 @@ Both tutors may have helped. What differs is the evidence each conversation prov
 
 ## The idea: revise the conditions under which a teaching move is reused
 
-A teaching skill is a reusable move, such as asking a student to justify a term. The graph would record a relationship between **what the student has already shown, what the tutor does, and what reasoning the student subsequently contributes**. A hyperedge can keep these roles together. This matters when the same question serves different purposes depending on what the student has already worked out and what earlier hints have revealed.
+A teaching skill is a reusable move, such as asking a student to justify a term. A role-labelled hyperedge ties together **the judgment the learner has expressed, the material the tutor selects to test it, and the reasoning the learner is asked to do next**. These three roles describe a design decision. The response then shows who actually supplied the key relationship. A later independent attempt supplies evidence for keeping or revising the combination.
 
 | Point in the interaction | Evidence the tutor could use |
 | --- | --- |
