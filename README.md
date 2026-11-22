@@ -2,9 +2,9 @@
 
 English · [中文](README.zh-CN.md)
 
-**Can an AI tutor learn from students’ later independent work when a combination of teaching moves is worth repeating?** A learner’s correction gives the tutor a success to learn from. To decide what deserves the credit, the tutor needs to trace the idea the learner brought, the clues or examples it supplied, and the reasoning the learner still had to do.
+**Can an AI tutor use a student’s later explanation to discover what an earlier lesson left unresolved, then change how it teaches the next student?** A classroom example can let two different ideas produce the same correct answer. Independent work can reveal the difference and give the tutor a reason to revise a specific activity.
 
-**Starting here in a new chat?** The brief walks through one teaching decision, the evidence that could change it and the first artifact to build with a model API and an ordinary CPU. The project is at the research-design stage. [Research and implementation brief](RESEARCH_BRIEF.md)
+**[Read the full research proposal](RESEARCH_BRIEF.md)** for a worked density lesson, the teaching skills represented as nodes, the instructional hypothesis represented by a hyperedge, and the comparison with a fully specified written skill. The project is at the research-design stage. The first empirical case is planned in a public equation-tutoring dataset.
 
 ## The problem with learning from a successful lesson
 
@@ -12,12 +12,13 @@ Imagine two students who have left a term out of a fence-length equation. The fi
 
 Both tutors may have helped. What differs is the evidence each conversation provides about the value of the question. In the first, the student supplied the missing relationship after the prompt. In the second, the tutor had already supplied it. A tutor that gives its question credit every time the answer turns correct can gradually learn the wrong lesson about when to ask it. Simply penalizing explicit help can make the opposite mistake: a clear explanation may be exactly what allows a student to apply the idea independently later.
 
-**Our question is whether the *route to a correction* tells us which teaching experience to reuse.** Among students who ultimately correct a similar error and start with comparable knowledge, does tracing where the key relationship first appeared, and what the student subsequently did with it, help anticipate independent performance on a related problem? If it does, that evidence could change what the tutor does the next time it encounters that difficulty.
+**The first question for the data is whether the route to a correction tells us which teaching experience to revisit.** Among students who ultimately correct a similar error and start with comparable knowledge, does tracing where the key relationship first appeared, and what the student subsequently did with it, help anticipate independent performance on a related problem? If it does, that evidence could change what the tutor does the next time it encounters that difficulty.
 
 ## What earlier work has already established
 
 | Earlier work | Its contribution and the question it leaves us |
 | --- | --- |
+| [Data-driven redesign of intelligent tutors](https://arxiv.org/abs/2603.29094) and [instruction with contrasting cases](https://aaalab.stanford.edu/assets/papers/2011/Practicing_versus_inventing.pdf) | Redesigning practice from learner data and selecting contrasts to support transfer both have precedents. We ask whether later student reasoning can reveal why two explanations worked on the original example and guide the tutor to a specific edit. |
 | [Turning Errors into Successes, §4.6](https://arxiv.org/pdf/2611.20061) | In the Socratic group, correcting more errors was associated with better performance on practice-aligned transfer questions after accounting for initial successes. Our interest is the variation **among successful corrections**. |
 | [Pedagogical tutorial tactics](https://people.cs.pitt.edu/~litman/5-Chi.pdf) and [research on self-explaining feedback](https://doi.org/10.1016/j.cedpsych.2024.102326) | Tutors have already learned action policies from student outcomes. Experiments also show that the benefit of explaining one's errors depends on the feedback students receive. The open issue here is which part of a particular success deserves credit when updating a reusable rule. |
 | [REAT](https://arxiv.org/html/2609.29804v1) and [Eduardo](https://arxiv.org/abs/2610.06446) | REAT distils and retrieves tutoring experience and updates its utility from subsequent turn evaluation. Eduardo uses a simulated student's near-transfer test with tutor turns masked. We ask whether an observed human learner's route through a correction can identify **which experience** to keep or narrow. |
