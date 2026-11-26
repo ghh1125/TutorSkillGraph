@@ -1,0 +1,162 @@
+{
+  "concepts": [
+    {
+      "allotted_minutes": 20,
+      "concept_id": "c1",
+      "name": "QC Strategy: Testing Edge Cases",
+      "practice_problems": [
+        {
+          "correct_answer": "D",
+          "difficulty": "Medium",
+          "format": "MCQ",
+          "options": {
+            "A": "Quantity A is greater.",
+            "B": "Quantity B is greater.",
+            "C": "The two quantities are equal.",
+            "D": "The relationship cannot be determined from the information given."
+          },
+          "practice_problem_id": "quant:main:task_id_0402:practice_problem:23749",
+          "solution": "Test a positive number: If $y = 2$, Quantity A is $8/2 = 4$, and Quantity B is $4$. They are equal. Now test a negative number (an edge case!): If $y = -2$, Quantity A is $-8/2 = -4$, and Quantity B is $4$. Quantity B is greater. Because the relationship changes depending on the value of $y$, the answer is D.",
+          "source_problem_id": 23749,
+          "practice_question_text": "Given $y \\neq 0$.\n\nQuantity A: $\\frac{y^3}{|y|}$\nQuantity B: $y^2$"
+        },
+        {
+          "correct_answer": "D",
+          "difficulty": "Easy",
+          "format": "MCQ",
+          "options": {
+            "A": "Quantity A is greater.",
+            "B": "Quantity B is greater.",
+            "C": "The two quantities are equal.",
+            "D": "The relationship cannot be determined from the information given."
+          },
+          "practice_problem_id": "quant:main:task_id_0402:practice_problem:23750",
+          "solution": "Test an integer greater than $1$: If $x = 2$, Quantity A is $8$ and Quantity B is $4$ (Quantity A is greater). Now test a fraction between $0$ and $1$ (an edge case!): If $x = 0.5$, Quantity A is $0.125$ and Quantity B is $0.25$ (Quantity B is greater). Since the relationship changes, the answer is D.",
+          "source_problem_id": 23750,
+          "practice_question_text": "Given $x > 0$.\n\nQuantity A: $x^3$\nQuantity B: $x^2$"
+        },
+        {
+          "correct_answer": "C",
+          "difficulty": "Medium",
+          "format": "MCQ",
+          "options": {
+            "A": "Quantity A is greater.",
+            "B": "Quantity B is greater.",
+            "C": "The two quantities are equal.",
+            "D": "The relationship cannot be determined from the information given."
+          },
+          "practice_problem_id": "quant:main:task_id_0402:practice_problem:23751",
+          "solution": "Simplify Quantity A by factoring the difference of squares: $\\frac{(p - 2)(p + 2)}{p - 2}$. Since $p \\neq 2$, we can cancel $(p - 2)$ to get $p + 2$. This is exactly identical to Quantity B for all allowed values of $p$. Therefore, the quantities are always equal. (This contrasts with testing numbers, where you might miss an algebraic simplification).",
+          "source_problem_id": 23751,
+          "practice_question_text": "Given $p \\neq 2$.\n\nQuantity A: $\\frac{p^2 - 4}{p - 2}$\nQuantity B: $p + 2$"
+        }
+      ],
+      "pretest_evidence": [
+        "N13",
+        "N3"
+      ],
+      "priority_rank": 1,
+      "why_it_matters": "You missed two Quantitative Comparison questions by likely testing standard positive integers but overlooking fractions or negative numbers. The GRE intentionally designs QC questions to punish assumptions, so systematically testing edge cases (like negatives, fractions, $0$, and $1$) is one of the fastest ways to raise your score."
+    },
+    {
+      "allotted_minutes": 15,
+      "concept_id": "c2",
+      "name": "Real Numbers vs. Integers & Optimization",
+      "practice_problems": [
+        {
+          "correct_answer": "25",
+          "difficulty": "Medium",
+          "format": "SPR",
+          "options": {},
+          "practice_problem_id": "quant:main:task_id_0402:practice_problem:23752",
+          "solution": "For a given sum of two positive real numbers, their product is maximized when the two numbers are equal. Setting $x = y = 5$ gives $x + y = 10$. The product is $5 \\times 5 = 25$. If you restricted yourself to integers, you would still get $25$ here, but remember that $xy$ can be any real number up to $25$ (like $24.99$), not just integer products.",
+          "source_problem_id": 23752,
+          "practice_question_text": "The numbers $x$ and $y$ are positive real numbers such that $x + y = 10$. What is the maximum possible value of the product $xy$?"
+        },
+        {
+          "correct_answer": "B",
+          "difficulty": "Hard",
+          "format": "MCQ",
+          "options": {
+            "A": "12.5",
+            "B": "12.1",
+            "C": "13",
+            "D": "14"
+          },
+          "practice_problem_id": "quant:main:task_id_0402:practice_problem:23753",
+          "solution": "The maximum value of the product $cd$ occurs when $c = d = 3.5$. The maximum product is $3.5 \\times 3.5 = 12.25$. Because $c$ and $d$ are real numbers, $cd$ can be any value strictly greater than $0$ and up to $12.25$. The only option in this range is $12.1$. (If you assumed integers, you might think the max is $3 \\times 4 = 12$ and incorrectly rule out $12.1$).",
+          "source_problem_id": 23753,
+          "practice_question_text": "The numbers $c$ and $d$ are positive real numbers such that $c + d = 7$. Which of the following could be the value of $cd$?"
+        }
+      ],
+      "pretest_evidence": [
+        "N21"
+      ],
+      "priority_rank": 2,
+      "why_it_matters": "When a problem specifies 'real numbers,' assuming the variables must be integers will cause you to miss valid possibilities, especially when maximizing products. Recognizing that fractions and decimals are allowed opens up the correct range of answers and prevents you from eliminating correct options."
+    },
+    {
+      "allotted_minutes": 15,
+      "concept_id": "c3",
+      "name": "Prime Factorization in Factorials",
+      "practice_problems": [
+        {
+          "correct_answer": "14",
+          "difficulty": "Medium",
+          "format": "SPR",
+          "options": {},
+          "practice_problem_id": "quant:main:task_id_0402:practice_problem:23754",
+          "solution": "To find the number of factors of $5$ in $60!$, divide $60$ by $5$ to get $12$. This means there are $12$ multiples of $5$. Then, divide $12$ by $5$ to get $2$ (ignoring the remainder). This accounts for the multiples of $25$, which contain an extra factor of $5$. Add these together: $12 + 2 = 14$.",
+          "source_problem_id": 23754,
+          "practice_question_text": "What is the largest integer $n$ such that $5^n$ divides $60!$ evenly?"
+        },
+        {
+          "correct_answer": "40",
+          "original_unnormalized_answer": "9",
+          "difficulty": "Hard",
+          "format": "SPR",
+          "options": {},
+          "practice_problem_id": "quant:main:task_id_0402:practice_problem:23755",
+          "solution": "A factor of $10$ is created by multiplying a $2$ and a $5$. In any factorial, there are always more factors of $2$ than factors of $5$, so the number of $10$s is limited by the number of $5$s. To count the $5$s in $40!$, divide $40$ by $5$ to get $8$. Then divide $8$ by $5$ to get $1$ (ignore the remainder). Add them up: $8 + 1 = 9$. Thus, $10^9$ is the largest power of $10$ that divides $40!$.",
+          "source_problem_id": 23755,
+          "practice_question_text": "Let $K = 40!$. What is the largest integer $x$ such that $10^x$ divides $K$ evenly?"
+        }
+      ],
+      "pretest_evidence": [
+        "N16"
+      ],
+      "priority_rank": 3,
+      "why_it_matters": "The GRE tests your ability to find how many times a number divides into a factorial. This is done by counting prime factors (like $5$s for trailing zeros), a specific method that is highly reliable and quick once you learn the steps."
+    },
+    {
+      "allotted_minutes": 10,
+      "concept_id": "c4",
+      "name": "Even and Odd Number Properties",
+      "practice_problems": [
+        {
+          "correct_answer": "B",
+          "difficulty": "Medium",
+          "format": "MCQ",
+          "options": {
+            "A": "$x^2 y + y$",
+            "B": "$x y^2 + x$",
+            "C": "$2x + y$",
+            "D": "$x^2 + y^2 + 1$"
+          },
+          "practice_problem_id": "quant:main:task_id_0402:practice_problem:23756",
+          "solution": "Plug in simple numbers: let $x = 1$ (odd) and $y = 2$ (even).\nOption A: $(1)^2(2) + 2 = 2 + 2 = 4$ (even).\nOption B: $(1)(2)^2 + 1 = 4 + 1 = 5$ (odd).\nOption C: $2(1) + 2 = 4$ (even).\nOption D: $(1)^2 + (2)^2 + 1 = 1 + 4 + 1 = 6$ (even).\nOnly Option B yields an odd integer.",
+          "source_problem_id": 23756,
+          "practice_question_text": "If $x$ is an odd integer and $y$ is an even integer, which of the following must be an odd integer?"
+        }
+      ],
+      "pretest_evidence": [
+        "N25"
+      ],
+      "priority_rank": 4,
+      "why_it_matters": "Systematically testing even and odd expressions by plugging in simple numbers (like $1$ for odd and $2$ for even) will prevent algebraic mix-ups and secure points on medium-to-hard number property questions."
+    }
+  ],
+  "lesson_plan_id": "quant:main:task_id_0402:lesson_plan:1073",
+  "source_lesson_plan_id": 1073,
+  "student_summary": "This plan targets the specific gaps from your pre-test to maximize your GRE score. We will focus on testing edge cases in Quantitative Comparison, distinguishing real numbers from integers, finding prime factors in factorials, and mastering even/odd properties—while also sharpening your attention to detail on constraints like 'more than' versus 'equal to'."
+}

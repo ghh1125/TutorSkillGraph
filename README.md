@@ -2,9 +2,21 @@
 
 English · [中文](README.zh-CN.md)
 
+The method description traces a teaching skill from its original lesson through an independent student response to a revised teaching move. It includes a diagram of a classroom hyperedge and the corresponding code and records. [Hypergraph and skill evolution (Chinese)](METHOD.zh-CN.md) · [Data and reproduction (Chinese)](data/README.md)
+
+In 24 additional held-out StudentBench classrooms, the official plan met the prespecified next-turn teaching objective in 11 of 24 cases (45.8%). The TutorSkillGraph plan met it in 19 of 24 (79.2%) using the same official tutor strategy and `gpt-6-luna`. The new teaching move uses learners' later independent choices in earlier classrooms to select a comparison the current learner can test. [Paired results and worked classroom example (Chinese)](experiments/evidence_revision/REPORT.zh-CN.md)
+
+In the [expanded StudentBench comparison (Chinese)](experiments/grounded_tutor/REPORT.zh-CN.md), 32 held-out learners contributed one tutoring decision each. With the official tutoring prompt and the same `gpt-6-luna`, the original plan met the prespecified next-turn objective in 17 cases and the revised plan in 23. The report links every response and its blinded assessment.
+
+The [paired final-inference pilot (Chinese)](experiments/reason_ablation/REPORT.zh-CN.md) builds candidate teaching skills from 12 released tutoring sessions. Both replay arms use the published StudentBench tutor strategy and the same small model. The report includes both held-out cases, the historical tutors' replies, and a reproduction of the fence dataset's regression baseline.
+
+The [first empirical pilot (Chinese)](experiments/lesson_revision_pilot/REPORT.zh-CN.md) compares held-out predictions for real learners and traces one proposed lesson change and one reason to retain the original instruction to GRE tutoring records.
+
+The [p019 case](cases/p019.zh-CN.md) and its [structured record](cases/p019.json) are implemented under [src/tutorskillgraph](src/tutorskillgraph/). See the [source build instructions](README.zh-CN.md). This pilot proposes a testable lesson revision. The released data provide a combined transfer score and leave the learner's item-specific answer and reasoning unknown.
+
 **Can an AI tutor use a student’s later explanation to discover what an earlier lesson left unresolved, then change how it teaches the next student?** A classroom example can let two different ideas produce the same correct answer. Independent work can reveal the difference and give the tutor a reason to revise a specific activity.
 
-**[Read the full research proposal](RESEARCH_BRIEF.md)** for a worked density lesson, the teaching skills represented as nodes, the instructional hypothesis represented by a hyperedge, and the comparison with a fully specified written skill. The project is at the research-design stage. The first empirical case is planned in a public equation-tutoring dataset.
+**[Read the full research proposal](RESEARCH_BRIEF.md)** for a worked density lesson, the teaching skills represented as nodes, the instructional hypothesis represented by a hyperedge, and the comparison with a fully specified written skill. The first case now uses a public equation-tutoring record. Testing the proposed edit with learners remains open.
 
 ## The problem with learning from a successful lesson
 

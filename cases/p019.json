@@ -1,0 +1,172 @@
+{
+  "case_id": "p019-gate-closure-v1",
+  "design_commit": "80c2fbb950784aaa25b3e658bcc9910fd67b55c9",
+  "observed": {
+    "learner": "p019",
+    "objective": "gate_fence",
+    "condition": "socratic",
+    "source_commit": "98c52a668fc6ba76fa330eb9539ab893616111ba",
+    "log": {
+      "file": "anonymized_tutoring_logs.csv",
+      "record": 55,
+      "first_line": 177,
+      "last_line": 181,
+      "link": "https://github.com/the-oak-lab/scaffolded-error-correction/blob/98c52a668fc6ba76fa330eb9539ab893616111ba/anonymized_tutoring_logs.csv#L177-L181"
+    },
+    "turns": [
+      {
+        "turn": 1,
+        "role": "user",
+        "excerpt": "x+2y=500",
+        "start": 34,
+        "end": 42,
+        "paraphrase": "学生提交初答。"
+      },
+      {
+        "turn": 2,
+        "role": "assistant",
+        "excerpt": "no gate at all",
+        "start": 199,
+        "end": 213,
+        "paraphrase": "导师先问没有门洞时，矩形的完整周长是多少。"
+      },
+      {
+        "turn": 3,
+        "role": "user",
+        "excerpt": "2x+2y=500",
+        "start": 0,
+        "end": 9,
+        "paraphrase": "学生写出没有门洞时的方程。"
+      },
+      {
+        "turn": 4,
+        "role": "assistant",
+        "excerpt": "10-foot gate",
+        "start": 134,
+        "end": 146,
+        "paraphrase": "导师确认周长表达式，问十英尺门洞怎样影响用料。"
+      },
+      {
+        "turn": 5,
+        "role": "user",
+        "excerpt": "I removed one x",
+        "start": 27,
+        "end": 42,
+        "paraphrase": "学生解释，有门的那一边不用围，因此删去了一个 x。"
+      },
+      {
+        "turn": 6,
+        "role": "assistant",
+        "excerpt": "only subtract the 10-foot opening",
+        "start": 286,
+        "end": 319,
+        "paraphrase": "导师对照整条边和十英尺门洞，已明确提示只减门洞。"
+      },
+      {
+        "turn": 7,
+        "role": "user",
+        "excerpt": "2x+2y-10=500",
+        "start": 12,
+        "end": 24,
+        "paraphrase": "学生写出单门题的完整方程，这条回复只有算式和简短应答。"
+      },
+      {
+        "turn": 8,
+        "role": "assistant",
+        "excerpt": "absolutely correct",
+        "start": 8,
+        "end": 26,
+        "paraphrase": "导师确认并解释单门方程，该题的对话到此结束。"
+      }
+    ],
+    "initial_correct_label": "FALSE",
+    "final_correct_label": "TRUE",
+    "independent_assessment": {
+      "score_source": {
+        "file": "anonymized_data.csv",
+        "record": 20,
+        "first_line": 20,
+        "last_line": 20,
+        "link": "https://github.com/the-oak-lab/scaffolded-error-correction/blob/98c52a668fc6ba76fa330eb9539ab893616111ba/anonymized_data.csv#L20-L20"
+      },
+      "field": "pct_practice_aligned",
+      "raw_fraction": "0.6666666666666666",
+      "max_points": 9,
+      "scope": "three_transfer_items_combined",
+      "related_public_item": "补充材料第 4 题 Farm Gates，两个门洞分别为 12 和 8 英尺，围栏 500 英尺。",
+      "paper": "https://arxiv.org/pdf/2611.20061v1#page=49",
+      "codebook": "https://github.com/the-oak-lab/scaffolded-error-correction/blob/98c52a668fc6ba76fa330eb9539ab893616111ba/codebooks.xlsx",
+      "item_answer": null,
+      "item_score": null,
+      "item_reason": null,
+      "missing_reason": "公开版本仅提供三道变式题合计成绩，缺少该生在 Farm Gates 上的逐题记录。"
+    }
+  },
+  "proposed": {
+    "purpose": "检验单门纠错结束时，学生能否自行根据所有开口决定扣去的长度。若相似学生反复主张有多个开口也只扣一处，则试改结尾。",
+    "interpretations": {
+      "all_openings": "A 按实际缺口计数。每个无需围栏的开口都从完整周长中扣去一次。",
+      "one_opening_only": "B 把单门做法推广成只扣一处门宽，即使有多个开口也只选一处。"
+    },
+    "relationship_to_observation": "A、B 是我们为第 7 轮正确式子提出的两种可能理解。第 5 轮学生亲口说过删去整条边，那是更早的判断。提示后照着写、偶然漏读一个门、算术失误也能影响回答。",
+    "predictions": [
+      {
+        "task": "原练习",
+        "gate_widths_ft": [
+          10
+        ],
+        "fence_ft": 500,
+        "task_origin": "公开练习，第 7 轮有真实回答",
+        "all_openings": "2x + 2y − 10 = 500",
+        "one_opening_only": [
+          "2x + 2y − 10 = 500"
+        ]
+      },
+      {
+        "task": "等宽双门诊断题",
+        "gate_widths_ft": [
+          10,
+          10
+        ],
+        "fence_ft": 500,
+        "task_origin": "本项目设计，未对 p019 施测",
+        "all_openings": "2x + 2y − 20 = 500",
+        "one_opening_only": [
+          "2x + 2y − 10 = 500"
+        ]
+      },
+      {
+        "task": "Farm Gates",
+        "gate_widths_ft": [
+          12,
+          8
+        ],
+        "fence_ft": 500,
+        "task_origin": "公开后测题，p019 的逐题作答未知",
+        "all_openings": "2x + 2y − 20 = 500",
+        "one_opening_only": [
+          "2x + 2y − 12 = 500",
+          "2x + 2y − 8 = 500"
+        ]
+      }
+    ],
+    "probe_prompt": "一个矩形院子的边长为 x、y 英尺。一条 x 边和一条 y 边各有一个 10 英尺宽的门洞，门洞处无需围栏。可用围栏共 500 英尺。请列方程，并解释你为什么这样列。",
+    "interpret_probe": "研究者在给反馈前保存学生的首答、完整理由和已获得的提示。A 预期学生解释两个门都不用围，因此共扣 20。B 预期学生说这道题只需扣一个门，因此扣 10。等价移项照样认可，单看最后的数值无法识别理由。",
+    "individual_criteria": {
+      "withdraw": "修订前，学生首次独立做等宽双门题，写出等价于扣 20 的方程，并自行说明两处门洞各省 10。撤回给该学生增设多门对照的建议。",
+      "try": "相同条件下写出扣 10，并明确解释两个门也只应扣一处。此回答支持为该学生试用针对性对照。诊断题此时已见过，后续测验须换题。",
+      "clarify": "只写减 10 或减 20、理由含糊，或式子与理由矛盾，均保留未决。若学生逐一写了两个门却算错总数，先让他重算，以区分算术和计数问题。",
+      "pending": "缺少独立首答、只看到合计分，或题目已讲过、导师已提示扣两个门时，保持待取证。"
+    },
+    "edit": {
+      "location": "原课第 7 轮学生写对之后，第 8 轮确认答案之处。",
+      "v0": "导师确认单门方程，复述从矩形周长中扣去十英尺门洞的理由，结束本题。",
+      "v1": "面向下一批起点相近的学生，在同一位置确认单门式子，接着把题面改为两条边各有一个同宽门洞。让学生自行列式并解释，再按其理由反馈。",
+      "control": "要检验改课收益，两组在相同时间内各完成一次额外列式并解释。对照组换一组数字做单门题，修订组做双门对照。两组使用相同的回复机会和反馈时间。",
+      "transfer": "另留一题，两组在教学后均首次独立作答。例如矩形展板外框实际装饰条长 360 厘米，三个分开的开口宽 3、5、7 厘米。边长为 x、y 厘米时应得 2x+2y−15=360，理由需逐一对应三个开口。等宽双门题一旦用于教学或诊断，就退出该学生的效果测验。",
+      "cohort_withdrawal": "在起点可比、教学时间和练习次数匹配的随机比较中，预先约定以新题上方程与理由均正确的学生比例作为指标。若修订组减对照组之差的预设置信区间上界 ≤ 0，撤回向这一人群推广该改法的建议。区间仍包含有意义的改善时保留未决。个人一次回答只影响对该学生的补教决定。"
+    },
+    "observed_probe_response": null,
+    "current_decision": "待取证"
+  }
+}

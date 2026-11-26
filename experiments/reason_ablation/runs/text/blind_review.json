@@ -1,0 +1,1357 @@
+{
+  "instructions": "对照原课与新题首答，判断动作、两种预测、撤回条件是否有依据。preferred 可填 1、2、两者相当、都不充分、无法判定。",
+  "cases": [
+    {
+      "case": "task_id_0219",
+      "source": "https://huggingface.co/datasets/handshake-ai-research/studentbench/blob/304c8d63c726e72b60510bba3a44454fc0726721/1_main_leaderboard_data/gre_quant/ai_arm_gemini-3.1-pro-high/task_id_0219/ai_tutoring_data/student_ai_tutor_interaction_trajectory.csv",
+      "evidence": {
+        "lesson_version": "task_id_0219/lesson/1/v1",
+        "observed_earlier_events": [
+          {
+            "event": 1,
+            "role": "system",
+            "text": "What is the units digit of $3^{45} + 7^{22}$?"
+          },
+          {
+            "event": 9,
+            "role": "student",
+            "text": "7, 4, 1, 8, 5, 2, 9, 6, 3, 0, and then it cycles, so 22 mod 10 = 2, so it should be 4?"
+          },
+          {
+            "event": 10,
+            "role": "ai_tutor",
+            "text": "You have the exact right logic for applying the remainder! \n\nBut take a close look at the sequence you generated for 7. It looks like you listed the units digits for the *multiples* of 7 ($7\\times1=7$, $7\\times2=14$, $7\\times3=21$, etc.). \n\nRemember, an exponent means we are *multiplying by 7* each time, not adding 7! \n\nLet's find the units digits for the first few *powers* of 7 instead: $7^1$, $7^2$, $7^3$, $7^4$. What do you get for those? \n\n*(Hint: to find the next units digit, just multiply the previous units digit by 7!)*"
+          },
+          {
+            "event": 11,
+            "role": "student",
+            "text": "Oh right, then it would be 7, 9, 3, 1 so 22 mod 4 = 2, so it should be 9"
+          },
+          {
+            "event": 15,
+            "role": "student",
+            "text": "Submitted 2 (correct: True)."
+          }
+        ],
+        "researcher_description_of_lesson": "The lesson uses the material at event 1. The learner's actions are at [9, 11, 15]. The tutor's actions are at [10]. Their order is [9, 10, 11, 15]. The teaching step being reviewed is: Distinguish powers from multiples and ask the learner to construct the repeating units digits. At turn 10, only [1, 9] in these excerpts preceded the tutor's move. The learner was to do this: Build the power cycle of 7 and use the remainder to locate the digit.",
+        "later_item_before_feedback": {
+          "item_event": 17,
+          "item": "What is the units digit of $8^{34}$?",
+          "answer": "4",
+          "math_key": "4",
+          "response_event": 19,
+          "first_response_work": "8, 4, 2, 6, so this also cycles in 4, so 34 mod 4 = 2, so it should be 4"
+        },
+        "candidate_actions": {
+          "A": "Contrast indexing a cycle starting at exponent zero with indexing it starting at exponent one.",
+          "B": "Keep this lesson step for similar circumstances without targeted reteaching.",
+          "C": "First elicit one unaided explanation on a fresh example; defer a targeted edit.",
+          "D": "Contrast multiples with successive powers of the same base before locating a term."
+        }
+      },
+      "proposals": {
+        "1": {
+          "action": "C",
+          "observed_evidence": "事件9把7的数列列成7,4,1,…，这是7的倍数个位；事件10后，事件11能写出7的幂个位循环7,9,3,1，并算出7^22个位为9。事件15提交的2是原题正确答案，但没有说明3^45部分；后题8^34答4（事件19）也没有过程，不能据此确认独立迁移。",
+          "event_ids": [
+            9,
+            10,
+            11,
+            15,
+            19
+          ],
+          "diagnostic_material": "暂不改写旧课，先用同一道新诊断题请学习者独立说明：求2^5的个位，并写出逐次幂的个位循环及如何定位。该题未在记录中施测。",
+          "explanation_1": {
+            "rule": "可能的规则：把指数理解成乘数，列同一底数的倍数个位，而非逐次乘方。",
+            "original_prediction": "对原题中的7^22会算7×22的个位，答4。",
+            "diagnostic_prediction": "对2^5会算2×5的个位，答0。"
+          },
+          "explanation_2": {
+            "rule": "可能的规则：知道幂的循环，但把指数余数当作从循环第0项开始的位置，产生一位偏移。",
+            "original_prediction": "对7^22，22除以4余2，却取循环第3项，答3。",
+            "diagnostic_prediction": "对2^5，5除以4余1，却取循环第2项，答4。"
+          },
+          "lesson_step": "保留原课中明确区分倍数与连续乘方、并让学习者构造循环的步骤；当前证据不足以决定是否需针对性改写。原材料中，事件9与事件11确实显示了提示前后的差异，但事件11是在提示后完成，不能证明独立掌握。",
+          "withdraw_if": "若学习者在新题上未经提示，能写出2,4,8,6的幂循环、正确定位2^5并解释定位方式，就撤回暂缓针对性改写的决定；若出现错误，再按上述不同预测判断需针对的环节。"
+        },
+        "2": {
+          "action": "C",
+          "observed_evidence": "事件9中，学习者把7的数列写成7、4、1……，看起来像7的倍数个位；事件10指出应逐次乘7。事件11随后给出7、9、3、1，并用22 mod 4定位，事件15记录提交答案2且正确。但事件11没有解释如何把所得个位用于原题的和；后续题的首答也只是写出8的幂循环并算出4，不能单凭它确认原误解已消除。",
+          "event_ids": [
+            9,
+            10,
+            11,
+            15,
+            19
+          ],
+          "diagnostic_material": "建议先用一个新例子无提示诊断（未曾施测）：求5^6的个位，并说明如何列数列及定位。原题本身已有倍数与幂的区分过程，事件11可作为纠正后表现；不过尚不能判明学习者原先是误把幂当倍数，还是只在循环索引上出错。",
+          "explanation_1": {
+            "rule": "竞争解释一：学习者把指数理解为相乘的次数，因而列出底数的倍数而非连续幂。",
+            "original_prediction": "在原题上会先列出7、4、1……这样的倍数个位；经事件10提示后，可能改列7、9、3、1。",
+            "diagnostic_prediction": "对5^6会倾向列5、0、5、0……（倍数个位），而非连续幂的个位5、5、5……；需看其无提示说明。"
+          },
+          "explanation_2": {
+            "rule": "竞争解释二：学习者能生成连续幂，但不确定周期位置对应的指数是从0还是从1开始。",
+            "original_prediction": "原题可能能列出7、9、3、1，却在22 mod 4后定位错位；事件11的定位为2并得到9，未呈现这类错误。",
+            "diagnostic_prediction": "对5^6会列出连续幂的个位5、5、5……，并说明周期位置如何对应指数；这个例子对索引错误的区分力有限，因周期各项相同，需结合解释追问，不能据答案单独判定。"
+          },
+          "lesson_step": "暂不针对性改写；保留事件10的“逐次乘底数、构造幂的个位循环”支架，先在新例子上无提示观察。原材料已显示从倍数列转为幂列，但没有充分区分两种解释。",
+          "withdraw_if": "若学习者在新例子中无提示地说明指数表示连续相乘、正确列出幂的个位循环，并清楚解释周期位置与指数的对应关系，就撤回需要补教这一内容的判断。"
+        }
+      },
+      "teacher_evaluation": {
+        "preferred": null,
+        "reason": null,
+        "adequate_proposals": null
+      }
+    },
+    {
+      "case": "task_id_0260",
+      "source": "https://huggingface.co/datasets/handshake-ai-research/studentbench/blob/304c8d63c726e72b60510bba3a44454fc0726721/1_main_leaderboard_data/gre_quant/ai_arm_gemini-3.1-pro-high/task_id_0260/ai_tutoring_data/student_ai_tutor_interaction_trajectory.csv",
+      "evidence": {
+        "lesson_version": "task_id_0260/lesson/1/v1",
+        "observed_earlier_events": [
+          {
+            "event": 1,
+            "role": "system",
+            "text": "A class of 50 students took a test. The 30 students in Section A scored an average of exactly 80. The 20 students in Section B scored an average of less than 70.\n\nOptions: A) Quantity A is greater. | B) Quantity B is greater. | C) The two quantities are equal. | D) The relationship cannot be determined from the information given."
+          },
+          {
+            "event": 3,
+            "role": "student",
+            "text": "so we first do (30x80) + (20x70) / 50?"
+          },
+          {
+            "event": 7,
+            "role": "student",
+            "text": "3800/50 = 380/5 = 76"
+          },
+          {
+            "event": 8,
+            "role": "ai_tutor",
+            "text": "Perfect. So, if Section B scored *exactly* 70, the overall average would be exactly 76.\n\nBut let's look closely at the problem again. It says the 20 students in Section B scored an average of **less than** 70. \n\nIf Section B's average is actually *lower* than 70, what does that do to the overall average of the class? Will it be exactly 76, greater than 76, or less than 76?"
+          },
+          {
+            "event": 9,
+            "role": "student",
+            "text": "lower than"
+          },
+          {
+            "event": 10,
+            "role": "ai_tutor",
+            "text": "Exactly! Since Section B's average is pulling the total down, the overall average for all 50 students must be **less than 76**.\n\nNow, let's look at the two quantities in the problem:\n**Quantity A:** The overall average score of all 50 students\n**Quantity B:** 76\n\nBased on what we just figured out, which quantity is greater?"
+          },
+          {
+            "event": 11,
+            "role": "student",
+            "text": "Submitted B (correct: True)."
+          }
+        ],
+        "researcher_description_of_lesson": "The lesson uses the material at event 1. The learner's actions are at [3, 7, 9, 11]. The tutor's actions are at [8, 10]. Their order is [3, 7, 8, 9, 10, 11]. The teaching step being reviewed is: Compute the weighted boundary and then decide which side of it is attainable. At turn 8, only [1, 3, 7] in these excerpts preceded the tutor's move. The learner was to do this: Decide which side of the weighted boundary the true average falls on.",
+        "later_item_before_feedback": {
+          "item_event": 13,
+          "item": "A fruit stand sold 100 apples. 75 of the apples were sold for more than \\$1.20 each, and the remaining 25 apples were sold for exactly \\$0.80 each. Which of the following could be the average price per apple for all 100 apples?\n\nOptions: A) \\$1.00 | B) \\$1.05 | C) \\$1.10 | D) \\$1.15",
+          "answer": "1.10 (the numerical value stated; no option was stated)",
+          "math_key": "D ($1.15)",
+          "response_event": 15,
+          "first_response_work": "75 x 1.2 + 25 x 0.8 / 100 = 1.1"
+        },
+        "candidate_actions": {
+          "A": "Contrast equal-sized and unequal-sized groups using equal group means first.",
+          "B": "First elicit one unaided explanation on a fresh example; defer a targeted edit.",
+          "C": "Contrast equal-to and strictly-above prices with the same weights.",
+          "D": "Keep this lesson step for similar circumstances without targeted reteaching."
+        }
+      },
+      "proposals": {
+        "1": {
+          "action": "B",
+          "observed_evidence": "事件7算出把B组均值设为70时的边界值76；事件9说整体均值“lower than”，事件11选B。能支持其判断方向，但未见完整解释。后续事件15报出数值1.10，并未指出选项；不能据此认定选了C或D，也无法判断其推理。旧题中“少于70”已区分边界等于与实际低于，但未充分区分理解加权边界与只套用“低于就整体低于”的规则。",
+          "event_ids": [
+            7,
+            9,
+            11,
+            15
+          ],
+          "diagnostic_material": "暂缓定向改课，先在新例题上无提示地要求说明理由：40件商品中，30件售价恰为2元，10件售价高于2元。问总平均价与2元的关系。此例未在记录中施测。",
+          "explanation_1": {
+            "rule": "理解加权边界：先算各组均值恰在边界时的整体均值，再据严格不等关系判断。",
+            "original_prediction": "预期说明B组均值恰为70时整体为76，实际低于70故整体低于76；与事件9、11相符，但未观察到完整论证。",
+            "diagnostic_prediction": "预期指出边界整体均值为2元，第三组价格严格高于2元，因此总平均价严格高于2元。"
+          },
+          "explanation_2": {
+            "rule": "只记住某个组“低于”边界会把总均值往下拉，未必理解加权边界及其适用条件。",
+            "original_prediction": "也可能凭“B组低于70会拉低整体”选B；现有旧题不能排除此解释。",
+            "diagnostic_prediction": "可能只说某组价格高于2元会拉高平均价，未能说明基准整体均值为2元及权重如何支持比较；若能完整说明，则此解释较不成立。"
+          },
+          "lesson_step": "保留“先算加权边界，再判断真实均值位于哪侧”的步骤；暂不针对原课作改动，先收集新例题上的独立解释。",
+          "withdraw_if": "若学习者在未提示的新例中无法算出2元边界或误判方向，就撤回暂缓改动的决定，针对加权边界与严格不等关系补教。"
+        },
+        "2": {
+          "action": "B",
+          "observed_evidence": "事件7算出边界值76；事件9在提示后说平均分会更低，事件11选B。后来事件15只给出1.10的计算值，没有报告选项；它可能是中间边界计算，不能据此断定选择了边界选项。",
+          "event_ids": [
+            7,
+            9,
+            11,
+            15
+          ],
+          "diagnostic_material": "暂不改写旧课，先用一个未提示的新题诊断：4件商品中，3件售价都高于10元，另1件恰为2元。总平均价能否恰为8元？能否为9元？要求说明理由；这是建议的诊断题，并未实际施测。",
+          "explanation_1": {
+            "rule": " learner理解严格不等号；后来1.10只是加权边界的中间计算，并非最终选择。",
+            "original_prediction": "在原题提示下判断总平均分低于76，选B；这与事件9、11一致。",
+            "diagnostic_prediction": "说平均价不能恰为8元，但可以为9元，并说明前三件的价格可高于10元而使平均价超过边界。"
+          },
+          "explanation_2": {
+            "rule": " learner会算加权边界，却可能把“严格高于”当作“等于也可达到”。",
+            "original_prediction": "若无提示，可能认为总平均分可恰为76；不过原题在提示后得到正确回答，因此旧题尚未排除这种依赖提示的可能。",
+            "diagnostic_prediction": "可能把8元说成可达到，因为它是边界计算值；也可能只报边界而未判断可达性。"
+          },
+          "lesson_step": "保留旧课中先算加权边界的步骤，暂缓针对严格不等号改课；事件9和11显示提示后的正确判断，但不足以证明独立迁移。",
+          "withdraw_if": "若学习者在上述诊断题中未经提示，明确说8元不可达到、9元可以，并用严格不等号解释，就撤回针对可达性的疑虑；若把8元判为可达到，再考虑针对边界是否可取这一点改写旧课。"
+        }
+      },
+      "teacher_evaluation": {
+        "preferred": null,
+        "reason": null,
+        "adequate_proposals": null
+      }
+    },
+    {
+      "case": "task_id_0328",
+      "source": "https://huggingface.co/datasets/handshake-ai-research/studentbench/blob/304c8d63c726e72b60510bba3a44454fc0726721/1_main_leaderboard_data/gre_quant/ai_arm_gemini-3.1-pro-high/task_id_0328/ai_tutoring_data/student_ai_tutor_interaction_trajectory.csv",
+      "evidence": {
+        "lesson_version": "task_id_0328/lesson/215/v1",
+        "observed_earlier_events": [
+          {
+            "event": 215,
+            "role": "system",
+            "text": "John can complete a specific project in 10 days working alone, and Mary can complete the same project in 15 days working alone. They work together on the project for 4 days, after which John is reassigned and leaves. How many additional days will it take Mary to finish the project working alone?\n\nOptions: A) 3 | B) 4 | C) 5 | D) 6"
+          },
+          {
+            "event": 217,
+            "role": "student",
+            "text": "i dont get this one"
+          },
+          {
+            "event": 218,
+            "role": "ai_tutor",
+            "text": "No worries, this one has a few more moving parts, but the exact same rules apply! Let's take it one step at a time.\n\nFirst, let's find their individual rates just like we did with the pipes. \n\nIf John takes 10 days to complete 1 project, what fraction of the project does he complete in exactly 1 day? And what about Mary?"
+          },
+          {
+            "event": 221,
+            "role": "student",
+            "text": "1/6"
+          },
+          {
+            "event": 222,
+            "role": "ai_tutor",
+            "text": "Exactly! $1/10 + 1/15 = 5/30$, which simplifies beautifully to $1/6$.\n\nSo, if they complete $1/6$ of the project in one day, how much of the project do they finish during the 4 days they work together?"
+          },
+          {
+            "event": 223,
+            "role": "student",
+            "text": "2/3"
+          },
+          {
+            "event": 224,
+            "role": "ai_tutor",
+            "text": "Spot on! 4 days * 1/6 = 4/6, which simplifies to 2/3 of the project completed.\n\nSince they've finished 2/3 of the project, what fraction of the project is left for Mary to finish all by herself?"
+          },
+          {
+            "event": 225,
+            "role": "student",
+            "text": "Submitted C (correct: True)."
+          }
+        ],
+        "researcher_description_of_lesson": "The lesson uses the material at event 215. The learner's actions are at [217, 221, 223, 225]. The tutor's actions are at [218, 222, 224]. Their order is [217, 218, 221, 222, 223, 224, 225]. The teaching step being reviewed is: Split a job when the team changes and recompute the rate on the work that remains. At turn 222, only [215, 217, 218, 221] in these excerpts preceded the tutor's move. The learner was to do this: Use the first stage's rate and duration to find the work already done.",
+        "later_item_before_feedback": {
+          "item_event": 227,
+          "item": "Pump X can fill an empty reservoir in 4 hours, and Pump Y can fill the same reservoir in 6 hours. Pump Z can empty the full reservoir in 3 hours. The reservoir is initially empty. If Pumps X and Y are turned on at 12:00 PM, and Pump Z is turned on at 1:00 PM, at what time will the reservoir be completely filled?\n\nOptions: A) 6:00 PM | B) 7:00 PM | C) 8:00 PM | D) 9:00 PM",
+          "answer": "8 pm",
+          "math_key": "C (8 pm)",
+          "response_event": 229,
+          "first_response_work": "5/12 at 1pm. combined rate after is 1/12 so 8pm"
+        },
+        "candidate_actions": {
+          "A": "Contrast continuing at the old rate with recomputing the net rate when one worker or pump changes.",
+          "B": "Keep this lesson step for similar circumstances without targeted reteaching.",
+          "C": "First elicit one unaided explanation on a fresh example; defer a targeted edit.",
+          "D": "Contrast clock time with duration for an otherwise constant-rate task."
+        }
+      },
+      "proposals": {
+        "1": {
+          "action": "C",
+          "observed_evidence": "学习者先说“i dont get this one”(217)，之后给出合并速率1/6(221)、4天完成2/3(223)，最后选择C(225)。这些表现显示了部分计算，但对“换人后只对剩余工作重新计算”的规则没有直接解释。后续泵题中，学习者写出1点时已完成5/12、之后净速率1/12，答8点(227、229)；这与按阶段处理相符，但仍未证明其理解适用于旧题中的完工时长。",
+          "event_ids": [
+            217,
+            221,
+            223,
+            225,
+            227,
+            229
+          ],
+          "diagnostic_material": "先暂缓改课，在新题中让学习者独立说明阶段变化后的剩余工作与新速率。共同诊断例：甲独做需8小时，乙独做需12小时；两人先合作3小时，甲离开。问乙还需几小时？答案为5小时。",
+          "explanation_1": {
+            "rule": "可能规则：每个阶段按当时仍在工作的人的净速率计算；先算已完成工作，再对剩余部分计时。",
+            "original_prediction": "原题中两人速率为1/6，4天完成2/3；剩余1/3由玛丽以1/15完成，需5天。",
+            "diagnostic_prediction": "新例中合速率为5/24，3小时完成5/8；剩余3/8由乙以1/12完成，需4.5小时。"
+          },
+          "explanation_2": {
+            "rule": "竞争解释：学习者会算合作阶段的工作量或选择正确选项，但未掌握人员变化后应重算剩余工作的时间。",
+            "original_prediction": "可能算出2/3并选C，但未能说明玛丽接手后如何用1/15处理剩余1/3；单看旧题的选择无法排除此解释。",
+            "diagnostic_prediction": "新例中可能只给出合作阶段已完成的5/8，或错误地沿用合速率5/24来计算剩余时间，而不能得出乙独做需4.5小时。"
+          },
+          "lesson_step": "先保留“先算已完成部分，再对剩余工作按新团队速率计时”这一步；目前旧题与后续泵题均有分阶段计算线索，但旧题未记录学习者对最后一步的解释。",
+          "withdraw_if": "若学习者在新例中不经提示，能说明剩余3/8由乙以1/12完成、因此需4.5小时，并解释为何不再用合作速率，则撤回暂缓改课的判断，保留该教学步骤。"
+        },
+        "2": {
+          "action": "C",
+          "observed_evidence": "事件221中，学习者回答“1/6”，但这是两人的合计日效率，不是各自效率；该回答是在提示后给出的。事件223给出4天完成2/3，事件225选C（正确），但没有说明剩余工作或Mary单独完成所需时间。后续事件229只记录“8 pm”，没有解题过程。",
+          "event_ids": [
+            221,
+            223,
+            225,
+            229
+          ],
+          "diagnostic_material": "可先不改课，另用同一新例诊断：John单独8天完成，Mary单独12天完成；两人合作2天后John离开。问Mary还需几天？正确分段计算为7天。此例未在记录中实际施测。",
+          "explanation_1": {
+            "rule": "按每阶段实际参与者重算效率：先用合计效率求已完成工作，再用Mary效率完成余量。",
+            "original_prediction": "5天：合作效率为1/6，4天完成2/3，余1/3；Mary以1/15完成需5天。",
+            "diagnostic_prediction": "7天：合作效率5/24，2天完成5/12，余7/12；Mary以1/12完成需7天。"
+          },
+          "explanation_2": {
+            "rule": "把合作阶段的合计效率当作离开后Mary的效率。",
+            "original_prediction": "2天：余下1/3除以1/6。与学习者选C不符，因此原题的选项已对这一明确规则提供了区分。",
+            "diagnostic_prediction": "2.8天：余下7/12除以合作效率5/24。"
+          },
+          "lesson_step": "暂缓定向修改；保留“人员改变后，按剩余工作和新阶段效率重算”的步骤。先要求学习者无提示说出原题中余下的工作量及Mary的效率，并解释为何要用该效率。",
+          "withdraw_if": "若学习者在无提示的新例中能正确分阶段计算并解释为何离开后只用Mary的效率，我会撤回对该步骤需要针对性修改的判断。"
+        }
+      },
+      "teacher_evaluation": {
+        "preferred": null,
+        "reason": null,
+        "adequate_proposals": null
+      }
+    },
+    {
+      "case": "task_id_0353",
+      "source": "https://huggingface.co/datasets/handshake-ai-research/studentbench/blob/304c8d63c726e72b60510bba3a44454fc0726721/1_main_leaderboard_data/gre_quant/ai_arm_gemini-3.1-pro-high/task_id_0353/ai_tutoring_data/student_ai_tutor_interaction_trajectory.csv",
+      "evidence": {
+        "lesson_version": "task_id_0353/lesson/67/v1",
+        "observed_earlier_events": [
+          {
+            "event": 67,
+            "role": "system",
+            "text": "$a$ and $b$ are nonzero numbers.\n\nQuantity A: $|a - b|$\nQuantity B: $|a| - |b|$\n\nOptions: A) Quantity A is greater. | B) Quantity B is greater. | C) The two quantities are equal. | D) The relationship cannot be determined from the information given."
+          },
+          {
+            "event": 69,
+            "role": "student",
+            "text": "well this is different, but wouldn't these be the same? or does - being in absolute value change anything?"
+          },
+          {
+            "event": 70,
+            "role": "ai_tutor",
+            "text": "That is a really common intuition! It definitely *looks* like they should be the same. \n\nBut instead of guessing how the absolute value works, let's use our new strategy to test it! \n\nLet's start by picking two normal, positive integers. What happens if we make $a = 5$ and $b = 3$? \n\nCalculate Quantity A ($|a - b|$) and Quantity B ($|a| - |b|$) for me. What do you get?"
+          },
+          {
+            "event": 72,
+            "role": "ai_tutor",
+            "text": "Perfect! Both Quantity A and Quantity B equal 2 in this case. So, if we only tested those numbers, we'd think the answer is C (The two quantities are equal).\n\nBut remember our strategic checklist! The problem only says $a$ and $b$ are *nonzero* numbers. That means negative numbers are fair game.\n\nWhat happens if we make one of them negative? Let's try $a = 5$ and $b = -3$. \n\nCalculate Quantity A ($|a - b|$) and Quantity B ($|a| - |b|$) with these new numbers. What do you get?"
+          },
+          {
+            "event": 73,
+            "role": "student",
+            "text": "a = 8 b = 2"
+          },
+          {
+            "event": 74,
+            "role": "ai_tutor",
+            "text": "Exactly! \n\nWhen $a = 5$ and $b = -3$, Quantity A is 8 and Quantity B is 2. \n\nSo, in our first test (where both were positive), the quantities were **equal**. \nIn our second test (where one was negative), **Quantity A was greater**.\n\nBased on those two different results, what must the correct answer be?"
+          },
+          {
+            "event": 75,
+            "role": "student",
+            "text": "it cant be determined i see"
+          },
+          {
+            "event": 77,
+            "role": "student",
+            "text": "Submitted D (correct: True)."
+          }
+        ],
+        "researcher_description_of_lesson": "The lesson uses the material at event 67. The learner's actions are at [69, 73, 75, 77]. The tutor's actions are at [70, 72, 74]. Their order is [69, 70, 72, 73, 74, 75, 77]. The teaching step being reviewed is: Ask the learner to test allowed numbers before concluding a comparison is indeterminate. At turn 74, only [67, 69, 70, 72, 73] in these excerpts preceded the tutor's move. The learner was to do this: Infer a comparison from two legal examples with different relations.",
+        "later_item_before_feedback": {
+          "item_event": 79,
+          "item": "$x$ and $y$ are nonzero real numbers such that $x > y$.\n\nQuantity A: $x^2y$\nQuantity B: $xy^2$\n\nOptions: A) Quantity A is greater. | B) Quantity B is greater. | C) The two quantities are equal. | D) The relationship cannot be determined from the information given.",
+          "answer": "D (cannot be determined)",
+          "math_key": "D",
+          "response_event": 81,
+          "first_response_work": "so for this it couldn't be determined right because x and y are nonzero real numbers?"
+        },
+        "candidate_actions": {
+          "A": "First elicit one unaided explanation on a fresh example; defer a targeted edit.",
+          "B": "Practice the evaluation of absolute values on the same two signed inputs.",
+          "C": "Keep this lesson step for similar circumstances without targeted reteaching.",
+          "D": "Pair a broad-domain problem whose comparison is fixed with one whose comparison changes, requiring evidence before choosing D."
+        }
+      },
+      "proposals": {
+        "1": {
+          "action": "A",
+          "observed_evidence": "在原题中，学生先问两式是否相同及负数是否会改变绝对值（69）；面对要求代入 a=5、b=-3 的提示，回答“a=8 b=2”（73），随后在听到两个测试结果后说“it cant be determined i see”并选 D（75、77）。这支持其能接受示例给出的结论，但没有显示独立完成代入或说明推理。后来题目选 D（81），但没有作答过程，不能据此判断迁移。",
+          "event_ids": [
+            69,
+            73,
+            75,
+            77,
+            81
+          ],
+          "diagnostic_material": "暂不改课，先用同一个新诊断例子区分两种可能规则（尚未施测）：设 a、b 为非零实数，比较 |a+b| 与 |a|+|b|。请学生独立说明结论及理由。原题作为对照：|a-b| 与 |a|-|b|。",
+          "explanation_1": {
+            "rule": "可能规则：只要两个合法代入得到不同关系，就能判定关系无法确定。",
+            "original_prediction": "原题中会依据相等与 A 较大这两个示例选 D。",
+            "diagnostic_prediction": "新例中可能选 D，若只依赖抽样测试，也可能给出未经证明的结论；须要求理由来检验是否有依据。"
+          },
+          "explanation_2": {
+            "rule": "可能规则：认为绝对值可逐项处理，或把比较题按一次代入结果作答；目前证据不足以判定其具体错误规则。",
+            "original_prediction": "可能把原式当作相同，或以某次代入所得关系作答；73 的回答不能确认实际计算过程。",
+            "diagnostic_prediction": "新例中可能把 |a+b| 与 |a|+|b| 视为总相等，或由单一例子决定答案；要求解释可检验其是否理解绝对值不具这种分配性质。"
+          },
+          "lesson_step": "保留“用合法数值测试关系”的步骤，但先让学生独立计算并解释每个数量，再明确指出不同关系的两个合法例子足以证明关系无法确定；暂缓针对性改写，因现有记录无法辨明其在计算、绝对值概念或证据规则上的困难。",
+          "withdraw_if": "若学生在未获提示的新诊断例中能正确计算并给出完整、一般性的理由，且能解释为何原题的两个不同结果足以支持 D，就撤回暂缓改写的判断，并保留现有步骤。"
+        },
+        "2": {
+          "action": "A",
+          "observed_evidence": "事件73中，学习者给出“a = 8 b = 2”，对应提示中的两个量值；事件75说“it cant be determined”，事件77选择D。学习者未说明为什么两个例子足以推出D。后续事件81只说x、y是非零实数，选择D；不能据此判断其推理是否迁移。",
+          "event_ids": [
+            73,
+            75,
+            77,
+            81
+          ],
+          "diagnostic_material": "建议用同一新诊断题区分两种解释：已知u>v>0，比较|u−v|与|u|−|v|。正确关系为C，因为u、v为正且u>v，所以两量都等于u−v。此题未在记录中施测。",
+          "explanation_1": {
+            "rule": "理解应比较允许取值下的关系，并用条件推理；原题中两个合法例子分别得到相等与A大，故关系不能确定。",
+            "original_prediction": "D；可用两例关系不同作解释。",
+            "diagnostic_prediction": "C；因u>v>0时两量恒相等。"
+          },
+          "explanation_2": {
+            "rule": "把“变量非零”当作选择D的线索，而未判断比较关系。",
+            "original_prediction": "D；依据非零这一表面线索。",
+            "diagnostic_prediction": "D；仍可能仅因变量非零而选D，尽管关系固定为相等。"
+          },
+          "lesson_step": "暂时保留“先测试允许取值，再判断关系”的步骤，不立即改写旧课；先请学习者在新题中独立说明关系及理由。",
+          "withdraw_if": "若学习者在新题中未经提示仍因变量非零而选D，或无法说明为何关系固定，应撤回暂缓编辑的决定，针对“非零不等于关系不确定”设计教学。"
+        }
+      },
+      "teacher_evaluation": {
+        "preferred": null,
+        "reason": null,
+        "adequate_proposals": null
+      }
+    },
+    {
+      "case": "task_id_0378",
+      "source": "https://huggingface.co/datasets/handshake-ai-research/studentbench/blob/304c8d63c726e72b60510bba3a44454fc0726721/1_main_leaderboard_data/gre_quant/ai_arm_gemini-3.1-pro-high/task_id_0378/ai_tutoring_data/student_ai_tutor_interaction_trajectory.csv",
+      "evidence": {
+        "lesson_version": "task_id_0378/lesson/107/v1",
+        "observed_earlier_events": [
+          {
+            "event": 107,
+            "role": "system",
+            "text": "If $X$ is 40 percent of $Y$, and $Y$ is 20 percent of $Z$, then $Z$ is what percent of $X$?\n\nOptions: A) 8% | B) 125% | C) 800% | D) 1250%"
+          },
+          {
+            "event": 109,
+            "role": "student",
+            "text": "Submitted B (correct: False)."
+          },
+          {
+            "event": 110,
+            "role": "ai_tutor",
+            "text": "Good try! You are super close, but B isn't quite it. I suspect there might be a tiny decimal slip-up in the math. \n\nLet's break it down using the exact same steps you used on the last one. \n\nFirst, how did you translate \"$X$ is 40 percent of $Y$\" and \"$Y$ is 20 percent of $Z$\" into equations?"
+          },
+          {
+            "event": 111,
+            "role": "student",
+            "text": "x=.4y,y=.2z.  x=.4(.2z), .08z=x"
+          },
+          {
+            "event": 114,
+            "role": "ai_tutor",
+            "text": "Exactly! So $Z = 12.5X$. \n\nYou've found the multiplier. Now, to answer the specific question \"$Z$ is what percent of $X$?\", how do we convert that decimal multiplier of 12.5 into a percentage?"
+          },
+          {
+            "event": 115,
+            "role": "student",
+            "text": "*100"
+          },
+          {
+            "event": 118,
+            "role": "ai_tutor",
+            "text": "Boom! You got it. 1250% is absolutely correct (Option D).\n\nNotice one really important detail here: the question asked \"$Z$ is what percent **of** $X$?\", so we just converted 12.5 to 1250% and stopped there. We didn't subtract 100% like we did in the last problem, because it didn't ask for \"percent **more than**\". \n\nYou did a fantastic job with the three key steps for these problems:\n1. Translate the English into math ($X = 0.4Y$, $Y = 0.2Z$).\n2. Chain them together and isolate the variable they are asking about ($Z = 12.5X$).\n3. Read carefully to see if they want \"percent of\" (just multiply by 100) or \"percent more than\" (multiply by 100, then subtract 100).\n\nHow are you feeling about this concept now? Ready to tackle another one, or do you feel like you've got this locked down?"
+          },
+          {
+            "event": 119,
+            "role": "student",
+            "text": "Submitted D (correct: True)."
+          }
+        ],
+        "researcher_description_of_lesson": "The lesson uses the material at event 107. The learner's actions are at [109, 111, 115, 119]. The tutor's actions are at [110, 114, 118]. Their order is [109, 110, 111, 114, 115, 118, 119]. The teaching step being reviewed is: Translate the chain to one variable and distinguish percent of from percent more than. At turn 114, only [107, 109, 110, 111] in these excerpts preceded the tutor's move. The learner was to do this: Convert a multiplicative relation into the requested type of percentage.",
+        "later_item_before_feedback": {
+          "item_event": 121,
+          "item": "Company A's revenue is 40 percent of Company B's revenue. Company B's revenue is 25 percent more than Company C's revenue. Company C's revenue is what percent more than Company A's revenue?\n\n(Give your answer as a number, omitting the percent symbol)",
+          "answer": "100%",
+          "math_key": "100%",
+          "response_event": 123,
+          "first_response_work": "A=.4B,B=1.25C, A=.5C,C=2A,100%?"
+        },
+        "candidate_actions": {
+          "A": "Contrast percent of and percent more than using the same ratio.",
+          "B": "Contrast increasing an amount by a percentage with taking that percentage of the original amount.",
+          "C": "Keep this lesson step for similar circumstances without targeted reteaching.",
+          "D": "First elicit one unaided explanation on a fresh example; defer a targeted edit."
+        }
+      },
+      "proposals": {
+        "1": {
+          "action": "D",
+          "observed_evidence": "事件111中，学习者正确写出 x=.4y、y=.2z，并推出 x=.08z；事件115只回答“*100”，之后事件119选D。原题的链式关系和最终选项正确，但“*100”是对提示的回应，未展示其能否独立区分“是……的百分之几”与“多百分之几”。后来题目的回答是100%，但没有过程，不能据此判断规则。",
+          "event_ids": [
+            111,
+            115,
+            119,
+            123
+          ],
+          "diagnostic_material": "暂不改课，先在新例题上无提示询问答案和理由：A是B的80%，B是C的50%，问C是A的百分之几、又比A多百分之几？两个问题都以同一关系为依据。",
+          "explanation_1": {
+            "rule": "能区分“是……的百分之几”与“比……多百分之几”：前者直接报告比值乘100，后者再减100。",
+            "original_prediction": "原题会得1250%；若问Z比X多百分之几，则得1150%。",
+            "diagnostic_prediction": "新例中C是A的250%；C比A多150%。"
+          },
+          "explanation_2": {
+            "rule": "把“比原量多p%”也当成“取原量的p%”，遗漏原量部分。",
+            "original_prediction": "原题仍可能得1250%，因为原题只问“是……的百分之几”，无法区分此规则。",
+            "diagnostic_prediction": "新例中可能把C比A多的百分比答成250%，而非150%；“C是A的百分之几”仍可答250%。"
+          },
+          "lesson_step": "保留事件118关于“percent of”直接转百分数、“percent more than”再减100%的说明；先用上述同关系双问的诊断，要求学习者独立解释两种答案的差别，再决定是否针对性改写。",
+          "withdraw_if": "若学习者在无提示诊断中正确给出250%和150%，并说明前者是比值、后者扣除原量所占的100%，则撤回针对性修改建议。"
+        },
+        "2": {
+          "action": "C",
+          "observed_evidence": "事件111中，学习者正确写出 x=.4y、y=.2z，并推出 x=.08z；事件115只回答“*100”，未独立说出最终百分数。后来事件123的作答写出 A=.4B、B=1.25C、A=.5C、C=2A，并给出“100%”，显示其在新题中得到正确的“多百分之几”答案。",
+          "event_ids": [
+            111,
+            115,
+            123
+          ],
+          "diagnostic_material": "暂保留原步骤。两种可能解释仍可用同一新题进一步区分（未实际施测）：若 P=25%Q，问“Q是P的百分之几？”并另问“Q比P多百分之几？”。",
+          "explanation_1": {
+            "rule": "小数乘数转百分数时发生位值错误。",
+            "original_prediction": "可能把 12.5 错转成 125%，对应其最初选项B；但事件115只表明知道要乘100，不能确认错误原因。",
+            "diagnostic_prediction": "由 Q=4P，答第一问400%，第二问300%。"
+          },
+          "explanation_2": {
+            "rule": "把“是……的百分之几”和“比……多百分之几”混为一谈，额外减去100%。",
+            "original_prediction": "对“Z是X的百分之几”可能减100，得到1150%；这与其所选B（125%）并不吻合。",
+            "diagnostic_prediction": "对同一题可能把第一问也答成300%，第二问答300%。"
+          },
+          "lesson_step": "保留“先求乘数，再区分‘是……的百分之几’与‘比……多百分之几’”这一步。后来事件123的关系式及答案支持其在该题上完成了迁移；原题本身不能确定最初选B的具体原因。",
+          "withdraw_if": "若后续未提示的同类作答显示把“是……的百分之几”也减去100%，或乘数转百分数仍出现位值错误，再重新考虑针对性修改。"
+        }
+      },
+      "teacher_evaluation": {
+        "preferred": null,
+        "reason": null,
+        "adequate_proposals": null
+      }
+    },
+    {
+      "case": "task_id_0402",
+      "source": "https://huggingface.co/datasets/handshake-ai-research/studentbench/blob/304c8d63c726e72b60510bba3a44454fc0726721/1_main_leaderboard_data/gre_quant/ai_arm_gemini-3.1-pro-high/task_id_0402/ai_tutoring_data/student_ai_tutor_interaction_trajectory.csv",
+      "evidence": {
+        "lesson_version": "task_id_0402/lesson/1/v1",
+        "observed_earlier_events": [
+          {
+            "event": 1,
+            "role": "system",
+            "text": "Given $y \\neq 0$.\n\nQuantity A: $\\frac{y^3}{|y|}$\nQuantity B: $y^2$\n\nOptions: A) Quantity A is greater. | B) Quantity B is greater. | C) The two quantities are equal. | D) The relationship cannot be determined from the information given."
+          },
+          {
+            "event": 3,
+            "role": "student",
+            "text": "Is quantity A greater due to the cubic exponent over the absolute value always being greater than the squared exponent"
+          },
+          {
+            "event": 4,
+            "role": "ai_tutor",
+            "text": "That is a really common intuition! Higher exponents often make us think the number will automatically be bigger. \n\nBut let's test that theory by plugging in some actual numbers. The GRE loves to trick us with exponents, which is exactly why our strategy of **Testing Edge Cases** is so powerful here.\n\nFirst, let's just test a \"normal\" positive integer. What happens to Quantity A and Quantity B if we plug in $y = 2$? What values do you get for each?"
+          },
+          {
+            "event": 5,
+            "role": "student",
+            "text": "a: 4 b: 4"
+          },
+          {
+            "event": 6,
+            "role": "ai_tutor",
+            "text": "Spot on! If $y = 2$, both quantities equal 4. \n\nIf we stopped there and only tested positive integers, we might guess the answer is C (The two quantities are equal). \n\nBut remember our goal today: **Testing Edge Cases**. The problem says $y \\neq 0$, but it doesn't say $y$ has to be positive! \n\nWhat happens if we test a negative edge case, like $y = -2$? What do you get for Quantity A and Quantity B then?"
+          },
+          {
+            "event": 7,
+            "role": "student",
+            "text": "a: -4 b: 4"
+          },
+          {
+            "event": 8,
+            "role": "ai_tutor",
+            "text": "Exactly! \n\nWhen $y = 2$, the quantities are equal (A = B).\nWhen $y = -2$, Quantity B is greater (A < B).\n\nSince the relationship changes depending on which number we plug in, what must the correct answer to this QC question be?"
+          },
+          {
+            "event": 9,
+            "role": "student",
+            "text": "d?"
+          },
+          {
+            "event": 13,
+            "role": "student",
+            "text": "Submitted D (correct: True)."
+          }
+        ],
+        "researcher_description_of_lesson": "The lesson uses the material at event 1. The learner's actions are at [3, 5, 7, 9, 13]. The tutor's actions are at [4, 6, 8]. Their order is [3, 4, 5, 6, 7, 8, 9, 13]. The teaching step being reviewed is: Use admissible numerical cases to check a comparison involving exponents. At turn 6, only [1, 3, 4, 5] in these excerpts preceded the tutor's move. The learner was to do this: Choose an admissible case that breaks the first trial's ordering.",
+        "later_item_before_feedback": {
+          "item_event": 15,
+          "item": "Given $x > 0$.\n\nQuantity A: $x^3$\nQuantity B: $x^2$\n\nOptions: A) Quantity A is greater. | B) Quantity B is greater. | C) The two quantities are equal. | D) The relationship cannot be determined from the information given.",
+          "answer": "A is always greater",
+          "math_key": "D",
+          "response_event": 16,
+          "first_response_work": "I beleive A will always be greater due to the larger exponent"
+        },
+        "candidate_actions": {
+          "A": "First elicit one unaided explanation on a fresh example; defer a targeted edit.",
+          "B": "Keep this lesson step for similar circumstances without targeted reteaching.",
+          "C": "Keep the base positive and contrast powers at bases below and above one before summarizing.",
+          "D": "Keep the absolute-value denominator and contrast positive and negative inputs before summarizing."
+        }
+      },
+      "proposals": {
+        "1": {
+          "action": "A",
+          "observed_evidence": "事件3把“指数较高”当作 A 较大的理由；在原题中，学习者算出 y=2 时相等（事件5），又算出 y=-2 时 A=-4、B=4（事件7），随后答 D（事件9），并提交正确选项（事件13）。但后续题给定 x>0 时，学习者答“A is always greater”（事件16），没有展示推理；这可能是忽略 x 的范围，也可能是把较高次幂误当作总较大。",
+          "event_ids": [
+            3,
+            5,
+            7,
+            9,
+            13,
+            16
+          ],
+          "diagnostic_material": "先暂缓定向修改；让学习者不受提示地解释新题：给定 0<x<1，比较 x^3 与 x^2。",
+          "explanation_1": {
+            "rule": "可能规则：只要幂指数较高，数值就较大。",
+            "original_prediction": "会预测原题中 A>B；但事件7的负数计算与此预测相反，说明原题的边界案例已经对这一简单规则构成反证。",
+            "diagnostic_prediction": "会预测 x^3>x^2，因为 3>2。"
+          },
+          "explanation_2": {
+            "rule": "可能规则：比较正底数的幂时，底数范围影响大小；但学习者可能忽略 x>0 并把负底数经验套到后题，或尚未掌握 0<x<1 的情况。",
+            "original_prediction": "原题中会算出 y=2 时相等、y=-2 时 B>A，最终选 D；这与事件5、7、9相符。",
+            "diagnostic_prediction": "若能区分底数范围，会答 x^3<x^2；若沿用“指数较高则较大”，则会答 x^3>x^2。"
+          },
+          "lesson_step": "保留原题用正、负可取值检查关系的步骤；暂不改写课程，先取得上述无提示解释，判断后续错误来自何种规则。",
+          "withdraw_if": "若学习者在无提示的新题中正确指出 0<x<1 时 x^3<x^2，并说明底数范围如何影响比较，就撤回“需要定向补教”的判断；若只给对选项而无解释，仍不能排除竞争解释。"
+        },
+        "2": {
+          "action": "C",
+          "observed_evidence": "事件3把较大指数当作A较大的理由；事件5在y=2得到相等，事件7在y=-2得到A=-4、B=4，随后事件9、13选择D。但这些是在提示后完成的。后来事件16仍称A因指数较大而总较大，说明正数范围内的底数大小尚未处理。",
+          "event_ids": [
+            3,
+            5,
+            7,
+            9,
+            13,
+            16
+          ],
+          "diagnostic_material": "用同一个未施测诊断例：给定x=1/2，比较A=x^3与B=x^2。A实际小于B。原题已显示在引导下能用正、负输入区分关系，但没有检验正底数小于1的情形。",
+          "explanation_1": {
+            "rule": "较大指数总使幂较大。",
+            "original_prediction": "预测原题A较大。",
+            "diagnostic_prediction": "预测x=1/2时A较大。"
+          },
+          "explanation_2": {
+            "rule": "只按符号/边界试值判断原题；把正底数下较大指数视为较大。",
+            "original_prediction": "用y=2与y=-2可得关系变化，预测D。",
+            "diagnostic_prediction": "预测x=1/2时A较大。"
+          },
+          "lesson_step": "采用C：保留用可取数值检验比较的步骤，但针对性补充正底数小于1与大于1的对照（如1/2和2），再总结指数比较不能脱离底数范围。",
+          "withdraw_if": "若学习者在无提示的新题中能解释x=1/2时x^3<x^2，并说明底数范围为何改变比较结果，就撤回这项针对性补充。"
+        }
+      },
+      "teacher_evaluation": {
+        "preferred": null,
+        "reason": null,
+        "adequate_proposals": null
+      }
+    },
+    {
+      "case": "task_id_0445",
+      "source": "https://huggingface.co/datasets/handshake-ai-research/studentbench/blob/304c8d63c726e72b60510bba3a44454fc0726721/1_main_leaderboard_data/gre_quant/ai_arm_gemini-3.1-pro-high/task_id_0445/ai_tutoring_data/student_ai_tutor_interaction_trajectory.csv",
+      "evidence": {
+        "lesson_version": "task_id_0445/lesson/92/v1",
+        "observed_earlier_events": [
+          {
+            "event": 92,
+            "role": "system",
+            "text": "In a certain high school, 70 percent of the male students and 40 percent of the female students participate in at least one extracurricular activity. If 52 percent of all the students in the high school participate in at least one extracurricular activity, what percent of the students in the high school are male? (Assume that every student is classified as either male or female.)\n\nOptions: A) 30% | B) 40% | C) 48% | D) 60%"
+          },
+          {
+            "event": 93,
+            "role": "student",
+            "text": "Ok break it down for me"
+          },
+          {
+            "event": 95,
+            "role": "ai_tutor",
+            "text": "You got it. This one is a classic GRE word problem where we are mixing two groups together, and we can solve it by carefully defining our \"parts\" and our \"whole\".\n\nLet’s use **M** to represent the total number of male students and **F** to represent the total number of female students. \n\nBased on the first sentence, how would you write the number of *participating* males (using M) and the number of *participating* females (using F)?"
+          },
+          {
+            "event": 96,
+            "role": "student",
+            "text": "Would this also be 40%"
+          },
+          {
+            "event": 97,
+            "role": "ai_tutor",
+            "text": "Yes! 40% is exactly right. \n\nSince you jumped right to the answer, I'd love to hear how you got there! Did you set up an equation with M and F, did you test the answer choices, or did you use another trick?"
+          },
+          {
+            "event": 98,
+            "role": "student",
+            "text": "i setup a series of equations and set them equal to eachother"
+          },
+          {
+            "event": 99,
+            "role": "ai_tutor",
+            "text": "That's a fantastic approach! Setting up an algebraic equation is a foolproof way to handle these types of mixture problems. \n\nJust to make sure we're on the exact same page, what was the main equation you set up? Was it something like `0.70M + 0.40F = ...`?"
+          },
+          {
+            "event": 102,
+            "role": "student",
+            "text": "Submitted B (correct: True)."
+          }
+        ],
+        "researcher_description_of_lesson": "The lesson uses the material at event 92. The learner's actions are at [93, 96, 98, 102]. The tutor's actions are at [95, 97, 99]. Their order is [93, 95, 96, 97, 98, 99, 102]. The teaching step being reviewed is: Form an equation using a consistent population total, then solve for the unknown. At turn 99, only [92, 93, 95, 96, 97, 98] in these excerpts preceded the tutor's move. The learner was to do this: Show how the group counts relate to the whole population.",
+        "later_item_before_feedback": {
+          "item_event": 104,
+          "item": "At a certain college, 60 percent of the students are Science majors and the rest are Arts majors. After 600 new students enroll as Science majors and 200 new students enroll as Arts majors, the percentage of students who are Science majors increases to 64 percent. Assuming no other changes to the student population, what was the original number of students at the college?\n\nOptions: A) 1,800 | B) 2,200 | C) 2,500 | D) 3,000",
+          "answer": "2,200",
+          "math_key": "B (2,200)",
+          "response_event": 106,
+          "first_response_work": "would this be 2200 since 0.6x+600/ x+800 = .64 and then you just solve from there"
+        },
+        "candidate_actions": {
+          "A": "Contrast an original total with an enlarged total as the percentage denominator.",
+          "B": "Keep this lesson step for similar circumstances without targeted reteaching.",
+          "C": "Contrast a group percentage with an unweighted average of subgroup percentages.",
+          "D": "First elicit one unaided explanation on a fresh example; defer a targeted edit."
+        }
+      },
+      "proposals": {
+        "1": {
+          "action": "D",
+          "observed_evidence": "事件96只问“是不是40%”，事件98说列方程并令其相等，但未展示方程；事件102选B。后来事件106写出含0.6x、600及x+800的方程，并给出2200，但没有展示解方程过程。证据支持初步迁移，却不足以确认原题中的推理。",
+          "event_ids": [
+            96,
+            98,
+            102,
+            106
+          ],
+          "diagnostic_material": "暂不改写旧课，先给一个未讲解的新题并要求独立写方程、说明分母：某校原有学生中，60%参加社团；新增100名学生，其中80人参加，新增后参加比例为62%。求原有学生人数。",
+          "explanation_1": {
+            "rule": "正确规则：整体比例用参加人数总和除以学生总数；新增学生后，分子、分母都相应增加。",
+            "original_prediction": "原题会列出0.70M+0.40F=0.52(M+F)，并可求出男生占40%。",
+            "diagnostic_prediction": "会列出(0.60x+80)/(x+100)=0.62，并据此求x。"
+          },
+          "explanation_2": {
+            "rule": "竞争解释：把两个群体的百分比直接平均，或在总体扩大后仍沿用原总体作分母。",
+            "original_prediction": "可能因选项或猜测答40%；若直接平均70%与40%，则得不到总体比例52%。",
+            "diagnostic_prediction": "可能把60%与80%直接平均，或写成(0.60x+80)/x=0.62，而不是使用新增后的总人数作分母。"
+          },
+          "lesson_step": "保留“用一致的人口总数建立方程”这一步；先让学习者独立说明原题中M+F为何是总体，并用上述新题检查是否会同时更新分子与分母。旧题的答案和列方程自述不能区分两种解释；后续题的方程虽是有力线索，但不足以证明独立、完整的解题理由。",
+          "withdraw_if": "若学习者在无提示的新题中写出正确方程，解释分母为何为x+100，并正确求解，则撤回暂缓针对性修改的决定，保留原教学步骤。"
+        },
+        "2": {
+          "action": "D",
+          "observed_evidence": "事件96中，学习者在解释方法前先问“Would this also be 40%”；事件98称列了一系列方程并令其相等，但没有给出方程。事件102选择B正确。后续事件106答出2,200，但没有作答过程。现有证据不能确认其是否会用一致的总体作分母。",
+          "event_ids": [
+            96,
+            98,
+            102,
+            106
+          ],
+          "diagnostic_material": "先暂缓改写，在新例题中请学习者独立写式并解释分母：某校男生参与率为80%，女生为30%，全校参与率为50%，求男生占全校的比例。",
+          "explanation_1": {
+            "rule": "按各组人数加权，以全体人数为总体：总体参与率等于各组参与人数之和除以全体人数。",
+            "original_prediction": "列出0.70M + 0.40F = 0.52(M + F)，得M/(M + F)=40%；这与其正确选B相符，但其过程未观察到。",
+            "diagnostic_prediction": "列出0.80M + 0.30F = 0.50(M + F)，得男生占比40%。"
+          },
+          "explanation_2": {
+            "rule": "把两个组的参与率直接作不加权平均，忽略各组人数比例。",
+            "original_prediction": "会把70%与40%平均为55%，与题给52%不符；仅凭选B无法判断其是否曾用此规则或是否只是猜中。",
+            "diagnostic_prediction": "会把80%与30%平均为55%，而不是求出男生占比；若意识到不能由此匹配50%，也尚未证明会建立加权方程。"
+          },
+          "lesson_step": "暂时保留“用一致的总体人数建立方程，再求未知量”这一步，不据现有记录作针对性改写；先用上述新例题观察其独立列式及分母说明。",
+          "withdraw_if": "若学习者在未提示的新例题中独立写出加权方程，并说明总体参与率的分母是全体人数，就撤回暂缓判断，保留该教学步骤。"
+        }
+      },
+      "teacher_evaluation": {
+        "preferred": null,
+        "reason": null,
+        "adequate_proposals": null
+      }
+    },
+    {
+      "case": "task_id_0450",
+      "source": "https://huggingface.co/datasets/handshake-ai-research/studentbench/blob/304c8d63c726e72b60510bba3a44454fc0726721/1_main_leaderboard_data/gre_quant/ai_arm_gemini-3.1-pro-high/task_id_0450/ai_tutoring_data/student_ai_tutor_interaction_trajectory.csv",
+      "evidence": {
+        "lesson_version": "task_id_0450/lesson/12/v1",
+        "observed_earlier_events": [
+          {
+            "event": 12,
+            "role": "system",
+            "text": "In the $xy$-plane, line $k$ has an $x$-intercept of $10$ and a $y$-intercept of $5$. Line $j$ is perpendicular to line $k$ and passes through the origin. If lines $j$ and $k$ intersect at the point $(a, b)$, what is the value of $a + b$?\n\nOptions: A) 4 | B) 5 | C) 6 | D) 8"
+          },
+          {
+            "event": 14,
+            "role": "student",
+            "text": "Submitted C (correct: True)."
+          },
+          {
+            "event": 15,
+            "role": "ai_tutor",
+            "text": "Spot on! \"C\" is exactly right. Great work.\n\nSince my goal is to make sure you have a rock-solid, repeatable method for test day, could you quickly walk me through the steps you took to get there? \n\nSpecifically:\n1. What did you find for the slope of line $k$?\n2. How did you use that to build the equation for line $j$? \n3. How did you find their intersection point? \n\nLet me know your thought process!"
+          }
+        ],
+        "researcher_description_of_lesson": "The lesson uses the material at event 12. The learner's actions are at [14]. The tutor's actions are at [15]. Their order is [14, 15]. The teaching step being reviewed is: After a correct choice, ask for the slope, the point on the line, and the quantity requested. At turn 15, only [12, 14] in these excerpts preceded the tutor's move. The learner was to do this: Explain which perpendicular line and point yield the requested result.",
+        "later_item_before_feedback": {
+          "item_event": 16,
+          "item": "In the $xy$-plane, line $A$ passes through the points $(0, 4)$ and $(8, 0)$. Line $B$ is the perpendicular bisector of the line segment connecting these two points. What is the $x$-intercept of line $B$?\n\nOptions: A) 2 | B) 3 | C) 4 | D) 6",
+          "answer": "B (3)",
+          "math_key": "B (3)",
+          "response_event": 18,
+          "first_response_work": "its B right? because thats the point where the line crosses the x axis?"
+        },
+        "candidate_actions": {
+          "A": "Contrast the x-intercept of a line with its y-intercept using the same graph.",
+          "B": "Keep this lesson step for similar circumstances without targeted reteaching.",
+          "C": "First elicit one unaided explanation on a fresh example; defer a targeted edit.",
+          "D": "Contrast a perpendicular line through the origin with one through a segment midpoint."
+        }
+      },
+      "proposals": {
+        "1": {
+          "action": "C",
+          "observed_evidence": "事件14只有正确选项 C（6），没有解题过程；事件15提出了步骤问题，但没有记录学习者的回答。后续事件18选择了正确的 3，并说“that’s the point where the line crosses the x axis”，但这句话不足以确认其是否能构造垂直平分线。",
+          "event_ids": [
+            14,
+            15,
+            18
+          ],
+          "diagnostic_material": "尚不应针对某种误解直接改课。先在新题上无提示地请学习者解释构线和求截距。共同诊断题：线段端点为 (0,6) 与 (6,0)，求其垂直平分线的 x 截距。正确构线经过中点 (3,3)，斜率为 1，故为 y=x，x 截距为 0。",
+          "explanation_1": {
+            "rule": "可能只把“x 截距”理解为线与 x 轴的交点，能识别截距，但未必会构造垂直线或垂直平分线。",
+            "original_prediction": "可能仍选 C（6）；原题正确选项本身不能检验其构线过程。",
+            "diagnostic_prediction": "可能答 3，把线段中点的 x 坐标当作所求 x 截距。"
+          },
+          "explanation_2": {
+            "rule": "可能能正确处理斜率、垂直关系及过指定点的直线，但事件14只是猜选或未展示推理。",
+            "original_prediction": "也可能选 C（6）；原题没有足够过程来区分此解释与解释1。",
+            "diagnostic_prediction": "应说明中点为 (3,3)，用垂直斜率构线，并得 x 截距 0。"
+          },
+          "lesson_step": "暂时保留事件15“正确选择后追问斜率、所过点和所求量”的步骤，但应先补一次新题上的无提示解释；现有记录未显示学习者回答过这些追问。",
+          "withdraw_if": "若学习者在共同诊断题上无需提示地正确构造垂直平分线并解释为何 x 截距为 0，就撤回针对截距或构线困难的定向改动。"
+        },
+        "2": {
+          "action": "C",
+          "observed_evidence": "事件14只记录选择C且正确，没有计算过程；事件15随后要求说明斜率、直线方程和交点，但没有该说明的记录。后续事件18在另一题选择正确，但无过程，不能据此确认理解了哪种方法。",
+          "event_ids": [
+            14,
+            15,
+            18
+          ],
+          "diagnostic_material": "建议先用一道新题收集无提示解法（未曾施测）：直线k的x截距为8、y截距为4；直线j与k垂直且过原点，求交点坐标和。正确方法得k斜率−1/2、j斜率2，交点为(8/5,16/5)，坐标和24/5。",
+          "explanation_1": {
+            "rule": "理解斜率关系：求出k的斜率，取垂直斜率，结合过原点确定j，再求交点。",
+            "original_prediction": "原题预测6，与事件14所选答案相同。",
+            "diagnostic_prediction": "新题预测24/5。"
+          },
+          "explanation_2": {
+            "rule": "把垂直线的斜率误当作原直线斜率的相反数，而非负倒数。",
+            "original_prediction": "原题k斜率为−1/2，误用的j斜率为1/2，预测交点坐标和15/2。",
+            "diagnostic_prediction": "新题同样误用j斜率1/2，预测交点坐标和6。"
+          },
+          "lesson_step": "暂不针对某种误解改写教学；保留“正确选择后追问斜率、所用点及所求量”的步骤，但先在新例题上取得无提示解释。原题的正确选择本身不能区分上述解释。",
+          "withdraw_if": "若学习者在新例题上无提示地说明垂直斜率取负倒数、利用过原点写出j的方程并正确求交点，则撤回暂缓判断，保留现有追问步骤。"
+        }
+      },
+      "teacher_evaluation": {
+        "preferred": null,
+        "reason": null,
+        "adequate_proposals": null
+      }
+    },
+    {
+      "case": "task_id_0472",
+      "source": "https://huggingface.co/datasets/handshake-ai-research/studentbench/blob/304c8d63c726e72b60510bba3a44454fc0726721/1_main_leaderboard_data/gre_quant/ai_arm_gemini-3.1-pro-high/task_id_0472/ai_tutoring_data/student_ai_tutor_interaction_trajectory.csv",
+      "evidence": {
+        "lesson_version": "task_id_0472/lesson/136/v1",
+        "observed_earlier_events": [
+          {
+            "event": 136,
+            "role": "system",
+            "text": "A 5-person task force is to be formed from a group of 10 employees. If the 2 co-founders of the company must both be on the task force, how many different task forces are possible?\n\nOptions: A) 56 | B) 112 | C) 120 | D) 252"
+          },
+          {
+            "event": 138,
+            "role": "student",
+            "text": "how do i do this"
+          },
+          {
+            "event": 139,
+            "role": "ai_tutor",
+            "text": "This is a classic GRE combination problem with a twist—a specific restriction! \n\nTo tackle this, let's break it down into two parts: the spots we need to fill, and the pool of people we can choose from.\n\nThe problem says we need a 5-person task force, but the 2 co-founders **must** be on it. So, imagine you have 5 chairs for this task force, and the 2 co-founders just sat down in two of them. \n\nHow many empty chairs (spots) are left to fill?"
+          },
+          {
+            "event": 140,
+            "role": "student",
+            "text": "3"
+          },
+          {
+            "event": 141,
+            "role": "ai_tutor",
+            "text": "Exactly! There are 3 spots left to fill. \n\nNow, let's look at the pool of people we can choose from to fill those 3 spots. \n\nThe original group had 10 employees. Since the 2 co-founders are already on the task force, how many employees are left in the pool to choose from?"
+          },
+          {
+            "event": 142,
+            "role": "student",
+            "text": "8"
+          },
+          {
+            "event": 143,
+            "role": "ai_tutor",
+            "text": "Spot on. We have 8 employees left to choose from.\n\nSo, the whole problem boils down to this: How many ways can we choose 3 people out of a pool of 8?\n\nSince the order we pick them in doesn't matter for a task force, this is a combination. Do you remember the formula or the shortcut for calculating \"8 choose 3\"?"
+          },
+          {
+            "event": 146,
+            "role": "student",
+            "text": "Submitted A (correct: True)."
+          },
+          {
+            "event": 147,
+            "role": "ai_tutor",
+            "text": "Awesome job, you got it! \n\nJust to tie a bow on the math: on the bottom, $3 \\times 2 \\times 1 = 6$. That cancels out perfectly with the $6$ on top, leaving just $8 \\times 7 = 56$. \n\nThis is a huge GRE strategy to remember: **whenever a combination problem forces you to include specific items, subtract them from both your total pool AND your available spots before doing the math.**\n\nYou nailed the combinatorics side of this concept! The practice panel just queued up another problem for you. Give it a shot whenever you're ready, and let's see how it goes!"
+          }
+        ],
+        "researcher_description_of_lesson": "The lesson uses the material at event 136. The learner's actions are at [138, 140, 142, 146]. The tutor's actions are at [139, 141, 143, 147]. Their order is [138, 139, 140, 141, 142, 143, 146, 147]. The teaching step being reviewed is: For mandatory named members, remove them from both available places and the candidate pool. At turn 147, only [136, 138, 139, 140, 141, 142, 143, 146] in these excerpts preceded the tutor's move. The learner was to do this: Identify which named members to fix and count only the remaining places.",
+        "later_item_before_feedback": {
+          "item_event": 166,
+          "item": "A delegation of 4 students is to be chosen from a group of 5 seniors and 4 juniors. If the delegation must include at least one junior, how many different delegations are possible?\n\nOptions: A) 40 | B) 120 | C) 121 | D) 126",
+          "answer": "56",
+          "math_key": "C (121)",
+          "response_event": 168,
+          "first_response_work": "i thought this was just 56 again"
+        },
+        "candidate_actions": {
+          "A": "Contrast a named mandatory member with at least one member of a category.",
+          "B": "Keep this lesson step for similar circumstances without targeted reteaching.",
+          "C": "Keep a named mandatory member and contrast ordered versus unordered selections.",
+          "D": "First elicit one unaided explanation on a fresh example; defer a targeted edit."
+        }
+      },
+      "proposals": {
+        "1": {
+          "action": "D",
+          "observed_evidence": "原题中学生回答剩余位置为3（事件140）、剩余候选人为8（事件142），并选中正确选项A（事件146）；但没有给出组合计算的解释。后题只记录了答案56（事件168），且无过程，不能据此判断其是否理解“至少一名”条件。",
+          "event_ids": [
+            140,
+            142,
+            146,
+            168
+          ],
+          "diagnostic_material": "建议先用一个新题让学生独立说明：从5名教师和4名助教中选4人，至少选1名助教，有多少种选法？该例尚未施测。",
+          "explanation_1": {
+            "rule": "正确理解固定指定成员后，人数和名额都相应扣除；“至少一名某类成员”可用总数减去不含该类成员的情况。",
+            "original_prediction": "原题会固定两位创办人，再从其余8人中选3人，得56。",
+            "diagnostic_prediction": "用补集计算：C(9,4)−C(5,4)=121。"
+          },
+          "explanation_2": {
+            "rule": "可能只会照搬“扣掉指定人数”的步骤，未掌握如何处理“至少一名”类别条件。",
+            "original_prediction": "仍可能照搬固定两位创办人、从8人中选3人的步骤，得56。",
+            "diagnostic_prediction": "可能误把“至少一名助教”当作必须恰好一名，得C(4,1)C(5,3)=40；也可能无法确定要排除哪种情况。"
+          },
+          "lesson_step": "暂不改写原课：它清楚示范了指定成员必须入选时，从总人数和剩余名额同时扣除，但没有证据表明学生能迁移到类别条件。先取得一次新例的独立解答，再决定是否针对“至少一名”补教。",
+          "withdraw_if": "若学生在未提示下对新例给出121，并完整说明用全部选法减去没有助教的选法，则撤回需要补教“至少一名”条件的判断。"
+        },
+        "2": {
+          "action": "A",
+          "observed_evidence": "原题中，学习者回答剩余位置为3、剩余候选人为8，并选对56（事件140、142、146）；但没有解释组合计算。后题“至少一名junior”时，学习者说“我以为又是56”（事件168）。这显示可能把不同限制混为一谈，但尚不能确定原因。",
+          "event_ids": [
+            140,
+            142,
+            146,
+            168
+          ],
+          "diagnostic_material": "建议保留原题的“先固定两位共同创办人，再从剩余员工中选人”步骤，并新增对照：从6人（2名红队员、4名蓝队员）中选3人，至少选1名红队员，有多少种？正确方法是总数减去全是蓝队员的情况：C(6,3)-C(4,3)=16。",
+          "explanation_1": {
+            "rule": "学习者理解了固定指定成员的做法，却可能把“至少一名某类成员”也当成固定一名成员。",
+            "original_prediction": "原题会答56：固定两位共同创办人，再从8人中选3人。",
+            "diagnostic_prediction": "可能答C(5,2)=10：固定一名红队员后再选2人，遗漏两名红队员都入选的情形。"
+          },
+          "explanation_2": {
+            "rule": "学习者可能只是记住或复用了56，尚未展示能区分限制类型；面对“至少一名”时会用补集计数。",
+            "original_prediction": "原题也会答56，但这本身不能证明理解了计数规则。",
+            "diagnostic_prediction": "会答16：从全部选法中减去不含红队员的选法。"
+          },
+          "lesson_step": "针对性修改：保留原有的“从总人数和位置数中都扣除指定成员”讲解，紧接着用上述对照题明确：指定的个人可直接固定；“至少一名”通常要考虑多个可能情形或用补集。原题本身不能区分这两种解释。",
+          "withdraw_if": "若学习者在未提示时说明原题为何固定两位共同创办人，并在对照题中正确用补集得到16且解释排除的是零名红队员，可撤回针对性修改的判断。"
+        }
+      },
+      "teacher_evaluation": {
+        "preferred": null,
+        "reason": null,
+        "adequate_proposals": null
+      }
+    },
+    {
+      "case": "task_id_0483",
+      "source": "https://huggingface.co/datasets/handshake-ai-research/studentbench/blob/304c8d63c726e72b60510bba3a44454fc0726721/1_main_leaderboard_data/gre_quant/ai_arm_gemini-3.1-pro-high/task_id_0483/ai_tutoring_data/student_ai_tutor_interaction_trajectory.csv",
+      "evidence": {
+        "lesson_version": "task_id_0483/lesson/26/v1",
+        "observed_earlier_events": [
+          {
+            "event": 26,
+            "role": "system",
+            "text": "$x$ is a real number.\n\nQuantity A: $x^2 + 9$\nQuantity B: $6x$\n\nOptions: A) Quantity A is greater. | B) Quantity B is greater. | C) The two quantities are equal. | D) The relationship cannot be determined from the information given."
+          },
+          {
+            "event": 27,
+            "role": "student",
+            "text": "this one is certainly A"
+          },
+          {
+            "event": 29,
+            "role": "ai_tutor",
+            "text": "I can completely see why you'd say A! If you test a number like $x = 0$, Quantity A is $9$ and Quantity B is $0$. If you test $x = 1$, Quantity A is $10$ and Quantity B is $6$. In both cases, A is definitely bigger.\n\nBut remember our strategy: we want to actively try to *break* that pattern! We know A can be greater, but is there any number that makes B greater, or makes the two quantities **equal**? \n\nTry testing $x = 3$. What do you get for Quantity A and Quantity B?"
+          },
+          {
+            "event": 30,
+            "role": "student",
+            "text": "at 3 its equal"
+          },
+          {
+            "event": 31,
+            "role": "ai_tutor",
+            "text": "Exactly! When $x = 3$, both quantities are exactly 18. \n\nSo, let's look at what we found:\nWhen $x = 0$, Quantity A is greater.\nWhen $x = 3$, the two quantities are equal.\n\nSince the relationship changes depending on the number you pick (sometimes A is greater, sometimes they are equal), what does that mean the final answer must be?"
+          },
+          {
+            "event": 32,
+            "role": "student",
+            "text": "D"
+          },
+          {
+            "event": 33,
+            "role": "ai_tutor",
+            "text": "Spot on! D is exactly right. \n\nYou are really getting the hang of this. You've successfully used positives, negatives, and zero to break patterns and reveal when an answer should be D. \n\nLet's try one more right here in the chat to practice another crucial part of our testing checklist that the GRE *loves* to test: **fractions** (specifically, fractions between 0 and 1) and **one**.\n\n**Problem:** $m$ is a number greater than 0.\n**Quantity A:** $m$\n**Quantity B:** $m^2$\n\nUsing our checklist, what numbers would you test for $m$, and what do you think the final answer is?"
+          },
+          {
+            "event": 34,
+            "role": "student",
+            "text": "Submitted D (correct: True)."
+          }
+        ],
+        "researcher_description_of_lesson": "The lesson uses the material at event 26. The learner's actions are at [27, 30, 32, 34]. The tutor's actions are at [29, 31, 33]. Their order is [27, 29, 30, 31, 32, 33, 34]. The teaching step being reviewed is: Test whether an allowed value breaks an apparent consistent ordering. At turn 31, only [26, 27, 29, 30] in these excerpts preceded the tutor's move. The learner was to do this: Find whether a second allowed value breaks the first ordering.",
+        "later_item_before_feedback": {
+          "item_event": 36,
+          "item": "$x$ is a real number such that $x^4 < x^2$.\n\nQuantity A: $x^3$\nQuantity B: $x$\n\nOptions: A) Quantity A is greater. | B) Quantity B is greater. | C) The two quantities are equal. | D) The relationship cannot be determined from the information given.",
+          "answer": "B",
+          "math_key": "D",
+          "response_event": 38,
+          "first_response_work": "we can tell x is less than 1 so the answer is B"
+        },
+        "candidate_actions": {
+          "A": "First elicit one unaided explanation on a fresh example; defer a targeted edit.",
+          "B": "Hold sign positive and contrast equality at a special positive integer with ordinary integer inputs.",
+          "C": "Keep this lesson step for similar circumstances without targeted reteaching.",
+          "D": "Hold magnitude below one and contrast positive and negative fractions allowed by the constraint."
+        }
+      },
+      "proposals": {
+        "1": {
+          "action": "D",
+          "observed_evidence": "事件27中学习者先断言原题一定是A；事件30在提示下算出x=3时相等，事件32答D。事件38的后续题中，学习者说“x小于1，所以答案是B”，没有考虑约束也允许负数；该题正确答案为D。",
+          "event_ids": [
+            27,
+            30,
+            32,
+            38
+          ],
+          "diagnostic_material": "两种解释仍可能：一是把“绝对值小于1”误当成“正且小于1”；二是只根据某些测试值作答，尚未稳定检查正负两类。原题没有要求比较负值，因此不能区分这两种解释。可用同一个新诊断例：t为实数且t⁴<t²，比较t³与t，并要求分别检验t=1/2与t=-1/2。",
+          "explanation_1": {
+            "rule": "把小于1理解为正数且小于1。",
+            "original_prediction": "原题中看到x=0时A较大，可能仍先答A；在提示发现x=3相等后，答D。",
+            "diagnostic_prediction": "只考虑正的t时，t³<t，预测B较大。"
+          },
+          "explanation_2": {
+            "rule": "会检查不同允许值，但原题只在提示后检查了相等值，未展示对正负值的系统检验。",
+            "original_prediction": "看到x=0时A较大、x=3时相等后，答D。",
+            "diagnostic_prediction": "检验正负两个分数会发现正值时t³<t、负值时t³>t，预测关系不定，答D。"
+          },
+          "lesson_step": "选择D：保留“找一个允许值打破原有排序”的步骤，并在后续约束题处补上绝对值小于1时正、负分数都可能允许的对照。让学习者先独立判断并说明两种符号的结果，再反馈。",
+          "withdraw_if": "若学习者未经提示，能在上述新诊断例中检验正、负分数并说明关系相反、故选D，就撤回针对该学习者需要补教符号对照的判断。"
+        },
+        "2": {
+          "action": "A",
+          "observed_evidence": "原题中，学生先断言 A（事件 27）；在提示后只指出 x=3 时相等（事件 30），再答 D（事件 32）。这显示学生完成了被引导的反例检查，但没有留下独立解释。后续受限题答 B（事件 38），无过程记录；依约束，实际应有正、负两类 x，关系不确定，因此这项回答提示可能存在未解决的符号问题，但不足以确认原因。",
+          "event_ids": [
+            27,
+            30,
+            32,
+            38
+          ],
+          "diagnostic_material": "两种解释在原题上都可能导向 D，原材料无法区分。可用同一个新诊断题：实数 t 满足 0<|t|<1，比 t³ 与 t。该题有正、负两种允许取值。此题未曾施测。",
+          "explanation_1": {
+            "rule": "能顾及正负两种允许取值，并用它们判断关系是否固定。",
+            "original_prediction": "D：原题中 A 始终不小于 B，且可取等；关系并非始终严格大于，故选 D。",
+            "diagnostic_prediction": "D：正 t 时 t³<t，负 t 时 t³>t。"
+          },
+          "explanation_2": {
+            "rule": "把“绝对值小于 1”误当成变量为正，或只按正数判断幂的大小。",
+            "original_prediction": "D：在原题的提示下可由 x=0 与 x=3 得到 D；这并不能检验其对负数的处理。",
+            "diagnostic_prediction": "B：若只按正 t 判断，会认为 t³<t，Quantity B 较大。"
+          },
+          "lesson_step": "暂不针对性改写旧课，先在新例子中无提示地请学生说明正、负允许值分别带来什么关系。若有必要，之后再补上“约束是否允许负值”的检查；原题的提示式流程本身未区分上述解释。",
+          "withdraw_if": "若学生在未提示下能正确说明诊断题中正 t 给出 B 较大、负 t 给出 A 较大，并据此选择 D，就撤回针对符号处理的修改判断。"
+        }
+      },
+      "teacher_evaluation": {
+        "preferred": null,
+        "reason": null,
+        "adequate_proposals": null
+      }
+    },
+    {
+      "case": "task_id_0608",
+      "source": "https://huggingface.co/datasets/handshake-ai-research/studentbench/blob/304c8d63c726e72b60510bba3a44454fc0726721/1_main_leaderboard_data/gre_quant/ai_arm_gemini-3.1-pro-high/task_id_0608/ai_tutoring_data/student_ai_tutor_interaction_trajectory.csv",
+      "evidence": {
+        "lesson_version": "task_id_0608/lesson/1/v1",
+        "observed_earlier_events": [
+          {
+            "event": 1,
+            "role": "system",
+            "text": "Quantity A: $x^2 + y^2$\nQuantity B: $(x + y)^2$\n\n$x$ and $y$ are nonzero integers.\n\nOptions: A) Quantity A is greater. | B) Quantity B is greater. | C) The two quantities are equal. | D) The relationship cannot be determined from the information given."
+          },
+          {
+            "event": 3,
+            "role": "student",
+            "text": "what are the triclks to looking at these kidns of problems"
+          },
+          {
+            "event": 4,
+            "role": "ai_tutor",
+            "text": "The best \"trick\" is actually a reliable, step-by-step method called **Testing Cases**. \n\nWhenever you see variables like $x$ and $y$ with some basic rules (like \"nonzero integers\"), your goal is to test a couple of different scenarios to see if the relationship between Quantity A and Quantity B stays the same or changes. \n\nHere is the game plan:\n1. **Test an easy case:** Pick simple numbers that fit the rules, plug them in, and see which Quantity is bigger.\n2. **Try to break it:** Pick a *different* type of number (like negatives, or making the numbers equal) to see if you can get a different result. \nIf the relationship changes, the answer is always D!\n\nLet's try it together on this problem. To start, what are two simple, easy-to-calculate nonzero integers we could plug in for $x$ and $y$?"
+          },
+          {
+            "event": 5,
+            "role": "student",
+            "text": "Submitted B (correct: False)."
+          },
+          {
+            "event": 6,
+            "role": "ai_tutor",
+            "text": "I see you picked B. I bet I know exactly why! If you plug in simple positive numbers like $x=1$ and $y=2$, Quantity B is definitely bigger ($5$ vs $9$). \n\nBut remember step 2 from our game plan: **Try to break it.** \n\nIf you only test one type of number, you might fall into a trap. The problem just says $x$ and $y$ are \"nonzero integers.\" We tested positives. What if we mix it up? \n\nTry testing one positive integer and one negative integer (for example, $x = 2$ and $y = -2$). What happens to Quantity A and Quantity B when you plug those in?"
+          },
+          {
+            "event": 7,
+            "role": "student",
+            "text": "a becomes larger than B"
+          },
+          {
+            "event": 8,
+            "role": "ai_tutor",
+            "text": "Exactly! \n\nLet's look at what just happened:\n* When we tested $x=1$ and $y=2$, **Quantity B** was greater ($5$ vs $9$).\n* When we tested $x=2$ and $y=-2$, **Quantity A** was greater ($8$ vs $0$).\n\nSince the relationship *changes* depending on which numbers we pick, what does that tell us the final answer has to be?"
+          },
+          {
+            "event": 9,
+            "role": "student",
+            "text": "cannot be determined"
+          },
+          {
+            "event": 11,
+            "role": "student",
+            "text": "Submitted D (correct: True)."
+          }
+        ],
+        "researcher_description_of_lesson": "The lesson uses the material at event 1. The learner's actions are at [3, 5, 7, 9, 11]. The tutor's actions are at [4, 6, 8]. Their order is [3, 4, 5, 6, 7, 8, 9, 11]. The teaching step being reviewed is: Use two admissible inputs giving different relations to justify an indeterminate comparison. At turn 8, only [1, 3, 4, 5, 6, 7] in these excerpts preceded the tutor's move. The learner was to do this: Use the two observed comparisons to choose the quantitative relation.",
+        "later_item_before_feedback": {
+          "item_event": 13,
+          "item": "Quantity A: $x^3$\nQuantity B: $x^2$\n\n$x > 0$\n\nOptions: A) Quantity A is greater. | B) Quantity B is greater. | C) The two quantities are equal. | D) The relationship cannot be determined from the information given.",
+          "answer": "The student reported two outcomes: the quantities can be equal, and A can be greater. No letter was given.",
+          "math_key": "D",
+          "response_event": 15,
+          "first_response_work": "if i try the number 1 than they are equal but if I use anything more than 1 A will always be bigger"
+        },
+        "candidate_actions": {
+          "A": "Contrast replacing x by a negative number with respecting a positive domain.",
+          "B": "First elicit one unaided explanation on a fresh example; defer a targeted edit.",
+          "C": "Keep this lesson step for similar circumstances without targeted reteaching.",
+          "D": "Contrast a single numerical example with two legal values that give distinct relations."
+        }
+      },
+      "proposals": {
+        "1": {
+          "action": "C",
+          "observed_evidence": "事件7中，学习者判断原题的第二组取值使A大于B；事件9回答“cannot be determined”，随后事件11选择D。之后在x>0的题目中，学习者报告两种结果：相等、A大于B；这两种结果都可由合法正数取得，足以说明关系不固定。",
+          "event_ids": [
+            7,
+            9,
+            11,
+            15
+          ],
+          "diagnostic_material": "新诊断例（未实际施测）：A=x²，B=x，且x>0。",
+          "explanation_1": {
+            "rule": "会检查取值是否符合条件，并用两个合法输入得到不同关系。",
+            "original_prediction": "原题预测D，例如(1,2)使B较大，(2,-2)使A较大。",
+            "diagnostic_prediction": "预测D：x=1时相等，x=2时A较大。"
+          },
+          "explanation_2": {
+            "rule": "只记住“找到两种结果就选D”，不核对输入是否合法。",
+            "original_prediction": "也预测D；原题中正、负整数都合法，故无法区分两种解释。",
+            "diagnostic_prediction": "可能仍预测D，但若用不合法的负数举例，则不能作为有效依据；需看其是否改用合法正数。"
+          },
+          "lesson_step": "暂保留“用两个允许的输入得到不同关系来论证D”这一步。后续题中学习者报告的两种结果均与x>0相容，已有迁移证据；原题本身不能区分严谨检查条件与机械套用。",
+          "withdraw_if": "若学习者在新例中 unaided 只靠不符合x>0的取值论证D，或无法用合法取值解释两种关系，就撤回保留判断并针对检查定义域进行修改。"
+        },
+        "2": {
+          "action": "B",
+          "observed_evidence": "事件9答“cannot be determined”，事件11选择D，符合原题结论；但这一步紧接着教师在事件8列出了两组相反关系，不能视为独立论证。后题事件15的作答给出 x=1 时相等、x>1 时 A 较大；这是有用的数值观察，但未给选项，也没有说明定义域中的值是否会产生不同关系。",
+          "event_ids": [
+            9,
+            11,
+            15
+          ],
+          "diagnostic_material": "先暂缓改写旧课，另给一题并请学习者不受提示地解释：A=x^2，B=x，且 x 为正整数；要求判断关系并说明依据。此题未在记录中施测。",
+          "explanation_1": {
+            "rule": "学习者可能把“用两个允许的取值找到不同关系”当作判断无法确定的标准，并能迁移这一规则。",
+            "original_prediction": "原题中会用正整数（如 1、2）得到 B>A，再用一正一负（如 2、−2）得到 A>B，并据此判D。",
+            "diagnostic_prediction": "新题会指出 x=1 时相等、x=2 时 A>B，故关系不能确定。"
+          },
+          "explanation_2": {
+            "rule": "学习者可能只会比较算出的数值，或将某个示例的结果推广；原题中的正确选择可能来自跟随提示。",
+            "original_prediction": "也可能复述事件6、8给出的数值后选D，但未必独立说明为何这些合法取值足以支持结论。",
+            "diagnostic_prediction": "可能只举 x=1 或 x=2 并把该单一关系当作答案，或未把两种不同关系联系到“无法确定”。"
+          },
+          "lesson_step": "保留“用两个允许取值产生不同关系来支持无法确定”这一步，先在新例上观察独立解释；暂不针对正负数规则改课。旧材料已经在事件6、8提供了两个符合条件且关系不同的例子，但学习者没有独立生成这些例子。",
+          "withdraw_if": "若学习者在新例中无提示地指出 x=1 时相等、x=2 时 A>B，并明确以两种合法取值的关系不同为依据判断无法确定，就撤回暂缓编辑的判断，并保留该教学步骤。"
+        }
+      },
+      "teacher_evaluation": {
+        "preferred": null,
+        "reason": null,
+        "adequate_proposals": null
+      }
+    },
+    {
+      "case": "task_id_0636",
+      "source": "https://huggingface.co/datasets/handshake-ai-research/studentbench/blob/304c8d63c726e72b60510bba3a44454fc0726721/1_main_leaderboard_data/gre_quant/ai_arm_gemini-3.1-pro-high/task_id_0636/ai_tutoring_data/student_ai_tutor_interaction_trajectory.csv",
+      "evidence": {
+        "lesson_version": "task_id_0636/lesson/48/v1",
+        "observed_earlier_events": [
+          {
+            "event": 48,
+            "role": "system",
+            "text": "Given: $x$ and $y$ are distinct non-zero real numbers such that $x + y > 0$.\n\nQuantity A: $\\frac{x}{y} + \\frac{y}{x}$\nQuantity B: $2$\n\nOptions: A) Quantity A is greater. | B) Quantity B is greater. | C) The two quantities are equal. | D) The relationship cannot be determined from the information given."
+          },
+          {
+            "event": 49,
+            "role": "student",
+            "text": "Submitted D (correct: True)."
+          },
+          {
+            "event": 50,
+            "role": "ai_tutor",
+            "text": "Awesome job getting \"D\"! That is absolutely correct. (And apologies for the glitchy text in my last message!)\n\nSince this is the last practice problem for this concept, I want to make sure we fully lock in the strategy before we wrap up. I'd love to hear how you approached this one! \n\nThe rules were $x$ and $y$ are distinct, non-zero, and $x + y > 0$. What specific edge cases did you test for $x$ and $y$ to prove that the relationship between Quantity A and Quantity B changes?"
+          }
+        ],
+        "researcher_description_of_lesson": "The lesson uses the material at event 48. The learner's actions are at [49]. The tutor's actions are at [50]. Their order is [49, 50]. The teaching step being reviewed is: Before accepting indeterminacy, ask which admissible edge cases establish the claimed relations. At turn 50, only [48, 49] in these excerpts preceded the tutor's move. The learner was to do this: Explain which admissible values would support an indeterminate comparison.",
+        "later_item_before_feedback": {
+          "item_event": 52,
+          "item": "Given: $x^2 y > x y^2$ and $x y < 0$\n\nQuantity A: $x$\nQuantity B: $y$\n\nOptions: A) Quantity A is greater. | B) Quantity B is greater. | C) The two quantities are equal. | D) The relationship cannot be determined from the information given.",
+          "answer": "D",
+          "math_key": "B",
+          "response_event": 54,
+          "first_response_work": "For #11, wouldnt it be D as the values would ultimately depend on the values of x and y, and a positive x but a negative y would debunk the first given"
+        },
+        "candidate_actions": {
+          "A": "Require a candidate counterexample to satisfy both givens before using it to justify D.",
+          "B": "Keep this lesson step for similar circumstances without targeted reteaching.",
+          "C": "Compare an expression with its reciprocal using only same-sign inputs.",
+          "D": "First elicit one unaided explanation on a fresh example; defer a targeted edit."
+        }
+      },
+      "proposals": {
+        "1": {
+          "action": "D",
+          "observed_evidence": "事件49只有正确选择D，没有解释；事件50随后要求说明满足全部条件的边界例。后题事件54中，学习者称正x、负y可反驳条件，但没有核验两个不等式同时成立。后者提示可能忽略合取条件，却不是原题上的直接证据。",
+          "event_ids": [
+            49,
+            50,
+            54
+          ],
+          "diagnostic_material": "暂不改写原课，先在新题上无提示地要求学习者给出两个满足全部条件、分别支持两种大小关系的例子，并验证条件。可用新诊断题：x、y为不同非零实数且x+y>0，比较 x/y+y/x 与2；要求举例并核验。此例未曾施测。原题只记录了选择D，尚不能区分真正用合格反例证明不确定，与未经核验地猜D。",
+          "explanation_1": {
+            "rule": "会检查候选值是否同时满足所有条件，并用两个合格例子证明关系可变。",
+            "original_prediction": "选D；例如(2,1)满足条件且表达式为2.5，大于2；(1,-0.5)也满足条件且表达式为-2.5，小于2。",
+            "diagnostic_prediction": "仍选D，并给出类似上述两个例子，核验每组都满足前提。"
+          },
+          "explanation_2": {
+            "rule": "把D当作“数值依赖x、y”的结论，可能只检查符号或单个条件，不核验全部约束。",
+            "original_prediction": "也可能选D，但只凭结论或给出未核验的正负数例子；因此原题选择本身无法区分。",
+            "diagnostic_prediction": "可能仍选D，却无法给出两个同时满足前提且结果相反的例子，或会使用不合格取值；这是预测而非已观察表现。"
+          },
+          "lesson_step": "暂时保留“用满足全部前提的边界例支持不确定性”这一步；下一次先收集一次无提示的新题解释，再决定是否针对核验条件作编辑。",
+          "withdraw_if": "若学习者在新题上未经提示便给出并核验两个满足全部条件、结果相反的例子，就撤回需要针对该课增加核验步骤的判断。"
+        },
+        "2": {
+          "action": "D",
+          "observed_evidence": "事件49中学习者只提交了D，未给推理；事件50的追问没有得到可见回答。后续事件54在新题上答D，但该题答案为B，且没有作答过程。因此既不能确认其会用符合全部条件的例子论证不确定，也不足以确定其错误所依据的规则。",
+          "event_ids": [
+            49,
+            50,
+            54
+          ],
+          "diagnostic_material": "同一新诊断例：a、b为互不相等的正实数，比较 a/b+b/a 与 2。正确关系为前者大于2。该例未在记录中施测。",
+          "explanation_1": {
+            "rule": "会检验候选取值是否同时满足全部条件，并据有效反例判断关系。",
+            "original_prediction": "D；可用(2,1)得到大于2，用(2,-1)得到小于2，二者都满足原题条件。",
+            "diagnostic_prediction": "A；正且不等时，(a-b)^2/(ab)>0，故 a/b+b/a>2。"
+          },
+          "explanation_2": {
+            "rule": "看到变量取值不固定或题目涉及变量，就倾向选D，而不核验条件是否已确定关系。",
+            "original_prediction": "D；但这只是可能的猜测规则，并非已观察到的解释。",
+            "diagnostic_prediction": "D；尽管新例中正数且互不相等已足以确定前者大于2。"
+          },
+          "lesson_step": "暂不改写“接受D前，要求指出符合全部条件的边界例”这一步；先用上述新例取得一次无提示作答及理由。",
+          "withdraw_if": "若学习者无提示地在新例中选A，并说明正数、不等使差值 (a-b)^2/(ab) 为正，就撤回基于缺少迁移证据而暂缓定向改写的决定。"
+        }
+      },
+      "teacher_evaluation": {
+        "preferred": null,
+        "reason": null,
+        "adequate_proposals": null
+      }
+    }
+  ]
+}

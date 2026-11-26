@@ -1,0 +1,50 @@
+{
+  "case": "task_id_0328",
+  "version_reviewed": "task_id_0328/lesson/215/v1",
+  "view": "text",
+  "arm": "answer",
+  "response_id": "resp_0bfc63e7b2c4f136016b02d6c3269487d0897a0aacd35b1c85",
+  "model": "gpt-6-luna",
+  "usage": {
+    "input_tokens": 1252,
+    "input_tokens_details": {
+      "cache_write_tokens": 1249,
+      "cache_write_tokens_details": {
+        "ttl_12h_tokens": 0,
+        "ttl_30m_tokens": 1249
+      },
+      "cached_tokens": 0
+    },
+    "output_tokens": 997,
+    "output_tokens_details": {
+      "reasoning_tokens": 516
+    },
+    "total_tokens": 2249
+  },
+  "request_sha256": "154772a9c511c65d3ccea8b76b9514df5dc47b24eb0fe6652e3cb96cc4b35705",
+  "decision": {
+    "action": "C",
+    "observed_evidence": "事件221中，学习者回答“1/6”，但这是两人的合计日效率，不是各自效率；该回答是在提示后给出的。事件223给出4天完成2/3，事件225选C（正确），但没有说明剩余工作或Mary单独完成所需时间。后续事件229只记录“8 pm”，没有解题过程。",
+    "event_ids": [
+      221,
+      223,
+      225,
+      229
+    ],
+    "diagnostic_material": "可先不改课，另用同一新例诊断：John单独8天完成，Mary单独12天完成；两人合作2天后John离开。问Mary还需几天？正确分段计算为7天。此例未在记录中实际施测。",
+    "explanation_1": {
+      "rule": "按每阶段实际参与者重算效率：先用合计效率求已完成工作，再用Mary效率完成余量。",
+      "original_prediction": "5天：合作效率为1/6，4天完成2/3，余1/3；Mary以1/15完成需5天。",
+      "diagnostic_prediction": "7天：合作效率5/24，2天完成5/12，余7/12；Mary以1/12完成需7天。"
+    },
+    "explanation_2": {
+      "rule": "把合作阶段的合计效率当作离开后Mary的效率。",
+      "original_prediction": "2天：余下1/3除以1/6。与学习者选C不符，因此原题的选项已对这一明确规则提供了区分。",
+      "diagnostic_prediction": "2.8天：余下7/12除以合作效率5/24。"
+    },
+    "lesson_step": "暂缓定向修改；保留“人员改变后，按剩余工作和新阶段效率重算”的步骤。先要求学习者无提示说出原题中余下的工作量及Mary的效率，并解释为何要用该效率。",
+    "withdraw_if": "若学习者在无提示的新例中能正确分阶段计算并解释为何离开后只用Mary的效率，我会撤回对该步骤需要针对性修改的判断。"
+  },
+  "selected_action": "probe",
+  "unresolved_citations": []
+}

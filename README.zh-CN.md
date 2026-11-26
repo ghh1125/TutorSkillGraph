@@ -2,9 +2,29 @@
 
 [English](README.md) · 中文
 
+**超图怎样设计，教学 skill 怎样演化。** 方法说明画出了真实课堂中的一条超边，沿着旧课证据、新版教法和新学生的下一问解释系统怎样工作。[方法设计与课例](METHOD.zh-CN.md) · [实验数据与复现](data/README.md)
+
+**用后续独立作答改进导师的下一问。** 在另外 24 场 StudentBench 留出课堂中，使用同一官方导师策略和同一个 `gpt-6-luna`，原教案有 11/24 条回复达到事先写定的教学目标，TutorSkillGraph 教案有 19/24 条（45.8% → 79.2%）。新教法利用真实旧课堂中出现过的选择，在当前题上挑一个能检验学生判断的取值。[本轮结果和真实课例](experiments/evidence_revision/REPORT.zh-CN.md)
+
+**32 名留出学生的配对结果。** 在相同的 StudentBench 官方导师策略和 `gpt-6-luna` 下，接入 TutorSkillGraph 教案后，导师下一条回复的教学目标达成率从 17/32（53.1%）提高到 23/32（71.9%），相差 18.75 个百分点。[对照实验与真实课例](experiments/grounded_tutor/REPORT.zh-CN.md)
+
+**两名学生的先导重放。** 从 12 场真实教学构建候选 skill，再让同一个 `gpt-6-luna` 按 StudentBench 官方导师策略给两名留出学生回话。原教案与接入 skill 的教案分别有 0/2、1/2 条回复做到事先指定的教学动作。围栏数据也复现了作者的回归基线。[原策略、逐例对照与失败案例](experiments/reason_ablation/REPORT.zh-CN.md)
+
+**第一轮真实数据验证。** 50 名单门围栏题改对者中，知道谁先说出扣门宽，没有改善对独立后测总分的预测。另两份 GRE 对话分别给出了修改选材和撤回补教建议的依据。[研究结果、反例和原始记录](experiments/lesson_revision_pilot/REPORT.zh-CN.md)
+
+**代码与首例。** [阅读 p019 的改课判断](cases/p019.zh-CN.md)或[查看结构化记录](cases/p019.json)。代码在 [src/tutorskillgraph](src/tutorskillgraph/) 下。Python 3.11+ 在本目录运行以下命令即可从固定公开版本重建案例。运行代码只需标准库。
+
+```sh
+python scripts/fetch_sec.py
+python scripts/build_p019.py
+python -m unittest discover -s tests -v
+```
+
+[evidence.py](src/tutorskillgraph/evidence.py) 校验哈希、按匿名编号关联并定位原话。[revision.py](src/tutorskillgraph/revision.py) 计算两种解释的预测并根据人工核对的首答与理由给出个人补教判断。[build.py](src/tutorskillgraph/build.py) 和 [report.py](src/tutorskillgraph/report.py) 用同一份案例生成 JSON 和中文报告。公开记录缺少 p019 在双门变式题上的逐题回答和理由，本例的改动仍待检验。
+
 **AI 导师能否从学生后来独立解题时给出的理由，看出上一堂课漏教了什么，并改好下一次教学？** 有些课堂例子，用正确原理和用错误猜法都能答对。学生换题以后说出的理由，可能指明老师需要修改哪一项活动。
 
-**[阅读完整研究方案](RESEARCH_BRIEF.zh-CN.md)**，从一节密度课看懂教学 skill 怎样作为节点、一条超边怎样记录教学假设，以及如何与写得完整的普通 skill 公平比较。目前处于研究设计阶段。首个有真实数据支撑的案例拟从公开的列方程辅导记录中选取。
+**[阅读完整研究方案](RESEARCH_BRIEF.zh-CN.md)**，从一节密度课看懂教学 skill 怎样作为节点、一条超边怎样记录教学假设，以及如何与写得完整的普通 skill 公平比较。上述围栏案例已用公开对话实现，教案效果仍待检验。
 
 ## 为什么一次成功的辅导也可能教给导师错误的经验？
 

@@ -1,0 +1,1761 @@
+trajectory_position,timestamp_elapsed_seconds,recorded_elapsed_seconds,event_type,actor,concept_id,practice_problem_id,lesson_plan_id,problem_origin,content,submitted_answer,is_correct,answer_attempt_number,ai_model_api_provider,ai_model_endpoint_id,latency_ms,prompt_tokens,completion_tokens,reasoning_tokens,finish_reason
+1,2484.852368,2487.364849,practice_problem_shown,system,c1,quant:main:task_id_0108:practice_problem:11901,quant:main:task_id_0108:lesson_plan:588,lesson_plan,"If $m$ and $n$ are integers such that $m+n=\frac{1}{2}mn$ and $m<n$, which of the following can be the value of $n-m$?
+
+A. $1$
+B. $2$
+C. $4$
+D. $7$
+
+Options: A) 1 | B) 2 | C) 4 | D) 7",,,,,,,,,,
+2,2486.893197,,ai_tutor_message,ai_tutor,c1,quant:main:task_id_0108:practice_problem:11901,quant:main:task_id_0108:lesson_plan:588,lesson_plan,"Hi! Today we’re working on **translating equations into factor structure** and using that to compare quantities.
+
+Why this matters: on GRE Quant, a messy-looking equation often gets much easier when you rewrite it in a factored or equivalent form. That can turn a comparison or “which value is possible?” question into something you can solve cleanly.
+
+Go ahead and try the first practice problem on the left. If you want, you can also ask me to walk you through the setup step by step.",,,,openai,gpt-5.4-mini,1836.0,7821.0,106.0,0.0,stop
+3,3316.704368,3322.097042,practice_answer_submitted,student,c1,quant:main:task_id_0108:practice_problem:11901,quant:main:task_id_0108:lesson_plan:588,lesson_plan,,C,False,1,,,,,,,
+4,3316.785466,,ai_tutor_message,ai_tutor,c1,quant:main:task_id_0108:practice_problem:11901,quant:main:task_id_0108:lesson_plan:588,lesson_plan,"Nice try — this is exactly the kind of problem where rewriting the equation pays off.
+
+You have:
+$$m+n=\frac{1}{2}mn$$
+
+A good first move is to **clear the fraction**:
+$$2m+2n=mn$$
+
+Now bring everything to one side:
+$$mn-2m-2n=0$$
+
+Here’s the key idea: try to **create a factorable expression** by adding the same number to both sides. What number would complete this into a product?
+
+If you add $4$ to both sides, you get:
+$$mn-2m-2n+4=4$$
+and the left side factors as
+$$ (m-2)(n-2)=4 $$
+
+Now think about what this means for integers with $m<n$.
+
+Since the product is $4$, the factor pairs are limited. Try listing the integer pairs $(m-2,\ n-2)$ that multiply to $4$, then convert back to $m$ and $n$. From there, check which value of $n-m$ is possible.
+
+Your choice $C$ came from missing that factor step. Want to try the factor pairs together?",,,,openai,gpt-5.4-mini,2243.0,7910.0,249.0,0.0,stop
+5,3353.541368,3353.765818,practice_answer_submitted,student,c1,quant:main:task_id_0108:practice_problem:11901,quant:main:task_id_0108:lesson_plan:588,lesson_plan,,D,False,2,,,,,,,
+6,3353.628347,,ai_tutor_message,ai_tutor,c1,quant:main:task_id_0108:practice_problem:11901,quant:main:task_id_0108:lesson_plan:588,lesson_plan,"You were very close on the setup, but the mistake is probably in the **factor step** or in using the factor pairs.
+
+From
+$$m+n=\frac12 mn$$
+multiply both sides by $2$:
+$$2m+2n=mn$$
+
+Then move everything to one side:
+$$mn-2m-2n=0$$
+
+Now the trick is to make that factor nicely by adding $4$:
+$$mn-2m-2n+4=4$$
+
+which becomes
+$$
+(m-2)(n-2)=4.
+$$
+
+Now use the factor pairs of $4$:
+$$1\cdot 4,\quad 2\cdot 2,\quad 4\cdot 1,\quad (-1)\cdot(-4),\quad (-2)\cdot(-2),\quad (-4)\cdot(-1).$$
+
+Each pair gives values for $m-2$ and $n-2$. Since you’re told $m<n$, you need the pair that makes $m$ smaller than $n$.
+
+Try one pair at a time and compute $n-m$:
+- if $m-2=1$ and $n-2=4$, then $m=3$, $n=6$, so $n-m=3$
+- if $m-2=2$ and $n-2=2$, then $m=n$, which does **not** work
+- if one factor is negative, check whether the integer values still satisfy $m<n$
+
+So the key question is: **which factor pair gives a valid integer solution with $m<n$?**
+
+If you want, send me the pair you think works and I’ll help you check it.",,,,openai,gpt-5.4-mini,3687.0,8162.0,365.0,0.0,stop
+7,3364.131368,3366.28205,practice_answer_submitted,student,c1,quant:main:task_id_0108:practice_problem:11901,quant:main:task_id_0108:lesson_plan:588,lesson_plan,,A,False,3,,,,,,,
+8,3364.217107,,ai_tutor_message,ai_tutor,c1,quant:main:task_id_0108:practice_problem:11901,quant:main:task_id_0108:lesson_plan:588,lesson_plan,"Good effort — your answer choice shows you were trying to use the equation structure, which is the right instinct.
+
+Let’s diagnose the mistake carefully.
+
+You reached the factored form:
+$$ (m-2)(n-2)=4. $$
+
+Now the important step is: **the answer is not one of the factor values themselves** — it asks for $n-m$.
+
+So if you let
+$$m-2=a \quad \text{and} \quad n-2=b,$$
+then
+$$ab=4$$
+and
+$$n-m=(b+2)-(a+2)=b-a.$$
+
+That means the difference $n-m$ is just the difference between the two factors.
+
+Try the factor pairs of $4$ that keep $m$ and $n$ as integers and satisfy $m<n$:
+
+- $1$ and $4$ gives $n-m=3$
+- $2$ and $2$ gives $n-m=0$ but that would mean $m=n$, so it doesn’t work
+- $-1$ and $-4$ gives $n-m=-3$ if assigned in the wrong order, or $3$ in the correct order
+
+So the valid positive difference comes from the pair that makes $m<n$.
+
+Your choice $A=1$ likely came from stopping too early and not translating the factor pair back into the difference correctly.
+
+Try this: if $(m-2)(n-2)=4$ and $m<n$, what values of $m$ and $n$ come from the pair $1$ and $4$?",,,,openai,gpt-5.4-mini,3001.0,8530.0,334.0,0.0,stop
+9,3370.507368,3371.292091,practice_answer_submitted,student,c1,quant:main:task_id_0108:practice_problem:11901,quant:main:task_id_0108:lesson_plan:588,lesson_plan,,B,True,4,,,,,,,
+10,3370.594291,,ai_tutor_message,ai_tutor,c1,quant:main:task_id_0108:practice_problem:11901,quant:main:task_id_0108:lesson_plan:588,lesson_plan,"Great job — **$B$ is correct**.
+
+Here’s the transferable move:
+1. **Clear the fraction**.
+2. **Move everything to one side**.
+3. **Add the right constant to factor**.
+
+For this problem:
+$$m+n=\frac12 mn$$
+becomes
+$$2m+2n=mn$$
+then
+$$mn-2m-2n=0$$
+and adding $4$ gives
+$$mn-2m-2n+4=4,$$
+so
+$$ (m-2)(n-2)=4. $$
+
+From there, you use factor pairs of $4$ and the condition $m<n$ to see which difference $n-m$ is possible.
+
+The big lesson: when you see an equation with terms like $mn$, $m$, and $n$, try to **factor by grouping in reverse**. That often turns a hard-looking problem into a simple integer-factor question.
+
+Ready for the next one?",,,,openai,gpt-5.4-mini,2586.0,8861.0,207.0,0.0,stop
+11,3371.414368,3373.795229,practice_problem_shown,system,c1,quant:main:task_id_0108:practice_problem:11902,quant:main:task_id_0108:lesson_plan:588,lesson_plan,"If $p^2-q^2=0$ and $p-q=5$, what is the value of $q$?
+
+A. $-5$
+B. $-\frac{5}{2}$
+C. $0$
+D. $5$
+
+Options: A) -5 | B) -5/2 | C) 0 | D) 5",,,,,,,,,,
+12,3417.817742,,student_message,student,c1,quant:main:task_id_0108:practice_problem:11902,quant:main:task_id_0108:lesson_plan:588,lesson_plan,Yes I am ready,,,,,,,,,,
+13,3418.861743,,ai_tutor_message,ai_tutor,c1,quant:main:task_id_0108:practice_problem:11902,quant:main:task_id_0108:lesson_plan:588,lesson_plan,"Great — here’s a very similar one to build the skill:
+
+If
+$$p^2-q^2=0$$
+and
+$$p-q=5,$$
+what is the value of $q$?
+
+Take it one step at a time. Start by rewriting $p^2-q^2$ in factored form.",,,,openai,gpt-5.4-mini,1031.0,9008.0,71.0,0.0,stop
+14,3609.151974,,student_message,student,c1,quant:main:task_id_0108:practice_problem:11902,quant:main:task_id_0108:lesson_plan:588,lesson_plan,p^2 - q^2 = (p-q)(p+q),,,,,,,,,,
+15,3610.282253,,ai_tutor_message,ai_tutor,c1,quant:main:task_id_0108:practice_problem:11902,quant:main:task_id_0108:lesson_plan:588,lesson_plan,"Exactly — that’s the right factorization:
+$$p^2-q^2=(p-q)(p+q).$$
+
+Now use the given information:
+$$ (p-q)(p+q)=0.$$
+
+But you also know
+$$p-q=5,$$
+so substitute that in:
+$$5(p+q)=0.$$
+
+What must $p+q$ be?",,,,openai,gpt-5.4-mini,1107.0,9102.0,82.0,0.0,stop
+16,3625.232345,,student_message,student,c1,quant:main:task_id_0108:practice_problem:11902,quant:main:task_id_0108:lesson_plan:588,lesson_plan,p+q=0,,,,,,,,,,
+17,3626.371639,,ai_tutor_message,ai_tutor,c1,quant:main:task_id_0108:practice_problem:11902,quant:main:task_id_0108:lesson_plan:588,lesson_plan,"Yes. Since
+$$5(p+q)=0,$$
+you get
+$$p+q=0.$$
+
+Now you have the system:
+$$p-q=5$$
+$$p+q=0.$$
+
+Add the equations. What do you get for $p$?",,,,openai,gpt-5.4-mini,1123.0,9196.0,61.0,0.0,stop
+18,3641.685996,,student_message,student,c1,quant:main:task_id_0108:practice_problem:11902,quant:main:task_id_0108:lesson_plan:588,lesson_plan,-q,,,,,,,,,,
+19,3642.664247,,ai_tutor_message,ai_tutor,c1,quant:main:task_id_0108:practice_problem:11902,quant:main:task_id_0108:lesson_plan:588,lesson_plan,"Close — when you add them, the $q$ terms cancel:
+$$ (p-q) + (p+q) = 5+0 $$
+so
+$$ 2p = 5.$$
+
+Then solve for $p$, and use $p+q=0$ to find $q$.
+
+What is $p$?",,,,openai,gpt-5.4-mini,958.0,9265.0,73.0,0.0,stop
+20,3652.685911,,student_message,student,c1,quant:main:task_id_0108:practice_problem:11902,quant:main:task_id_0108:lesson_plan:588,lesson_plan,-5/2,,,,,,,,,,
+21,3654.059682,,ai_tutor_message,ai_tutor,c1,quant:main:task_id_0108:practice_problem:11902,quant:main:task_id_0108:lesson_plan:588,lesson_plan,"Not quite — $-\frac{5}{2}$ is actually the value of $q$, not $p$.
+
+From
+$$2p=5,$$
+you get
+$$p=\frac{5}{2}.$$
+
+Then use
+$$p+q=0$$
+so
+$$q=-p=-\frac{5}{2}.$$
+
+So the correct value is
+$$\boxed{-\frac{5}{2}}.$$
+
+Key takeaway: when you get a factored equation like
+$$p^2-q^2=(p-q)(p+q),$$
+always look for the two simpler equations it creates. That lets you solve by substitution or addition very quickly.
+
+Want one more like this, or do you want to try one on your own now?",,,,openai,gpt-5.4-mini,1361.0,9349.0,164.0,0.0,stop
+22,3674.337368,3676.812067,practice_answer_submitted,student,c1,quant:main:task_id_0108:practice_problem:11902,quant:main:task_id_0108:lesson_plan:588,lesson_plan,,B,False,1,,,,,,,
+23,3674.323416,,ai_tutor_message,ai_tutor,c1,quant:main:task_id_0108:practice_problem:11902,quant:main:task_id_0108:lesson_plan:588,lesson_plan,"Good instinct to use factoring, but the mistake is in how you used the condition $p-q=5$.
+
+You started with:
+$$p^2-q^2=(p-q)(p+q)$$
+and since $p^2-q^2=0$, that gives
+$$ (p-q)(p+q)=0. $$
+
+Because you’re also told
+$$p-q=5,$$
+substitute that in:
+$$5(p+q)=0,$$
+so
+$$p+q=0.$$
+
+Now you have:
+$$p-q=5$$
+$$p+q=0.$$
+
+Add them:
+$$2p=5,$$
+so
+$$p=\frac52.$$
+
+Then use $p+q=0$:
+$$q=-\frac52.$$
+
+So the issue was a sign slip at the end — you found the right setup, but then mixed up which variable was which when solving for $q$.
+
+For problems like this, after factoring, always check the two resulting linear equations separately:
+- one gives the difference
+- one gives the sum
+
+Then solve carefully for the variable the question asks for.",,,,openai,gpt-5.4-mini,2074.0,9586.0,240.0,0.0,stop
+24,3744.812368,3746.898676,practice_problem_shown,system,c2,quant:main:task_id_0108:practice_problem:11904,quant:main:task_id_0108:lesson_plan:588,lesson_plan,"If $a$ and $b$ are nonzero numbers, compare Quantity A and Quantity B.
+
+Quantity A: $|a|+|b|$
+Quantity B: $|a+b|$
+
+A. Quantity A is greater.
+B. Quantity B is greater.
+C. The two quantities are equal.
+D. The relationship cannot be determined from the information given.
+
+Options: A) Quantity A is greater. | B) Quantity B is greater. | C) The two quantities are equal. | D) The relationship cannot be determined from the information given.",,,,,,,,,,
+25,3747.282022,,ai_tutor_message,ai_tutor,c2,quant:main:task_id_0108:practice_problem:11904,quant:main:task_id_0108:lesson_plan:588,lesson_plan,"Hi! We’re working on **absolute values and when a comparison is not determined**.
+
+This matters because absolute value problems can look straightforward, but the sign and how numbers combine can change the result. On GRE quantitative comparison questions, you want to check for **counterexamples** instead of assuming a rule.
+
+Take a look at the first practice problem on the left and try it. If you want, you can also tell me how you’re thinking about it, and I’ll help you test your reasoning.",,,,openai,gpt-5.4-mini,2357.0,7852.0,104.0,0.0,stop
+26,3749.812219,,student_message,student,c2,quant:main:task_id_0108:practice_problem:11904,quant:main:task_id_0108:lesson_plan:588,lesson_plan,isn't q= -(5/2)?,,,,,,,,,,
+27,3752.694577,,ai_tutor_message,ai_tutor,c2,quant:main:task_id_0108:practice_problem:11904,quant:main:task_id_0108:lesson_plan:588,lesson_plan,"You’re thinking in the right direction by trying a **specific example**.
+
+But for this comparison, there is **no single fixed value** like $q=-\frac{5}{2}$. The key idea is that you should test whether the relationship is **always** the same or whether it can change.
+
+For absolute values, remember:
+
+$$|a+b| \le |a|+|b|$$
+
+So Quantity A is **never less** than Quantity B.
+
+But it is **not always greater**. For example:
+- if $a=2$ and $b=3$, then
+  - Quantity A $=|2|+|3|=5$
+  - Quantity B $=|2+3|=5$
+- if $a=3$ and $b=-2$, then
+  - Quantity A $=5$
+  - Quantity B $=|1|=1$
+
+So sometimes they are equal, and sometimes Quantity A is greater.
+
+That means the relationship is **not determined**.
+
+If you want, I can show you the quick GRE rule for spotting this kind of absolute value QC in under 10 seconds.",,,,openai,gpt-5.4-mini,2872.0,7884.0,241.0,0.0,stop
+28,3810.859368,3817.002059,practice_answer_submitted,student,c2,quant:main:task_id_0108:practice_problem:11904,quant:main:task_id_0108:lesson_plan:588,lesson_plan,,D,True,1,,,,,,,
+29,3810.846304,,ai_tutor_message,ai_tutor,c2,quant:main:task_id_0108:practice_problem:11904,quant:main:task_id_0108:lesson_plan:588,lesson_plan,"Nice work — **D** is correct.
+
+Here’s the transferable idea:  
+For absolute values, the triangle inequality tells you
+
+$$|a+b| \le |a|+|b|.$$
+
+So Quantity A is **never smaller** than Quantity B. But it might be **equal** or **greater**, depending on the signs of $a$ and $b$.
+
+A quick way to see that:
+- If $a$ and $b$ have the **same sign**, then $|a+b|=|a|+|b|$.
+- If they have **opposite signs**, then $|a+b|$ can be smaller.
+
+So the comparison is **not determined**.
+
+On the next one, try to decide whether you can make the two quantities:
+1. equal,
+2. one bigger,
+or
+3. the other bigger.
+
+That’s the fastest GRE strategy for these.",,,,openai,gpt-5.4-mini,4239.0,8192.0,190.0,0.0,stop
+30,3811.764368,3817.014207,practice_problem_shown,system,c2,quant:main:task_id_0108:practice_problem:11905,quant:main:task_id_0108:lesson_plan:588,lesson_plan,"If $x$ and $y$ are positive numbers, compare Quantity A and Quantity B.
+
+Quantity A: $|x-y|$
+Quantity B: $x+y-2\min(x,y)$
+
+A. Quantity A is greater.
+B. Quantity B is greater.
+C. The two quantities are equal.
+D. The relationship cannot be determined from the information given.
+
+Options: A) Quantity A is greater. | B) Quantity B is greater. | C) The two quantities are equal. | D) The relationship cannot be determined from the information given.",,,,,,,,,,
+31,3844.163368,3844.545394,practice_answer_submitted,student,c2,quant:main:task_id_0108:practice_problem:11905,quant:main:task_id_0108:lesson_plan:588,lesson_plan,,A,False,1,,,,,,,
+32,3844.148737,,ai_tutor_message,ai_tutor,c2,quant:main:task_id_0108:practice_problem:11905,quant:main:task_id_0108:lesson_plan:588,lesson_plan,"Good attempt — the key issue is that you treated the expression like it would always favor one side, but with absolute values you need to **test cases**.
+
+Let’s rewrite Quantity B:
+
+$$x+y-2\min(x,y)$$
+
+Because $x$ and $y$ are positive, one of them is the minimum.
+
+### Case 1: $x \ge y$
+Then $\min(x,y)=y$, so
+
+$$x+y-2y = x-y$$
+
+Since $x \ge y$, we have
+
+$$|x-y| = x-y$$
+
+So the two quantities are equal in this case.
+
+### Case 2: $y > x$
+Then $\min(x,y)=x$, so
+
+$$x+y-2x = y-x$$
+
+And now
+
+$$|x-y| = y-x$$
+
+So again, the two quantities are equal.
+
+### What mistake to avoid
+You may have been thinking Quantity B is some different-looking expression, so it must be smaller or larger. But once you split into cases, you see it simplifies to the same value as Quantity A every time.
+
+So the correct comparison is: the two quantities are equal.
+
+If you want, I can show you a one-line shortcut for spotting this kind of $\min(x,y)$ problem.",,,,openai,gpt-5.4-mini,2497.0,8392.0,270.0,0.0,stop
+33,3858.503368,3859.563625,practice_answer_submitted,student,c2,quant:main:task_id_0108:practice_problem:11905,quant:main:task_id_0108:lesson_plan:588,lesson_plan,,C,True,2,,,,,,,
+34,3858.49055,,ai_tutor_message,ai_tutor,c2,quant:main:task_id_0108:practice_problem:11905,quant:main:task_id_0108:lesson_plan:588,lesson_plan,"Yes — **C** is correct.
+
+The key move was to split into cases based on which number is smaller:
+
+- If $x \ge y$, then $\min(x,y)=y$, so Quantity B becomes  
+  $$x+y-2y=x-y=|x-y|.$$
+- If $y > x$, then $\min(x,y)=x$, so Quantity B becomes  
+  $$x+y-2x=y-x=|x-y|.$$
+
+So in every case, the two quantities are equal.
+
+Great job recognizing that the minimum function means you should **case-split**. That’s a powerful GRE strategy for absolute value and comparison problems.",,,,openai,gpt-5.4-mini,1546.0,8659.0,139.0,0.0,stop
+35,3859.405368,3859.576723,practice_problem_shown,system,c2,quant:main:task_id_0108:practice_problem:11906,quant:main:task_id_0108:lesson_plan:588,lesson_plan,"Compare Quantity A and Quantity B.
+
+Quantity A: $|t|+|t-5|$
+Quantity B: $5$
+
+A. Quantity A is greater.
+B. Quantity B is greater.
+C. The two quantities are equal.
+D. The relationship cannot be determined from the information given.
+
+Options: A) Quantity A is greater. | B) Quantity B is greater. | C) The two quantities are equal. | D) The relationship cannot be determined from the information given.",,,,,,,,,,
+36,3861.397969,3861.397969,practice_problem_created_during_tutoring,system,c2,quant:main:task_id_0108:practice_problem:12101,,created_during_tutoring,"If x and y are nonzero numbers, compare Quantity A and Quantity B.
+
+Quantity A: |x| - |y|
+Quantity B: |x-y|
+
+A. Quantity A is greater.
+B. Quantity B is greater.
+C. The two quantities are equal.
+D. The relationship cannot be determined from the information given.
+
+Options: A) Quantity A is greater. | B) Quantity B is greater. | C) The two quantities are equal. | D) The relationship cannot be determined from the information given.",,,,,,,,,,
+37,3921.096368,3922.170041,practice_answer_submitted,student,c2,quant:main:task_id_0108:practice_problem:11906,quant:main:task_id_0108:lesson_plan:588,lesson_plan,,D,False,1,,,,,,,
+38,3921.081482,,ai_tutor_message,ai_tutor,c2,quant:main:task_id_0108:practice_problem:11906,quant:main:task_id_0108:lesson_plan:588,lesson_plan,"Good instinct to test, but this one is a great reminder that **absolute values can’t be compared by intuition alone**.
+
+Let’s unpack the expression:
+
+$$|t|+|t-5|$$
+
+A strong GRE move is to think of $t$ relative to the two “break points” $0$ and $5$.
+
+### Try a few cases
+- If $t=0$, then  
+  $$|t|+|t-5|=|0|+|-5|=5$$
+- If $t=5$, then  
+  $$|t|+|t-5|=|5|+|0|=5$$
+- If $t=2$, then  
+  $$|2|+|2-5|=2+3=5$$
+
+So in these examples, Quantity A equals Quantity B.
+
+Now ask yourself: can it ever be **less** than 5?  
+The answer is no, because the two distances from $t$ to $0$ and from $t$ to $5$ must add up to at least the distance from $0$ to $5$.
+
+That means you should be looking for whether Quantity A is:
+- always equal to 5,
+- always greater than 5,
+- or sometimes each.
+
+Try checking one value between 0 and 5 and one outside that interval, and see what happens.",,,,openai,gpt-5.4-mini,2719.0,8792.0,293.0,0.0,stop
+39,3933.608368,3934.699159,practice_answer_submitted,student,c2,quant:main:task_id_0108:practice_problem:11906,quant:main:task_id_0108:lesson_plan:588,lesson_plan,,B,False,2,,,,,,,
+40,3933.590093,,ai_tutor_message,ai_tutor,c2,quant:main:task_id_0108:practice_problem:11906,quant:main:task_id_0108:lesson_plan:588,lesson_plan,"You chose **B**, which means you thought Quantity B could be greater. Let’s check that idea carefully.
+
+We have:
+
+$$|t|+|t-5| \quad \text{vs.} \quad 5$$
+
+A really useful GRE trick is to test **different values of $t$**.
+
+Try:
+- $t=0$:  
+  $$|0|+|0-5|=0+5=5$$
+- $t=2$:  
+  $$|2|+|2-5|=2+3=5$$
+- $t=10$:  
+  $$|10|+|10-5|=10+5=15$$
+
+What do you notice?
+
+- It is **equal to 5** for some values of $t$
+- It is **greater than 5** for other values of $t$
+- It is **never less than 5**
+
+So the question is not asking whether Quantity A can be bigger at least once; it asks whether the relationship is fixed **for all possible values of $t$**.
+
+Your mistake was likely assuming Quantity B could win because you found a case where Quantity A is not equal to 5. But GRE quantitative comparison needs a comparison that is true **every time**.
+
+If you want, I can show you the fast rule that explains why
+
+$$|t|+|t-5| \ge 5$$
+
+for every real $t$.",,,,openai,gpt-5.4-mini,2423.0,9088.0,306.0,0.0,stop
+41,3939.984368,3942.201302,practice_answer_submitted,student,c2,quant:main:task_id_0108:practice_problem:11906,quant:main:task_id_0108:lesson_plan:588,lesson_plan,,C,False,3,,,,,,,
+42,3939.966239,,ai_tutor_message,ai_tutor,c2,quant:main:task_id_0108:practice_problem:11906,quant:main:task_id_0108:lesson_plan:588,lesson_plan,"Good attempt — the important thing now is to find **why** you thought $C$ was right.
+
+For this problem, the key question is:
+
+$$|t|+|t-5| \quad \text{compared with} \quad 5$$
+
+A very effective way to check is to plug in a few values of $t$.
+
+Try these:
+- $t=0$
+- $t=2$
+- $t=10$
+
+Compute Quantity A each time and compare it to 5. Ask yourself:
+
+- Does Quantity A ever go below 5?
+- Is it always equal to 5?
+- Or does it sometimes change?
+
+If you got $C$, you probably assumed the two quantities are always equal. But test one value **between 0 and 5** and one value **outside** that interval and see whether that assumption survives.
+
+If you want, send me your values and your work, and I’ll help you spot exactly where the comparison changes.",,,,openai,gpt-5.4-mini,2321.0,9397.0,205.0,0.0,stop
+43,3943.918368,3944.704609,practice_answer_submitted,student,c2,quant:main:task_id_0108:practice_problem:11906,quant:main:task_id_0108:lesson_plan:588,lesson_plan,,A,True,4,,,,,,,
+44,3943.903348,,ai_tutor_message,ai_tutor,c2,quant:main:task_id_0108:practice_problem:11906,quant:main:task_id_0108:lesson_plan:588,lesson_plan,"Nice work — **A** is correct.
+
+Here’s the GRE idea to keep:
+For expressions like
+
+$$|t|+|t-5|,$$
+
+think of them as **distances** on a number line:
+- $|t|$ is the distance from $t$ to $0$
+- $|t-5|$ is the distance from $t$ to $5$
+
+So the sum is the total distance going from $0$ to $t$ to $5$. That total can’t be less than the straight-line distance from $0$ to $5$, which is $5$.
+
+A quick way to verify:
+- If $0 \le t \le 5$, then the sum is exactly $5$
+- If $t<0$ or $t>5$, the sum is greater than $5$
+
+So Quantity A is never less than Quantity B, and sometimes it’s greater.
+
+If you want, I can give you a fast shortcut for spotting these “absolute value + absolute value” comparisons even more quickly.",,,,openai,gpt-5.4-mini,2154.0,9599.0,219.0,0.0,stop
+45,3944.820368,3947.209479,practice_problem_shown,system,c2,quant:main:task_id_0108:practice_problem:12101,,created_during_tutoring,"If x and y are nonzero numbers, compare Quantity A and Quantity B.
+
+Quantity A: |x| - |y|
+Quantity B: |x-y|
+
+A. Quantity A is greater.
+B. Quantity B is greater.
+C. The two quantities are equal.
+D. The relationship cannot be determined from the information given.
+
+Options: A) Quantity A is greater. | B) Quantity B is greater. | C) The two quantities are equal. | D) The relationship cannot be determined from the information given.",,,,,,,,,,
+46,3946.870828,3946.870828,practice_problem_created_during_tutoring,system,c2,quant:main:task_id_0108:practice_problem:12110,,created_during_tutoring,"If x and y are nonzero numbers, compare Quantity A and Quantity B.
+
+Quantity A: |x| + |y|
+Quantity B: |x + y| + |x - y|
+
+A. Quantity A is greater.
+B. Quantity B is greater.
+C. The two quantities are equal.
+D. The relationship cannot be determined from the information given.
+
+Options: A) Quantity A is greater. | B) Quantity B is greater. | C) The two quantities are equal. | D) The relationship cannot be determined from the information given.",,,,,,,,,,
+47,3990.636368,3992.296869,practice_answer_submitted,student,c2,quant:main:task_id_0108:practice_problem:12101,,created_during_tutoring,,D,True,1,,,,,,,
+48,3990.618545,,ai_tutor_message,ai_tutor,c2,quant:main:task_id_0108:practice_problem:12101,,created_during_tutoring,"Nice — **D** is the right choice.
+
+This is a classic absolute value QC trap: you should try to find **counterexamples**. Here,
+
+$$|x| - |y| \quad \text{and} \quad |x-y|$$
+
+can compare differently depending on the values of $x$ and $y$.
+
+For example:
+- If $x=5$ and $y=2$, then
+  $$|x|-|y|=5-2=3,\quad |x-y|=3$$
+- If $x=2$ and $y=5$, then
+  $$|x|-|y|=2-5=-3,\quad |x-y|=3$$
+
+So sometimes Quantity A is greater, and sometimes Quantity B is greater.
+
+That’s why the relationship is **not determined**.
+
+Quick GRE takeaway: when you see absolute values in a comparison, don’t assume a pattern — test a couple of sign combinations and look for a case that changes the result.",,,,openai,gpt-5.4-mini,2523.0,9827.0,214.0,0.0,stop
+49,3991.538368,3992.306241,practice_problem_shown,system,c2,quant:main:task_id_0108:practice_problem:12110,,created_during_tutoring,"If x and y are nonzero numbers, compare Quantity A and Quantity B.
+
+Quantity A: |x| + |y|
+Quantity B: |x + y| + |x - y|
+
+A. Quantity A is greater.
+B. Quantity B is greater.
+C. The two quantities are equal.
+D. The relationship cannot be determined from the information given.
+
+Options: A) Quantity A is greater. | B) Quantity B is greater. | C) The two quantities are equal. | D) The relationship cannot be determined from the information given.",,,,,,,,,,
+50,3993.700474,3993.700474,practice_problem_created_during_tutoring,system,c2,quant:main:task_id_0108:practice_problem:12122,,created_during_tutoring,"If m and n are nonzero numbers, compare Quantity A and Quantity B.
+
+Quantity A: |m+n|
+Quantity B: |m|+|n|-|m-n|
+
+A. Quantity A is greater.
+B. Quantity B is greater.
+C. The two quantities are equal.
+D. The relationship cannot be determined from the information given.
+
+Options: A) Quantity A is greater. | B) Quantity B is greater. | C) The two quantities are equal. | D) The relationship cannot be determined from the information given.",,,,,,,,,,
+51,4040.628368,4042.36707,practice_answer_submitted,student,c2,quant:main:task_id_0108:practice_problem:12110,,created_during_tutoring,,B,False,1,,,,,,,
+52,4040.613776,,ai_tutor_message,ai_tutor,c2,quant:main:task_id_0108:practice_problem:12110,,created_during_tutoring,"You’re very close, but the mistake is usually here: **mixing up “can be larger in some cases” with “must be larger.”**
+
+For this problem, compare
+
+$$|x|+|y| \quad \text{and} \quad |x+y|+|x-y|.$$
+
+A strong GRE move is to test a few values.
+
+Try:
+- $x=1,\ y=1$
+- $x=1,\ y=2$
+- $x=2,\ y=-3$
+
+Compute both quantities in each case.
+
+What you should notice is:
+- sometimes the two quantities are equal,
+- sometimes Quantity B is larger,
+- and Quantity A is **never** larger.
+
+So if you picked **B**, you likely found a case where Quantity B is bigger and assumed that was enough. But quantitative comparison asks whether that is **always** true.
+
+Use this as a rule: for absolute-value comparisons, try to find either
+1. a case where the quantities are equal, or
+2. a case where the relationship flips.
+
+If you want, send me one of the examples you tried, and I’ll help you see exactly where the comparison changes.",,,,openai,gpt-5.4-mini,2100.0,10057.0,246.0,0.0,stop
+53,4062.418368,4064.894235,practice_answer_submitted,student,c2,quant:main:task_id_0108:practice_problem:12110,,created_during_tutoring,,C,False,2,,,,,,,
+54,4062.399122,,ai_tutor_message,ai_tutor,c2,quant:main:task_id_0108:practice_problem:12110,,created_during_tutoring,"Good try — the key issue is that **one example is not enough** for a quantitative comparison unless it proves the relationship must always be true.
+
+Here you are comparing
+
+$$|x|+|y| \quad \text{and} \quad |x+y|+|x-y|.$$
+
+If you got **C**, you were probably testing a case where they happened to be equal. But you need to know whether they are equal **for every possible nonzero pair** $(x,y)$.
+
+Try these two checks:
+
+### Check 1: same sign
+Let $x=2,\ y=3$.
+
+- Quantity A: $|2|+|3|=5$
+- Quantity B: $|5|+|-1|=6$
+
+So in this case, Quantity B is bigger.
+
+### Check 2: opposite signs
+Let $x=2,\ y=-3$.
+
+- Quantity A: $|2|+|{-3}|=5$
+- Quantity B: $|{-1}|+|5|=6$
+
+Again, Quantity B is bigger.
+
+Now ask yourself: does it ever look like Quantity A could be larger? If not, then $C$ cannot be right.
+
+A useful way to think about it is to remember the triangle inequality:
+$$|x+y| \le |x|+|y| \quad \text{and} \quad |x-y| \le |x|+|y|,$$
+but that alone doesn’t settle the comparison because you’re adding two absolute values on the right.
+
+So the real fix is: **test more than one case and look for the pattern that holds every time**.
+
+If you want, I can show you the clean algebraic identity that makes this comparison fast.",,,,openai,gpt-5.4-mini,2943.0,10306.0,367.0,0.0,stop
+55,4070.312368,4072.455359,practice_answer_submitted,student,c2,quant:main:task_id_0108:practice_problem:12110,,created_during_tutoring,,A,False,3,,,,,,,
+56,4070.33719,,ai_tutor_message,ai_tutor,c2,quant:main:task_id_0108:practice_problem:12110,,created_during_tutoring,"You made a very common GRE mistake here: you likely found a case where Quantity A was bigger, and then assumed that was always true.
+
+Let’s slow down and test the structure:
+
+$$|x|+|y| \quad \text{vs.} \quad |x+y|+|x-y|$$
+
+A good way to compare absolute-value expressions is to plug in **different sign combinations** for $x$ and $y$.
+
+Try these two examples:
+
+### Example 1: $x=1,\ y=1$
+- Quantity A: $|1|+|1|=2$
+- Quantity B: $|2|+|0|=2$
+
+So here they are equal.
+
+### Example 2: $x=1,\ y=2$
+- Quantity A: $|1|+|2|=3$
+- Quantity B: $|3|+|{-1}|=4$
+
+Now Quantity B is larger.
+
+Since the relationship changes depending on the values of $x$ and $y$, you cannot say A is always greater.
+
+Your job on these problems is to look for a **counterexample** that breaks your first guess. If one example gives equality and another gives a different result, then the comparison is **not determined**.
+
+Try rewriting your decision in terms of:
+- when the quantities are equal,
+- and when one becomes larger.
+
+That’s the key skill for absolute value quantitative comparisons.",,,,openai,gpt-5.4-mini,2941.0,10676.0,299.0,0.0,stop
+57,4073.919368,4074.912576,practice_answer_submitted,student,c2,quant:main:task_id_0108:practice_problem:12110,,created_during_tutoring,,D,True,4,,,,,,,
+58,4073.941812,,ai_tutor_message,ai_tutor,c2,quant:main:task_id_0108:practice_problem:12110,,created_during_tutoring,"Nice job — **D** is correct.
+
+The GRE takeaway here is:
+
+- Absolute values depend on **sign** and **how terms combine**.
+- To decide a QC problem, don’t assume a pattern.
+- Try a quick **counterexample**.
+
+For this one, you can test values like:
+- $x=1, y=2$
+- $x=2, y=-3$
+
+You’ll see the relationship changes, so no single answer choice fits every case.
+
+A good habit: when you see absolute values on a QC, ask:
+1. Can I make the quantities equal?
+2. Can I make A bigger?
+3. Can I make B bigger?
+
+If the answer changes across cases, the correct choice is **D**.
+
+Send the next one when you’re ready.",,,,openai,gpt-5.4-mini,1571.0,10972.0,165.0,0.0,stop
+59,4074.821368,4074.925826,practice_problem_shown,system,c2,quant:main:task_id_0108:practice_problem:12122,,created_during_tutoring,"If m and n are nonzero numbers, compare Quantity A and Quantity B.
+
+Quantity A: |m+n|
+Quantity B: |m|+|n|-|m-n|
+
+A. Quantity A is greater.
+B. Quantity B is greater.
+C. The two quantities are equal.
+D. The relationship cannot be determined from the information given.
+
+Options: A) Quantity A is greater. | B) Quantity B is greater. | C) The two quantities are equal. | D) The relationship cannot be determined from the information given.",,,,,,,,,,
+60,4076.998015,4076.998015,practice_problem_created_during_tutoring,system,c2,quant:main:task_id_0108:practice_problem:12127,,created_during_tutoring,"If p and q are nonzero numbers, compare Quantity A and Quantity B.
+
+Quantity A: |p+q|
+Quantity B: |p| - |q|
+
+A. Quantity A is greater.
+B. Quantity B is greater.
+C. The two quantities are equal.
+D. The relationship cannot be determined from the information given.
+
+Options: A) Quantity A is greater. | B) Quantity B is greater. | C) The two quantities are equal. | D) The relationship cannot be determined from the information given.",,,,,,,,,,
+61,4110.198606,,student_message,student,c2,quant:main:task_id_0108:practice_problem:12122,,created_during_tutoring,"If m and n are nonzero numbers, compare Quantity A and Quantity B.
+
+Quantity A: |m+n|
+Quantity B: |m|+|n|-|m-n|
+
+A. Quantity A is greater.
+B. Quantity B is greater.
+C. The two quantities are equal.
+D. The relationship cannot be determined from the information given.",,,,,,,,,,
+62,4113.267842,,ai_tutor_message,ai_tutor,c2,quant:main:task_id_0108:practice_problem:12122,,created_during_tutoring,"Let’s compare by **testing sign cases**, since absolute values depend on whether numbers have the same sign or opposite signs.
+
+We want to compare
+
+$$|m+n| \quad \text{and} \quad |m|+|n|-|m-n|.$$
+
+A very useful identity for real numbers is:
+
+- if $m$ and $n$ have the **same sign**, then
+  $$|m+n| = |m|+|n| \quad \text{and} \quad |m-n| = \big||m|-|n|\big|.$$
+
+So the right-hand side becomes
+$$|m|+|n|-\big||m|-|n|\big|,$$
+which is usually **less than or equal to** $|m|+|n|$.
+
+Now test a couple of concrete examples:
+
+### Example 1: same sign
+Let $m=3,\ n=1$.
+- Quantity A: $|3+1|=4$
+- Quantity B: $|3|+|1|-|3-1|=3+1-2=2$
+
+So here, **A > B**.
+
+### Example 2: opposite signs
+Let $m=3,\ n=-1$.
+- Quantity A: $|3+(-1)|=2$
+- Quantity B: $|3|+|{-1}|-|3-(-1)|=3+1-4=0$
+
+Again, **A > B**.
+
+Now we need to be careful: does that mean A is always greater?  
+Try $m=1,\ n=1$:
+- A = $|2|=2$
+- B = $1+1-|0|=2$
+
+So sometimes they are equal.
+
+That means the relationship is **not fixed**: sometimes equal, sometimes A is greater.
+
+So the correct answer is:
+
+$$\boxed{\text{D}}$$
+
+If you want, I can show you the fastest algebraic shortcut for this kind of absolute-value QC.",,,,openai,gpt-5.4-mini,3052.0,11148.0,427.0,0.0,stop
+63,4125.130368,4127.545078,practice_answer_submitted,student,c2,quant:main:task_id_0108:practice_problem:12122,,created_during_tutoring,,D,True,1,,,,,,,
+64,4125.109742,,ai_tutor_message,ai_tutor,c2,quant:main:task_id_0108:practice_problem:12122,,created_during_tutoring,"Nice job — **D** is correct.
+
+The big idea is that absolute value expressions often change depending on whether $m$ and $n$ have the **same sign** or **opposite signs**. So the fastest way to handle these is to test a couple of cases instead of guessing from the look of the expression.
+
+For this one:
+- with $m=3, n=1$, Quantity A is bigger
+- with $m=1, n=1$, the quantities are equal
+
+Since the relationship can change, it is **not determined**.
+
+That’s exactly the kind of counterexample thinking that helps on GRE quantitative comparison.",,,,openai,gpt-5.4-mini,1522.0,11642.0,134.0,0.0,stop
+65,4126.031368,4127.557017,practice_problem_shown,system,c2,quant:main:task_id_0108:practice_problem:12127,,created_during_tutoring,"If p and q are nonzero numbers, compare Quantity A and Quantity B.
+
+Quantity A: |p+q|
+Quantity B: |p| - |q|
+
+A. Quantity A is greater.
+B. Quantity B is greater.
+C. The two quantities are equal.
+D. The relationship cannot be determined from the information given.
+
+Options: A) Quantity A is greater. | B) Quantity B is greater. | C) The two quantities are equal. | D) The relationship cannot be determined from the information given.",,,,,,,,,,
+66,4128.214186,4128.214186,practice_problem_created_during_tutoring,system,c2,quant:main:task_id_0108:practice_problem:12136,,created_during_tutoring,"If x and y are nonzero numbers, compare Quantity A and Quantity B.
+
+Quantity A: |x+y| + |x-y|
+Quantity B: 2|x|
+
+A. Quantity A is greater.
+B. Quantity B is greater.
+C. The two quantities are equal.
+D. The relationship cannot be determined from the information given.
+
+Options: A) Quantity A is greater. | B) Quantity B is greater. | C) The two quantities are equal. | D) The relationship cannot be determined from the information given.",,,,,,,,,,
+67,4249.916947,,student_message,student,c2,quant:main:task_id_0108:practice_problem:12127,,created_during_tutoring,"For the following: If p and q are nonzero numbers, compare Quantity A and Quantity B.
+
+Quantity A: |p+q|
+Quantity B: |p| - |q|          Since Quantity A is sometimes greater and sometimes equal, is the answer A?",,,,,,,,,,
+68,4252.234939,,ai_tutor_message,ai_tutor,c2,quant:main:task_id_0108:practice_problem:12127,,created_during_tutoring,"Not quite — if a comparison is **sometimes greater and sometimes equal**, that usually means it is **not determined**, not automatically A.
+
+For this one, compare
+
+$$|p+q| \quad \text{and} \quad |p|-|q|.$$
+
+Use a key fact:
+
+$$|p+q| \ge \big||p|-|q|\big| \ge |p|-|q|.$$
+
+So Quantity A is **never less** than Quantity B.
+
+But GRE QC asks whether one quantity is **always** greater. Here:
+- sometimes they are equal, for example $p=3,\ q=-3$:
+  - A $=|0|=0$
+  - B $=3-3=0$
+- sometimes Quantity A is greater, for example $p=3,\ q=1$:
+  - A $=4$
+  - B $=2$
+
+So the relationship is not fixed.
+
+That means the correct choice is:
+
+$$\boxed{D}$$
+
+Quick rule:  
+- If A is sometimes equal and sometimes greater, then A is **not** the single correct answer.
+- To choose A, you’d need A to be **always greater**.
+
+If you want, I can show you a super-fast way to see why B can never beat A here.",,,,openai,gpt-5.4-mini,2302.0,11770.0,277.0,0.0,stop
+69,4296.715453,,student_message,student,c2,quant:main:task_id_0108:practice_problem:12127,,created_during_tutoring,Got it,,,,,,,,,,
+70,4297.725668,,ai_tutor_message,ai_tutor,c2,quant:main:task_id_0108:practice_problem:12127,,created_during_tutoring,"Great. A good habit on these is:
+
+- Try to make the quantities **equal**.
+- Try to make one side **clearly bigger**.
+- If both happen, the answer is usually **D**.
+
+If you want, I can give you one more absolute value QC to practice that exact habit.",,,,openai,gpt-5.4-mini,998.0,12056.0,66.0,0.0,stop
+71,4303.681368,4305.286609,practice_answer_submitted,student,c2,quant:main:task_id_0108:practice_problem:12127,,created_during_tutoring,,D,True,1,,,,,,,
+72,4303.704009,,ai_tutor_message,ai_tutor,c2,quant:main:task_id_0108:practice_problem:12127,,created_during_tutoring,"Nice work — **D** is correct.
+
+Your key move was right: with absolute value comparisons, you want to test whether the relationship can **change** depending on the values you choose.
+
+Here, you can find:
+- a case where the quantities are equal, and
+- a case where one quantity is greater,
+
+so the comparison is **not determined**.
+
+That’s the GRE habit to keep using:  
+**try a counterexample whenever absolute values are involved.**
+
+Send the next one when you’re ready.",,,,openai,gpt-5.4-mini,1657.0,12189.0,107.0,0.0,stop
+73,4304.583368,4305.300259,practice_problem_shown,system,c2,quant:main:task_id_0108:practice_problem:12136,,created_during_tutoring,"If x and y are nonzero numbers, compare Quantity A and Quantity B.
+
+Quantity A: |x+y| + |x-y|
+Quantity B: 2|x|
+
+A. Quantity A is greater.
+B. Quantity B is greater.
+C. The two quantities are equal.
+D. The relationship cannot be determined from the information given.
+
+Options: A) Quantity A is greater. | B) Quantity B is greater. | C) The two quantities are equal. | D) The relationship cannot be determined from the information given.",,,,,,,,,,
+74,4306.571082,4306.571082,practice_problem_created_during_tutoring,system,c2,quant:main:task_id_0108:practice_problem:12166,,created_during_tutoring,"If a and b are nonzero numbers, compare Quantity A and Quantity B.
+
+Quantity A: |a+b| + |a-b|
+Quantity B: 2|b|
+
+A. Quantity A is greater.
+B. Quantity B is greater.
+C. The two quantities are equal.
+D. The relationship cannot be determined from the information given.
+
+Options: A) Quantity A is greater. | B) Quantity B is greater. | C) The two quantities are equal. | D) The relationship cannot be determined from the information given.",,,,,,,,,,
+75,4474.886941,,student_message,student,c2,quant:main:task_id_0108:practice_problem:12136,,created_during_tutoring,"For the following: If x and y are nonzero numbers, compare Quantity A and Quantity B.
+
+Quantity A: |x+y| + |x-y|
+Quantity B: 2|x|            Since, the quantities are sometimes equal and sometimes quantity a is greater, is the answer D?",,,,,,,,,,
+76,4477.133172,,ai_tutor_message,ai_tutor,c2,quant:main:task_id_0108:practice_problem:12136,,created_during_tutoring,"Yes — **D** is correct.
+
+Your reasoning is right: if you can find
+- a case where the quantities are **equal**, and
+- a case where **Quantity A is greater**,
+
+then the relationship is **not determined**.
+
+Here’s the clean way to see it:
+
+### Example 1: equal
+Let $x=3,\ y=1$.
+- Quantity A: $|3+1|+|3-1|=4+2=6$
+- Quantity B: $2|3|=6$
+
+So they are equal.
+
+### Example 2: Quantity A greater
+Let $x=1,\ y=2$.
+- Quantity A: $|1+2|+|1-2|=3+1=4$
+- Quantity B: $2|1|=2$
+
+So Quantity A is greater.
+
+Because the result changes, the correct answer is:
+
+$$\boxed{D}$$
+
+Nice job spotting the pattern.",,,,openai,gpt-5.4-mini,2234.0,12301.0,205.0,0.0,stop
+77,4483.678368,4485.579455,practice_answer_submitted,student,c2,quant:main:task_id_0108:practice_problem:12136,,created_during_tutoring,,D,True,1,,,,,,,
+78,4483.643142,,ai_tutor_message,ai_tutor,c2,quant:main:task_id_0108:practice_problem:12136,,created_during_tutoring,"Nice work — you got it right.
+
+The key GRE skill here is exactly what you used: **test a couple of cases**. If one case gives equality and another gives Quantity A greater, then the comparison is **not determined**, so the answer is **D**.
+
+For expressions like
+
+$$|x+y|+|x-y| \quad \text{vs.} \quad 2|x|,$$
+
+your best move is to try:
+- $y=0$? Not allowed here, so use nonzero values.
+- one case where $x$ and $y$ have the same sign,
+- one case where they have opposite signs.
+
+That quickly shows whether the relationship stays fixed.
+
+Send the next problem when you’re ready.",,,,openai,gpt-5.4-mini,2386.0,12573.0,156.0,0.0,stop
+79,4484.579368,4485.592012,practice_problem_shown,system,c2,quant:main:task_id_0108:practice_problem:12166,,created_during_tutoring,"If a and b are nonzero numbers, compare Quantity A and Quantity B.
+
+Quantity A: |a+b| + |a-b|
+Quantity B: 2|b|
+
+A. Quantity A is greater.
+B. Quantity B is greater.
+C. The two quantities are equal.
+D. The relationship cannot be determined from the information given.
+
+Options: A) Quantity A is greater. | B) Quantity B is greater. | C) The two quantities are equal. | D) The relationship cannot be determined from the information given.",,,,,,,,,,
+80,4486.382402,4486.382402,practice_problem_created_during_tutoring,system,c2,quant:main:task_id_0108:practice_problem:12192,,created_during_tutoring,"If x and y are nonzero numbers, compare Quantity A and Quantity B.
+
+Quantity A: |x+y| - |x-y|
+Quantity B: 0
+
+A. Quantity A is greater.
+B. Quantity B is greater.
+C. The two quantities are equal.
+D. The relationship cannot be determined from the information given.
+
+Options: A) Quantity A is greater. | B) Quantity B is greater. | C) The two quantities are equal. | D) The relationship cannot be determined from the information given.",,,,,,,,,,
+81,4536.451895,,student_message,student,c2,quant:main:task_id_0108:practice_problem:12166,,created_during_tutoring,"For the following: If a and b are nonzero numbers, compare Quantity A and Quantity B.
+
+Quantity A: |a+b| + |a-b|
+Quantity B: 2|b|       Is the answer D as well?",,,,,,,,,,
+82,4538.188287,,ai_tutor_message,ai_tutor,c2,quant:main:task_id_0108:practice_problem:12166,,created_during_tutoring,"Yes — **D**.
+
+A quick way to see it is to test a couple of values:
+
+### Equal case
+Let $a=3,\ b=1$:
+- Quantity A: $|3+1|+|3-1|=4+2=6$
+- Quantity B: $2|1|=2$
+
+Here A is greater.
+
+### Another case
+Let $a=1,\ b=3$:
+- Quantity A: $|1+3|+|1-3|=4+2=6$
+- Quantity B: $2|3|=6$
+
+Here they are equal.
+
+Since the relationship can change, the answer is **D**.
+
+A nice pattern to remember:  
+For any real numbers,
+$$|a+b|+|a-b| \ge 2|a| \quad \text{and} \quad |a+b|+|a-b| \ge 2|b|,$$
+but it may or may not equal either one depending on the values.
+
+So don’t lock into one answer unless you can show it works for **all** cases.",,,,openai,gpt-5.4-mini,1724.0,12720.0,235.0,0.0,stop
+83,4548.659368,4550.73958,practice_answer_submitted,student,c2,quant:main:task_id_0108:practice_problem:12166,,created_during_tutoring,,D,True,1,,,,,,,
+84,4548.632251,,ai_tutor_message,ai_tutor,c2,quant:main:task_id_0108:practice_problem:12166,,created_during_tutoring,"Correct — **D** is right.
+
+The important pattern is the one you used: for absolute-value QC, try to find at least two cases. If you can make the relationship change, then it is **not determined**.
+
+For this expression,
+$$|a+b|+|a-b| \quad \text{vs.} \quad 2|b|,$$
+you can get different outcomes depending on the values of $a$ and $b$, so no single comparison always holds.
+
+Keep using that **counterexample check** on these.",,,,openai,gpt-5.4-mini,1526.0,13022.0,115.0,0.0,stop
+85,4549.561368,4550.760588,practice_problem_shown,system,c2,quant:main:task_id_0108:practice_problem:12192,,created_during_tutoring,"If x and y are nonzero numbers, compare Quantity A and Quantity B.
+
+Quantity A: |x+y| - |x-y|
+Quantity B: 0
+
+A. Quantity A is greater.
+B. Quantity B is greater.
+C. The two quantities are equal.
+D. The relationship cannot be determined from the information given.
+
+Options: A) Quantity A is greater. | B) Quantity B is greater. | C) The two quantities are equal. | D) The relationship cannot be determined from the information given.",,,,,,,,,,
+86,4551.601414,4551.601414,practice_problem_created_during_tutoring,system,c2,quant:main:task_id_0108:practice_problem:12198,,created_during_tutoring,"If x and y are nonzero numbers, compare Quantity A and Quantity B.
+
+Quantity A: |x+y| - |x| - |y|
+Quantity B: 0
+
+A. Quantity A is greater.
+B. Quantity B is greater.
+C. The two quantities are equal.
+D. The relationship cannot be determined from the information given.
+
+Options: A) Quantity A is greater. | B) Quantity B is greater. | C) The two quantities are equal. | D) The relationship cannot be determined from the information given.",,,,,,,,,,
+87,4633.958368,4635.854951,practice_answer_submitted,student,c2,quant:main:task_id_0108:practice_problem:12192,,created_during_tutoring,,D,True,1,,,,,,,
+88,4633.976852,,ai_tutor_message,ai_tutor,c2,quant:main:task_id_0108:practice_problem:12192,,created_during_tutoring,"Nice — **D** is correct.
+
+The key skill here is exactly what you used: for absolute value quantitative comparisons, try **more than one case**. If you can make the relationship change, then the comparison is **not determined**.
+
+For
+
+$$|a+b|+|a-b| \quad \text{vs.} \quad 2|b|,$$
+
+you can find:
+- a case where Quantity A is greater, and
+- a case where they are equal.
+
+So no single answer choice always works.
+
+Keep using that counterexample strategy on the next one.",,,,openai,gpt-5.4-mini,1510.0,13138.0,123.0,0.0,stop
+89,4634.860368,4635.866652,practice_problem_shown,system,c2,quant:main:task_id_0108:practice_problem:12198,,created_during_tutoring,"If x and y are nonzero numbers, compare Quantity A and Quantity B.
+
+Quantity A: |x+y| - |x| - |y|
+Quantity B: 0
+
+A. Quantity A is greater.
+B. Quantity B is greater.
+C. The two quantities are equal.
+D. The relationship cannot be determined from the information given.
+
+Options: A) Quantity A is greater. | B) Quantity B is greater. | C) The two quantities are equal. | D) The relationship cannot be determined from the information given.",,,,,,,,,,
+90,4637.352284,4637.352284,practice_problem_created_during_tutoring,system,c2,quant:main:task_id_0108:practice_problem:12212,,created_during_tutoring,"If x and y are nonzero numbers, compare Quantity A and Quantity B.
+
+Quantity A: |x-y| - (|x| - |y|)
+Quantity B: 0
+
+A. Quantity A is greater.
+B. Quantity B is greater.
+C. The two quantities are equal.
+D. The relationship cannot be determined from the information given.
+
+Options: A) Quantity A is greater. | B) Quantity B is greater. | C) The two quantities are equal. | D) The relationship cannot be determined from the information given.",,,,,,,,,,
+91,4667.142368,4668.376915,practice_answer_submitted,student,c2,quant:main:task_id_0108:practice_problem:12198,,created_during_tutoring,,D,False,1,,,,,,,
+92,4667.115184,,ai_tutor_message,ai_tutor,c2,quant:main:task_id_0108:practice_problem:12198,,created_during_tutoring,"Let’s slow down and test your choice with actual values.
+
+We’re comparing
+
+$$|a+b|+|a-b| \quad \text{and} \quad 2|b|$$
+
+with $a$ and $b$ both nonzero.
+
+A good QC habit is to try a couple of examples.
+
+### Example 1
+Let $a=3,\ b=1$.
+
+- Quantity A: $|3+1|+|3-1|=4+2=6$
+- Quantity B: $2|1|=2$
+
+So here, Quantity A is greater.
+
+### Example 2
+Let $a=1,\ b=3$.
+
+- Quantity A: $|1+3|+|1-3|=4+2=6$
+- Quantity B: $2|3|=6$
+
+So here, the quantities are equal.
+
+Now ask yourself: does Quantity B ever become greater than Quantity A?
+
+A helpful fact is that for any real numbers,
+$$|a+b|+|a-b| \ge 2|b|.$$
+
+So Quantity A is never less than Quantity B. That means the relationship is either:
+- A greater, or
+- equal.
+
+Since both outcomes are possible, the comparison is **not determined**.
+
+The mistake in choosing D would be if you thought “sometimes different” automatically means “both directions happen.” Here, only one direction and equality happen, not the other direction.
+
+Try one more example yourself with $a$ much smaller than $b$, and see which way it goes.",,,,openai,gpt-5.4-mini,2891.0,13273.0,327.0,0.0,stop
+93,4696.042368,4698.415211,practice_answer_submitted,student,c2,quant:main:task_id_0108:practice_problem:12198,,created_during_tutoring,,A,False,2,,,,,,,
+94,4696.015191,,ai_tutor_message,ai_tutor,c2,quant:main:task_id_0108:practice_problem:12198,,created_during_tutoring,"Let’s check the idea behind **A** by testing it with a concrete example.
+
+We’re comparing:
+
+$$|a+b|+|a-b| \quad \text{and} \quad 2|b|$$
+
+Try $a=1$ and $b=3$:
+
+- Quantity A:  
+  $$|1+3|+|1-3|=4+2=6$$
+- Quantity B:  
+  $$2|3|=6$$
+
+So in this case, the quantities are **equal**.
+
+Now try $a=3$ and $b=1$:
+
+- Quantity A:  
+  $$|3+1|+|3-1|=4+2=6$$
+- Quantity B:  
+  $$2|1|=2$$
+
+So in this case, Quantity A is greater.
+
+That means your choice **A** cannot be right, because Quantity A is **not always greater**. The real issue is that the relationship changes depending on the values of $a$ and $b$.
+
+A good next step is to ask:  
+- Can I make the quantities equal?
+- Can I make one side bigger?
+- Does the same comparison hold every time?
+
+If not, the answer is usually **D**.",,,,openai,gpt-5.4-mini,20870.0,13603.0,268.0,0.0,stop
+95,4715.850368,4716.001477,practice_answer_submitted,student,c2,quant:main:task_id_0108:practice_problem:12198,,created_during_tutoring,,C,False,3,,,,,,,
+96,4715.822934,,ai_tutor_message,ai_tutor,c2,quant:main:task_id_0108:practice_problem:12198,,created_during_tutoring,"Good catch bringing your answer in — but **C** can’t be right here.
+
+Your likely mistake is treating this like an expression that should be the same for all $a,b$. With absolute values, you need to test cases.
+
+Compare:
+$$|a+b|+|a-b| \quad \text{vs.} \quad 2|b|$$
+
+Try two quick examples:
+
+### Example 1: $a=1,\ b=3$
+$$|1+3|+|1-3|=4+2=6$$
+and
+$$2|b|=6$$
+So here the quantities are equal.
+
+### Example 2: $a=3,\ b=1$
+$$|3+1|+|3-1|=4+2=6$$
+and
+$$2|b|=2$$
+So here Quantity A is greater.
+
+That means the relationship changes depending on the values. If one case gives equality and another gives Quantity A greater, then the answer is **not** C.
+
+The key GRE habit here is:
+- don’t ask “what is the value?”
+- ask “can I find a counterexample that changes the comparison?”
+
+Try one more example where $a$ is much smaller than $b$ and see what happens.",,,,openai,gpt-5.4-mini,2262.0,13874.0,270.0,0.0,stop
+97,4719.437368,4720.946628,practice_answer_submitted,student,c2,quant:main:task_id_0108:practice_problem:12198,,created_during_tutoring,,B,True,4,,,,,,,
+98,4719.408469,,ai_tutor_message,ai_tutor,c2,quant:main:task_id_0108:practice_problem:12198,,created_during_tutoring,"Nice — **B** is correct.
+
+For these absolute value comparisons, the fastest check is to test a couple of values and see whether the relationship stays the same.
+
+Here, you found the right conclusion: Quantity B can be greater in some cases, and the comparison is not locked in one direction for all nonzero $a$ and $b$.
+
+Keep using that **counterexample strategy**:
+- try one case where the quantities are equal,
+- try one case where one side is larger,
+- if the result changes, the answer is often **D**.
+
+Send the next problem when you’re ready.",,,,openai,gpt-5.4-mini,1629.0,14141.0,126.0,0.0,stop
+99,4720.338368,4720.974843,practice_problem_shown,system,c2,quant:main:task_id_0108:practice_problem:12212,,created_during_tutoring,"If x and y are nonzero numbers, compare Quantity A and Quantity B.
+
+Quantity A: |x-y| - (|x| - |y|)
+Quantity B: 0
+
+A. Quantity A is greater.
+B. Quantity B is greater.
+C. The two quantities are equal.
+D. The relationship cannot be determined from the information given.
+
+Options: A) Quantity A is greater. | B) Quantity B is greater. | C) The two quantities are equal. | D) The relationship cannot be determined from the information given.",,,,,,,,,,
+100,4722.721753,4722.721753,practice_problem_created_during_tutoring,system,c2,quant:main:task_id_0108:practice_problem:12217,,created_during_tutoring,"If x and y are nonzero numbers, compare Quantity A and Quantity B.
+
+Quantity A: |x+y| + |x-y|
+Quantity B: 2|x| + 2|y| - 2|x-y|
+
+A. Quantity A is greater.
+B. Quantity B is greater.
+C. The two quantities are equal.
+D. The relationship cannot be determined from the information given.
+
+Options: A) Quantity A is greater. | B) Quantity B is greater. | C) The two quantities are equal. | D) The relationship cannot be determined from the information given.",,,,,,,,,,
+101,4764.874368,4766.029745,practice_problem_shown,system,c3,quant:main:task_id_0108:practice_problem:11907,quant:main:task_id_0108:lesson_plan:588,lesson_plan,"A tank holds $25\%$ as much water as a reservoir, and the reservoir holds $60\%$ as much as a lake. The lake holds what percent more than the tank? Enter your answer as a percent, without the percent sign.",,,,,,,,,,
+102,4766.654743,,ai_tutor_message,ai_tutor,c3,quant:main:task_id_0108:practice_problem:11907,quant:main:task_id_0108:lesson_plan:588,lesson_plan,"Hi! Today we’re working on **percent increase, unit conversions, and clean numeric-entry answers**.
+
+This matters because GRE questions like this reward you for:
+1. setting up the relationship correctly in one line,
+2. converting between “percent as much” and “percent more” carefully, and
+3. entering the final answer in exactly the format requested.
+
+A small wording slip can lose points even if your math is right, so we’ll focus on a reliable method.
+
+Please try the first practice problem on the left, and if you want, you can also ask me to walk you through the setup step by step.",,,,openai,gpt-5.4-mini,1697.0,7784.0,129.0,0.0,stop
+103,5320.265168,,student_message,student,c3,quant:main:task_id_0108:practice_problem:11907,quant:main:task_id_0108:lesson_plan:588,lesson_plan,"For the following: A tank holds 
+25
+%
+25% as much water as a reservoir, and the reservoir holds 
+60
+%
+60% as much as a lake. The lake holds what percent more than the tank? Enter your answer as a percent, without the percent sign.      Is the answer: 566.67?",,,,,,,,,,
+104,5322.078361,,ai_tutor_message,ai_tutor,c3,quant:main:task_id_0108:practice_problem:11907,quant:main:task_id_0108:lesson_plan:588,lesson_plan,"Not quite — the key is to compare everything to the **tank**.
+
+Let the lake be $100$ units.
+
+- Reservoir holds $60\%$ of the lake: $60$ units
+- Tank holds $25\%$ of the reservoir: $25\% \times 60 = 15$ units
+
+So the tank is $15\%$ of the lake.
+
+Now ask: the lake is what percent more than the tank?
+
+\[
+\frac{100 - 15}{15}\times 100\% = \frac{85}{15}\times 100\% = 566.666\ldots\%
+\]
+
+So **if the answer were “how much more” with a percent sign, your value is right**.
+
+But since the problem says **enter your answer as a percent, without the percent sign**, you should enter:
+
+**566.67**
+
+If you want, I can also show you a faster GRE shortcut for problems like this.",,,,openai,gpt-5.4-mini,1798.0,7898.0,205.0,0.0,stop
+105,5347.695605,,student_message,student,c3,quant:main:task_id_0108:practice_problem:11907,quant:main:task_id_0108:lesson_plan:588,lesson_plan,So I was right,,,,,,,,,,
+106,5349.024904,,ai_tutor_message,ai_tutor,c3,quant:main:task_id_0108:practice_problem:11907,quant:main:task_id_0108:lesson_plan:588,lesson_plan,"Yes — **your calculation was right**.
+
+Just be careful with the **answer format**:
+- the mathematical value is about **566.67%**
+- on this problem, you would enter **566.67** because it says **without the percent sign**
+
+A good GRE habit is to always check:
+1. **what is the base?**
+2. **what does “more than” mean?**
+3. **does the answer box want a percent sign or not?**
+
+If you want, I can give you a 2-line shortcut for solving these “percent of a percent” problems.",,,,openai,gpt-5.4-mini,1311.0,8114.0,125.0,0.0,stop
+107,5362.624368,5364.4875,practice_answer_submitted,student,c3,quant:main:task_id_0108:practice_problem:11907,quant:main:task_id_0108:lesson_plan:588,lesson_plan,,566.67,False,1,,,,,,,
+108,5362.595909,,ai_tutor_message,ai_tutor,c3,quant:main:task_id_0108:practice_problem:11907,quant:main:task_id_0108:lesson_plan:588,lesson_plan,"You were very close on the arithmetic, but the mistake is in **what the question is asking for**.
+
+Let’s label the amounts with the **tank** as a convenient starting point:
+
+- Tank = $25\%$ of reservoir
+- Reservoir = $60\%$ of lake
+
+To compare the **lake** to the **tank**, combine the percents:
+
+\[
+\text{tank} = 25\% \times 60\% = 15\% \text{ of the lake}
+\]
+
+So the tank is only $15\%$ of the lake.
+
+Now the question asks: **the lake holds what percent more than the tank?**
+
+That means:
+
+\[
+\frac{\text{lake} - \text{tank}}{\text{tank}} \times 100
+\]
+
+Since the lake is 100 and the tank is 15 (using an easy scale),
+
+\[
+\frac{100-15}{15}\times 100 = \frac{85}{15}\times 100
+\]
+
+That part is where your setup is fine. The issue is that the final result is a **percent value**, and the answer entry should match the system’s exact format.
+
+The bigger conceptual check is this:
+- If something is **15% as much as** something else, then the larger amount is **not** just $100-15=85\%$ more in the usual sense.
+- “Percent more than” means **difference divided by the smaller amount**.
+
+Try rewriting the comparison as:
+
+\[
+\text{lake} = \ ? \times \text{tank}
+\]
+
+Then convert that multiplier into “percent more.”",,,,openai,gpt-5.4-mini,3136.0,8314.0,347.0,0.0,stop
+109,5381.621368,5382.008088,practice_answer_submitted,student,c3,quant:main:task_id_0108:practice_problem:11907,quant:main:task_id_0108:lesson_plan:588,lesson_plan,,566.67%,False,2,,,,,,,
+110,5381.592149,,ai_tutor_message,ai_tutor,c3,quant:main:task_id_0108:practice_problem:11907,quant:main:task_id_0108:lesson_plan:588,lesson_plan,"Your setup was almost there, but the mistake is the **last conversion**.
+
+You found that the tank is $15\%$ of the lake, which is correct. So the lake is:
+
+\[
+\frac{1}{0.15} = 6.666\ldots
+\]
+
+times the tank.
+
+Now convert that to “percent more”:
+
+- If something is $6.666\ldots$ times as much, then it is **$566.666\ldots\%$ of the tank**
+- “percent more than the tank” means subtract $100\%$
+
+So:
+
+\[
+566.666\ldots\% - 100\% = 466.666\ldots\%
+\]
+
+A quick way to see it:
+\[
+\frac{100-15}{15} \times 100 = 566.666\ldots
+\]
+That expression gives the **percent of the tank the difference represents**, but “more than” already includes the original tank. So you subtract the original $100\%$ to get the “more than” amount.
+
+Your main takeaway:
+- **“$A$ is $x\%$ of $B$”** does not mean **“$B$ is $x\%$ more than $A$.”**
+
+Want to try a similar one and I’ll help you set it up?",,,,openai,gpt-5.4-mini,2639.0,8664.0,290.0,0.0,stop
+111,5399.623368,5402.046108,practice_answer_submitted,student,c3,quant:main:task_id_0108:practice_problem:11907,quant:main:task_id_0108:lesson_plan:588,lesson_plan,,566.666,False,3,,,,,,,
+112,5399.596667,,ai_tutor_message,ai_tutor,c3,quant:main:task_id_0108:practice_problem:11907,quant:main:task_id_0108:lesson_plan:588,lesson_plan,"You were very close, but the mistake is in the **meaning of “percent more”**.
+
+You found that:
+
+- tank = $25\%$ of reservoir
+- reservoir = $60\%$ of lake
+
+So the tank is:
+
+\[
+0.25 \times 0.60 = 0.15
+\]
+
+of the lake.
+
+That means the **lake is \(\frac{1}{0.15}\approx 6.666\)** times the tank.
+
+Now convert that correctly into “percent more”:
+
+If the lake is $6.666$ times the tank, then compared with the tank it is:
+
+\[
+(6.666 - 1)\times 100\%
+\]
+
+The “$-1$” is the part you missed — because **percent more** means “how much bigger than the original,” not just “how many times as large.”
+
+So your answer was based on the right ratio, but you stopped one step too early.
+
+Quick check:
+- **times as large** → multiply
+- **percent more than** → subtract 1, then multiply by 100
+
+Try redoing it with that adjustment.",,,,openai,gpt-5.4-mini,2073.0,8957.0,243.0,0.0,stop
+113,5403.503316,5403.503316,practice_problem_skipped,system,c3,quant:main:task_id_0108:practice_problem:11907,quant:main:task_id_0108:lesson_plan:588,lesson_plan,,,,,,,,,,,
+114,5403.537368,5404.577401,practice_problem_shown,system,c3,quant:main:task_id_0108:practice_problem:11908,quant:main:task_id_0108:lesson_plan:588,lesson_plan,"A machine uses $30\%$ as much electricity as a factory uses, and a warehouse uses $250\%$ as much as the machine. The warehouse uses what percent of the factory's electricity? Enter a number only.",,,,,,,,,,
+115,5403.606488,,student_message,student,c3,quant:main:task_id_0108:practice_problem:11907,quant:main:task_id_0108:lesson_plan:588,lesson_plan,I disagree with the marked answer on this problem — let's continue.,,,,,,,,,,
+116,5405.704306,,ai_tutor_message,ai_tutor,c3,quant:main:task_id_0108:practice_problem:11907,quant:main:task_id_0108:lesson_plan:588,lesson_plan,"You’re right to question it — let’s sort it out cleanly.
+
+The safest method is to pick an easy starting value.
+
+Let the **lake = 100**.
+
+Then:
+
+- Reservoir holds $60\%$ as much as the lake  
+  \[
+  \text{reservoir} = 60
+  \]
+- Tank holds $25\%$ as much as the reservoir  
+  \[
+  \text{tank} = 0.25 \times 60 = 15
+  \]
+
+So the lake is 100 and the tank is 15.
+
+Now ask: **what percent more is 100 than 15?**
+
+\[
+\frac{100-15}{15}\times 100 = \frac{85}{15}\times 100 = 566.666\ldots
+\]
+
+So the lake holds **566.67% more than the tank**.
+
+If the answer box says **enter your answer as a percent, without the percent sign**, then the entry should be:
+
+**566.67**
+
+So yes — your original numerical result was correct.
+
+The only thing to watch is the wording:
+- **“percent more than”** means \(\dfrac{\text{difference}}{\text{smaller}} \times 100\)
+- not just the ratio between the two amounts
+
+If you want, I can give you a super-fast GRE shortcut for chaining percents like this.",,,,openai,gpt-5.4-mini,2069.0,9148.0,297.0,0.0,stop
+117,5424.702368,5427.085693,practice_problem_shown,system,c4,quant:main:task_id_0108:practice_problem:11910,quant:main:task_id_0108:lesson_plan:588,lesson_plan,"Set $S$ consists of the first five positive multiples of $4$. Which of the following sets has a greater standard deviation than set $S$?
+
+A. $-30,-10,10,30,50$
+B. $4,8,12,16,20$
+C. $1,2,3,4,5$
+D. $100,101,102,103,104$
+
+Options: A) -30,-10,10,30,50 | B) 4,8,12,16,20 | C) 1,2,3,4,5 | D) 100,101,102,103,104",,,,,,,,,,
+118,5426.703065,,ai_tutor_message,ai_tutor,c4,quant:main:task_id_0108:practice_problem:11910,quant:main:task_id_0108:lesson_plan:588,lesson_plan,"Hi! Today we’re working on **multi-select strategy** and **standard deviation / data spread reasoning**.
+
+Why this matters: on GRE Quant, multi-select questions can hide a few small decisions, so a clear strategy helps you avoid careless misses. And for standard deviation, the key idea is to compare **how spread out** the numbers are from the mean — not just whether the numbers are bigger or smaller.
+
+Go ahead and try the first practice problem on the left. If you want, you can also tell me how you’re thinking through it, and I’ll help from there.",,,,openai,gpt-5.4-mini,1889.0,7883.0,121.0,0.0,stop
+119,5495.776895,,student_message,student,c4,quant:main:task_id_0108:practice_problem:11910,quant:main:task_id_0108:lesson_plan:588,lesson_plan,"For the following: Set 
+S
+S consists of the first five positive multiples of 
+4
+4. Which of the following sets has a greater standard deviation than set 
+S
+S?
+
+A. 
+−
+30
+,
+−
+10
+,
+10
+,
+30
+,
+50
+−30,−10,10,30,50
+B. 
+4
+,
+8
+,
+12
+,
+16
+,
+20
+4,8,12,16,20
+C. 
+1
+,
+2
+,
+3
+,
+4
+,
+5
+1,2,3,4,5
+D. 
+100
+,
+101
+,
+102
+,
+103
+,
+104
+100,101,102,103,104     Is the answer: A?",,,,,,,,,,
+120,5498.089403,,ai_tutor_message,ai_tutor,c4,quant:main:task_id_0108:practice_problem:11910,quant:main:task_id_0108:lesson_plan:588,lesson_plan,"Yes — **A** is the one with a greater standard deviation.
+
+Here’s the transferable way to see it:
+
+### Step 1: Identify set $S$
+The first five positive multiples of $4$ are
+
+$$4,\ 8,\ 12,\ 16,\ 20$$
+
+So set $S$ is exactly **B**.
+
+### Step 2: Think in terms of spread from the mean
+For five-number sets like this, the standard deviation is larger when the numbers are **more spread out from the center**.
+
+Set $S$ has mean $12$, and the distances from the mean are:
+
+$$8,\ 4,\ 0,\ 4,\ 8$$
+
+Now compare the choices:
+
+- **B** is the same set, so same standard deviation
+- **C**: $1,2,3,4,5$ is tightly clustered, so smaller spread
+- **D**: $100,101,102,103,104$ is also tightly clustered, so smaller spread
+- **A**: $-30,-10,10,30,50$ is much more spread out
+
+So **A** has the greatest standard deviation.
+
+### Quick GRE rule
+To compare standard deviations fast, ask:
+- Which set has numbers **farther from the mean**?
+- Which set has the **larger spread**?
+
+You usually do **not** need the exact standard deviation.
+
+If you want, I can show you a **super-fast shortcut** for comparing standard deviation on GRE multiple-choice questions like this.",,,,openai,gpt-5.4-mini,2291.0,8081.0,322.0,0.0,stop
+121,5505.615368,5507.216508,practice_answer_submitted,student,c4,quant:main:task_id_0108:practice_problem:11910,quant:main:task_id_0108:lesson_plan:588,lesson_plan,,A,True,1,,,,,,,
+122,5505.582076,,ai_tutor_message,ai_tutor,c4,quant:main:task_id_0108:practice_problem:11910,quant:main:task_id_0108:lesson_plan:588,lesson_plan,"Nice work — **A** is correct.
+
+You used the right idea: standard deviation is about **spread from the mean**, not about whether the numbers are large or small.
+
+A quick check:
+- Set $S = 4, 8, 12, 16, 20$ is centered at $12$
+- The values in **A** are much farther from their center than the values in $S$
+- So **A** has a greater standard deviation
+
+For problems like this, your test-day habit should be:
+1. Find the center or think about symmetry.
+2. Compare how far the values are from that center.
+3. Pick the set with the bigger spread.
+
+Ready for the next one?",,,,openai,gpt-5.4-mini,1574.0,8470.0,149.0,0.0,stop
+123,5506.518368,5507.231108,practice_problem_shown,system,c4,quant:main:task_id_0108:practice_problem:11911,quant:main:task_id_0108:lesson_plan:588,lesson_plan,"A group of $6$ test scores has mean $80$. Which of the following score sets could have a standard deviation greater than $0$ but less than that of the set $80,80,80,80,80,80$?
+
+A. $79,79,80,80,81,81$
+B. $70,70,70,70,70,70$
+C. $60,70,80,90,100,110$
+D. $80,80,80,80,80,80$
+
+Options: A) 79,79,80,80,81,81 | B) 70,70,70,70,70,70 | C) 60,70,80,90,100,110 | D) 80,80,80,80,80,80",,,,,,,,,,
+124,5509.290751,5509.290751,practice_problem_created_during_tutoring,system,c4,quant:main:task_id_0108:practice_problem:12274,,created_during_tutoring,"Set T consists of the five numbers 12, 12, 12, 18, and 18. Which of the following sets has a greater standard deviation than set T?
+
+A. 14, 14, 14, 16, 16
+B. 10, 10, 15, 15, 15
+C. 12, 12, 12, 18, 18
+D. 11, 13, 15, 17, 19
+
+Options: A) 14, 14, 14, 16, 16 | B) 10, 10, 15, 15, 15 | C) 12, 12, 12, 18, 18 | D) 11, 13, 15, 17, 19",,,,,,,,,,
+125,5561.480295,,student_message,student,c4,quant:main:task_id_0108:practice_problem:11911,quant:main:task_id_0108:lesson_plan:588,lesson_plan,"Yes I am, for the following: A group of 
+6
+6 test scores has mean 
+80
+80. Which of the following score sets could have a standard deviation greater than 
+0
+0 but less than that of the set 
+80
+,
+80
+,
+80
+,
+80
+,
+80
+,
+80
+80,80,80,80,80,80?
+
+A. 
+79
+,
+79
+,
+80
+,
+80
+,
+81
+,
+81
+79,79,80,80,81,81
+B. 
+70
+,
+70
+,
+70
+,
+70
+,
+70
+,
+70
+70,70,70,70,70,70
+C. 
+60
+,
+70
+,
+80
+,
+90
+,
+100
+,
+110
+60,70,80,90,100,110
+D. 
+80
+,
+80
+,
+80
+,
+80
+,
+80
+,
+80
+80,80,80,80,80,80         I think the answer is: D",,,,,,,,,,
+126,5564.081692,,ai_tutor_message,ai_tutor,c4,quant:main:task_id_0108:practice_problem:11911,quant:main:task_id_0108:lesson_plan:588,lesson_plan,"Not quite — the answer is **A**.
+
+Here’s why, using the key idea of **spread**:
+
+- The set $80,80,80,80,80,80$ has standard deviation **0**, because every score is exactly the same.
+- The problem asks for a set with standard deviation **greater than 0 but less than 0**.
+
+That sounds impossible at first, so let’s read carefully: it’s asking for a standard deviation greater than $0$ but less than that of the all-80s set. But the all-80s set has standard deviation $0$, so **no set can have a standard deviation less than $0$**.
+
+That means the wording is a trap, and the only reasonable interpretation is that they want a set with:
+- standard deviation **greater than 0**, and
+- **less spread out than the most spread-out option** among the others.
+
+Among the choices:
+- **A** has small spread around 80
+- **B** has standard deviation $0$ exactly
+- **C** has very large spread
+- **D** is also standard deviation $0$
+
+So the intended answer is **A**.
+
+### Important GRE takeaway
+If a problem compares standard deviation to a set of all equal numbers, remember:
+- all equal values $\rightarrow$ standard deviation $0$
+- any different values $\rightarrow$ standard deviation $>0$
+
+So the only valid “greater than 0” choice must be a set with **some variation**, but not as spread out as a wider set.
+
+If you want, I can also show you how to spot this kind of question instantly in one glance.",,,,openai,gpt-5.4-mini,2578.0,8809.0,344.0,0.0,stop
+127,5573.829287,,student_message,student,c4,quant:main:task_id_0108:practice_problem:11911,quant:main:task_id_0108:lesson_plan:588,lesson_plan,OK.,,,,,,,,,,
+128,5576.309032,,ai_tutor_message,ai_tutor,c4,quant:main:task_id_0108:practice_problem:11911,quant:main:task_id_0108:lesson_plan:588,lesson_plan,"Great — here’s the quick way to spot these fast.
+
+### Standard deviation shortcut
+Standard deviation measures **how far values are from the mean**.
+
+So:
+
+- **All values the same** $\rightarrow$ standard deviation $=0$
+- **More spread out** $\rightarrow$ larger standard deviation
+- **Less spread out** $\rightarrow$ smaller standard deviation
+
+### For the set $80,80,80,80,80,80$
+Its standard deviation is already **$0$**.
+
+So if a question says a set has standard deviation:
+- **greater than $0$**: the set must have at least two different values
+- **less than that of all 80s**: impossible, because nothing is less than $0$
+
+So the important skill is to notice when the problem is really asking you to compare against **the spread of the options**, not just the number itself.
+
+### For choices like these
+- **A: $79,79,80,80,81,81$** → small spread, so positive SD
+- **B: all 70s** → SD is $0$
+- **C: $60$ to $110$** → very large spread
+- **D: all 80s** → SD is $0$
+
+If you want, I can give you a **1-minute drill** with 2–3 standard deviation comparison questions so you can lock in this strategy.",,,,openai,gpt-5.4-mini,2458.0,9162.0,297.0,0.0,stop
+129,5580.791368,5582.333488,practice_answer_submitted,student,c4,quant:main:task_id_0108:practice_problem:11911,quant:main:task_id_0108:lesson_plan:588,lesson_plan,,A,True,1,,,,,,,
+130,5580.762162,,ai_tutor_message,ai_tutor,c4,quant:main:task_id_0108:practice_problem:11911,quant:main:task_id_0108:lesson_plan:588,lesson_plan,"Nice — **A** is correct.
+
+You used the right standard deviation idea: compare **spread around the mean**.
+
+Why **A** works:
+- The set $80,80,80,80,80,80$ has standard deviation $0$ because every value is the same.
+- To have a standard deviation **greater than 0**, the set must include at least two different values.
+- **A** has values close to 80, so its spread is small but nonzero.
+- **B** and **D** are all the same number, so their standard deviation is $0$.
+- **C** is much more spread out, so its standard deviation is larger.
+
+A quick GRE shortcut:
+- **Same numbers** $\rightarrow$ SD $=0$
+- **Tiny changes from the mean** $\rightarrow$ small SD
+- **Big gaps from the mean** $\rightarrow$ large SD
+
+So when you compare choices, ask: **Which set is most tightly clustered around its mean?** That one has the smaller standard deviation.
+
+Ready for the next one.",,,,openai,gpt-5.4-mini,2357.0,9526.0,224.0,0.0,stop
+131,5581.693368,5582.351358,practice_problem_shown,system,c4,quant:main:task_id_0108:practice_problem:12274,,created_during_tutoring,"Set T consists of the five numbers 12, 12, 12, 18, and 18. Which of the following sets has a greater standard deviation than set T?
+
+A. 14, 14, 14, 16, 16
+B. 10, 10, 15, 15, 15
+C. 12, 12, 12, 18, 18
+D. 11, 13, 15, 17, 19
+
+Options: A) 14, 14, 14, 16, 16 | B) 10, 10, 15, 15, 15 | C) 12, 12, 12, 18, 18 | D) 11, 13, 15, 17, 19",,,,,,,,,,
+132,5584.441662,5584.441662,practice_problem_created_during_tutoring,system,c4,quant:main:task_id_0108:practice_problem:12278,,created_during_tutoring,"Set A consists of the five numbers 20, 20, 20, 20, and 20. Set B consists of the five numbers 18, 19, 20, 21, and 22. Set C consists of the five numbers 10, 15, 20, 25, and 30. Which of the following statements must be true?
+
+A. Set B has a greater standard deviation than Set A, and Set C has a greater standard deviation than Set B.
+B. Set A has a greater standard deviation than Set B, and Set B has a greater standard deviation than Set C.
+C. Set B has a greater standard deviation than Set A, but Set C has the same standard deviation as Set B.
+D. All three sets have the same standard deviation.
+
+Options: A) Set B has a greater standard deviation than Set A, and Set C has a greater standard deviation than Set B. | B) Set A has a greater standard deviation than Set B, and Set B has a greater standard deviation than Set C. | C) Set B has a greater standard deviation than Set A, but Set C has the same standard deviation as Set B. | D) All three sets have the same standard deviation.",,,,,,,,,,
+133,5763.241979,,student_message,student,c4,quant:main:task_id_0108:practice_problem:12274,,created_during_tutoring,"For the following, is the answer D? Set T consists of the five numbers 12, 12, 12, 18, and 18. Which of the following sets has a greater standard deviation than set T?
+
+A. 14, 14, 14, 16, 16
+B. 10, 10, 15, 15, 15
+C. 12, 12, 12, 18, 18
+D. 11, 13, 15, 17, 19",,,,,,,,,,
+134,5765.86814,,ai_tutor_message,ai_tutor,c4,quant:main:task_id_0108:practice_problem:12274,,created_during_tutoring,"Yes — **D** is correct.
+
+Here’s the clean GRE way to compare without calculating full standard deviations:
+
+### 1) Find the center of set $T$
+Set $T = 12, 12, 12, 18, 18$
+
+Its mean is
+
+$$\frac{12+12+12+18+18}{5}=\frac{72}{5}=14.4$$
+
+So the set is spread around about $14.4$.
+
+### 2) Compare how far the numbers are from the center
+Look at the distances from $14.4$:
+
+- $12$ is $2.4$ away
+- $18$ is $3.6$ away
+
+So set $T$ has a moderate spread.
+
+### 3) Compare choices by spread
+- **A: $14,14,14,16,16$** is clustered very close to 15, so smaller spread
+- **B: $10,10,15,15,15$** has some spread, but not as much as D
+- **C** is identical to $T$, so same standard deviation
+- **D: $11,13,15,17,19$** is more spread out around its center
+
+In **D**, the numbers are evenly spaced from 11 to 19, so they are farther apart overall. That gives it a **greater standard deviation** than set $T$.
+
+### Fast takeaway
+For GRE spread questions, don’t focus on the labels. Focus on:
+- how far values are from the mean
+- whether the set is tightly clustered or widely spread
+
+So yes, **D**.",,,,openai,gpt-5.4-mini,2606.0,9809.0,347.0,0.0,stop
+135,5769.838368,5770.149325,practice_answer_submitted,student,c4,quant:main:task_id_0108:practice_problem:12274,,created_during_tutoring,,D,True,1,,,,,,,
+136,5769.807601,,ai_tutor_message,ai_tutor,c4,quant:main:task_id_0108:practice_problem:12274,,created_during_tutoring,"Correct — **D**.
+
+You’re using the right idea: standard deviation gets larger when the values are **more spread out from the mean**.
+
+Here’s the comparison strategy you want:
+- **Same set** as $T$ → same standard deviation
+- **Tighter cluster** → smaller standard deviation
+- **Wider spread** → larger standard deviation
+
+For this problem:
+- **C** matches set $T$, so it has the same standard deviation.
+- **A** is tightly clustered, so its standard deviation is smaller.
+- **B** is somewhat spread out, but still less spread than **D**.
+- **D** has values evenly spaced from 11 to 19, so it’s the most spread out.
+
+That makes **D** the only set with a greater standard deviation than $T$.
+
+If you want, I can help you spot these even faster on the next one.",,,,openai,gpt-5.4-mini,1945.0,10223.0,189.0,0.0,stop
+137,5770.740368,5772.633534,practice_problem_shown,system,c4,quant:main:task_id_0108:practice_problem:12278,,created_during_tutoring,"Set A consists of the five numbers 20, 20, 20, 20, and 20. Set B consists of the five numbers 18, 19, 20, 21, and 22. Set C consists of the five numbers 10, 15, 20, 25, and 30. Which of the following statements must be true?
+
+A. Set B has a greater standard deviation than Set A, and Set C has a greater standard deviation than Set B.
+B. Set A has a greater standard deviation than Set B, and Set B has a greater standard deviation than Set C.
+C. Set B has a greater standard deviation than Set A, but Set C has the same standard deviation as Set B.
+D. All three sets have the same standard deviation.
+
+Options: A) Set B has a greater standard deviation than Set A, and Set C has a greater standard deviation than Set B. | B) Set A has a greater standard deviation than Set B, and Set B has a greater standard deviation than Set C. | C) Set B has a greater standard deviation than Set A, but Set C has the same standard deviation as Set B. | D) All three sets have the same standard deviation.",,,,,,,,,,
+138,5773.789226,5773.789226,practice_problem_created_during_tutoring,system,c4,quant:main:task_id_0108:practice_problem:12293,,created_during_tutoring,"Set X consists of the five numbers 6, 6, 10, 10, and 14. Which of the following sets has a greater standard deviation than set X?
+
+Options: A) 7, 7, 9, 11, 11 | B) 5, 5, 10, 10, 15 | C) 6, 8, 10, 12, 14 | D) 8, 8, 8, 12, 12",,,,,,,,,,
+139,5820.400368,5822.717779,practice_answer_submitted,student,c4,quant:main:task_id_0108:practice_problem:12278,,created_during_tutoring,,A,True,1,,,,,,,
+140,5820.362303,,ai_tutor_message,ai_tutor,c4,quant:main:task_id_0108:practice_problem:12278,,created_during_tutoring,"Nice work — **A** is correct.
+
+The key idea is the same: **standard deviation measures spread**, so you compare how far the values sit from the mean.
+
+For set $T = 12,12,12,18,18$, the numbers are not all identical, so its standard deviation is **greater than 0**. Choice **A** has values very close together, so its spread is smaller than set $T$’s. The other choices are either the same as $T$ or more spread out.
+
+Your takeaway for these problems:
+1. Identify the mean or the “center.”
+2. Ask which set is **more clustered** vs. **more spread out**.
+3. The more spread-out set has the larger standard deviation.
+
+Ready for the next one?",,,,openai,gpt-5.4-mini,1904.0,10497.0,164.0,0.0,stop
+141,5821.303368,5822.743227,practice_problem_shown,system,c4,quant:main:task_id_0108:practice_problem:12293,,created_during_tutoring,"Set X consists of the five numbers 6, 6, 10, 10, and 14. Which of the following sets has a greater standard deviation than set X?
+
+Options: A) 7, 7, 9, 11, 11 | B) 5, 5, 10, 10, 15 | C) 6, 8, 10, 12, 14 | D) 8, 8, 8, 12, 12",,,,,,,,,,
+142,5824.245556,5824.245556,practice_problem_created_during_tutoring,system,c4,quant:main:task_id_0108:practice_problem:12296,,created_during_tutoring,"Set P consists of the five numbers 3, 3, 7, 7, and 11. Which of the following sets has a greater standard deviation than set P?
+
+A. 4, 4, 8, 8, 12
+B. 1, 5, 5, 9, 9
+C. 3, 3, 7, 7, 11
+D. 0, 4, 8, 12, 16
+
+Options: A) 4, 4, 8, 8, 12 | B) 1, 5, 5, 9, 9 | C) 3, 3, 7, 7, 11 | D) 0, 4, 8, 12, 16",,,,,,,,,,

@@ -1,0 +1,290 @@
+[
+  {
+    "session": "task_id_0177",
+    "criterion": "回答能否代 2，说明原分母为零。可以让学生选合法值或因式分解。答清这个具体疑问即可，避免代做其余整题。",
+    "replies": {
+      "X": "Right—you **can’t substitute $x=2$ into the original expression**, because its denominator would be zero. But you can test other values, or use the condition $x\\ne2$ to simplify.\n\nA useful first step is to factor the numerator using the difference of squares: $x^2-4=(x-2)(x+2)$. What happens when you simplify Quantity A for $x\\ne2$?",
+      "Y": "Good question — **yes, you should not test $x=2$**, because the expression $\\dfrac{x^2-4}{x-2}$ would be undefined there.\n\nBut that’s not the main reason this problem is interesting. The key is to **simplify the expression algebraically** first.\n\n### Step 1: Factor the numerator\n$$x^2 - 4 = (x-2)(x+2)$$\n\nSo Quantity A becomes\n$$\\frac{(x-2)(x+2)}{x-2}$$\n\nSince $x \\ne 2$, you can cancel $(x-2)$:\n$$x+2$$\n\n### Step 2: Compare\nNow Quantity A is just $x+2$, which is exactly Quantity B.\n\nSo the two quantities are equal.\n\n### Big idea\nWhen a GRE problem says a value is excluded, it often means:\n- you **can’t plug in the excluded value**\n- but you **can simplify the expression for all allowed values**\n\nThat’s the transferable skill here: **factor first, then cancel only when the denominator is not zero**.\n\nIf you want, I can give you a quick rule for when cancellation is valid and when it’s not.",
+      "Z": "Right—you **can’t use $x=2$ as a test value**, because the problem explicitly excludes it, and Quantity A’s denominator would be zero there.\n\nBut you can factor the numerator:\n$$x^2-4=(x-2)(x+2).$$\nSince $x\\ne2$, cancel the common factor $x-2$:\n$$\\frac{(x-2)(x+2)}{x-2}=x+2.$$\n\nSo for every allowed value of $x$, the quantities are equal. The key distinction is that cancellation works only because $x-2\\ne0$; it doesn’t make the original expression defined at $x=2$."
+    }
+  },
+  {
+    "session": "task_id_0197",
+    "criterion": "对准“大 x 会让前面的 4 不重要”这一理由。用公共正因子或等价变形说明为何系数仍有作用，并给学生留一个因子或大小的判断。",
+    "replies": {
+      "X": "Good instinct to compare the structures, but in this case the key idea is:\n\n\\[\n2^{x+1} = 2 \\cdot 2^x\n\\]\n\nSo Quantity A is really just **2 times** \\(2^x\\), while Quantity B is\n\n\\[\n4 \\cdot 2^x\n\\]\n\nNow both quantities have the same factor \\(2^x\\). So compare the coefficients:\n\n- Quantity A: \\(2 \\cdot 2^x\\)\n- Quantity B: \\(4 \\cdot 2^x\\)\n\nSince \\(4 > 2\\), Quantity B is greater.\n\nA useful GRE habit: when you see exponents, try to **rewrite them so the powers match** before comparing. Here the “\\(+1\\)” does matter, but not in the way of making A larger automatically — it changes the coefficient.\n\nIf you want, I can show you a fast rule for comparing expressions like \\(2^{x+1}\\), \\(4\\cdot 2^x\\), and \\(8\\cdot 2^{x-1}\\) without expanding anything.",
+      "Y": "I see why the “$+1$” looks like it might make A larger—but with exponents, adding 1 means multiplying by 2:\n\n$$2^{x+1}=2^x\\cdot 2.$$\n\nSo Quantity A is $2\\cdot 2^x$, while Quantity B is $4\\cdot 2^x$. Since $2^x$ is positive for every integer $x$, both quantities share the same positive factor. You can compare the remaining factors: $2$ and $4$.\n\nEven when $x$ is very large, it scales **both** quantities by the same amount; the factor of 4 in B still matters. Which quantity is greater?",
+      "Z": "Not quite—the “$+1$” is part of the **exponent**, so use the exponent rule to rewrite Quantity A:\n\n$$2^{x+1}=2^x\\cdot 2.$$\n\nQuantity B is $2^x\\cdot 4$. Since $2^x$ is positive for every integer $x$, both quantities share the same positive factor. Compare the remaining factors, $2$ and $4$: which quantity is greater?\n\nThe factor $4$ doesn’t become irrelevant when $x$ is large; both quantities grow by the same factor $2^x$."
+    }
+  },
+  {
+    "session": "task_id_0241",
+    "criterion": "学生已将 A 化为 1，也注意到正的 m 可在 1 的两侧。认可这个足以支持 D 的论证，可简短澄清允许范围。再次要求证明同一点才算过关，视为重复补教。",
+    "replies": {
+      "X": "Exactly. Since $m$ is positive, $\\sqrt{m^2}=m$, so Quantity A simplifies to\n\n$$\\frac{m}{m}=1.$$\n\nYou’re comparing $1$ with an unspecified positive number $m$. For example, $m=\\tfrac12$ makes Quantity A greater, while $m=2$ makes Quantity B greater (and $m=1$ makes them equal). So the relationship **cannot be determined**: **D**.\n\nYour check of different possible values is a strong QC strategy whenever a variable’s range doesn’t fix the comparison.",
+      "Y": "You simplified Quantity A correctly: since $m$ is positive, $\\sqrt{m^2}=m$, so Quantity A is $1$. Now you’re comparing $1$ with $m$.\n\nTo check whether the relationship is fixed, try the allowed value $m=2$. What do you get for each quantity, and what does that tell you?",
+      "Z": "Yes — that’s the right conclusion.\n\nBecause $m$ is positive,\n\n$$\\sqrt{m^2} = |m| = m,$$\n\nso\n\n$$\\frac{\\sqrt{m^2}}{m}=\\frac{m}{m}=1.$$\n\nSo the comparison is really:\n\n- Quantity A = $1$\n- Quantity B = $m$\n\nAnd since all you know is that $m>0$, $m$ could be less than $1$, equal to $1$, or greater than $1$.\n\nSo the relationship **cannot be determined**.\n\nNice job spotting the simplification. The GRE lesson here is: when you see $\\sqrt{x^2}$, rewrite it as $|x|$, not just $x$ automatically."
+    }
+  },
+  {
+    "session": "task_id_0329",
+    "criterion": "解决学生对评分的异议。按显示的根式，A 为 0，B 为负，选择 A 正确。须澄清上句说 B 的矛盾或明确支持学生；若区分粘贴渲染和显示题面也可。",
+    "replies": {
+      "X": "If Quantity A is $\\sqrt{x^2}-|x|$, then **A is greater**:\n\n$$\\sqrt{x^2}=|x|,$$\n\nso Quantity A is $0$. Since $x<0$, Quantity B is negative; therefore $0>x$.\n\nI’m sorry: my earlier reply contradicted itself. Under this expression, the correct choice is **A**.",
+      "Y": "**A. Quantity A is greater.**\n\nIf Quantity A is $x^2-|x|$, then because $x<0$, $|x|=-x$. Thus Quantity A is $x^2+x$. Compare it with Quantity B, $x$:\n\n$$(x^2+x)-x=x^2>0.$$\n\nSo Quantity A is greater. If you meant $\\sqrt{x^2}-|x|$, the answer is still A: Quantity A is $0$, while $x<0$.",
+      "Z": "Let’s simplify Quantity A carefully:\n\n$$x^2 - |x|$$\n\nSince $x<0$, we know\n\n$$|x|=-x.$$\n\nSo Quantity A becomes\n\n$$x^2 - (-x)=x^2+x.$$\n\nQuantity B is just\n\n$$x.$$\n\nNow compare:\n\n$$x^2+x \\quad \\text{vs.} \\quad x$$\n\nSubtract $x$ from both quantities:\n\n$$x^2 \\quad \\text{vs.} \\quad 0.$$\n\nBecause $x<0$, $x^2$ is **positive**, so\n\n$$x^2 > 0.$$\n\nTherefore Quantity A is greater.\n\n### Answer: **A**\n\nQuick mental shortcut:\n- Replace $|x|$ with $-x$ if $x<0$\n- Then compare the simplified expressions\n- If you get something like $x^2$ versus $0$, remember a square is positive for any nonzero $x$\n\nIf you want, I can give you 2–3 more QC problems like this for fast practice."
+    }
+  },
+  {
+    "session": "task_id_0425",
+    "criterion": "直接认可学生对 1 与 −1 的比较，确认负 x 时 A 恒等于 1，必要时指出评分冲突。学生已给出最终判断，无须再要求重做。",
+    "replies": {
+      "X": "Yes — exactly.\n\nSince $x$ is negative:\n\n$$\\sqrt{x^2}=|x|=-x$$\n\nso\n\n$$\\frac{\\sqrt{x^2}}{-x}=\\frac{-x}{-x}=1.$$\n\nAnd Quantity B is $-1$.\n\nBecause\n\n$$1>-1,$$\n\n**Quantity A is greater**.\n\nSo the correct choice is **A**.\n\nYou had the right comparison idea; the key was just making sure the square root simplifies correctly first.",
+      "Y": "Yes—you’re exactly right: $1>-1$, so Quantity A is always greater than Quantity B. The correct choice is **A**.\n\nI mistakenly said your submission of A was incorrect, but your reasoning is correct. In general, use $\\sqrt{x^2}=|x|$; since $x<0$, $|x|=-x$, so Quantity A equals $1$.",
+      "Z": "Yes—exactly. Since $x<0$, we have $\\sqrt{x^2}=|x|=-x$, so Quantity A is\n\n$$\\frac{-x}{-x}=1.$$\n\nQuantity B is $-1$, and $1>-1$. Therefore **Quantity A is always greater (choice A)**. If the practice panel marked A incorrect, that appears to be a grading error."
+    }
+  },
+  {
+    "session": "task_id_0471",
+    "criterion": "承认 A≥6 的观察。区别总是严格大于与可能取等，让学生检验等号或区间/区间外的情形。若已直接解决具体疑问，至少说明为什么 ≥ 不足以选 A。",
+    "replies": {
+      "X": "Your reasoning that Quantity A is **at least** \\(6\\) is right. The subtle point is that QC option A means **strictly greater for every allowed \\(x\\)**—not “greater than or equal.”\n\nCheck two values:\n- At \\(x=0\\), compare \\( |0-1|+|0+5| \\) with \\(6\\).\n- At \\(x=2\\), compare \\( |2-1|+|2+5| \\) with \\(6\\).\n\nEvaluate those and notice whether the relationship is the same in both cases. If one case gives equality and the other gives Quantity A greater, the answer is **D**, not A.",
+      "Y": "Yes — that’s the right reasoning, and the key is the GRE meaning of the QC choices.\n\nIf Quantity A is **never less than 6**, then:\n\n- it can be **equal** to 6 for some \\(x\\)\n- it can be **greater** than 6 for other \\(x\\)\n\nIn Quantitative Comparison, that still counts as **A** if Quantity B is 6, because the question is effectively asking whether A is ever less, equal, or greater than B across the allowed values.\n\nHere, the important fact is:\n\n$$|x-1|+|x+5| \\ge 6$$\n\nand equality does happen for some \\(x\\) values, but **Quantity B is never greater**.\n\nSo your conclusion is solid:\n- **A is the correct choice**\n\n### Tiny correction to your wording\nYou said “in general, it should be greater than or equal to Quantity B.”  \nThat’s fine mathematically, but for QC you should translate it into:\n- if A is **always at least** B, and\n- sometimes **strictly greater**,\nthen the answer is **A**.\n\nThat’s the QC habit to keep.\n\nIf you want, I can give you a one-line rule for recognizing these “sum of distances” absolute value problems instantly.",
+      "Z": "Your reasoning is right that Quantity A is **always at least 6**. The key is how QC defines option A: it means Quantity A is **strictly greater for every allowed value**.\n\nHere, when \\(x\\) is between \\(-5\\) and \\(1\\), the sum of distances is exactly \\(6\\). For example, at \\(x=0\\),\n\n$$|0-1|+|0+5|=1+5=6.$$\n\nBut for \\(x=2\\), it is greater:\n\n$$|2-1|+|2+5|=1+7=8.$$\n\nSo the relationship is **equal for some values and Quantity A is greater for others**. Since no single strict comparison holds for all \\(x\\), the QC answer is **D**.\n\nYour “greater than or equal to” conclusion was correct; it just doesn’t match option A, which requires “greater than” every time."
+    }
+  },
+  {
+    "session": "task_id_0512",
+    "criterion": "解释 2 不能代及原因，回答“可以代什么”或说明可直接因式分解。避免把一次合法试值当作普遍证明。",
+    "replies": {
+      "X": "You don’t need to plug in a particular value. Since $x\\neq 2$, the denominator is nonzero, so you can factor and cancel:\n\n$$\n\\frac{x^2-4}{x-2}\n=\\frac{(x-2)(x+2)}{x-2}\n=x+2\n$$\n\nThat matches Quantity B for every allowed value of $x$, so the quantities are equal: **C**.\n\nThe restriction $x\\neq 2$ matters because canceling $x-2$ is valid only when it isn’t zero.",
+      "Y": "Good question — **you do not need to plug in any value** here.\n\nThe condition $x \\ne 2$ is only there so that the denominator in Quantity A is not zero. It tells you the expression is allowed to be simplified by canceling $(x-2)$.\n\nStart with\n\n$$\n\\frac{x^2-4}{x-2}\n$$\n\nFactor the numerator:\n\n$$\nx^2-4=(x-2)(x+2)\n$$\n\nSo\n\n$$\n\\frac{(x-2)(x+2)}{x-2}=x+2\n$$\n\nas long as $x \\ne 2$.\n\nThat means Quantity A and Quantity B are the same, so the answer is **C**.\n\nKey idea: in QC, if you can simplify the two quantities to the same expression, you’re done — no plugging in needed. Only use a test value when simplification doesn’t settle it.",
+      "Z": "Sorry—I answered the previous problem by mistake.\n\nFor this one, you don’t need to plug in a value. Factor the numerator using the difference of squares:\n\n$$\n\\frac{x^2-4}{x-2}\n=\n\\frac{(x-2)(x+2)}{x-2}\n$$\n\nSince the problem tells you $x\\ne 2$, the factor $x-2$ is not zero, so you can cancel it. Quantity A becomes $x+2$, which is exactly Quantity B.\n\n**The quantities are equal, so the answer is C.** The restriction $x\\ne2$ is what makes that cancellation valid."
+    }
+  },
+  {
+    "session": "task_id_0532",
+    "criterion": "正面回答两边若都是 x−6 就相等，或核对显示的当前式子两边实际为 x−1。清楚区分所指题目，避免默认 B 大或把 x−6 当当前题的化简结果。",
+    "replies": {
+      "X": "You’re right to question that — **it should not say B**. I incorrectly affirmed the panel’s feedback.\n\nFor the previous problem, when $x\\ne -6$,\n\n$$\\frac{x^2-36}{x+6}\n=\\frac{(x-6)(x+6)}{x+6}\n=x-6.$$\n\nQuantity B is also $x-6$, so the quantities are equal: **C**. If the panel marked B correct, its feedback appears inconsistent with the expressions shown.\n\nThe new problem shown above has the same structure: $\\frac{x^2-1}{x+1}=x-1$ for $x\\ne -1$, which matches Quantity B, so that comparison is also **C**.",
+      "Y": "If both quantities really simplify to $x-6$, then **neither** is greater — the correct QC answer would be **C**, not B.\n\nSo if you saw **B**, one of these is happening:\n- the problem was copied incorrectly,\n- the answer key is wrong,\n- or one of the expressions was different from what you wrote.\n\nFor a QC problem, if\n$$\\text{Quantity A}=x-6 \\quad \\text{and} \\quad \\text{Quantity B}=x-6,$$\nthen they are equal for every valid $x$.\n\nA good check is to ask:\n- Did I simplify both sides correctly?\n- Did I cancel a factor that could be zero?\n- Did I accidentally change the original expression?\n\nIf you want, send me the exact problem text or your full work, and I’ll help you verify where the mismatch happened.",
+      "Z": "You’re right to question that — **I gave you the wrong interpretation**. If Quantity A simplifies to $x-6$ and Quantity B is also $x-6$, the quantities are equal, so the correct choice is **C**, not B. The panel’s “B marked correct” appears inconsistent with the problem as written.\n\nFor the current problem, factor $x^2-1=(x-1)(x+1)$. Since $x\\ne -1$, Quantity A simplifies to $x-1$, which matches Quantity B. So this one is also **C**."
+    }
+  },
+  {
+    "session": "task_id_0462",
+    "criterion": "当前工人题提交了正确的 0。回应这个结果，给学生留出核对 3 点加入前的完成量或 6 点前是否已做到 80 的实质一步，避免继续讲上一道两人骑车题。",
+    "replies": {
+      "X": "For the worker problem, **0 hours after 6:00 p.m.** is correct. I mistakenly answered the earlier biking problem—sorry about that.\n\nHere’s the timeline setup:\n\n- **Noon to 3:00:** First worker alone: $8 \\times 3 = 24$ units.\n- **3:00 to 6:00:** Both work at $8+12=20$ units per hour: $20 \\times 3 = 60$ units.\n\nBy 6:00, they would have completed $24+60=84$ units, which is more than the $80$ required. In fact, they finish before 6:00. So **no additional hours are needed after 6:00**.",
+      "Y": "Correct—**0 more hours** is the right conclusion: the task is already complete by 6:00 p.m.\n\nTo check it from the timeline, how many units has the first worker completed by **3:00 p.m.**, before the second worker joins?",
+      "Z": "Nice work — **0** is the right conclusion here.\n\nThe key GRE habit is: if the work is already finished before the cutoff time, then the extra time needed after that cutoff is **zero**.\n\nFor these problems, your setup should always be:\n\n1. Break the timeline into intervals.\n2. Compute work done in each interval with  \n   $$\\text{work}=\\text{rate}\\times\\text{time}.$$\n3. Compare total work to the amount needed.\n4. If the total is already reached, stop immediately.\n\nYou spotted the important idea: **once the task is complete, later time windows don’t matter.**\n\nReady for the next one?"
+    }
+  },
+  {
+    "session": "task_id_0141",
+    "criterion": "学生在答导师自己出的三道小题。正确核对第 1 题为 9、第 3 题相等，指出或引导发现第 2 题两量相等；避免只讲练习面板。",
+    "replies": {
+      "X": "Nice effort — you got **2 and 3 right**.\n\n### 1) Units digit of $7^{202}$\nThe cycle for powers of 7 is:\n$$7, 9, 3, 1$$\n\nSince the cycle repeats every 4 and\n$$202 \\div 4 \\text{ leaves remainder } 2,$$\n$7^{202}$ ends in the **2nd** digit of the cycle, which is **9**.\n\nSo **1 is correct**.\n\n### 2) and 3)\n- $\\sqrt{a^2} = |a|$\n- If $a$ is negative, then $|a| = -a$, so the two quantities are equal.\n- Also, for any nonzero $x$, $\\sqrt{x^2} = |x|$, so those are equal too.\n\n### Final answers:\n1. **9**  \n2. **Equal**  \n3. **Equal**\n\nIf you want, I can give you one last problem that mixes **absolute value with a comparison**.",
+      "Y": "You got **1 and 3 right**. For **2**, the quantities are **equal**, not B:\n\n1. $202$ leaves remainder $2$ when divided by $4$, so $7^{202}$ has the same units digit as $7^2$: **9**.\n2. Since $a<0$, $|a|=-a$. And $\\sqrt{a^2}=|a|$, so both quantities equal $-a$.\n3. $\\sqrt{x^2}=|x|$ for every real $x$, so the quantities are **equal**.\n\nThe key distinction in question 2: for a negative $a$, $-a$ is positive, and it is exactly the value of $|a|$.",
+      "Z": "You got **all three correct**.\n\n1. **Units digit of $7^{202}$:** The cycle for powers of $7$ is $7,9,3,1$, repeating every 4. Since $202$ leaves remainder $2$ when divided by $4$, use the second digit: **9**.\n2. **Quantity A equals Quantity B:** For negative $a$, $\\sqrt{a^2}=|a|=-a$. So neither is greater. (For a multiple-choice comparison, choose “equal.”)\n3. **Equal:** For every real $x$, $\\sqrt{x^2}=|x|$.\n\nOne small correction: for **2**, the answer is **equal**, not “B is greater.” The expressions have exactly the same value."
+    }
+  },
+  {
+    "session": "task_id_0213",
+    "criterion": "回应学生猜 B，针对非零 x 下 4x³/(2x) 的系数或指数约分给一个有效切入点，把至少一步化简或比较留给学生。",
+    "replies": {
+      "X": "Not quite—simplify Quantity A before comparing:\n\n$$\\frac{4x^3}{2x}=2x^{3-1}=2x^2,$$\n\nand this is valid because $x\\ne 0$. That matches Quantity B exactly, so the correct choice is **C: the quantities are equal**.",
+      "Y": "Not quite—the quantities are **equal**, so the answer is **C**.\n\nSince $x\\neq 0$, you can divide by $x$:\n\n$$\\frac{4x^3}{2x}=\\frac{4}{2}x^{3-1}=2x^2.$$\n\nThat matches Quantity B exactly. When simplifying a quotient with the same nonzero base, divide the coefficients and subtract the exponents.",
+      "Z": "Not for this one. Let’s simplify together:\n\n$$\\frac{4x^3}{2x}=\\frac{4}{2}\\cdot x^{3-1}=2x^2$$\n\nSo Quantity A becomes exactly **$2x^2$**, which matches Quantity B.\n\nSo the answer is **C**, not B.\n\nKey GRE habit:\n- Divide coefficients normally: $4/2=2$\n- Subtract exponents when dividing same bases: $x^3/x=x^{3-1}=x^2$\n- Check whether the result matches the other quantity exactly\n\nIf you want, I can give you a 10-second rule to spot these instantly."
+    }
+  },
+  {
+    "session": "task_id_0232",
+    "criterion": "回答能否约去 x−2，说明只有因式可约且此处分母非零。可以让学生完成约分或解释结果，避免否定这条正确思路。",
+    "replies": {
+      "X": "Yes—you can cancel the factor $x-2$ because the condition says $x\\neq 2$, so it isn’t zero.\n\nThe numerator factors as $(x-2)(x+2)$. After canceling the common factor, what expression remains for Quantity A?",
+      "Y": "Yes. Since $x\\neq 2$, the factor $x-2$ is not zero, so you can cancel it:\n\n$$\\frac{(x-2)(x+2)}{x-2}=x+2.$$\n\nThat makes Quantity A equal to Quantity B for every allowed value of $x$. Which comparison option matches that?",
+      "Z": "Yes — **you can cancel out $x-2$** because $x\\neq 2$, so that factor is not zero.\n\nSo:\n\n$$\\frac{(x-2)(x+2)}{x-2}=x+2$$\n\nThat means Quantity A becomes exactly Quantity B.\n\nSo the two quantities are **equal**.\n\nIf you want, I can also show you the one big caution GRE likes here: **when cancellation is valid and when it is not**."
+    }
+  },
+  {
+    "session": "task_id_0348",
+    "criterion": "认可学生已发现还可能相等，衔接前轮已经给过的证据。可简要说明它如何推翻固定 A，或前进；避免要求机械重做原有两个例子。",
+    "replies": {
+      "X": "Exactly. The key distinction is **“greater than or equal to”** versus **“always greater than.”**\n\nHere, $|a|+|b|\\ge |a+b|$, but it’s equal when $a$ and $b$ have the same sign, and greater when they have opposite signs. So you need examples of both cases to see that the relationship **cannot be determined**.",
+      "Y": "Exactly — that’s the key idea.\n\nFor problems like this, you want to ask two questions:\n\n1. **Can the quantities be equal?**\n2. **Can one quantity be larger in another valid case?**\n\nIf the answer is “yes” to both, then the relationship is **cannot be determined**.\n\nHere, equality happens when $a$ and $b$ have the **same sign**:\n- both positive, or\n- both negative\n\nThat’s when\n\n$$|a+b|=|a|+|b|.$$\n\nBut if $a$ and $b$ have **opposite signs**, then there’s cancellation, so\n\n$$|a+b|<|a|+|b|.$$\n\nSo the fast GRE habit is:\n\n- test one case for equality\n- test one case for strict inequality\n- if both happen, choose **D**\n\nIf you want, I can give you a quick practice problem on this exact idea.",
+      "Z": "Exactly—you found the key distinction: “never smaller” doesn’t mean “always greater.” When a comparison could be equal for one allowed case and greater for another, the relationship cannot be determined.\n\nA useful next step is to test opposite-sign values too: try the fresh case $a=1,\\ b=-1$. Evaluate both quantities, then tell me whether it gives equality or strict inequality."
+    }
+  },
+  {
+    "session": "task_id_0357",
+    "criterion": "纠正学生以为两量不等的困惑。x≠−1 使约分合法，两量相等。直接答疑或让学生确认已经得到的同一个式子。",
+    "replies": {
+      "X": "They **are** equal for every allowed value of $x$.\n\nHere’s the clean reasoning:\n\n$$x^2+2x+1=(x+1)^2$$\n\nSo\n\n$$\\frac{x^2+2x+1}{x+1}=\\frac{(x+1)^2}{x+1}=x+1$$\n\nAnd Quantity B is also\n\n$$x+1$$\n\nThe condition $x\\ne -1$ is there only so the denominator isn’t $0$.\n\nSo the correct QC answer is **C: the two quantities are equal**.\n\n### What to remember\nIf you see:\n- a numerator that factors as the same thing in the denominator,\n- and the problem says that denominator is not zero,\n\nthen simplify first. On GRE QC, that often turns a messy-looking fraction into something identical.\n\nIf you want, I can give you 3 very fast “factor before you compare” examples to practice.",
+      "Y": "They **are equal** for every allowed value of $x$.\n\nThe numerator factors as\n$$x^2+2x+1=(x+1)^2.$$\n\nSince the problem says $x\\ne -1$, the denominator $x+1$ is not zero, so you can cancel:\n$$\\frac{(x+1)^2}{x+1}=x+1.$$\n\nThat matches Quantity B exactly, so the correct choice is **C**. If you selected C and it was marked incorrect, the marking may have been an error.",
+      "Z": "They **are equal**. You’re right to question the “incorrect” mark: the algebra shows that C is correct.\n\n$$x^2+2x+1=(x+1)^2$$\n\nSince the problem says $x\\ne -1$, the denominator $x+1$ is not zero, so you can cancel:\n\n$$\\frac{(x+1)^2}{x+1}=x+1$$\n\nThat is exactly Quantity B. So the quantities are equal, choice **C**. The practice panel’s mark appears inconsistent with the problem as written."
+    }
+  },
+  {
+    "session": "task_id_0364",
+    "criterion": "区分绝对值非负与大小关系固定。利用同号和异号、或和发生抵消的情况，给学生留一次有效比较，或针对刚才的说法指出反例。不能声称绝对值总严格大于零。",
+    "replies": {
+      "X": "Absolute value does make each term nonnegative, but that does **not** mean the two whole quantities are always equal.\n\nHere’s the key distinction:\n\n- $|x|+|y|$ is the sum of two nonnegative numbers.\n- $|x+y|$ is the absolute value of the **sum before** taking absolute value.\n\nThose are not the same operation.\n\nExample:\n- If $x=2$ and $y=-3$,\n  - $|x|+|y|=2+3=5$\n  - $|x+y|=|{-1}|=1$\n\nBoth are positive, but they are **not equal**.\n\nSo “absolute value makes things positive” is true, but it does **not** decide which quantity is larger. The hidden condition is whether $x$ and $y$ have the same sign.\n\nA good QC habit: whenever you see absolute values, ask:\n- Can I simplify with a rule?\n- If not, can I test a positive/negative case?\n\nWant to try another absolute-value QC example?",
+      "Y": "You’re right that each absolute-value expression is nonnegative. But **both being positive doesn’t mean they’re equal**: the absolute value is applied to different things.\n\nFor example, with $x=2,\\ y=3$:\n$$|x|+|y|=5,\\qquad |x+y|=5.$$\n\nBut with $x=2,\\ y=-3$:\n$$|x|+|y|=5,\\qquad |x+y|=1.$$\n\nSo the quantities can be equal or Quantity A can be greater. The relationship is **D: cannot be determined**. In general, $|x+y|\\le |x|+|y|$; opposite signs can make the sum inside the absolute value smaller.",
+      "Z": "You’re right that each absolute value is nonnegative. But **being nonnegative doesn’t mean the two quantities are equal**: $|x+y|$ takes the absolute value *after* adding, while $|x|+|y|$ adds the magnitudes separately.\n\nTry the fresh valid case $x=1,\\ y=-1$. What do you get for Quantity A and Quantity B? Then compare them with the earlier case $x=1,\\ y=2$. If the relationship differs, that tells you why the answer isn’t C."
+    }
+  },
+  {
+    "session": "task_id_0367",
+    "criterion": "处理刚粘贴的新题。给出关于分子平方差或分母限制的具体第一步，让学生完成另一因子、约分或最终关系。避免继续上一题的函数。",
+    "replies": {
+      "X": "You’re comparing\n\n$$\\text{Quantity A}=\\frac{x^2-1}{x+1}\n\\qquad\\text{and}\\qquad\n\\text{Quantity B}=x-1,$$\n\nwith $x\\ne -1$.\n\nStart by factoring the numerator of Quantity A using the difference-of-squares pattern. What does $x^2-1$ factor into? Then check whether you can cancel a factor, keeping the restriction $x\\ne -1$ in mind.",
+      "Y": "Let’s reset and focus on this Quantity Comparison problem.\n\nFactor the numerator using the difference-of-squares identity:\n\n$$x^2-1=(x-1)(x+1).$$\n\nSince the question tells you $x\\ne -1$, you can cancel the common factor $x+1$. What expression remains, and how does it compare with Quantity B?",
+      "Z": "Great — this is a very important algebra pattern.\n\nYou’re comparing\n\n$$\\text{Quantity A}=\\frac{x^2-1}{x+1}$$\nand\n$$\\text{Quantity B}=x-1,$$\n\nwith $x\\ne -1$.\n\n### Step 1: Factor the numerator\nRecognize the difference of squares:\n\n$$x^2-1=(x-1)(x+1).$$\n\nSo Quantity A becomes\n\n$$\\frac{(x-1)(x+1)}{x+1}.$$\n\n### Step 2: Cancel the common factor\nSince $x\\ne -1$, the denominator is not zero, so you can cancel $x+1$:\n\n$$\\frac{(x-1)(x+1)}{x+1}=x-1.$$\n\n### Step 3: Compare\nQuantity A is exactly equal to Quantity B.\n\nSo the answer is:\n\n$$\\boxed{\\text{C}}$$\n\n### GRE takeaway\nWhen you see a rational expression:\n- look for factoring opportunities first,\n- then cancel only factors, not terms,\n- and always check the restriction so you know cancellation is allowed.\n\nIf you want, I can give you a similar one where a hidden restriction changes the answer."
+    }
+  },
+  {
+    "session": "task_id_0376",
+    "criterion": "回答指数/约分问题，用因式分解解释平方差如何变为 x+3。须留心 x≠0 仍允许 x=3，而原分母在 3 处未定义。",
+    "replies": {
+      "X": "Here, the exponent **does** effectively decrease—but the key step is factoring first:\n\n$$x^2-9=(x-3)(x+3)$$\n\nThen, for $x\\ne3$, the common factor $x-3$ cancels:\n\n$$\\frac{(x-3)(x+3)}{x-3}=x+3$$\n\nSo the expressions are equal wherever Quantity A is defined. You can also think of $x^2/x=x^{2-1}=x$, but you **can’t** cancel terms across subtraction: for example, you can’t cancel an $x$ directly out of $x^2-9$.\n\nOne detail: the prompt says $x\\ne0$, but the denominator also requires $x\\ne3$. Assuming the comparison is intended for values where both quantities are defined, the quantities are equal.",
+      "Y": "Great question. The exponent **does** change when you rewrite the expression — it just changes in a controlled way.\n\nThe key rule is:\n\n$$a^{m+n} = a^m \\cdot a^n$$\n\nSo if you have\n\n$$2^{x+3}$$\n\nyou can split the exponent into two parts:\n\n$$2^{x+3} = 2^x \\cdot 2^3$$\n\nHere’s the idea:\n\n- the $x$ part stays as the exponent on the variable piece\n- the $3$ turns into a separate factor, because it is part of the exponent sum\n\nSo the exponent isn’t “ignored”; it gets **distributed into multiplication**.\n\n### Why this works\nBecause exponentiation means repeated multiplication. For example:\n\n$$2^5 = 2^{2+3} = 2^2 \\cdot 2^3 = 4 \\cdot 8 = 32$$\n\nThe exponent $5$ didn’t disappear — it was split into $2$ and $3$.\n\n### In your problem\nQuantity A:\n\n$$2^{x+3} = 2^x \\cdot 8$$\n\nQuantity B:\n\n$$8 \\cdot 2^x$$\n\nSame thing.\n\n### Big GRE habit\nWhen you see:\n- $a^{m+n}$, rewrite as $a^m a^n$\n- $a^{m-n}$, rewrite as $\\dfrac{a^m}{a^n}$\n\nIf you want, I can give you a 1-minute rule sheet for exponent simplification in QC questions.",
+      "Z": "In the previous problem, the exponent rule is $2^{x+3}=2^x\\cdot2^3$: you split the **sum** in the exponent into a product, so the $x$ stays in $2^x$.\n\nFor the new problem, there’s no exponent to change. Start by factoring the numerator as a difference of squares:\n$$x^2-9=(x-3)(x+3).$$\nThen you can cancel the common factor $x-3$—but only where $x\\ne3$, since the original denominator is zero at $x=3$. What expression remains to compare with Quantity B?"
+    }
+  },
+  {
+    "session": "task_id_0129",
+    "criterion": "针对选错 B，引导学生分解 x²−1 或检查分母，把一个数学步骤留给学生。若声称对每个正整数都成立，必须处理 x=1 处分母为零。",
+    "replies": {
+      "X": "Good try — the key mistake is probably that you simplified **too quickly** without checking the domain.\n\nLook at Quantity A:\n\n$$\\frac{x^2-1}{x-1}$$\n\nBefore canceling anything, factor the numerator:\n$$x^2-1=(x-1)(x+1)$$\n\nSo it *seems* like you can cancel and get $x+1$.\n\nBut here’s the important GRE point: you may only do that if $x-1 \\neq 0$, because the original expression would be undefined when $x=1$.\n\nNow check the condition: $x$ is a **positive integer**, so $x=1$ is allowed.  \nThat means for one valid value, Quantity A is not even defined, so you cannot say the two quantities are equal for all allowed $x$.\n\nTry testing a couple of valid values:\n- If $x=2$, what happens?\n- If $x=1$, what happens?\n\nThat should show you why the relationship is not determinate from the information given.",
+      "Y": "Good try—this is a classic trap: the denominator rules out one value of \\(x\\).\n\nFactor the numerator:\n\\[\n\\frac{x^2-1}{x-1}=\\frac{(x-1)(x+1)}{x-1}.\n\\]\nYou can cancel \\(x-1\\) only when \\(x-1\\ne 0\\), so \\(x\\ne1\\). Since \\(x\\) is a positive integer, the allowed values are \\(2,3,4,\\ldots\\). For every allowed value, Quantity A simplifies to \\(x+1\\), which is Quantity B.\n\nSo the quantities are **equal: C**. The key habit is to check the original denominator before canceling. What made you choose B?",
+      "Z": "You chose **B**, but for every value where Quantity A is defined, the quantities are equal.\n\nFactor the numerator:\n$$x^2-1=(x-1)(x+1).$$\nSo Quantity A becomes\n$$\\frac{(x-1)(x+1)}{x-1}=x+1,$$\nprovided $x\\ne1$, since the original denominator cannot be zero.\n\nThat matches Quantity B, so the intended comparison is **C**. One subtlety: the printed condition allows $x=1$, where Quantity A is undefined. Always check the original denominator before canceling."
+    }
+  },
+  {
+    "session": "task_id_0148",
+    "criterion": "接住正确 D，联系 A=1、m² 随正 m 经过 1 的本题依据；可以让学生独立给一个例子或确认已有有效解释。仅说有变量所以一定是 D 不合格。",
+    "replies": {
+      "X": "D is correct. Let’s justify it from the condition, rather than relying only on “it depends”:\n\nSince $m>0$, $\\sqrt{m^2}=|m|=m$, so Quantity A is\n$$\\frac{m}{m}=1.$$\nQuantity B is $m^2$. The condition $m>0$ doesn’t tell you whether $m^2$ is below, equal to, or above $1$:\n\n- If $m=\\tfrac12$, Quantity A is greater.\n- If $m=1$, they’re equal.\n- If $m=2$, Quantity B is greater.\n\nSo no single relationship must hold. Your instinct to look for whether the comparison changes was right; these examples verify that it really does.",
+      "Y": "Your answer **D** is correct, but the reason isn’t simply that $m$ can vary: simplify Quantity A first. Since $m>0$, $\\sqrt{m^2}=m$, so Quantity A is $1$.\n\nNow check the allowed case $m=\\tfrac12$: what is Quantity B, and how does it compare with $1$? That gives you one comparison; then you’ll need a second allowed value to see whether the relationship can change.",
+      "Z": "Nice — **D** is the right conclusion here.\n\nThe core GRE idea is: if a variable is not pinned down tightly enough, you should ask whether the comparison is **fixed for all allowed values** or whether it **changes**.\n\nA useful way to think about this kind of problem is:\n\n- If you can show the relationship is the same no matter what the variable is, choose that answer.\n- If you can find even two allowed values that give different comparisons, then the answer is **cannot be determined**.\n\nSo for this one, your “it changes with the value” instinct was the right one.\n\nAs you keep going, try to distinguish:\n1. **Algebra can force one answer**\n2. **Multiple allowed cases can lead to different answers**\n\nThat distinction is exactly what GRE QC is testing.\n\nReady for the next one?"
+    }
+  },
+  {
+    "session": "task_id_0266",
+    "criterion": "学生只提交正确 C。可肯定选择，请他说明一个关键因式或为何 x≠−1 可约。留一个实质步骤，或给出新的等难度应用而不代做。",
+    "replies": {
+      "X": "Nice work — that’s the right comparison.\n\nThe key move was to **factor** the numerator:\n$$x^2-1=(x-1)(x+1).$$\n\nSo Quantity A becomes\n$$\\frac{(x-1)(x+1)}{x+1}.$$\n\nBecause $x\\ne -1$, the factor $x+1$ is not zero, so you can cancel it:\n$$\\frac{(x-1)(x+1)}{x+1}=x-1.$$\n\nThat is exactly Quantity B, so the two quantities are equal.\n\nBig GRE takeaway: when you see a rational expression, always check whether it factors cleanly and whether any cancellation is legal based on the domain.",
+      "Y": "Correct—you chose **C**. Now justify it by factoring the numerator $x^2-1$ and simplifying, while keeping the restriction $x\\ne -1$ in mind. What expression do you get for Quantity A?",
+      "Z": "Correct! Factor the numerator:\n\n$$x^2-1=(x-1)(x+1).$$\n\nSince the problem tells you $x\\ne -1$, the denominator $x+1$ is not zero, so you can cancel that factor:\n\n$$\\frac{x^2-1}{x+1}\n=\\frac{(x-1)(x+1)}{x+1}\n=x-1.$$\n\nThat matches Quantity B, so the quantities are equal.\n\n**Transferable check:** When you cancel a factor, first make sure it cannot be zero under the given conditions. Also, cancellation removes a *factor*, not a term—for example, you can’t cancel an $x$ out of a sum like $x+1$."
+    }
+  },
+  {
+    "session": "task_id_0311",
+    "criterion": "针对错误 B，聚焦 (x²−4)/(x−2) 与 x+2。引导进行因式分解或约分，保留一个由学生完成的步骤。",
+    "replies": {
+      "X": "Your choice **B** is understandable, but the key move is to factor the numerator:\n\n$$x^2-4=(x-2)(x+2).$$\n\nBecause the problem states $x\\ne2$, the denominator $x-2$ is nonzero, so you can cancel that factor:\n\n$$\\frac{(x-2)(x+2)}{x-2}=x+2.$$\n\nThat makes Quantity A equal to Quantity B for every allowed value of $x$. The correct choice is **C**.\n\nThe restriction matters: cancellation is valid here because $x=2$ is excluded.",
+      "Y": "That’s a useful one to miss: the restriction $x\\ne2$ tells you exactly when you’re allowed to simplify.\n\nFactor the numerator as a difference of squares:\n\n$$x^2-4=(x-2)(x+2)$$\n\nSo Quantity A becomes\n\n$$\\frac{(x-2)(x+2)}{x-2}$$\n\nBecause $x\\ne2$, the denominator isn’t zero, so you can cancel $x-2$. Quantity A is therefore $x+2$, exactly Quantity B.\n\n**Answer: C — the quantities are equal.**\n\nThe key habit: factor first, then cancel only after checking that the canceled factor can’t be zero.",
+      "Z": "Good try — the tricky part here is the **hidden cancellation**.\n\nYou have\n\n$$\\frac{x^2-4}{x-2}$$\n\nBefore comparing, try factoring the numerator:\n\n$$x^2-4 = (x-2)(x+2)$$\n\nSo the expression becomes\n\n$$\\frac{(x-2)(x+2)}{x-2}$$\n\nNow ask: since $x \\ne 2$, what happens to the factor $x-2$?\n\nThat condition matters because it tells you the denominator is **never zero**, so you are allowed to cancel it.\n\nAfter simplification, Quantity A is the same as Quantity B.\n\nIf you want, reply with what Quantity A simplifies to after canceling, and I’ll check it."
+    }
+  },
+  {
+    "session": "task_id_0427",
+    "criterion": "对错误 B，引导比较 6⁸ 与 3¹² 的公共因子或等价的低次幂。A 正确，不能声称可只由指数大小决定。留一个实质的计算或判断。",
+    "replies": {
+      "X": "Good try — this is exactly the kind of QC problem where rewriting the bases pays off.\n\nYou chose $B$, so let’s inspect the expressions in a way that makes comparison easier:\n\n- Quantity A: $6^8 = (2\\cdot 3)^8 = 2^8\\cdot 3^8$\n- Quantity B: $3^{12}$\n\nNow compare them by making the powers match as much as possible. Since both have a factor of $3^8$, you can rewrite\n\n$$3^{12} = 3^8\\cdot 3^4.$$\n\nSo now you’re comparing\n\n$$2^8\\cdot 3^8 \\quad \\text{and} \\quad 3^8\\cdot 3^4.$$\n\nThe common factor $3^8$ appears on both sides, so the comparison reduces to:\n\n$$2^8 \\quad \\text{vs.} \\quad 3^4.$$\n\nAt that point, it’s much easier to tell which is larger.\n\n**Your likely mistake:** you may have treated the bigger exponent as automatically making the quantity larger, but with exponentials you have to compare the whole base-and-exponent structure, not just one part.\n\nIf you want, I can show you a fast GRE shortcut for this exact type of exponent comparison.",
+      "Y": "That’s a very understandable miss—both bases and exponents differ, so comparing just the bases or just the exponents can mislead you.\n\nRewrite both quantities with exponent $4$:\n\n$$6^8=(6^2)^4=36^4,\\qquad 3^{12}=(3^3)^4=27^4.$$\n\nSince $36>27$ and both numbers are positive, raising them to the same positive power preserves their order. So **Quantity A is greater**.\n\nA useful QC move is to look for a common exponent (or a common base) before comparing. Here, what made the comparison easier?",
+      "Z": "Your choice **B** is marked incorrect because Quantity A is actually greater. Rewrite both quantities so the comparison is easier:\n\n$$6^8=(2\\cdot3)^8=2^8\\cdot3^8.$$\n\nSince both quantities are positive, divide each by $3^8$. You’re left comparing $2^8$ with $3^4$. Those are $256$ and $81$, respectively, so Quantity A is greater: **A**.\n\nThe useful move is to rewrite using a common factor, then compare the remaining powers."
+    }
+  },
+  {
+    "session": "task_id_0433",
+    "criterion": "对错误 D，帮助学生检验关系实际上是否固定。有效方法是利用 x≠−2 与平方差，给学生留一步。仅用一个数值推出恒等不合格。",
+    "replies": {
+      "X": "You chose D, but the condition $x\\neq -2$ lets you simplify Quantity A safely. Factor the numerator:\n\\[\nx^2-4=(x-2)(x+2).\n\\]\nSince $x+2\\neq 0$, cancel that factor. What expression do you get, and how does it compare with Quantity B?",
+      "Y": "You were right to factor first, but there’s a small slip in how the cancellation works.\n\nStart by simplifying Quantity A:\n\\[\n\\frac{x^2-4}{x+2}\n\\]\nFactor the numerator as a difference of squares:\n\\[\nx^2-4=(x-2)(x+2)\n\\]\nSo\n\\[\n\\frac{(x-2)(x+2)}{x+2}\n\\]\nBecause $x\\neq -2$, you are allowed to cancel $x+2$, leaving\n\\[\nx-2\n\\]\n\nNow compare that to Quantity B:\n\\[\nx-2\n\\]\n\nSo the two quantities are actually the same for every allowed value of $x$.\n\nYour mistake was likely stopping at “there’s a denominator, so the relationship is uncertain.” But here the restriction $x\\neq -2$ is exactly what makes the simplification valid.\n\nA good GRE habit:  \n1. Factor.  \n2. Cancel only if the restriction allows it.  \n3. Compare the simplified expressions.\n\nIf you want, I can give you one more quick problem like this where the denominator cancels cleanly.",
+      "Z": "This is a good example of why the restriction matters. Factor the numerator:\n\\[\nx^2-4=(x-2)(x+2).\n\\]\nSince $x\\ne -2$, you can cancel $x+2$:\n\\[\n\\frac{x^2-4}{x+2}=x-2.\n\\]\nSo Quantity A and Quantity B are **equal** for every allowed value of $x$. The answer is **C**.\n\nA useful habit: when you cancel a factor, check that the variable restriction guarantees it isn’t zero. Here it does. A canceled expression can be equal to the simplified one on the original domain, even though the simplified expression may be defined at additional values."
+    }
+  },
+  {
+    "session": "task_id_0438",
+    "criterion": "面板当前选择 C 正确。将比较落到 (x²−4)/(x+2) 和 x−2，留一次独立解释或进一步应用。不要继续谈上一题 a+b。",
+    "replies": {
+      "X": "Correct — **C**. Factor the numerator:\n$$\\frac{x^2-4}{x+2}=\\frac{(x-2)(x+2)}{x+2}.$$\n\nBecause $x\\neq -2$, you can cancel $x+2$, leaving $x-2$. So the quantities are equal for every allowed value of $x$.\n\nThe restriction matters: cancellation is valid here precisely because the denominator isn’t zero.",
+      "Y": "Correct: **C, the quantities are equal**.\n\nTo see why, factor the numerator:\n$$x^2-4=(x-2)(x+2).$$\n\nSince $x\\neq -2$, the denominator $x+2$ is nonzero, so you can cancel that factor. What expression remains for Quantity A?",
+      "Z": "Nice work — **C** is correct.\n\nHere’s the key move: factor the numerator as a difference of squares:\n$$x^2-4=(x-2)(x+2).$$\n\nThen\n$$\\frac{x^2-4}{x+2}=\\frac{(x-2)(x+2)}{x+2}.$$\n\nBecause $x\\neq -2$, you’re allowed to cancel $x+2$, leaving\n$$x-2.$$\n\nSo Quantity A and Quantity B are equal.\n\nThe big takeaway: when you see a rational expression, **look for factoring before comparing**. That often turns a messy-looking quantity into something identical to the other side."
+    }
+  },
+  {
+    "session": "task_id_0456",
+    "criterion": "回应当前错误的 B，用本题 x²−4 和 x−2 提供可操作的起点，再让学生约分或比较。避免沿用上一题 (x−4)²−(y+1)²。",
+    "replies": {
+      "X": "You chose B, but this time the two quantities are **equal**. Start by factoring the numerator:\n\n\\[\nx^2-4=(x-2)(x+2)\n\\]\n\nSince \\(x\\ne2\\), you can cancel the common factor \\(x-2\\):\n\n\\[\n\\frac{x^2-4}{x-2}\n=\\frac{(x-2)(x+2)}{x-2}\n=x+2\n\\]\n\nThat matches Quantity B, so the correct choice is **C**.\n\nThe key habit: **factor first, then cancel only after checking that the canceled factor isn’t zero**. Here, \\(x\\ne2\\) makes the cancellation valid.",
+      "Y": "You were very close in setup, but the mistake is in how you handled the condition.\n\nYou correctly notice this is a **difference of squares**:\n\n\\[\n(x-4)^2-(y+1)^2=\\big((x-4)-(y+1)\\big)\\big((x-4)+(y+1)\\big)\n\\]\n\nwhich becomes\n\n\\[\n(x-y-5)(x+y-3)\n\\]\n\nNow here’s the key QC idea: because this expression is given as part of the problem setup, you use the fact that it equals $0$. So **one of the factors must be zero**.\n\nThat gives you two possibilities:\n\n- $x-y=5$\n- $x+y=3$\n\nNow use the extra information:\n\n\\[\nx-y=7\n\\]\n\nThis does **not** match $x-y=5$, so that case is impossible. That leaves only:\n\n\\[\nx+y=3\n\\]\n\nSo the issue is that you were probably comparing too quickly without using the zero-product structure carefully.\n\nIf you want, I can help you build the exact “factor → split into cases → eliminate one case” habit for QC.",
+      "Z": "You were close to the key move, but the correct choice is **C: the quantities are equal**.\n\nFactor the numerator as a difference of squares:\n\n\\[\nx^2-4=(x-2)(x+2)\n\\]\n\nSince the problem tells you \\(x\\ne2\\), you can cancel the factor \\(x-2\\):\n\n\\[\n\\frac{(x-2)(x+2)}{x-2}=x+2\n\\]\n\nThat is exactly Quantity B. The condition \\(x\\ne2\\) matters because it ensures the denominator isn’t zero."
+    }
+  },
+  {
+    "session": "task_id_0541",
+    "criterion": "肯定 y/x 的化简，纠正仅由一正一负便判断两个负分式谁更大的推断。可用合法的具体数或比较绝对值，并让学生完成比较或修正依据。",
+    "replies": {
+      "X": "Because **both are negative**, and with negative numbers the “bigger” one is the one **closer to 0**.\n\nLet’s use the sign idea carefully:\n\n$$\\frac{x}{y} \\quad \\text{with } x<0,\\ y>0 \\Rightarrow \\frac{x}{y}<0$$\n\nand\n\n$$\\frac{y}{x} \\quad \\text{with } y>0,\\ x<0 \\Rightarrow \\frac{y}{x}<0$$\n\nSo both quantities are negative. But a negative number is not automatically “smaller” or “bigger” just from being a fraction.\n\nUse a concrete example:\n\n- If $x=-2$ and $y=5$, then\n  $$\\frac{x}{y}=-\\frac{2}{5}, \\qquad \\frac{y}{x}=-\\frac{5}{2}$$\n  Here Quantity A is greater, because $-\\frac{2}{5} > -\\frac{5}{2}$.\n\n- If $x=-5$ and $y=2$, then\n  $$\\frac{x}{y}=-\\frac{5}{2}, \\qquad \\frac{y}{x}=-\\frac{2}{5}$$\n  Now Quantity B is greater.\n\nSo the relationship **depends on the sizes** of $|x|$ and $y$, not just their signs.\n\nA strong GRE habit here is:\n1. simplify first,\n2. check signs,\n3. if both are negative, test whether the comparison still depends on magnitudes.\n\nIf you want, I can show you a fast algebraic way to prove that it depends.",
+      "Y": "You’re right that $\\frac{y}{x}$ is always negative—but that doesn’t tell you it’s greater. **Among negative numbers, the one closer to zero is greater**, and which fraction is closer to zero depends on the magnitudes of $x$ and $y$.\n\nFor example:\n\n- If $x=-1,\\ y=2$, then $\\frac{x}{y}=-\\frac12$ and $\\frac{y}{x}=-2$, so **A is greater**.\n- If $x=-2,\\ y=1$, then $\\frac{x}{y}=-2$ and $\\frac{y}{x}=-\\frac12$, so **B is greater**.\n\nBoth examples satisfy $x<0<y$, but they give opposite comparisons. So neither quantity is always greater; the relationship **cannot be determined**.\n\nThe important distinction: knowing $y>0$ and $x<0$ establishes the sign of $\\frac{y}{x}$, but it doesn’t determine its size relative to $\\frac{x}{y}$.",
+      "Z": "You’re right that $\\frac{y}{x}$ is negative, but that doesn’t tell you it’s greater than $\\frac{x}{y}$: **both quantities are negative**, and their relative sizes depend on the values.\n\nTry the permitted values $x=-1,\\ y=2$. Evaluate $\\frac{x}{y}$ and $\\frac{y}{x}$, then decide which is greater. Does that support “always greater”?"
+    }
+  },
+  {
+    "session": "task_id_0696",
+    "criterion": "对粘贴的 x≠1 平方差题给一个具体起点，让学生继续因式分解、约分或比较。避免仅重复题面或直接替他完成全部工作。",
+    "replies": {
+      "X": "Factor the numerator in Quantity A as a difference of squares:\n\n$$x^2-1=(x-1)(x+1).$$\n\nThen, since $x\\ne1$, the denominator $x-1$ is not zero, so you can cancel the common factor:\n\n$$\\frac{x^2-1}{x-1}\n=\\frac{(x-1)(x+1)}{x-1}\n=x+1.$$\n\nThat is exactly Quantity B, so **the two quantities are equal (C)**.",
+      "Y": "Great — this is a perfect **factor and cancel** problem.\n\nWe want to compare:\n\n$$\\text{Quantity A}=\\frac{x^2-1}{x-1}$$\n$$\\text{Quantity B}=x+1$$\n\nwith the condition that $x\\ne 1$.\n\n---\n\n### Step 1: Factor the numerator\nNotice that $x^2-1$ is a difference of squares:\n\n$$x^2-1 = (x-1)(x+1)$$\n\nSo Quantity A becomes:\n\n$$\\frac{(x-1)(x+1)}{x-1}$$\n\n---\n\n### Step 2: Cancel the common factor\nBecause $x\\ne 1$, the factor $x-1$ is not zero, so it is safe to cancel:\n\n$$\\frac{(x-1)(x+1)}{x-1}=x+1$$\n\nSo Quantity A is exactly the same as Quantity B.\n\n---\n\n### Conclusion\n$$\\text{Quantity A}=\\text{Quantity B}$$\n\nSo the answer is:\n\n$$\\boxed{C}$$\n\n### What to remember\nWhen you see a fraction with a polynomial, try to:\n1. factor the numerator,\n2. see if something cancels,\n3. check the restriction so you don’t divide by zero.\n\nIf you want, I can give you a similar problem and let you try it yourself.",
+      "Z": "Factor the numerator using the difference-of-squares pattern:\n\n$$x^2-1=(x-1)(x+1).$$\n\nThen Quantity A is\n\n$$\\frac{(x-1)(x+1)}{x-1}.$$\n\nBecause $x\\ne1$, the denominator $x-1$ is not zero, so you can cancel that common factor:\n\n$$\\text{Quantity A}=x+1.$$\n\nThat is exactly Quantity B, so **the two quantities are equal**.\n\n**Answer: C.**"
+    }
+  },
+  {
+    "session": "task_id_0851",
+    "criterion": "针对错误的恒等理由，指出绝对值的和依非零 x 的位置而变。用允许的内外取值或分段推理开一个缺口给学生检验；x=0 不能充当合法例子。",
+    "replies": {
+      "X": "Not necessarily. Adding $1$ and subtracting $1$ produce different numbers; for example, if $x=3$, then $x+1=4$ and $x-1=2$.\n\nA helpful interpretation is that $|x+1|$ and $|x-1|$ are distances from $x$ to $-1$ and $1$. Those two distances add to at least the distance between $-1$ and $1$, which is $2$. Thus Quantity A is always at least Quantity B.\n\nCheck whether equality can occur: if $x=0$, Quantity A is $|1|+|-1|=2$. But $x=0$ is excluded. For any allowed $x\\ne0$, the sum is greater than $2$.\n\nSo Quantity A is greater, and the answer is **A**.",
+      "Y": "Not quite: adding $1$ and subtracting $1$ do not make the expressions equal. The absolute values measure distances from $0$, and those distances depend on $x$.\n\nFor instance, at $x=1$, compare $|1+1|+|1-1|$ with $2$. Then try the fresh valid case $x=2$: evaluate $|2+1|+|2-1|$ and compare it with $2$. Does the relationship stay the same in both cases?",
+      "Z": "Not quite — **that’s not true**.\n\nA number plus $1$ does **not** equal the same number minus $1$.\n\nFor example:\n- $5+1=6$\n- $5-1=4$\n\nThose are not equal.\n\nIf you mean a QC problem where the quantities are something like\n$$|x+1| \\quad \\text{and} \\quad |x-1|,$$\nthen you **cannot** say they’re equal just because both use absolute values. Absolute value does **not** make different expressions the same.\n\n### What absolute value actually does\nAbsolute value turns a number into its distance from $0$:\n\n- $|3|=3$\n- $|-3|=3$\n\nBut it does **not** remove the difference between $x+1$ and $x-1$.\n\n### Quick test\nTake $x=2$:\n$$|x+1|=|3|=3$$\n$$|x-1|=|1|=1$$\n\nNot equal.\n\nTake $x=0$:\n$$|x+1|=1,\\quad |x-1|=1$$\n\nEqual there.\n\nSo sometimes they’re equal, sometimes not. That’s why QC problems with absolute values often require you to test cases or analyze by sign.\n\nIf you want, I can show you a fast way to compare expressions like $|x+1|$ and $|x-1|$ without guessing."
+    }
+  },
+  {
+    "session": "task_id_1004",
+    "criterion": "认可 D，区分自由变化的是 y/4，与 1 相比的临界值是 y=4。可以用合法值阐明或请学生厘清这个区别，避免把 y=1 当临界。",
+    "replies": {
+      "X": "You’re right that the relationship can change as $y$ changes. One correction: since $x>0$, $\\frac{x}{x}=1$, so the cutoff is whether $\\frac{y}{4}$ is above or below $1$—that happens at $y=4$, not $y=1$.\n\nTry the test case $x=1,\\ y=2$: what are the two quantities, and what does that tell you about their relationship?",
+      "Y": "Correct: since $x>0$, $\\frac{x}{x}=1$. The comparison depends on whether $\\frac{y}{4}$ is below, equal to, or above $1$—that is, whether $y$ is below, equal to, or above $4$.\n\nFor example, $y=2$ makes Quantity A greater, while $y=8$ makes Quantity B greater. So the relationship cannot be determined. (The cutoff for $y$ is $4$, not $1$.)",
+      "Z": "Yes — that’s the right idea.\n\nHere’s the clean GRE way to see it:\n\n- Since $x$ is positive, $\\frac{x}{x} = 1$.\n- So Quantity A is always $1$.\n- Quantity B is $\\frac{y}{4}$, and since $y$ is only said to be positive, it can be:\n  - less than $4$, making Quantity B less than $1$,\n  - equal to $4$, making it equal to $1$,\n  - greater than $4$, making it greater than $1$.\n\nSo the relationship **changes** depending on $y$.\n\n### Answer: **D**\n\n### Quick QC habit to remember\nWhen you see a variable with only a weak condition like “positive,” ask:\n- Can it be small?\n- Can it be large?\n- Can it hit a special value?\n\nIf yes, you may need **D** unless the expression simplifies to something fixed.\n\nIf you want, I can give you a **fast test-value strategy** for QC problems like this one."
+    }
+  },
+  {
+    "session": "task_id_0511",
+    "criterion": "回应 2¹⁸ 显得更大的直觉，用 4 与 2 的关系指向统一底数。可以直接回答所问的技巧，同时把一个指数或比较步骤留给学生。",
+    "replies": {
+      "X": "Great question — the trick is to **rewrite both expressions with the same base**.\n\nSince $4 = 2^2$, you have\n\n$$4^9 = (2^2)^9 = 2^{18}.$$\n\nNow both quantities are the same:\n\n$$2^{18} = 4^9.$$\n\nSo the key lesson is: when you see powers, **look for a way to express them with the same base** before comparing.\n\nA quick rule you can use:\n- $4 = 2^2$\n- $8 = 2^3$\n- $16 = 2^4$\n- $9 = 3^2$\n- $25 = 5^2$\n\nThen use the power rule:\n$$\\left(a^m\\right)^n = a^{mn}.$$\n\nIf you want, I can give you 3 fast GRE-style exponent comparisons to practice this trick.",
+      "Y": "The trick is to **rewrite both quantities with the same base**:\n\n$$4^9=(2^2)^9=2^{2\\cdot 9}=2^{18}.$$\n\nSo the quantities are **equal**: choice **C**.\n\nYour intuition that $2^{18}$ is huge is right—but $4$ is already $2^2$, so each factor of $4$ contributes two factors of $2$. In general, use $(a^m)^n=a^{mn}$, then compare the resulting powers with the same base.",
+      "Z": "The trick is to rewrite both quantities with the **same base**. A larger base doesn’t automatically mean a larger value—the exponents matter too.\n\nSince $4=2^2$,\n$$4^9=(2^2)^9=2^{18}.$$\n\nSo Quantity A and Quantity B are **equal**. You can choose **C**."
+    }
+  },
+  {
+    "session": "task_id_0534",
+    "criterion": "对 2¹² 与 4⁵×2 的题面，给学生一个将 4 写成 2 的幂并合并指数的具体步骤。让学生完成改写或比较，不把重复粘贴题面视为已经作答。",
+    "replies": {
+      "X": "Rewrite Quantity B using base $2$: since $4=2^2$, you have\n$$4^5\\cdot2^1=(2^2)^5\\cdot2^1.$$\nUse the power-of-a-power rule, $(a^m)^n=a^{mn}$. What exponent of $2$ do you get for Quantity B, and how does it compare with Quantity A’s exponent, $12$?",
+      "Y": "Rewrite Quantity B using the same base as Quantity A: $4=2^2$, so\n\n$$4^5\\cdot 2^1=(2^2)^5\\cdot 2^1.$$\n\nNow use $(a^m)^n=a^{mn}$, then combine powers with the same base using $a^m\\cdot a^n=a^{m+n}$. What exponent of $2$ do you get for Quantity B, and how does it compare with $12$?",
+      "Z": "Let’s compare by rewriting everything with the **same base**.\n\nQuantity A:\n$$2^{12}$$\n\nQuantity B:\n$$4^5 \\cdot 2^1 = (2^2)^5 \\cdot 2^1 = 2^{10}\\cdot 2^1 = 2^{11}$$\n\nNow compare:\n$$2^{12} \\text{ vs. } 2^{11}$$\n\nSince the bases are the same and $12>11$, **Quantity A is greater**.\n\n**Answer: A**\n\nQuick rule to remember: when bases match, compare the **exponents**. When bases don’t match, try rewriting them with a common base first."
+    }
+  },
+  {
+    "session": "task_id_0542",
+    "criterion": "学生明确只要第一步。请他辨识或分解 x²−4，然后停下来让他动手。可以提示平方差公式，但不要代做完整约分和最终选择。",
+    "replies": {
+      "X": "Great choice. The **first step** is to check whether the numerator can be **factored**.\n\nYou have\n\n$$\\frac{x^2-4}{x+2}$$\n\nand $x^2-4$ is a difference of squares:\n\n$$x^2-4=(x-2)(x+2).$$\n\nSo rewrite Quantity A as\n\n$$\\frac{(x-2)(x+2)}{x+2}.$$\n\nBefore canceling, always pause and think: the problem says $x \\ne -2$, so the denominator is not zero, which means canceling is allowed.\n\nFrom there, see what Quantity A becomes, and compare it to Quantity B.\n\nIf you want, I can prompt you through the next step instead of giving it all away.",
+      "Y": "Start by factoring the numerator: $x^2-4$ is a **difference of squares**. What does it factor into?",
+      "Z": "First, look at the numerator and ask whether it factors. Here, $x^2-4$ is a difference of squares:\n\n$$x^2-4=(x-2)(x+2).$$\n\nNow rewrite the fraction using those factors. What factor appears in both the numerator and denominator, and what does the condition $x\\ne -2$ let you do?"
+    }
+  }
+]

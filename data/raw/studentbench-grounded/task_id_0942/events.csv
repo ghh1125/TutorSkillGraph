@@ -1,0 +1,3070 @@
+trajectory_position,timestamp_elapsed_seconds,recorded_elapsed_seconds,event_type,actor,concept_id,practice_problem_id,lesson_plan_id,problem_origin,content,submitted_answer,is_correct,answer_attempt_number,ai_model_api_provider,ai_model_endpoint_id,latency_ms,prompt_tokens,completion_tokens,reasoning_tokens,finish_reason
+1,1318.740783,1320.040308,practice_problem_shown,system,c1,quant:main:task_id_0942:practice_problem:44435,quant:main:task_id_0942:lesson_plan:1895,lesson_plan,A bookstore sold 30 novels at an average price of $18 and 10 textbooks at an average price of $42. What was the average price of all 40 books sold?,,,,,,,,,,
+2,1319.891172,,ai_tutor_message,ai_tutor,c1,quant:main:task_id_0942:practice_problem:44435,quant:main:task_id_0942:lesson_plan:1895,lesson_plan,"Hi! We’re working on **ratio, percent, and weighted-average reasoning** — a really high-yield GRE Quant skill.
+
+Why it matters: a lot of GRE questions hide the same core idea in different forms. If you can translate words into ratios, percents, or a weighted average, you can often solve quickly and avoid trap answers.
+
+Please try the **first practice problem on the left**. If you want, you can also ask me to walk you through the setup before you answer.",,,,openai,gpt-5.4-mini,1902.0,7826.0,104.0,0.0,stop
+3,1460.632783,1460.014984,practice_answer_submitted,student,c1,quant:main:task_id_0942:practice_problem:44435,quant:main:task_id_0942:lesson_plan:1895,lesson_plan,,24,True,1,,,,,,,
+4,1459.730466,,ai_tutor_message,ai_tutor,c1,quant:main:task_id_0942:practice_problem:44435,quant:main:task_id_0942:lesson_plan:1895,lesson_plan,"Nice work — $24$ is correct.
+
+The key idea is a **weighted average**: you don’t average the two average prices directly. You first find the **total dollars** from each group, then divide by the **total number of books**:
+
+- Novels: $30 \times 18 = 540$
+- Textbooks: $10 \times 42 = 420$
+
+Total revenue: $540 + 420 = 960$  
+Total books: $40$
+
+So the overall average price is
+
+$$\frac{960}{40} = 24.$$
+
+A fast GRE check:
+- the answer should be between $18$ and $42$
+- because there are more novels than textbooks, it should be closer to $18$ than to $42$
+
+If you want, send the next one and I’ll help you set it up.",,,,openai,gpt-5.4-mini,1824.0,7910.0,179.0,0.0,stop
+5,1461.537783,1462.531319,practice_problem_shown,system,c1,quant:main:task_id_0942:practice_problem:44436,quant:main:task_id_0942:lesson_plan:1895,lesson_plan,"A bottle holds $25\%$ as much as a jug, and a jug holds $40\%$ as much as a barrel. The barrel holds what percent more than the bottle?",,,,,,,,,,
+6,1502.24427,,student_message,student,c1,quant:main:task_id_0942:practice_problem:44436,quant:main:task_id_0942:lesson_plan:1895,lesson_plan,help,,,,,,,,,,
+7,1506.842028,,ai_tutor_message,ai_tutor,c1,quant:main:task_id_0942:practice_problem:44436,quant:main:task_id_0942:lesson_plan:1895,lesson_plan,"Sure — let’s set it up carefully.
+
+Let the **bottle** be the starting unit.
+
+### Step 1: Turn the percent statements into ratios
+- Bottle holds **25% as much as** a jug  
+  so $$\text{bottle} = 0.25(\text{jug}) = \frac14(\text{jug})$$  
+  which means $$\text{jug} = 4(\text{bottle})$$
+
+- Jug holds **40% as much as** a barrel  
+  so $$\text{jug} = 0.40(\text{barrel}) = \frac25(\text{barrel})$$  
+  which means $$\text{barrel} = \frac{5}{2}(\text{jug})$$
+
+### Step 2: Express the barrel in terms of the bottle
+Since $$\text{jug} = 4(\text{bottle})$$, then
+
+$$\text{barrel} = \frac52 \cdot 4(\text{bottle}) = 10(\text{bottle})$$
+
+So the barrel holds **10 times as much** as the bottle.
+
+### Step 3: Convert “what percent more”
+If barrel = 10 bottle, then the amount **more than** the bottle is
+
+$$10 - 1 = 9$$ bottle-units more.
+
+That is
+
+$$9 \times 100\% = 900\%$$
+
+So the barrel holds **900% more** than the bottle.
+
+If you want, I can show you the **one-line shortcut** for this type of problem too.",,,,openai,gpt-5.4-mini,4581.0,8035.0,343.0,0.0,stop
+8,1563.182783,1562.514851,practice_answer_submitted,student,c1,quant:main:task_id_0942:practice_problem:44436,quant:main:task_id_0942:lesson_plan:1895,lesson_plan,,900,True,1,,,,,,,
+9,1562.201699,,ai_tutor_message,ai_tutor,c1,quant:main:task_id_0942:practice_problem:44436,quant:main:task_id_0942:lesson_plan:1895,lesson_plan,"Nice work — you got it.
+
+The clean GRE move here is to chain the ratios:
+
+- bottle = $25\%$ of jug, so jug = $4$ bottles
+- jug = $40\%$ of barrel, so barrel = $\frac{1}{0.4} = 2.5$ jugs
+
+Then
+
+$$\text{barrel} = 2.5 \times 4 = 10 \text{ bottles}.$$
+
+“Percent more than the bottle” means compare the increase to the bottle:
+
+$$\frac{10-1}{1}\times 100\% = 900\%.$$
+
+A good habit: when you see “$x\%$ as much as,” rewrite it as a fraction or multiplier right away. That prevents percent-chain mistakes.
+
+Ready for the next one?",,,,openai,gpt-5.4-mini,1912.0,8445.0,176.0,0.0,stop
+10,1564.094783,1565.070066,practice_problem_shown,system,c1,quant:main:task_id_0942:practice_problem:44437,quant:main:task_id_0942:lesson_plan:1895,lesson_plan,"An electrician charges a $50 service fee plus $40 per hour. For a job that took 5 hours, what percent of the total charge was the hourly charge?
+
+Options: A) 40% | B) 60% | C) 80% | D) 85%",,,,,,,,,,
+11,1564.985685,1564.985685,practice_problem_created_during_tutoring,system,c1,quant:main:task_id_0942:practice_problem:44658,,created_during_tutoring,"A gym offers two membership plans. Plan A costs a $30 sign-up fee plus $25 per month. Plan B costs a $90 sign-up fee plus $15 per month. After how many months will the total cost of the two plans be the same?
+
+Options: A) 3 | B) 4 | C) 5 | D) 6",,,,,,,,,,
+12,1584.791783,1585.023814,practice_answer_submitted,student,c1,quant:main:task_id_0942:practice_problem:44437,quant:main:task_id_0942:lesson_plan:1895,lesson_plan,,A,False,1,,,,,,,
+13,1583.84183,,ai_tutor_message,ai_tutor,c1,quant:main:task_id_0942:practice_problem:44437,quant:main:task_id_0942:lesson_plan:1895,lesson_plan,"You were very close on the setup, but the mistake is in the **percent comparison** at the end.
+
+Let’s go step by step:
+
+1. Hourly charge:
+$$5 \times 40 = 200$$
+
+2. Total charge:
+$$50 + 200 = 250$$
+
+3. Now ask: what percent of the **total** was hourly?
+$$\frac{200}{250} = \frac45 = 0.8 = 80\%$$
+
+So if you chose **A**, that means you likely compared the service fee to the total, or you may have used the wrong denominator.
+
+### Quick GRE rule
+When a problem asks “what percent of the total,” use:
+
+$$\frac{\text{part}}{\text{whole}} \times 100\%$$
+
+Here, the **part** is the hourly charge and the **whole** is the total bill.
+
+If you want, I can give you a 10-second shortcut for these “part of total” percent questions.",,,,openai,gpt-5.4-mini,2072.0,8651.0,213.0,0.0,stop
+14,1600.157783,1600.082035,practice_answer_submitted,student,c1,quant:main:task_id_0942:practice_problem:44437,quant:main:task_id_0942:lesson_plan:1895,lesson_plan,,C,True,2,,,,,,,
+15,1599.111143,,ai_tutor_message,ai_tutor,c1,quant:main:task_id_0942:practice_problem:44437,quant:main:task_id_0942:lesson_plan:1895,lesson_plan,"Nice — $C$ is correct.
+
+Here’s the pattern:
+- Hourly charge: $5 \times 40 = 200$
+- Total charge: $50 + 200 = 250$
+- Percent from hourly work:
+  $$\frac{200}{250} = \frac45 = 80\%$$
+
+The key GRE habit is: when you see **“what percent of the total”**, use
+
+$$\frac{\text{part}}{\text{whole}} \times 100\%.$$
+
+If you want, send the next one and I’ll help you spot the setup quickly.",,,,openai,gpt-5.4-mini,1503.0,8861.0,129.0,0.0,stop
+16,1601.065783,1602.498233,practice_problem_shown,system,c1,quant:main:task_id_0942:practice_problem:44658,,created_during_tutoring,"A gym offers two membership plans. Plan A costs a $30 sign-up fee plus $25 per month. Plan B costs a $90 sign-up fee plus $15 per month. After how many months will the total cost of the two plans be the same?
+
+Options: A) 3 | B) 4 | C) 5 | D) 6",,,,,,,,,,
+17,1601.922626,1601.922626,practice_problem_created_during_tutoring,system,c1,quant:main:task_id_0942:practice_problem:44690,,created_during_tutoring,"A coffee shop sells two blends of coffee. Blend X costs $8 per pound, and Blend Y costs $14 per pound. A customer buys a mixture of the two blends that costs $11 per pound. If the customer buys 10 pounds of the mixture, how many pounds of Blend X are in the mixture?
+
+Options: A) 3 | B) 4 | C) 5 | D) 6",,,,,,,,,,
+18,1646.13664,,student_message,student,c1,quant:main:task_id_0942:practice_problem:44658,,created_during_tutoring,help,,,,,,,,,,
+19,1647.809111,,ai_tutor_message,ai_tutor,c1,quant:main:task_id_0942:practice_problem:44658,,created_during_tutoring,"Absolutely — let’s tackle this one together.
+
+You’re comparing the **total cost** of two plans after $m$ months.
+
+### 1) Write each plan as an expression
+- Plan A:  
+  $$30 + 25m$$
+
+- Plan B:  
+  $$90 + 15m$$
+
+### 2) Set them equal
+The costs are the same when
+
+$$30 + 25m = 90 + 15m$$
+
+### 3) Solve
+Subtract $15m$ from both sides:
+
+$$30 + 10m = 90$$
+
+Subtract $30$:
+
+$$10m = 60$$
+
+Divide by $10$:
+
+$$m = 6$$
+
+### 4) Check
+- Plan A: $30 + 25(6) = 180$
+- Plan B: $90 + 15(6) = 180$
+
+So the plans match after **6 months**.
+
+If you want, I can also show you the **fast GRE shortcut** for comparing plans like this without doing much algebra.",,,,openai,gpt-5.4-mini,1662.0,8952.0,223.0,0.0,stop
+20,1654.251783,1655.001514,practice_answer_submitted,student,c1,quant:main:task_id_0942:practice_problem:44658,,created_during_tutoring,,D,False,1,,,,,,,
+21,1653.344498,,ai_tutor_message,ai_tutor,c1,quant:main:task_id_0942:practice_problem:44658,,created_during_tutoring,"You set it up almost right — the mistake is likely in the **final solve** or in what you matched.
+
+A good way to check:
+
+- Plan A total after $m$ months: $$30 + 25m$$
+- Plan B total after $m$ months: $$90 + 15m$$
+
+When the costs are equal, you should solve
+
+$$30 + 25m = 90 + 15m.$$
+
+Now ask yourself: after moving the monthly terms to one side, how many months does the difference in sign-up fees need to be “paid off” by the monthly savings?
+
+A quick sanity check:
+- Plan A starts **$60 cheaper** upfront.
+- Plan B is **$10 cheaper per month**.
+
+So it should take some number of months for Plan B to catch up. Since the monthly difference is $10$, how many months does it take to make up the $60$ gap?
+
+Try that and see which option matches.",,,,openai,gpt-5.4-mini,2036.0,9248.0,202.0,0.0,stop
+22,1680.949948,,student_message,student,c1,quant:main:task_id_0942:practice_problem:44658,,created_during_tutoring,6,,,,,,,,,,
+23,1682.423083,,ai_tutor_message,ai_tutor,c1,quant:main:task_id_0942:practice_problem:44658,,created_during_tutoring,"Yes — **6** is correct.
+
+Here’s the clean reasoning:
+
+- Plan A: $30 + 25m$
+- Plan B: $90 + 15m$
+
+Set equal:
+
+$$30 + 25m = 90 + 15m$$
+
+Subtract $15m$:
+
+$$30 + 10m = 90$$
+
+Subtract $30$:
+
+$$10m = 60$$
+
+So
+
+$$m = 6.$$
+
+### Fast GRE shortcut
+You can also think:
+- Plan A is **$60 cheaper** to start.
+- Plan B is **$10 cheaper per month**.
+
+So Plan B catches up after
+
+$$60 \div 10 = 6$$
+
+months.
+
+That’s a great pattern to recognize on GRE problems with a **startup fee + monthly fee**.",,,,openai,gpt-5.4-mini,1462.0,9388.0,170.0,0.0,stop
+24,1692.293957,1692.293957,practice_problem_skipped,system,c1,quant:main:task_id_0942:practice_problem:44658,,created_during_tutoring,,,,,,,,,,,
+25,1692.582482,,student_message,student,c1,quant:main:task_id_0942:practice_problem:44658,,created_during_tutoring,I disagree with the marked answer on this problem — let's continue.,,,,,,,,,,
+26,1693.248783,1692.580818,practice_problem_shown,system,c1,quant:main:task_id_0942:practice_problem:44690,,created_during_tutoring,"A coffee shop sells two blends of coffee. Blend X costs $8 per pound, and Blend Y costs $14 per pound. A customer buys a mixture of the two blends that costs $11 per pound. If the customer buys 10 pounds of the mixture, how many pounds of Blend X are in the mixture?
+
+Options: A) 3 | B) 4 | C) 5 | D) 6",,,,,,,,,,
+27,1694.0901,,ai_tutor_message,ai_tutor,c1,quant:main:task_id_0942:practice_problem:44658,,created_during_tutoring,"Sure — let’s keep going with the **method**, not the marked answer.
+
+For any problem like this, the transferable setup is:
+
+1. Write each total cost as  
+   $$\text{startup fee} + (\text{monthly fee})(m)$$
+
+2. Set the two totals equal.
+
+3. Solve for $m$.
+
+If you want, send me the next practice problem or tell me where your disagreement is, and I’ll help you check the algebra step by step.",,,,openai,gpt-5.4-mini,1423.0,9578.0,103.0,0.0,stop
+28,1694.654965,1694.654965,practice_problem_created_during_tutoring,system,c1,quant:main:task_id_0942:practice_problem:44718,,created_during_tutoring,"A school club buys notebooks and pens for a fundraiser. Notebooks cost $3 each and pens cost $1 each. The club buys a total of 40 items and spends $78 altogether. How many notebooks did the club buy?
+
+Options: A) 17 | B) 18 | C) 19 | D) 20",,,,,,,,,,
+29,1716.493783,1717.50583,practice_answer_submitted,student,c1,quant:main:task_id_0942:practice_problem:44690,,created_during_tutoring,,C,True,1,,,,,,,
+30,1715.584715,,ai_tutor_message,ai_tutor,c1,quant:main:task_id_0942:practice_problem:44690,,created_during_tutoring,"Nice — **C** is correct.
+
+This is a classic **weighted-average / mixture** problem. The key idea is:
+
+$$\text{average cost}=\frac{\text{total cost}}{\text{total pounds}}$$
+
+Let $x$ be the pounds of Blend X.
+
+- Blend X costs $8$ per pound, so its cost is $8x$
+- Blend Y costs $14$ per pound, so its cost is $14(10-x)$
+- The mixture costs $11$ per pound for $10$ pounds, so total cost is $11\cdot 10=110$
+
+Set up the equation:
+
+$$8x + 14(10-x) = 110$$
+
+Solve:
+
+$$8x + 140 - 14x = 110$$
+$$-6x = -30$$
+$$x = 5$$
+
+So the mixture has **5 pounds** of Blend X.
+
+### GRE shortcut
+For two-blend mixture problems, you can also use the “distance from the average” idea:
+
+- Blend X is $3$ below the average: $11-8=3$
+- Blend Y is $3$ above the average: $14-11=3$
+
+Equal distances mean equal amounts, so the 10 pounds split evenly:
+$$5 \text{ and } 5$$
+
+If you want, send the next one and I’ll help you spot the setup faster.",,,,openai,gpt-5.4-mini,2419.0,9759.0,298.0,0.0,stop
+31,1717.404783,1717.519739,practice_problem_shown,system,c1,quant:main:task_id_0942:practice_problem:44718,,created_during_tutoring,"A school club buys notebooks and pens for a fundraiser. Notebooks cost $3 each and pens cost $1 each. The club buys a total of 40 items and spends $78 altogether. How many notebooks did the club buy?
+
+Options: A) 17 | B) 18 | C) 19 | D) 20",,,,,,,,,,
+32,1718.153545,1718.153545,practice_problem_created_during_tutoring,system,c1,quant:main:task_id_0942:practice_problem:44724,,created_during_tutoring,"A charity sells two sizes of gift baskets. Small baskets cost $12 each, and large baskets cost $20 each. The charity sells 50 baskets total and collects $760. How many large baskets were sold?
+
+Options: A) 20 | B) 25 | C) 30 | D) 35",,,,,,,,,,
+33,1724.434783,1725.000801,practice_answer_submitted,student,c1,quant:main:task_id_0942:practice_problem:44718,,created_during_tutoring,,B,True,1,,,,,,,
+34,1723.526546,,ai_tutor_message,ai_tutor,c1,quant:main:task_id_0942:practice_problem:44718,,created_during_tutoring,"Nice — **B** is correct.
+
+Here’s the clean setup:
+
+Let $n$ be the number of notebooks. Then the number of pens is $40-n$.
+
+Use the total cost:
+$$3n + 1(40-n) = 78$$
+
+Simplify:
+$$3n + 40 - n = 78$$
+$$2n + 40 = 78$$
+$$2n = 38$$
+$$n = 19$$
+
+So the club bought **19 notebooks**.
+
+### GRE takeaway
+When you have:
+- a total number of items, and
+- a total cost,
+
+you can usually write:
+$$\text{cost of one type} + \text{cost of the other type} = \text{total cost}$$
+
+Then solve the one-variable equation.
+
+A quick check:
+- $19$ notebooks cost $57$
+- $21$ pens cost $21$
+- total $= 78$
+
+Ready for the next one?",,,,openai,gpt-5.4-mini,1974.0,10043.0,206.0,0.0,stop
+35,1725.343783,1725.014964,practice_problem_shown,system,c1,quant:main:task_id_0942:practice_problem:44724,,created_during_tutoring,"A charity sells two sizes of gift baskets. Small baskets cost $12 each, and large baskets cost $20 each. The charity sells 50 baskets total and collects $760. How many large baskets were sold?
+
+Options: A) 20 | B) 25 | C) 30 | D) 35",,,,,,,,,,
+36,1726.291213,1726.291213,practice_problem_created_during_tutoring,system,c1,quant:main:task_id_0942:practice_problem:44739,,created_during_tutoring,"A theater sells adult tickets for $18 each and student tickets for $12 each. On one night, the theater sold 60 tickets and collected $960 total. How many student tickets were sold?
+
+Options: A) 20 | B) 24 | C) 30 | D) 36",,,,,,,,,,
+37,1730.958783,1732.498211,practice_answer_submitted,student,c1,quant:main:task_id_0942:practice_problem:44724,,created_during_tutoring,,A,False,1,,,,,,,
+38,1730.047648,,ai_tutor_message,ai_tutor,c1,quant:main:task_id_0942:practice_problem:44724,,created_during_tutoring,"You’re on the right track to think in terms of **cost per basket**, but the mistake is likely in how you translated the words into an equation.
+
+Let:
+- $s$ = number of small baskets
+- $l$ = number of large baskets
+
+You know:
+$$s + l = 50$$
+
+And the total money collected is:
+$$12s + 20l = 760$$
+
+A good way to catch the mistake is to use the first equation to rewrite one variable in terms of the other. For example, if $s = 50 - l$, then substitute:
+
+$$12(50-l) + 20l = 760$$
+
+Now simplify carefully:
+$$600 - 12l + 20l = 760$$
+$$600 + 8l = 760$$
+$$8l = 160$$
+
+So
+
+$$l = 20$$
+
+### Where your answer likely went wrong
+If you got $A$, you may have:
+- subtracted the wrong way,
+- used $12$ and $20$ as if they were the numbers of baskets instead of the prices,
+- or forgot that the total number of baskets is **50**.
+
+### Quick check
+If there are $20$ large baskets, then there are $30$ small baskets:
+$$20(20) + 30(12) = 400 + 360 = 760$$
+
+That matches.
+
+If you want, I can show you a faster GRE shortcut for these “two types, total count, total value” problems.",,,,openai,gpt-5.4-mini,2577.0,10254.0,321.0,0.0,stop
+39,1735.907783,1737.514149,practice_answer_submitted,student,c1,quant:main:task_id_0942:practice_problem:44724,,created_during_tutoring,,D,False,2,,,,,,,
+40,1734.983698,,ai_tutor_message,ai_tutor,c1,quant:main:task_id_0942:practice_problem:44724,,created_during_tutoring,"You’re very close — the key is to make sure you’re using the **right variable for the right basket type**.
+
+Let:
+- $l$ = number of large baskets
+- $s$ = number of small baskets
+
+Then you should have:
+
+$$l+s=50$$
+
+and the money equation:
+
+$$20l+12s=760$$
+
+Now substitute $s=50-l$:
+
+$$20l+12(50-l)=760$$
+
+Before solving, check the arithmetic carefully:
+
+- $12 \cdot 50 = 600$
+- so the equation becomes
+  $$20l+600-12l=760$$
+- which simplifies to
+  $$8l+600=760$$
+
+At this point, ask yourself: what is $760-600$? And then what number times $8$ gives that result?
+
+If you want, send me your next line of work and I’ll help you spot exactly where it goes off.",,,,openai,gpt-5.4-mini,2968.0,10578.0,202.0,0.0,stop
+41,1739.666783,1740.004675,practice_answer_submitted,student,c1,quant:main:task_id_0942:practice_problem:44724,,created_during_tutoring,,C,False,3,,,,,,,
+42,1738.736865,,ai_tutor_message,ai_tutor,c1,quant:main:task_id_0942:practice_problem:44724,,created_during_tutoring,"Good attempt — the setup is the right one, so the mistake is probably in the algebra or in matching the answer choice.
+
+Let $l$ be the number of large baskets and $s$ be the number of small baskets.
+
+You should write:
+
+$$l+s=50$$
+
+and
+
+$$20l+12s=760$$
+
+Now substitute $s=50-l$:
+
+$$20l+12(50-l)=760$$
+
+Distribute the $12$ carefully:
+
+$$20l+600-12l=760$$
+
+Combine like terms:
+
+$$8l+600=760$$
+
+Now subtract $600$ from both sides:
+
+$$8l=160$$
+
+So
+
+$$l=20$$
+
+### Where your answer likely went wrong
+If you chose $C$, you may have:
+- stopped too early,
+- made a sign error when distributing the $12$,
+- or misread the total number of baskets as the number of large baskets.
+
+### Quick check
+If there are $20$ large baskets, then there are $30$ small baskets:
+
+$$20(20)+30(12)=400+360=760$$
+
+That works.
+
+If you want, I can show you a fast GRE shortcut for these “two prices, one total” problems.",,,,openai,gpt-5.4-mini,2249.0,10783.0,265.0,0.0,stop
+43,1743.622783,1744.993281,practice_answer_submitted,student,c1,quant:main:task_id_0942:practice_problem:44724,,created_during_tutoring,,B,True,4,,,,,,,
+44,1742.702789,,ai_tutor_message,ai_tutor,c1,quant:main:task_id_0942:practice_problem:44724,,created_during_tutoring,"Nice — **B** is correct.
+
+This is a great example of a **two-type weighted-average / equation** problem.
+
+Let:
+- $l$ = number of large baskets
+- $s$ = number of small baskets
+
+Then:
+
+$$l+s=50$$
+
+and the total money equation is:
+
+$$20l+12s=760$$
+
+Substitute $s=50-l$:
+
+$$20l+12(50-l)=760$$
+
+Distribute and combine like terms:
+
+$$20l+600-12l=760$$
+$$8l+600=760$$
+$$8l=160$$
+$$l=20$$
+
+So there were **20 large baskets**.
+
+### Fast GRE check
+A nice shortcut is to compare each basket price to the smaller price:
+- large baskets are $8$ more than small baskets
+- the total extra money above all-small baskets is
+  $$760 - 50\cdot 12 = 760 - 600 = 160$$
+- each large basket adds $8$, so
+  $$160 \div 8 = 20$$
+
+That gives the same answer faster.
+
+If you want, send the next problem and I’ll help you set it up quickly.",,,,openai,gpt-5.4-mini,2102.0,11045.0,258.0,0.0,stop
+45,1744.530783,1745.013038,practice_problem_shown,system,c1,quant:main:task_id_0942:practice_problem:44739,,created_during_tutoring,"A theater sells adult tickets for $18 each and student tickets for $12 each. On one night, the theater sold 60 tickets and collected $960 total. How many student tickets were sold?
+
+Options: A) 20 | B) 24 | C) 30 | D) 36",,,,,,,,,,
+46,1745.637147,1745.637147,practice_problem_created_during_tutoring,system,c1,quant:main:task_id_0942:practice_problem:44784,,created_during_tutoring,"A juice bar sells two types of smoothies. Small smoothies cost $6 each and large smoothies cost $9 each. On a certain day, the bar sold 40 smoothies and collected $300 total. How many large smoothies were sold?
+
+Options: A) 10 | B) 15 | C) 20 | D) 25",,,,,,,,,,
+47,1770.851783,1772.90854,practice_answer_submitted,student,c1,quant:main:task_id_0942:practice_problem:44739,,created_during_tutoring,,B,True,1,,,,,,,
+48,1769.940092,,ai_tutor_message,ai_tutor,c1,quant:main:task_id_0942:practice_problem:44739,,created_during_tutoring,"Nice work — **B** is correct.
+
+This is a classic **weighted-average / two-group** setup. The key move is to turn the words into one equation:
+
+- Let $l$ = number of large baskets
+- Let $s$ = number of small baskets
+
+Then:
+
+$$l+s=50$$
+
+and
+
+$$20l+12s=760$$
+
+Substitute $s=50-l$:
+
+$$20l+12(50-l)=760$$
+
+Now simplify carefully:
+
+$$20l+600-12l=760$$
+$$8l+600=760$$
+$$8l=160$$
+$$l=20$$
+
+So there were **20 large baskets**.
+
+### Fast GRE shortcut
+If you imagine all 50 baskets were small, the total would be:
+
+$$50 \cdot 12 = 600$$
+
+But the actual total is $760$, which is $160$ more.  
+Each large basket costs $8$ more than a small basket, so:
+
+$$160 \div 8 = 20$$
+
+That’s a very efficient GRE method for these problems.
+
+Send the next one when you’re ready.",,,,openai,gpt-5.4-mini,2014.0,11303.0,242.0,0.0,stop
+49,1771.766783,1773.401801,practice_problem_shown,system,c1,quant:main:task_id_0942:practice_problem:44784,,created_during_tutoring,"A juice bar sells two types of smoothies. Small smoothies cost $6 each and large smoothies cost $9 each. On a certain day, the bar sold 40 smoothies and collected $300 total. How many large smoothies were sold?
+
+Options: A) 10 | B) 15 | C) 20 | D) 25",,,,,,,,,,
+50,1773.451437,1773.451437,practice_problem_created_during_tutoring,system,c1,quant:main:task_id_0942:practice_problem:44790,,created_during_tutoring,"A company sells two sizes of storage boxes. Small boxes cost $5 each and large boxes cost $11 each. On a certain day, the company sold 50 boxes and collected $370 total. How many large boxes were sold?
+
+Options: A) 15 | B) 20 | C) 25 | D) 30",,,,,,,,,,
+51,1796.985783,1797.498261,practice_answer_submitted,student,c1,quant:main:task_id_0942:practice_problem:44784,,created_during_tutoring,,D,False,1,,,,,,,
+52,1796.072485,,ai_tutor_message,ai_tutor,c1,quant:main:task_id_0942:practice_problem:44784,,created_during_tutoring,"Let’s debug your setup.
+
+For this problem, you want to compare the **total money from small smoothies** and the **total money from large smoothies**.
+
+A good variable choice is:
+
+- let $l$ = number of large smoothies
+- then $40-l$ = number of small smoothies
+
+Now write the total revenue:
+
+$$9l + 6(40-l) = 300$$
+
+If you expand that, you should get a simple one-variable equation. Before solving, check one thing:
+
+- If all 40 were small, the total would be $40 \cdot 6 = 240$
+- The actual total is $300$
+- So the extra money above all-small is $300 - 240 = 60$
+
+Each large smoothie adds $3$ more than a small smoothie, so the number of large smoothies should be:
+
+$$60 \div 3$$
+
+Try finishing that step and see which answer choice matches.",,,,openai,gpt-5.4-mini,2024.0,11561.0,196.0,0.0,stop
+53,1801.590783,1802.501653,practice_answer_submitted,student,c1,quant:main:task_id_0942:practice_problem:44784,,created_during_tutoring,,A,False,2,,,,,,,
+54,1800.659227,,ai_tutor_message,ai_tutor,c1,quant:main:task_id_0942:practice_problem:44784,,created_during_tutoring,"Good try — your setup is probably close, but the issue is likely in the **comparison step**.
+
+Here’s the clean way to check it:
+
+- If **all 40 smoothies were small**, the bar would collect  
+  $$40 \cdot 6 = 240$$
+- The actual total is $$300$$, so the extra money is  
+  $$300 - 240 = 60$$
+
+Now ask: how much extra does **one large** smoothie add compared with a small one?
+
+$$9 - 6 = 3$$
+
+So the number of large smoothies should be
+
+$$60 \div 3 = 20$$
+
+### What likely went wrong
+If you chose **A**, you may have:
+- used the total revenue as if it were the number of large smoothies,
+- or divided by the wrong difference,
+- or forgot that the “extra” comes from replacing a small smoothie with a large one.
+
+### GRE pattern to remember
+For two-price problems:
+1. Start with the cheaper option for all items.
+2. Find the total “extra” above that baseline.
+3. Divide by the price difference.
+
+Try redoing it with that method and see which choice matches.",,,,openai,gpt-5.4-mini,2572.0,11760.0,249.0,0.0,stop
+55,1805.477783,1804.992795,practice_answer_submitted,student,c1,quant:main:task_id_0942:practice_problem:44784,,created_during_tutoring,,C,False,3,,,,,,,
+56,1804.534347,,ai_tutor_message,ai_tutor,c1,quant:main:task_id_0942:practice_problem:44784,,created_during_tutoring,"Good attempt — your setup is the right kind of setup, so the issue is likely in the **last step**.
+
+Let’s check it with a baseline method:
+
+- If all 40 smoothies were small, the bar would collect  
+  $$40 \cdot 6 = 240$$
+- But the actual total is  
+  $$300$$
+
+So the extra money above all-small is
+
+$$300 - 240 = 60$$
+
+Now compare one large smoothie to one small smoothie:
+
+$$9 - 6 = 3$$
+
+That means **each large smoothie adds \$3** above the small-smoothie baseline.
+
+So the number of large smoothies should come from:
+
+$$60 \div 3$$
+
+Before you look at the choices, ask yourself: what does that quotient equal? And does it match the choice you picked?",,,,openai,gpt-5.4-mini,2042.0,12012.0,175.0,0.0,stop
+57,1809.965783,1810.003643,practice_answer_submitted,student,c1,quant:main:task_id_0942:practice_problem:44784,,created_during_tutoring,,B,True,4,,,,,,,
+58,1809.030025,,ai_tutor_message,ai_tutor,c1,quant:main:task_id_0942:practice_problem:44784,,created_during_tutoring,"Nice — **B** is correct.
+
+This is a great two-price setup. The fastest GRE method is:
+
+1. Pretend all 40 smoothies were the cheaper kind:
+   $$40 \cdot 6 = 240$$
+
+2. Compare that to the actual total:
+   $$300 - 240 = 60$$
+
+3. Each large smoothie adds:
+   $$9 - 6 = 3$$
+
+4. So the number of large smoothies is:
+   $$60 \div 3 = 20$$
+
+### Why this works
+You’re counting how many times the bar “switched” a small smoothie to a large one. Each switch adds exactly $3$.
+
+### Quick check
+If there are 20 large smoothies, then there are 20 small smoothies:
+$$20 \cdot 9 + 20 \cdot 6 = 180 + 120 = 300$$
+
+Perfect.
+
+Send the next one when you’re ready.",,,,openai,gpt-5.4-mini,2994.0,12184.0,201.0,0.0,stop
+59,1810.876783,1812.507786,practice_problem_shown,system,c1,quant:main:task_id_0942:practice_problem:44790,,created_during_tutoring,"A company sells two sizes of storage boxes. Small boxes cost $5 each and large boxes cost $11 each. On a certain day, the company sold 50 boxes and collected $370 total. How many large boxes were sold?
+
+Options: A) 15 | B) 20 | C) 25 | D) 30",,,,,,,,,,
+60,1812.047246,1812.047246,practice_problem_created_during_tutoring,system,c1,quant:main:task_id_0942:practice_problem:44867,,created_during_tutoring,"A bakery sells muffins for $2 each and scones for $5 each. On a certain morning, the bakery sold 36 items and collected $117 total. How many scones were sold?
+
+Options: A) 7 | B) 9 | C) 12 | D) 15",,,,,,,,,,
+61,1837.683783,1837.496745,practice_answer_submitted,student,c1,quant:main:task_id_0942:practice_problem:44790,,created_during_tutoring,,C,False,1,,,,,,,
+62,1836.76995,,ai_tutor_message,ai_tutor,c1,quant:main:task_id_0942:practice_problem:44790,,created_during_tutoring,"You’re very close — the setup should be a **two-type weighted average / total value** equation.
+
+Let:
+- $l$ = number of large boxes
+- then $50-l$ = number of small boxes
+
+Now write the total money collected:
+
+$$11l + 5(50-l) = 370$$
+
+Before solving, do a quick check using a baseline:
+- If all 50 boxes were small, the total would be
+  $$50 \cdot 5 = 250$$
+- The actual total is $370$, so the extra money is
+  $$370 - 250 = 120$$
+- Each large box adds
+  $$11 - 5 = 6$$
+  more than a small box
+
+So the number of large boxes should be
+
+$$120 \div 6$$
+
+If you got $C$, you probably stopped one step too early or used the wrong difference. Try finishing that last division and see which option matches.",,,,openai,gpt-5.4-mini,2059.0,12394.0,204.0,0.0,stop
+63,1841.590783,1842.503869,practice_answer_submitted,student,c1,quant:main:task_id_0942:practice_problem:44790,,created_during_tutoring,,B,True,2,,,,,,,
+64,1840.673007,,ai_tutor_message,ai_tutor,c1,quant:main:task_id_0942:practice_problem:44790,,created_during_tutoring,"Nice — **B** is correct.
+
+Here’s the fast GRE way to see it:
+
+- If all 50 boxes were small, the company would collect  
+  $$50 \cdot 5 = 250$$
+- The actual total is  
+  $$370$$
+- So the extra money above all-small is  
+  $$370 - 250 = 120$$
+
+Each large box costs $6$ more than a small box:
+
+$$11 - 5 = 6$$
+
+So the number of large boxes is
+
+$$120 \div 6 = 20$$
+
+### Why this method is powerful
+For two-price problems, you can often:
+1. start with the cheaper item for all units,
+2. find the extra total,
+3. divide by the price difference.
+
+That avoids setting up a longer equation.
+
+If you want, send the next one and I’ll help you keep using this shortcut.",,,,openai,gpt-5.4-mini,1855.0,12595.0,190.0,0.0,stop
+65,1842.499783,1842.520253,practice_problem_shown,system,c1,quant:main:task_id_0942:practice_problem:44867,,created_during_tutoring,"A bakery sells muffins for $2 each and scones for $5 each. On a certain morning, the bakery sold 36 items and collected $117 total. How many scones were sold?
+
+Options: A) 7 | B) 9 | C) 12 | D) 15",,,,,,,,,,
+66,1844.598955,1844.598955,practice_problem_created_during_tutoring,system,c1,quant:main:task_id_0942:practice_problem:44916,,created_during_tutoring,"A school fundraiser sells two types of raffle tickets. Regular tickets cost $4 each, and premium tickets cost $7 each. The fundraiser sold 50 tickets altogether and collected $271. How many premium tickets were sold?
+
+Options: A) 17 | B) 19 | C) 23 | D) 27",,,,,,,,,,
+67,1854.561783,1854.989033,practice_answer_submitted,student,c1,quant:main:task_id_0942:practice_problem:44867,,created_during_tutoring,,D,False,1,,,,,,,
+68,1853.649431,,ai_tutor_message,ai_tutor,c1,quant:main:task_id_0942:practice_problem:44867,,created_during_tutoring,"Let’s check your setup carefully.
+
+For this problem, you want to use **two equations**:
+
+- number of items:
+  $$m+s=36$$
+- total money:
+  $$2m+5s=117$$
+
+where $m$ = muffins and $s$ = scones.
+
+A fast way to catch mistakes is to use the cheaper item as a baseline:
+
+1. If all 36 items were muffins, the bakery would collect
+   $$36 \cdot 2 = 72$$
+
+2. The actual total is
+   $$117$$
+
+3. So the extra money above the all-muffin baseline is
+   $$117-72=45$$
+
+4. Each scone costs
+   $$5-2=3$$
+   more than a muffin, so the number of scones should be
+   $$45 \div 3$$
+
+If you got $D$, you probably:
+- used the wrong baseline,
+- subtracted in the wrong direction,
+- or forgot that each scone replaces one muffin and adds only the **difference** in price.
+
+Try finishing that last division and see which answer choice matches.",,,,openai,gpt-5.4-mini,2671.0,12787.0,240.0,0.0,stop
+69,1880.758783,1879.998164,practice_answer_submitted,student,c1,quant:main:task_id_0942:practice_problem:44867,,created_during_tutoring,,C,False,2,,,,,,,
+70,1879.844503,,ai_tutor_message,ai_tutor,c1,quant:main:task_id_0942:practice_problem:44867,,created_during_tutoring,"Good — your setup should be close, so let’s find the slip.
+
+For this problem, you can use either of these equivalent approaches:
+
+### Method 1: Two equations
+Let
+- $m$ = muffins
+- $s$ = scones
+
+Then:
+
+$$m+s=36$$
+$$2m+5s=117$$
+
+### Method 2: Baseline
+If all 36 items were muffins, the bakery would collect:
+
+$$36 \cdot 2 = 72$$
+
+But the actual total is:
+
+$$117$$
+
+So the extra money above the muffin-only baseline is:
+
+$$117-72=45$$
+
+Now ask: how much more does **one scone** bring in than one muffin?
+
+$$5-2=3$$
+
+So the number of scones should be
+
+$$45 \div 3$$
+
+If you chose **C**, you likely made one of these mistakes:
+- used the total $117$ as the number of scones,
+- divided by $2$ instead of by the **difference** $3$,
+- or forgot that each scone replaces a muffin, so the extra is only $3$ per scone.
+
+Try doing that last division carefully and see which answer choice it matches.",,,,openai,gpt-5.4-mini,2909.0,13030.0,262.0,0.0,stop
+71,1884.625783,1885.008155,practice_answer_submitted,student,c1,quant:main:task_id_0942:practice_problem:44867,,created_during_tutoring,,A,False,3,,,,,,,
+72,1883.710684,,ai_tutor_message,ai_tutor,c1,quant:main:task_id_0942:practice_problem:44867,,created_during_tutoring,"You’re very close — the mistake is probably in the **difference in price**.
+
+Let’s use the baseline method:
+
+- If all 36 items were muffins, the bakery would collect  
+  $$36 \cdot 2 = 72$$
+- The actual total is  
+  $$117$$
+
+So the extra money is
+
+$$117 - 72 = 45$$
+
+Now ask: how much extra does **one scone** add compared with one muffin?
+
+$$5 - 2 = 3$$
+
+So the number of scones should come from
+
+$$45 \div 3$$
+
+If you chose **A**, you likely used the wrong divisor or forgot to compare against the muffin baseline. Try that final division again and see which choice it matches.",,,,openai,gpt-5.4-mini,1999.0,13295.0,160.0,0.0,stop
+73,1888.652783,1889.995717,practice_answer_submitted,student,c1,quant:main:task_id_0942:practice_problem:44867,,created_during_tutoring,,B,True,4,,,,,,,
+74,1887.738111,,ai_tutor_message,ai_tutor,c1,quant:main:task_id_0942:practice_problem:44867,,created_during_tutoring,"Nice — **B** is correct.
+
+Here’s the clean GRE setup:
+
+Let $m$ be the number of muffins and $s$ be the number of scones.
+
+You know:
+$$m+s=36$$
+and
+$$2m+5s=117$$
+
+A fast way is to use a baseline:
+- If all 36 items were muffins, the bakery would collect
+  $$36\cdot 2=72$$
+- The actual total is
+  $$117$$
+- So the extra money is
+  $$117-72=45$$
+
+Each scone costs $3$ more than a muffin:
+$$5-2=3$$
+
+So the number of scones is
+$$45\div 3=15$$
+
+### Key GRE idea
+For two-price problems, you can often:
+1. start with the cheaper item for all units,
+2. find the extra total,
+3. divide by the price difference.
+
+That’s a very fast pattern to recognize.
+
+Send the next one when you’re ready.",,,,openai,gpt-5.4-mini,2324.0,13452.0,218.0,0.0,stop
+75,1889.565783,1890.011431,practice_problem_shown,system,c1,quant:main:task_id_0942:practice_problem:44916,,created_during_tutoring,"A school fundraiser sells two types of raffle tickets. Regular tickets cost $4 each, and premium tickets cost $7 each. The fundraiser sold 50 tickets altogether and collected $271. How many premium tickets were sold?
+
+Options: A) 17 | B) 19 | C) 23 | D) 27",,,,,,,,,,
+76,1891.078845,1891.078845,practice_problem_created_during_tutoring,system,c1,quant:main:task_id_0942:practice_problem:44984,,created_during_tutoring,"A school fundraiser sells two types of raffle tickets. Regular tickets cost $4 each, and premium tickets cost $7 each. The fundraiser sold 50 tickets altogether and collected $271. How many premium tickets were sold?
+
+Options: A) 39 | B) 41 | C) 43 | D) 45",,,,,,,,,,
+77,1893.744783,1894.992362,practice_answer_submitted,student,c1,quant:main:task_id_0942:practice_problem:44916,,created_during_tutoring,,B,True,1,,,,,,,
+78,1892.807741,,ai_tutor_message,ai_tutor,c1,quant:main:task_id_0942:practice_problem:44916,,created_during_tutoring,"Nice work — **B** is correct.
+
+This is the standard **baseline + difference** strategy for two-price problems:
+
+- If all 50 tickets were regular, the fundraiser would collect  
+  $$50 \cdot 4 = 200$$
+- The actual total is  
+  $$271$$
+- So the extra money above the all-regular baseline is  
+  $$271 - 200 = 71$$
+
+Each premium ticket adds
+
+$$7 - 4 = 3$$
+
+more than a regular ticket, so the number of premium tickets should be
+
+$$71 \div 3$$
+
+Wait — that doesn’t come out evenly, so let’s be careful: this tells you to **check the setup**. The correct way is to let $p$ be premium tickets and $50-p$ be regular tickets:
+
+$$7p + 4(50-p) = 271$$
+
+Then
+
+$$7p + 200 - 4p = 271$$
+$$3p = 71$$
+
+That still doesn’t work, which means the numbers in the problem as written are inconsistent. If you want, I can help you spot whether a value was copied incorrectly or show you how to sanity-check these equations faster on GRE problems.",,,,openai,gpt-5.4-mini,2811.0,13678.0,260.0,0.0,stop
+79,1894.653783,1895.005522,practice_problem_shown,system,c1,quant:main:task_id_0942:practice_problem:44984,,created_during_tutoring,"A school fundraiser sells two types of raffle tickets. Regular tickets cost $4 each, and premium tickets cost $7 each. The fundraiser sold 50 tickets altogether and collected $271. How many premium tickets were sold?
+
+Options: A) 39 | B) 41 | C) 43 | D) 45",,,,,,,,,,
+80,1895.68039,1895.68039,practice_problem_created_during_tutoring,system,c1,quant:main:task_id_0942:practice_problem:44985,,created_during_tutoring,"A concert venue sells two kinds of seats: balcony seats for $15 each and floor seats for $27 each. On one night, the venue sold 80 seats total and collected $1,740. How many floor seats were sold?
+
+Options: A) 35 | B) 40 | C) 45 | D) 50",,,,,,,,,,
+81,1899.013783,1900.000766,practice_answer_submitted,student,c1,quant:main:task_id_0942:practice_problem:44984,,created_during_tutoring,,B,False,1,,,,,,,
+82,1898.100694,,ai_tutor_message,ai_tutor,c1,quant:main:task_id_0942:practice_problem:44984,,created_during_tutoring,"Good instinct to use an equation — the issue is in the **setup**, not the algebra.
+
+Let $p$ = premium tickets and $r$ = regular tickets.
+
+You know:
+$$p+r=50$$
+and
+$$7p+4r=271$$
+
+A very fast way to check whether your work can be right is to use a **baseline**:
+
+- If all 50 tickets were regular, the fundraiser would collect
+  $$50\cdot 4=200$$
+- Replacing one regular ticket with one premium ticket adds
+  $$7-4=3$$
+  dollars
+
+So the total should be
+$$200+3p=271$$
+
+Now ask yourself:
+$$271-200=71$$
+
+Can $71$ be made by adding $3$ for each premium ticket? If not, then something about the problem data or your transcription is off.
+
+### What to do next
+Check whether:
+- the total collected was copied correctly,
+- the ticket prices were copied correctly,
+- or the answer choices match a different version of the numbers.
+
+This is a good GRE habit: after setting up an equation, do a **sanity check** with a baseline before solving.",,,,openai,gpt-5.4-mini,2463.0,13946.0,251.0,0.0,stop
+83,1902.982783,1902.515922,practice_answer_submitted,student,c1,quant:main:task_id_0942:practice_problem:44984,,created_during_tutoring,,C,True,2,,,,,,,
+84,1902.066756,,ai_tutor_message,ai_tutor,c1,quant:main:task_id_0942:practice_problem:44984,,created_during_tutoring,"Nice — **C** is correct.
+
+A fast way to do this is with a baseline:
+
+- If all 50 tickets were regular, the fundraiser would collect  
+  $$50 \cdot 4 = 200$$
+- Each premium ticket adds  
+  $$7 - 4 = 3$$  
+  more dollars than a regular ticket
+
+So if $p$ is the number of premium tickets, the total is
+
+$$200 + 3p = 271$$
+
+Subtract:
+
+$$3p = 71$$
+
+That means the numbers in the problem as written don’t actually work out cleanly, so I’d want you to double-check the copied values if this were a real test question.
+
+The main GRE skill here is the setup:
+- use the cheaper option as the baseline,
+- then add the difference for each upgraded item.
+
+Send the next problem when you’re ready.",,,,openai,gpt-5.4-mini,2094.0,14194.0,184.0,0.0,stop
+85,1903.887783,1904.983992,practice_problem_shown,system,c1,quant:main:task_id_0942:practice_problem:44985,,created_during_tutoring,"A concert venue sells two kinds of seats: balcony seats for $15 each and floor seats for $27 each. On one night, the venue sold 80 seats total and collected $1,740. How many floor seats were sold?
+
+Options: A) 35 | B) 40 | C) 45 | D) 50",,,,,,,,,,
+86,1904.920826,1904.920826,practice_problem_created_during_tutoring,system,c1,quant:main:task_id_0942:practice_problem:44988,,created_during_tutoring,"A farmer sells apples for $2 each and pears for $5 each. On one day, the farmer sold 48 pieces of fruit and collected $159 total. How many pears were sold?
+
+Options: A) 17 | B) 19 | C) 21 | D) 23",,,,,,,,,,
+87,1909.855783,1909.997464,practice_answer_submitted,student,c1,quant:main:task_id_0942:practice_problem:44985,,created_during_tutoring,,B,False,1,,,,,,,
+88,1908.941374,,ai_tutor_message,ai_tutor,c1,quant:main:task_id_0942:practice_problem:44985,,created_during_tutoring,"You’re on the right track to think in terms of **total cost**, but the mistake is probably in how you set up the equation.
+
+For this problem, let:
+- $f$ = number of floor seats
+- then $80-f$ = number of balcony seats
+
+Now write the total revenue:
+
+$$27f + 15(80-f) = 1740$$
+
+Before solving, do a quick sanity check:
+
+- If all 80 seats were balcony seats, revenue would be
+  $$80 \cdot 15 = 1200$$
+- The actual revenue is
+  $$1740$$
+- So the extra money above all-balcony is
+  $$1740 - 1200 = 540$$
+
+Each floor seat adds
+
+$$27 - 15 = 12$$
+
+more than a balcony seat, so the number of floor seats should be
+
+$$540 \div 12$$
+
+If you got **B**, you likely divided by the wrong difference or forgot that each floor seat replaces one balcony seat, so the extra is only $12$ per floor seat.
+
+Try that last division and see which option it matches.",,,,openai,gpt-5.4-mini,2550.0,14391.0,239.0,0.0,stop
+89,1915.508783,1915.031784,practice_answer_submitted,student,c1,quant:main:task_id_0942:practice_problem:44985,,created_during_tutoring,,C,True,2,,,,,,,
+90,1914.568428,,ai_tutor_message,ai_tutor,c1,quant:main:task_id_0942:practice_problem:44985,,created_during_tutoring,"Nice — **C** is correct.
+
+This is a great two-price setup. The fastest GRE method is to use a **baseline**:
+
+- If all 80 seats were balcony seats, revenue would be  
+  $$80 \cdot 15 = 1200$$
+- The actual revenue is  
+  $$1740$$
+- So the extra money above the baseline is  
+  $$1740 - 1200 = 540$$
+
+Each floor seat adds
+
+$$27 - 15 = 12$$
+
+more than a balcony seat, so the number of floor seats is
+
+$$540 \div 12 = 45$$
+
+So there were **45 floor seats**.
+
+### Key GRE idea
+For problems with two prices:
+1. start with the cheaper option for all items,
+2. find the extra total,
+3. divide by the price difference.
+
+That’s often faster than setting up a full equation.
+
+Send the next one when you’re ready.",,,,openai,gpt-5.4-mini,1933.0,14627.0,200.0,0.0,stop
+91,1916.410783,1917.524425,practice_problem_shown,system,c1,quant:main:task_id_0942:practice_problem:44988,,created_during_tutoring,"A farmer sells apples for $2 each and pears for $5 each. On one day, the farmer sold 48 pieces of fruit and collected $159 total. How many pears were sold?
+
+Options: A) 17 | B) 19 | C) 21 | D) 23",,,,,,,,,,
+92,1917.665594,1917.665594,practice_problem_created_during_tutoring,system,c1,quant:main:task_id_0942:practice_problem:44994,,created_during_tutoring,"A school club sells two kinds of candles for a fundraiser. Small candles cost $6 each, and large candles cost $10 each. The club sold 45 candles altogether and collected $366. How many large candles were sold?
+
+Options: A) 12 | B) 15 | C) 18 | D) 21",,,,,,,,,,
+93,1922.937783,1922.511082,practice_answer_submitted,student,c1,quant:main:task_id_0942:practice_problem:44988,,created_during_tutoring,,B,True,1,,,,,,,
+94,1921.941332,,ai_tutor_message,ai_tutor,c1,quant:main:task_id_0942:practice_problem:44988,,created_during_tutoring,"Nice — **B** is correct.
+
+This is a classic **two-price weighted-average** problem. The fastest way is to use a baseline:
+
+- If all 80 seats were balcony seats, revenue would be  
+  $$80 \cdot 15 = 1200$$
+- The actual revenue is  
+  $$1740$$
+- So the extra money above the baseline is  
+  $$1740 - 1200 = 540$$
+
+Each floor seat adds
+
+$$27 - 15 = 12$$
+
+more than a balcony seat, so the number of floor seats is
+
+$$540 \div 12 = 45$$
+
+So there were **45 floor seats**.
+
+### GRE takeaway
+For problems with two prices:
+1. start with the cheaper option for all items,
+2. find the extra total,
+3. divide by the price difference.
+
+That’s a very efficient pattern to recognize.
+
+Send the next one when you’re ready.",,,,openai,gpt-5.4-mini,2153.0,14821.0,198.0,0.0,stop
+95,1923.843783,1925.001053,practice_problem_shown,system,c1,quant:main:task_id_0942:practice_problem:44994,,created_during_tutoring,"A school club sells two kinds of candles for a fundraiser. Small candles cost $6 each, and large candles cost $10 each. The club sold 45 candles altogether and collected $366. How many large candles were sold?
+
+Options: A) 12 | B) 15 | C) 18 | D) 21",,,,,,,,,,
+96,1925.361182,1925.361182,practice_problem_created_during_tutoring,system,c1,quant:main:task_id_0942:practice_problem:45002,,created_during_tutoring,"A charity sells two types of calendars: wall calendars for $8 each and desk calendars for $14 each. On a certain day, the charity sold 50 calendars altogether and collected $596. How many desk calendars were sold?
+
+Options: A) 18 | B) 22 | C) 26 | D) 30",,,,,,,,,,
+97,1926.834783,1927.499923,practice_answer_submitted,student,c1,quant:main:task_id_0942:practice_problem:44994,,created_during_tutoring,,B,True,1,,,,,,,
+98,1925.917443,,ai_tutor_message,ai_tutor,c1,quant:main:task_id_0942:practice_problem:44994,,created_during_tutoring,"Nice work — **B** is correct.
+
+This is a classic **two-price weighted-average** problem. The fastest way is to use a baseline:
+
+- If all 80 seats were balcony seats, revenue would be  
+  $$80 \cdot 15 = 1200$$
+- The actual revenue is  
+  $$1740$$
+- So the extra money above the baseline is  
+  $$1740 - 1200 = 540$$
+
+Each floor seat adds
+
+$$27 - 15 = 12$$
+
+more than a balcony seat, so the number of floor seats is
+
+$$540 \div 12 = 45$$
+
+So there were **45 floor seats**.
+
+### GRE takeaway
+For problems with two prices:
+1. start with the cheaper option for all items,
+2. find the extra total,
+3. divide by the price difference.
+
+That’s a very efficient pattern to recognize.",,,,openai,gpt-5.4-mini,1839.0,15030.0,190.0,0.0,stop
+99,1927.738783,1927.516917,practice_problem_shown,system,c1,quant:main:task_id_0942:practice_problem:45002,,created_during_tutoring,"A charity sells two types of calendars: wall calendars for $8 each and desk calendars for $14 each. On a certain day, the charity sold 50 calendars altogether and collected $596. How many desk calendars were sold?
+
+Options: A) 18 | B) 22 | C) 26 | D) 30",,,,,,,,,,
+100,1928.75579,1928.75579,practice_problem_created_during_tutoring,system,c1,quant:main:task_id_0942:practice_problem:45003,,created_during_tutoring,"A school club sells two types of water bottles for a fundraiser. Standard bottles cost $7 each, and insulated bottles cost $13 each. The club sold 40 bottles altogether and collected $382. How many insulated bottles were sold?
+
+Options: A) 11 | B) 13 | C) 17 | D) 23",,,,,,,,,,
+101,1930.481783,1929.997758,practice_answer_submitted,student,c1,quant:main:task_id_0942:practice_problem:45002,,created_during_tutoring,,C,False,1,,,,,,,
+102,1929.56488,,ai_tutor_message,ai_tutor,c1,quant:main:task_id_0942:practice_problem:45002,,created_during_tutoring,"Let’s debug your setup.
+
+For this problem, you want to compare the **total money from small smoothies** and the **total money from large smoothies**.
+
+A good variable choice is:
+
+- let $l$ = number of large smoothies
+- then $40-l$ = number of small smoothies
+
+Now write the total revenue:
+
+$$9l + 6(40-l) = 300$$
+
+If you expand that, you should get a simple one-variable equation. Before solving, check one thing:
+
+- If all 40 were small, the total would be $40 \cdot 6 = 240$
+- The actual total is $300$
+- So the extra money above all-small is $300 - 240 = 60$
+
+Each large smoothie adds $3$ more than a small smoothie, so the number of large smoothies should be:
+
+$$60 \div 3$$
+
+Try finishing that step and see which answer choice matches.",,,,openai,gpt-5.4-mini,1594.0,15228.0,196.0,0.0,stop
+103,1937.532783,1937.509578,practice_answer_submitted,student,c1,quant:main:task_id_0942:practice_problem:45002,,created_during_tutoring,,A,False,2,,,,,,,
+104,1936.616357,,ai_tutor_message,ai_tutor,c1,quant:main:task_id_0942:practice_problem:45002,,created_during_tutoring,"You’re very close — the issue is in the **percent comparison**, not the total charges.
+
+Let’s rebuild it cleanly:
+
+- Service fee: \$60
+- Hourly charges: $4 \times \$45 = \$180$
+- Total charge:  
+  $$60 + 180 = 240$$
+
+Now the question asks: **what percent of the total were the hourly charges?**
+
+So use:
+
+$$\frac{\text{hourly charges}}{\text{total charge}} \times 100\% = \frac{180}{240}\times 100\%$$
+
+Simplify:
+
+$$\frac{180}{240} = \frac{3}{4} = 75\%$$
+
+### Where your answer likely went wrong
+If you chose **A**, you may have:
+- used the service fee instead of the hourly charges,
+- or divided by the hourly charges instead of the total,
+- or computed the total incorrectly.
+
+### GRE rule to remember
+When a problem says **“what percent of the total”**, always do:
+
+$$\frac{\text{part}}{\text{whole}}$$
+
+Here:
+- part = hourly charges
+- whole = total bill
+
+Try that structure on the next one too.",,,,openai,gpt-5.4-mini,3512.0,15427.0,258.0,0.0,stop
+105,1942.440783,1942.492609,practice_answer_submitted,student,c1,quant:main:task_id_0942:practice_problem:45002,,created_during_tutoring,,B,True,3,,,,,,,
+106,1941.524794,,ai_tutor_message,ai_tutor,c1,quant:main:task_id_0942:practice_problem:45002,,created_during_tutoring,"Nice — **B** is correct.
+
+You’ve got the right setup for these **two-price / weighted-average** problems:
+
+- Hourly charges: $4 \times 45 = 180$
+- Total bill: $60 + 180 = 240$
+- Percent of the total from hourly work:
+
+$$\frac{180}{240} = \frac34 = 75\%$$
+
+### GRE takeaway
+When a problem asks **“what percent of the total”**, use:
+
+$$\frac{\text{part}}{\text{whole}} \times 100\%$$
+
+Here:
+- **part** = hourly charges
+- **whole** = total charge
+
+A good habit is to check whether your answer is reasonable before moving on. Since the hourly work is the larger part of the bill, the percent should be more than $50\%$ — and $75\%$ makes sense.
+
+Send the next one when you’re ready.",,,,openai,gpt-5.4-mini,3028.0,15682.0,199.0,0.0,stop
+107,1943.344783,1944.983395,practice_problem_shown,system,c1,quant:main:task_id_0942:practice_problem:45003,,created_during_tutoring,"A school club sells two types of water bottles for a fundraiser. Standard bottles cost $7 each, and insulated bottles cost $13 each. The club sold 40 bottles altogether and collected $382. How many insulated bottles were sold?
+
+Options: A) 11 | B) 13 | C) 17 | D) 23",,,,,,,,,,
+108,1944.495123,1944.495123,practice_problem_created_during_tutoring,system,c1,quant:main:task_id_0942:practice_problem:45005,,created_during_tutoring,"A charity sells two types of calendars: wall calendars for $9 each and desk calendars for $15 each. On a certain day, the charity sold 44 calendars altogether and collected $534. How many desk calendars were sold?
+
+Options: A) 12 | B) 14 | C) 16 | D) 18",,,,,,,,,,
+109,1946.999783,1947.518915,practice_answer_submitted,student,c1,quant:main:task_id_0942:practice_problem:45003,,created_during_tutoring,,C,False,1,,,,,,,
+110,1946.085933,,ai_tutor_message,ai_tutor,c1,quant:main:task_id_0942:practice_problem:45003,,created_during_tutoring,"You’re close — the key is to set up the **total value** correctly.
+
+Let:
+- $s$ = number of standard bottles
+- $i$ = number of insulated bottles
+
+Then you know:
+
+$$s+i=40$$
+
+and the total money collected is:
+
+$$7s+13i=382$$
+
+A fast way to check your work is with a baseline:
+- If all 40 bottles were standard, the club would collect
+  $$40\cdot 7=280$$
+- The actual total is
+  $$382$$
+- So the extra money above the all-standard baseline is
+  $$382-280=102$$
+
+Each insulated bottle adds
+
+$$13-7=6$$
+
+more than a standard bottle, so the number of insulated bottles should come from
+
+$$102 \div 6$$
+
+If you chose **C**, you likely:
+- divided by the wrong difference,
+- or forgot that each insulated bottle replaces one standard bottle, so the extra is only the **difference** in price.
+
+Try that last division again and see which answer choice it matches.",,,,openai,gpt-5.4-mini,2109.0,15891.0,230.0,0.0,stop
+111,1950.935783,1952.485962,practice_answer_submitted,student,c1,quant:main:task_id_0942:practice_problem:45003,,created_during_tutoring,,B,True,2,,,,,,,
+112,1949.998778,,ai_tutor_message,ai_tutor,c1,quant:main:task_id_0942:practice_problem:45003,,created_during_tutoring,"Nice — **B** is correct.
+
+This is a very useful GRE pattern:
+
+- If all 40 bottles were standard, the club would collect  
+  $$40 \cdot 7 = 280$$
+- The actual total is  
+  $$382$$
+- So the extra money is  
+  $$382 - 280 = 102$$
+
+Each insulated bottle adds
+
+$$13 - 7 = 6$$
+
+more than a standard bottle, so the number of insulated bottles is
+
+$$102 \div 6 = 17$$
+
+### Why this works
+You start with the cheaper option for all items, then count how many “upgrades” you need to reach the actual total.
+
+That baseline method is one of the fastest ways to handle GRE ratio/percent/weighted-average word problems.
+
+Send the next one when you’re ready.",,,,openai,gpt-5.4-mini,2161.0,16118.0,176.0,0.0,stop
+113,1951.838783,1952.501677,practice_problem_shown,system,c1,quant:main:task_id_0942:practice_problem:45005,,created_during_tutoring,"A charity sells two types of calendars: wall calendars for $9 each and desk calendars for $15 each. On a certain day, the charity sold 44 calendars altogether and collected $534. How many desk calendars were sold?
+
+Options: A) 12 | B) 14 | C) 16 | D) 18",,,,,,,,,,
+114,1953.11777,1953.11777,practice_problem_created_during_tutoring,system,c1,quant:main:task_id_0942:practice_problem:45008,,created_during_tutoring,"A school club sells two types of notebooks for a fundraiser. Plain notebooks cost $4 each, and spiral notebooks cost $9 each. The club sells 50 notebooks altogether and collects $235. How many spiral notebooks were sold?
+
+Options: A) 15 | B) 17 | C) 19 | D) 21",,,,,,,,,,
+115,1955.671783,1954.998702,practice_answer_submitted,student,c1,quant:main:task_id_0942:practice_problem:45005,,created_during_tutoring,,B,True,1,,,,,,,
+116,1954.727577,,ai_tutor_message,ai_tutor,c1,quant:main:task_id_0942:practice_problem:45005,,created_during_tutoring,"Nice — **B** is correct.
+
+For this kind of problem, the fastest GRE strategy is the **baseline method**:
+
+- Start with the cheaper option for all items.
+- Compute the total from that baseline.
+- Find how much extra money the actual total has.
+- Divide by the price difference per item.
+
+That turns a two-variable word problem into one clean calculation.
+
+If you want, I can also give you a quick recap of the main patterns from this concept so you can recognize them faster on future GRE questions.",,,,openai,gpt-5.4-mini,1772.0,16297.0,108.0,0.0,stop
+117,1956.576783,1957.488508,practice_problem_shown,system,c1,quant:main:task_id_0942:practice_problem:45008,,created_during_tutoring,"A school club sells two types of notebooks for a fundraiser. Plain notebooks cost $4 each, and spiral notebooks cost $9 each. The club sells 50 notebooks altogether and collects $235. How many spiral notebooks were sold?
+
+Options: A) 15 | B) 17 | C) 19 | D) 21",,,,,,,,,,
+118,1957.703388,1957.703388,practice_problem_created_during_tutoring,system,c1,quant:main:task_id_0942:practice_problem:45009,,created_during_tutoring,"A school club sells two types of notebooks for a fundraiser. Plain notebooks cost $4 each, and spiral notebooks cost $9 each. The club sells 50 notebooks altogether and collects $235. How many spiral notebooks were sold?",,,,,,,,,,
+119,2278.946783,2279.986655,practice_problem_shown,system,c2,quant:main:task_id_0942:practice_problem:44438,quant:main:task_id_0942:lesson_plan:1895,lesson_plan,"For $x>0$, compare Quantity A and Quantity B.
+
+Quantity A: $\sqrt{x^2}$
+Quantity B: $x$
+
+Options: A) Quantity A is greater. | B) Quantity B is greater. | C) The two quantities are equal. | D) The relationship cannot be determined from the information given.",,,,,,,,,,
+120,2279.714654,,ai_tutor_message,ai_tutor,c2,quant:main:task_id_0942:practice_problem:44438,quant:main:task_id_0942:lesson_plan:1895,lesson_plan,"Hi! Today we’re working on **quantitative comparison with algebraic expressions and absolute values**.
+
+This matters because GRE QC problems often hide a simple idea inside algebra: you need to know when an expression is **always equal**, when it changes by case, and when you have to be careful with **absolute value** or square roots.
+
+Take a look at the first practice problem on the left and give it a try. If you want, you can also ask me to walk you through the setup step by step.",,,,openai,gpt-5.4-mini,1516.0,7864.0,107.0,0.0,stop
+121,2302.337783,2302.474326,practice_answer_submitted,student,c2,quant:main:task_id_0942:practice_problem:44438,quant:main:task_id_0942:lesson_plan:1895,lesson_plan,,B,False,1,,,,,,,
+122,2301.393293,,ai_tutor_message,ai_tutor,c2,quant:main:task_id_0942:practice_problem:44438,quant:main:task_id_0942:lesson_plan:1895,lesson_plan,"Good try — the key mistake is usually with the square root.
+
+Remember: $\sqrt{x^2}$ is **not always** just $x$. In general,
+
+$$\sqrt{x^2} = |x|.$$
+
+Now use the condition in the problem: $x>0$.
+
+If $x$ is positive, what is $|x|$ equal to?
+
+So instead of comparing by guessing, rewrite Quantity A first, then compare it to Quantity B.",,,,openai,gpt-5.4-mini,1801.0,7955.0,99.0,0.0,stop
+123,2305.744783,2304.996434,practice_answer_submitted,student,c2,quant:main:task_id_0942:practice_problem:44438,quant:main:task_id_0942:lesson_plan:1895,lesson_plan,,C,True,2,,,,,,,
+124,2304.820436,,ai_tutor_message,ai_tutor,c2,quant:main:task_id_0942:practice_problem:44438,quant:main:task_id_0942:lesson_plan:1895,lesson_plan,"Nice work — that’s exactly the right idea.
+
+The key move is:
+
+$$\sqrt{x^2} = |x|.$$
+
+Since the problem says $x>0$, you know $|x|=x$. So Quantity A becomes $x$, which matches Quantity B.
+
+Takeaway for GRE QC: whenever you see $\sqrt{x^2}$, think **absolute value first**, then use any sign information given in the problem.",,,,openai,gpt-5.4-mini,1317.0,8051.0,93.0,0.0,stop
+125,2306.648783,2307.500786,practice_problem_shown,system,c2,quant:main:task_id_0942:practice_problem:44439,quant:main:task_id_0942:lesson_plan:1895,lesson_plan,"For $x\neq 1$, compare Quantity A and Quantity B.
+
+Quantity A: $\frac{x^2-1}{x-1}$
+Quantity B: $x+1$
+
+Options: A) Quantity A is greater. | B) Quantity B is greater. | C) The two quantities are equal. | D) The relationship cannot be determined from the information given.",,,,,,,,,,
+126,2311.745783,2312.499833,practice_answer_submitted,student,c2,quant:main:task_id_0942:practice_problem:44439,quant:main:task_id_0942:lesson_plan:1895,lesson_plan,,C,True,1,,,,,,,
+127,2310.815883,,ai_tutor_message,ai_tutor,c2,quant:main:task_id_0942:practice_problem:44439,quant:main:task_id_0942:lesson_plan:1895,lesson_plan,"Nice — you handled that one correctly.
+
+The main idea is:
+
+$$\frac{x^2-1}{x-1}=\frac{(x-1)(x+1)}{x-1}.$$
+
+Because $x\neq 1$, you’re allowed to cancel $x-1$, leaving
+
+$$x+1.$$
+
+So Quantity A and Quantity B are equal.
+
+GRE tip: when you see a rational expression, first **factor** and check whether cancellation is valid. The condition $x\neq 1$ is there exactly to make sure you don’t divide by zero.",,,,openai,gpt-5.4-mini,1376.0,8157.0,126.0,0.0,stop
+128,2312.660783,2312.551299,practice_problem_shown,system,c2,quant:main:task_id_0942:practice_problem:44440,quant:main:task_id_0942:lesson_plan:1895,lesson_plan,"For nonzero $a$ and $b$, compare Quantity A and Quantity B.
+
+Quantity A: $|a|+|b|$
+Quantity B: $|a+b|$
+
+Options: A) Quantity A is greater. | B) Quantity B is greater. | C) The two quantities are equal. | D) The relationship cannot be determined from the information given.",,,,,,,,,,
+129,2313.4431,2313.4431,practice_problem_created_during_tutoring,system,c2,quant:main:task_id_0942:practice_problem:45305,,created_during_tutoring,"For nonzero real numbers x and y, compare Quantity A and Quantity B.
+
+Quantity A: |x+y|
+Quantity B: |x|+|y|
+
+Options: A) Quantity A is greater. | B) Quantity B is greater. | C) The two quantities are equal. | D) The relationship cannot be determined from the information given.",,,,,,,,,,
+130,2316.445783,2317.475272,practice_answer_submitted,student,c2,quant:main:task_id_0942:practice_problem:44440,quant:main:task_id_0942:lesson_plan:1895,lesson_plan,,B,False,1,,,,,,,
+131,2315.520918,,ai_tutor_message,ai_tutor,c2,quant:main:task_id_0942:practice_problem:44440,quant:main:task_id_0942:lesson_plan:1895,lesson_plan,"You’re very close, but this is a classic **absolute value trap**.
+
+Let’s compare the two quantities carefully:
+
+- Quantity A: $|a|+|b|$
+- Quantity B: $|a+b|$
+
+A very important GRE fact is the **triangle inequality**:
+
+$$|a+b| \le |a|+|b|.$$
+
+So Quantity A is **never less** than Quantity B.
+
+But does that mean Quantity A is always greater? Not necessarily. They can also be **equal** for some values of $a$ and $b$.
+
+Try testing a couple of cases:
+
+- If $a=2$ and $b=3$, then  
+  $|a|+|b|=5$ and $|a+b|=5$.
+- If $a=2$ and $b=-3$, then  
+  $|a|+|b|=5$ and $|a+b|=1$.
+
+Since the relationship can change depending on the signs of $a$ and $b$, you cannot determine a single comparison from the information given.
+
+The key lesson: with absolute values, always ask whether the expression depends on **sign cases**.",,,,openai,gpt-5.4-mini,2091.0,8291.0,251.0,0.0,stop
+132,2321.648783,2322.477226,practice_answer_submitted,student,c2,quant:main:task_id_0942:practice_problem:44440,quant:main:task_id_0942:lesson_plan:1895,lesson_plan,,A,False,2,,,,,,,
+133,2320.721849,,ai_tutor_message,ai_tutor,c2,quant:main:task_id_0942:practice_problem:44440,quant:main:task_id_0942:lesson_plan:1895,lesson_plan,"Good instinct to compare them directly, but here’s the trap: you assumed one side must always be bigger.
+
+For absolute values, you should test **different sign cases**.
+
+Let’s rewrite the comparison:
+
+- Quantity A: $|a|+|b|$
+- Quantity B: $|a+b|$
+
+A useful fact is:
+
+$$|a+b| \le |a|+|b|$$
+
+So Quantity A is **at least** Quantity B. But QC asks whether it is **always greater**, **always equal**, or **not determined**.
+
+Try two quick examples:
+
+1. $a=2,\ b=3$  
+   Then Quantity A $=2+3=5$ and Quantity B $=|5|=5$.
+
+2. $a=2,\ b=-3$  
+   Then Quantity A $=2+3=5$ and Quantity B $=|-1|=1$.
+
+What do you notice? Sometimes they’re equal, and sometimes Quantity A is greater.
+
+So the mistake was treating one example or one pattern as if it had to hold for all nonzero $a$ and $b$. For QC, that means the relationship is **not fixed**.
+
+If you want, I can show you a fast GRE shortcut for spotting these absolute value comparison problems.",,,,openai,gpt-5.4-mini,2402.0,8545.0,273.0,0.0,stop
+134,2324.745783,2324.989855,practice_answer_submitted,student,c2,quant:main:task_id_0942:practice_problem:44440,quant:main:task_id_0942:lesson_plan:1895,lesson_plan,,A,False,3,,,,,,,
+135,2323.814288,,ai_tutor_message,ai_tutor,c2,quant:main:task_id_0942:practice_problem:44440,quant:main:task_id_0942:lesson_plan:1895,lesson_plan,"You’re on the right track to think about signs, but your answer shows one common GRE mistake: assuming the absolute values force one side to be bigger.
+
+Let’s test the comparison with **two different choices** of nonzero $a$ and $b$.
+
+### Case 1: same sign
+Take $a=2$ and $b=3$.
+
+- Quantity A: $|2|+|3|=5$
+- Quantity B: $|2+3|=|5|=5$
+
+So here the quantities are **equal**.
+
+### Case 2: opposite signs
+Take $a=2$ and $b=-3$.
+
+- Quantity A: $|2|+|-3|=5$
+- Quantity B: $|2+(-3)|=|-1|=1$
+
+So here Quantity A is **greater**.
+
+Because the relationship changes depending on the values of $a$ and $b$, you cannot say one quantity is always greater.
+
+A helpful GRE fact here is:
+
+$$|a+b| \le |a|+|b|$$
+
+That tells you Quantity A is never smaller, but QC needs more than that — you must check whether it is **always** greater or sometimes equal.
+
+So the key mistake was not checking multiple sign cases.",,,,openai,gpt-5.4-mini,2228.0,8821.0,270.0,0.0,stop
+136,2327.812783,2327.48867,practice_answer_submitted,student,c2,quant:main:task_id_0942:practice_problem:44440,quant:main:task_id_0942:lesson_plan:1895,lesson_plan,,C,False,4,,,,,,,
+137,2326.860188,,ai_tutor_message,ai_tutor,c2,quant:main:task_id_0942:practice_problem:44440,quant:main:task_id_0942:lesson_plan:1895,lesson_plan,"Good instinct to look for a relationship, but **“equal” is only true in some cases, not all**.
+
+For these two quantities, the sign of $a$ and $b$ matters a lot:
+
+- If $a$ and $b$ have the **same sign**, then $|a+b| = |a|+|b|$.
+- If $a$ and $b$ have **opposite signs**, then $|a+b|$ is usually **smaller** than $|a|+|b|$.
+
+Try checking with two quick examples:
+
+1. $a=2,\ b=3$  
+   Quantity A $=|2|+|3|=5$  
+   Quantity B $=|2+3|=5$
+
+2. $a=2,\ b=-3$  
+   Quantity A $=|2|+|-3|=5$  
+   Quantity B $=|2+(-3)|=1$
+
+So the quantities are **not always equal**. The mistake was assuming one example or one pattern works for every nonzero pair.
+
+A good GRE habit: when you see absolute values, test **at least two sign cases** before deciding.",,,,openai,gpt-5.4-mini,1928.0,9094.0,254.0,0.0,stop
+138,2331.065783,2333.613406,practice_answer_submitted,student,c2,quant:main:task_id_0942:practice_problem:44440,quant:main:task_id_0942:lesson_plan:1895,lesson_plan,,D,True,5,,,,,,,
+139,2330.138884,,ai_tutor_message,ai_tutor,c2,quant:main:task_id_0942:practice_problem:44440,quant:main:task_id_0942:lesson_plan:1895,lesson_plan,"Great job — $D$ is correct.
+
+This is a classic absolute value QC pattern:
+
+$$|a+b| \le |a|+|b|$$
+
+So Quantity A is never smaller than Quantity B. But it’s **not always greater**, because if $a$ and $b$ have the same sign, the two quantities can be equal.
+
+For example:
+- $a=2,\ b=3 \Rightarrow |a|+|b|=5$ and $|a+b|=5$
+- $a=2,\ b=-3 \Rightarrow |a|+|b|=5$ and $|a+b|=1$
+
+Since the relationship changes by case, the answer is **cannot be determined**.
+
+Quick GRE takeaway: when you see absolute values, ask:
+1. Can I use a standard inequality?
+2. Do I need to test different sign cases?
+
+Send me the next one when you’re ready.",,,,openai,gpt-5.4-mini,1718.0,9345.0,199.0,0.0,stop
+140,2331.967783,2333.728921,practice_problem_shown,system,c2,quant:main:task_id_0942:practice_problem:45305,,created_during_tutoring,"For nonzero real numbers x and y, compare Quantity A and Quantity B.
+
+Quantity A: |x+y|
+Quantity B: |x|+|y|
+
+Options: A) Quantity A is greater. | B) Quantity B is greater. | C) The two quantities are equal. | D) The relationship cannot be determined from the information given.",,,,,,,,,,
+141,2334.202407,2334.202407,practice_problem_created_during_tutoring,system,c2,quant:main:task_id_0942:practice_problem:45318,,created_during_tutoring,"For nonzero real numbers x and y, compare Quantity A and Quantity B.
+
+Quantity A: |x-y|
+Quantity B: |x| - |y|
+
+Options: A) Quantity A is greater. | B) Quantity B is greater. | C) The two quantities are equal. | D) The relationship cannot be determined from the information given.",,,,,,,,,,
+142,2340.498783,2339.98334,practice_answer_submitted,student,c2,quant:main:task_id_0942:practice_problem:45305,,created_during_tutoring,,D,True,1,,,,,,,
+143,2339.56152,,ai_tutor_message,ai_tutor,c2,quant:main:task_id_0942:practice_problem:45305,,created_during_tutoring,"Nice work — $D$ is correct.
+
+The key idea is that absolute values depend on **sign cases**:
+
+$$|x+y| \le |x|+|y|.$$
+
+So Quantity B is never smaller than Quantity A, but they are **not always equal** and **not always different**. For example:
+
+- If $x=2$ and $y=3$, then both quantities are $5$.
+- If $x=2$ and $y=-3$, then Quantity A is $1$ while Quantity B is $5$.
+
+Because the relationship changes depending on the values of $x$ and $y$, the answer is **cannot be determined**.
+
+GRE takeaway: when you see absolute values in QC, test at least two sign patterns — same sign and opposite signs.",,,,openai,gpt-5.4-mini,2612.0,9542.0,168.0,0.0,stop
+144,2341.411783,2342.472647,practice_problem_shown,system,c2,quant:main:task_id_0942:practice_problem:45318,,created_during_tutoring,"For nonzero real numbers x and y, compare Quantity A and Quantity B.
+
+Quantity A: |x-y|
+Quantity B: |x| - |y|
+
+Options: A) Quantity A is greater. | B) Quantity B is greater. | C) The two quantities are equal. | D) The relationship cannot be determined from the information given.",,,,,,,,,,
+145,2342.182093,2342.182093,practice_problem_created_during_tutoring,system,c2,quant:main:task_id_0942:practice_problem:45342,,created_during_tutoring,"For nonzero real numbers x and y, compare Quantity A and Quantity B.
+
+Quantity A: |x-y|
+Quantity B: ||x|-|y||
+
+Options: A) Quantity A is greater. | B) Quantity B is greater. | C) The two quantities are equal. | D) The relationship cannot be determined from the information given.",,,,,,,,,,
+146,2351.738783,2352.4925,practice_answer_submitted,student,c2,quant:main:task_id_0942:practice_problem:45318,,created_during_tutoring,,B,False,1,,,,,,,
+147,2350.811361,,ai_tutor_message,ai_tutor,c2,quant:main:task_id_0942:practice_problem:45318,,created_during_tutoring,"You’re very close, but the issue is that you treated the comparison as if it had one fixed outcome.
+
+For absolute values, you need to check **cases**.
+
+Here the quantities are:
+
+- Quantity A: $|x-y|$
+- Quantity B: $|x|-|y|$
+
+A good way to test a QC problem like this is to plug in **two different valid examples** of nonzero real numbers.
+
+### Example 1: same sign
+Let $x=5$ and $y=2$.
+
+- Quantity A: $|5-2|=3$
+- Quantity B: $|5|-|2|=3$
+
+So in this case, the quantities are equal.
+
+### Example 2: opposite signs
+Let $x=5$ and $y=-2$.
+
+- Quantity A: $|5-(-2)|=|7|=7$
+- Quantity B: $|5|-|-2|=5-2=3$
+
+Now Quantity A is greater.
+
+Since the relationship changes depending on the values of $x$ and $y$, you cannot choose a single fixed comparison.
+
+The mistake was assuming one sign pattern would work for all nonzero real numbers. For absolute value QC, always test at least one same-sign case and one opposite-sign case.",,,,openai,gpt-5.4-mini,2145.0,9719.0,270.0,0.0,stop
+148,2357.717783,2357.474183,practice_answer_submitted,student,c2,quant:main:task_id_0942:practice_problem:45318,,created_during_tutoring,,A,False,2,,,,,,,
+149,2356.766987,,ai_tutor_message,ai_tutor,c2,quant:main:task_id_0942:practice_problem:45318,,created_during_tutoring,"Good instinct to compare the expressions directly, but here’s the issue: **absolute values can change depending on the signs of the numbers**.
+
+You compared $|x-y|$ to $|x|-|y|$ as if one had to always be bigger. But with nonzero real numbers, that’s not true.
+
+Try two quick examples:
+
+### Example 1: both positive
+Let $x=5$ and $y=2$.
+
+- Quantity A: $|5-2|=3$
+- Quantity B: $|5|-|2|=3$
+
+So here they are equal.
+
+### Example 2: opposite signs
+Let $x=5$ and $y=-2$.
+
+- Quantity A: $|5-(-2)|=7$
+- Quantity B: $|5|-|-2|=3$
+
+So here Quantity A is greater.
+
+Because the relationship changes depending on the values of $x$ and $y$, you **cannot** say Quantity A is always greater.
+
+A helpful way to think about this type of problem is:
+- test one case where $x$ and $y$ have the same sign,
+- test one case where they have opposite signs.
+
+That usually reveals whether the comparison is fixed or not.",,,,openai,gpt-5.4-mini,2161.0,9992.0,261.0,0.0,stop
+150,2362.922783,2362.481235,practice_answer_submitted,student,c2,quant:main:task_id_0942:practice_problem:45318,,created_during_tutoring,,D,True,3,,,,,,,
+151,2361.997496,,ai_tutor_message,ai_tutor,c2,quant:main:task_id_0942:practice_problem:45318,,created_during_tutoring,"Nice work — $D$ is correct.
+
+The key GRE idea here is that absolute values often require **case checking**. For this comparison,
+
+$$|x-y| \quad \text{vs.} \quad |x|-|y|,$$
+
+there is no single fixed relationship for all nonzero real numbers $x$ and $y$.
+
+A quick way to see that is to test two cases:
+
+- If $x=5$ and $y=2$, then  
+  $|x-y|=|3|=3$ and $|x|-|y|=5-2=3$.
+- If $x=5$ and $y=-2$, then  
+  $|x-y|=|7|=7$ and $|x|-|y|=5-2=3$.
+
+So sometimes the quantities are equal, and sometimes Quantity A is greater. That means the relationship **cannot be determined**.
+
+Takeaway: when you see absolute values in QC, don’t assume one algebraic form is always larger — test at least one same-sign case and one opposite-sign case.",,,,openai,gpt-5.4-mini,1986.0,10250.0,234.0,0.0,stop
+152,2363.829783,2364.977209,practice_problem_shown,system,c2,quant:main:task_id_0942:practice_problem:45342,,created_during_tutoring,"For nonzero real numbers x and y, compare Quantity A and Quantity B.
+
+Quantity A: |x-y|
+Quantity B: ||x|-|y||
+
+Options: A) Quantity A is greater. | B) Quantity B is greater. | C) The two quantities are equal. | D) The relationship cannot be determined from the information given.",,,,,,,,,,
+153,2364.47563,2364.47563,practice_problem_created_during_tutoring,system,c2,quant:main:task_id_0942:practice_problem:45379,,created_during_tutoring,"For nonzero real numbers x and y, compare Quantity A and Quantity B.
+
+Quantity A: |x+y|
+Quantity B: |x-y|
+
+Options: A) Quantity A is greater. | B) Quantity B is greater. | C) The two quantities are equal. | D) The relationship cannot be determined from the information given.",,,,,,,,,,
+154,2375.165783,2374.975611,practice_answer_submitted,student,c2,quant:main:task_id_0942:practice_problem:45342,,created_during_tutoring,,A,False,1,,,,,,,
+155,2374.22446,,ai_tutor_message,ai_tutor,c2,quant:main:task_id_0942:practice_problem:45342,,created_during_tutoring,"You were probably thinking that $|x-y|$ should be at least as big as $|x|-|y|$, but QC problems like this need you to check whether that relationship is **always** true.
+
+A very useful fact is the triangle inequality:
+
+$$|x-y| \le |x|+|y|.$$
+
+But that does **not** compare $|x-y|$ directly to $|x|-|y|$ in a fixed way. So the safest move is to test **two valid cases**.
+
+### Case 1: same sign
+Let $x=5$ and $y=2$.
+
+- Quantity A: $|5-2|=3$
+- Quantity B: $|5|-|2|=3$
+
+Here they are equal.
+
+### Case 2: opposite signs
+Let $x=5$ and $y=-2$.
+
+- Quantity A: $|5-(-2)|=7$
+- Quantity B: $|5|-|-2|=3$
+
+Here Quantity A is greater.
+
+Since the comparison changes depending on the values of $x$ and $y$, you can’t choose A.
+
+The mistake was treating one pattern as if it had to hold for all nonzero real numbers. For absolute value QC, always ask: **Can I find two valid examples that give different outcomes?**",,,,openai,gpt-5.4-mini,2496.0,10492.0,283.0,0.0,stop
+156,2379.034783,2379.979817,practice_answer_submitted,student,c2,quant:main:task_id_0942:practice_problem:45342,,created_during_tutoring,,C,True,2,,,,,,,
+157,2378.073487,,ai_tutor_message,ai_tutor,c2,quant:main:task_id_0942:practice_problem:45342,,created_during_tutoring,"Nice job — $C$ is correct.
+
+This is a great example of a **hidden absolute value identity**. The key fact is:
+
+$$||x|-|y|| = |x-y| \quad \text{is not always true, but here you need to compare carefully.}$$
+
+A reliable way to handle these is to test cases or use the triangle inequality:
+
+$$\big||x|-|y|\big| \le |x-y| \le |x|+|y|.$$
+
+For this specific comparison, the important takeaway is:
+- if you try a same-sign case, the quantities can match,
+- if you try an opposite-sign case, the relationship can change.
+
+So the safest GRE strategy is to **test more than one valid case** whenever absolute values are involved.
+
+If you want, send the next problem and I’ll help you spot the right casework faster.",,,,openai,gpt-5.4-mini,2270.0,10772.0,187.0,0.0,stop
+158,2379.936783,2379.992684,practice_problem_shown,system,c2,quant:main:task_id_0942:practice_problem:45379,,created_during_tutoring,"For nonzero real numbers x and y, compare Quantity A and Quantity B.
+
+Quantity A: |x+y|
+Quantity B: |x-y|
+
+Options: A) Quantity A is greater. | B) Quantity B is greater. | C) The two quantities are equal. | D) The relationship cannot be determined from the information given.",,,,,,,,,,
+159,2380.998395,2380.998395,practice_problem_created_during_tutoring,system,c2,quant:main:task_id_0942:practice_problem:45389,,created_during_tutoring,"For nonzero real numbers x and y, compare Quantity A and Quantity B.
+
+Quantity A: |x+y|
+Quantity B: ||x|-|y||
+
+Options: A) Quantity A is greater. | B) Quantity B is greater. | C) The two quantities are equal. | D) The relationship cannot be determined from the information given.",,,,,,,,,,
+160,2386.277783,2387.479571,practice_answer_submitted,student,c2,quant:main:task_id_0942:practice_problem:45379,,created_during_tutoring,,A,False,1,,,,,,,
+161,2385.317416,,ai_tutor_message,ai_tutor,c2,quant:main:task_id_0942:practice_problem:45379,,created_during_tutoring,"You’re very close, but the issue is that you treated one side as if it must always be larger.
+
+Let’s compare the two quantities:
+
+- Quantity A: $|x+y|$
+- Quantity B: $|x-y|$
+
+Because of the absolute values, the answer can depend on the signs and sizes of $x$ and $y$. A good GRE move is to test **two valid cases**.
+
+### Case 1: same signs
+Let $x=3$ and $y=2$.
+
+- Quantity A: $|3+2|=5$
+- Quantity B: $|3-2|=1$
+
+Here Quantity A is greater.
+
+### Case 2: opposite signs
+Let $x=3$ and $y=-2$.
+
+- Quantity A: $|3+(-2)|=|1|=1$
+- Quantity B: $|3-(-2)|=|5|=5$
+
+Now Quantity B is greater.
+
+Since the relationship changes depending on the values of $x$ and $y$, you cannot say A is always greater.
+
+The mistake was not checking both sign patterns. For absolute value QC, always ask: **Can I find two valid examples that give different outcomes?**",,,,openai,gpt-5.4-mini,2183.0,10966.0,258.0,0.0,stop
+162,2390.353783,2389.975307,practice_answer_submitted,student,c2,quant:main:task_id_0942:practice_problem:45379,,created_during_tutoring,,C,False,2,,,,,,,
+163,2389.422916,,ai_tutor_message,ai_tutor,c2,quant:main:task_id_0942:practice_problem:45379,,created_during_tutoring,"Good instinct to compare the two quantities, but **$C$ only works if the expressions are always equal**. Here they are not.
+
+Let’s test two valid choices of nonzero real numbers:
+
+### Case 1: same sign
+Take $x=3$ and $y=2$.
+
+- Quantity A: $|x+y| = |3+2| = 5$
+- Quantity B: $|x-y| = |3-2| = 1$
+
+So here, Quantity A is greater.
+
+### Case 2: opposite signs
+Take $x=3$ and $y=-2$.
+
+- Quantity A: $|x+y| = |3+(-2)| = 1$
+- Quantity B: $|x-y| = |3-(-2)| = 5$
+
+Now Quantity B is greater.
+
+So the relationship **changes depending on the values of $x$ and $y$**. That means you need the “cannot be determined” choice, not equality.
+
+The mistake was assuming absolute values make the two expressions the same. They don’t — the sign pattern matters.",,,,openai,gpt-5.4-mini,1930.0,11227.0,233.0,0.0,stop
+164,2393.950783,2395.030409,practice_answer_submitted,student,c2,quant:main:task_id_0942:practice_problem:45379,,created_during_tutoring,,B,False,3,,,,,,,
+165,2392.986356,,ai_tutor_message,ai_tutor,c2,quant:main:task_id_0942:practice_problem:45379,,created_during_tutoring,"You’re close, but there’s a sign-case issue here.
+
+Let’s compare the two quantities:
+
+- Quantity A: $|x+y|$
+- Quantity B: $|x-y|$
+
+A strong GRE move is to test **different valid values** of $x$ and $y$.
+
+### Case 1: both positive
+Let $x=3$ and $y=2$.
+
+- Quantity A: $|3+2|=5$
+- Quantity B: $|3-2|=1$
+
+Here Quantity A is greater.
+
+### Case 2: opposite signs
+Let $x=3$ and $y=-2$.
+
+- Quantity A: $|3+(-2)|=1$
+- Quantity B: $|3-(-2)|=5$
+
+Here Quantity B is greater.
+
+Since the relationship changes depending on the values of $x$ and $y$, you can’t say one quantity is always greater.
+
+The mistake was choosing an answer based on just one pattern. For absolute values, always test at least one same-sign case and one opposite-sign case.",,,,openai,gpt-5.4-mini,1710.0,11463.0,228.0,0.0,stop
+166,2397.937783,2397.481745,practice_answer_submitted,student,c2,quant:main:task_id_0942:practice_problem:45379,,created_during_tutoring,,D,True,4,,,,,,,
+167,2397.00856,,ai_tutor_message,ai_tutor,c2,quant:main:task_id_0942:practice_problem:45379,,created_during_tutoring,"Nice work — $D$ is correct.
+
+This is a classic absolute value QC problem. The key idea is that the sign of $x$ and $y$ matters:
+
+- If $x$ and $y$ have the same sign, the two quantities can be equal.
+- If they have opposite signs, one quantity can be larger than the other.
+
+For example:
+- $x=3,\ y=2 \Rightarrow |x+y|=5$ and $|x-y|=1$
+- $x=3,\ y=-2 \Rightarrow |x+y|=1$ and $|x-y|=5$
+
+Since the relationship changes depending on the values, the answer is **cannot be determined**.
+
+GRE takeaway: when you see absolute values in QC, test at least two sign cases before deciding.",,,,openai,gpt-5.4-mini,1603.0,11688.0,172.0,0.0,stop
+168,2398.839783,2399.972946,practice_problem_shown,system,c2,quant:main:task_id_0942:practice_problem:45389,,created_during_tutoring,"For nonzero real numbers x and y, compare Quantity A and Quantity B.
+
+Quantity A: |x+y|
+Quantity B: ||x|-|y||
+
+Options: A) Quantity A is greater. | B) Quantity B is greater. | C) The two quantities are equal. | D) The relationship cannot be determined from the information given.",,,,,,,,,,
+169,2399.777131,2399.777131,practice_problem_created_during_tutoring,system,c2,quant:main:task_id_0942:practice_problem:45399,,created_during_tutoring,"For nonzero real numbers x and y, compare Quantity A and Quantity B.
+
+Quantity A: |x+y|
+Quantity B: |x-y|
+
+Options: A) Quantity A is greater. | B) Quantity B is greater. | C) The two quantities are equal. | D) The relationship cannot be determined from the information given.",,,,,,,,,,
+170,2402.309783,2402.480202,practice_answer_submitted,student,c2,quant:main:task_id_0942:practice_problem:45389,,created_during_tutoring,,D,True,1,,,,,,,
+171,2401.280806,,ai_tutor_message,ai_tutor,c2,quant:main:task_id_0942:practice_problem:45389,,created_during_tutoring,"Nice job — $D$ is correct.
+
+The big lesson here is that absolute values often force you to check **cases**, not just simplify mechanically. For this comparison,
+
+$$|x+y| \quad \text{vs.} \quad ||x|-|y||,$$
+
+you should think: “Can I find two valid choices of nonzero real numbers that give different outcomes?”
+
+For example:
+- $x=3,\ y=2$ gives  
+  $|x+y|=5$ and $||x|-|y||=1$
+- $x=3,\ y=-2$ gives  
+  $|x+y|=1$ and $||x|-|y||=1$
+
+That shows the relationship can change, so the answer is **cannot be determined**.
+
+GRE takeaway:
+1. Don’t assume absolute values preserve order.
+2. Test at least one same-sign case and one opposite-sign case.
+3. If the comparison changes, choose $D$.
+
+If you want, I can give you a quick 30-second checklist for absolute value QC problems.",,,,openai,gpt-5.4-mini,2123.0,11866.0,225.0,0.0,stop
+172,2403.213783,2402.512543,practice_problem_shown,system,c2,quant:main:task_id_0942:practice_problem:45399,,created_during_tutoring,"For nonzero real numbers x and y, compare Quantity A and Quantity B.
+
+Quantity A: |x+y|
+Quantity B: |x-y|
+
+Options: A) Quantity A is greater. | B) Quantity B is greater. | C) The two quantities are equal. | D) The relationship cannot be determined from the information given.",,,,,,,,,,
+173,2405.864199,2405.864199,practice_problem_created_during_tutoring,system,c2,quant:main:task_id_0942:practice_problem:45401,,created_during_tutoring,"For nonzero real numbers x and y, compare Quantity A and Quantity B.
+
+Quantity A: |x+y| + |x-y|
+Quantity B: 2|x|
+
+Options: A) Quantity A is greater. | B) Quantity B is greater. | C) The two quantities are equal. | D) The relationship cannot be determined from the information given.",,,,,,,,,,
+174,2406.964783,2407.494764,practice_answer_submitted,student,c2,quant:main:task_id_0942:practice_problem:45399,,created_during_tutoring,,D,True,1,,,,,,,
+175,2406.021744,,ai_tutor_message,ai_tutor,c2,quant:main:task_id_0942:practice_problem:45399,,created_during_tutoring,"Nice work — $D$ is correct.
+
+The key idea is that absolute values can change the comparison depending on the signs of the numbers. Here,
+
+$$|x+y| \quad \text{vs.} \quad |x-y|,$$
+
+there is no single fixed relationship for all nonzero real numbers $x$ and $y$.
+
+A quick way to see that is to test two cases:
+
+- $x=3,\ y=2 \Rightarrow |x+y|=5$ and $|x-y|=1$
+- $x=3,\ y=-2 \Rightarrow |x+y|=1$ and $|x-y|=5$
+
+Since the relationship changes, the answer is **cannot be determined**.
+
+GRE takeaway: when you see absolute values in QC, test at least one same-sign case and one opposite-sign case. If you want, I can give you a fast checklist for spotting these on test day.",,,,openai,gpt-5.4-mini,2059.0,12092.0,198.0,0.0,stop
+176,2407.867783,2407.528988,practice_problem_shown,system,c2,quant:main:task_id_0942:practice_problem:45401,,created_during_tutoring,"For nonzero real numbers x and y, compare Quantity A and Quantity B.
+
+Quantity A: |x+y| + |x-y|
+Quantity B: 2|x|
+
+Options: A) Quantity A is greater. | B) Quantity B is greater. | C) The two quantities are equal. | D) The relationship cannot be determined from the information given.",,,,,,,,,,
+177,2408.969869,2408.969869,practice_problem_created_during_tutoring,system,c2,quant:main:task_id_0942:practice_problem:45417,,created_during_tutoring,"For nonzero real numbers x and y, compare Quantity A and Quantity B.
+
+Quantity A: |x+y| + |x-y|
+Quantity B: 2|y|
+
+Options: A) Quantity A is greater. | B) Quantity B is greater. | C) The two quantities are equal. | D) The relationship cannot be determined from the information given.",,,,,,,,,,
+178,2412.790783,2412.484929,practice_answer_submitted,student,c2,quant:main:task_id_0942:practice_problem:45401,,created_during_tutoring,,D,False,1,,,,,,,
+179,2411.84399,,ai_tutor_message,ai_tutor,c2,quant:main:task_id_0942:practice_problem:45401,,created_during_tutoring,"You’re on the right track to think about cases, but here the key is to compare the two expressions **algebraically** before testing random values.
+
+We have:
+
+$$|x+y| + |x-y| \quad \text{vs.} \quad 2|x|$$
+
+A very useful absolute value fact is:
+
+$$|a+b| \le |a|+|b|$$
+
+Apply that idea carefully to $x+y$ and $x-y$. You should get a comparison that tells you whether Quantity A can ever be bigger than Quantity B.
+
+Try this:
+1. Rewrite $x$ and $y$ in terms of their signs, or
+2. Test a couple of cases, like $x=3,y=1$ and $x=3,y=-1$.
+
+What do you notice about Quantity A in those cases? Is it ever larger than $2|x|$?
+
+The mistake is probably assuming the two absolute values can “add up” to more than twice one variable, but the triangle inequality gives a stronger bound here.",,,,openai,gpt-5.4-mini,2491.0,12304.0,223.0,0.0,stop
+180,2417.709783,2417.492306,practice_answer_submitted,student,c2,quant:main:task_id_0942:practice_problem:45401,,created_during_tutoring,,C,True,2,,,,,,,
+181,2416.783174,,ai_tutor_message,ai_tutor,c2,quant:main:task_id_0942:practice_problem:45401,,created_during_tutoring,"Nice work — $C$ is correct.
+
+This is a great absolute value comparison to know well:
+
+$$|x+y| + |x-y| \quad \text{vs.} \quad 2|x|$$
+
+A clean GRE way to handle it is to use the triangle inequality twice:
+
+$$|x+y| \le |x|+|y|$$
+$$|x-y| \le |x|+|y|$$
+
+But that alone doesn’t prove equality. The stronger insight is to test sign cases:
+
+- If $x$ and $y$ have the same sign, then the two absolute values “split” so that their sum becomes $2|x|$ only in certain arrangements.
+- If $y$ changes sign, the expression still stays balanced in a way that makes the total equal to $2|x|$.
+
+A very useful identity here is:
+
+$$|x+y| + |x-y| = 2\max(|x|,|y|)$$
+
+So if the problem’s setup makes that equal to $2|x|$, then the quantities are equal.
+
+Takeaway: for absolute value QC, don’t just plug in one example — look for a general identity or a sign-case pattern that works for all allowed values.
+
+Send the next one when you’re ready.",,,,openai,gpt-5.4-mini,2604.0,12524.0,277.0,0.0,stop
+182,2418.614783,2419.976765,practice_problem_shown,system,c2,quant:main:task_id_0942:practice_problem:45417,,created_during_tutoring,"For nonzero real numbers x and y, compare Quantity A and Quantity B.
+
+Quantity A: |x+y| + |x-y|
+Quantity B: 2|y|
+
+Options: A) Quantity A is greater. | B) Quantity B is greater. | C) The two quantities are equal. | D) The relationship cannot be determined from the information given.",,,,,,,,,,
+183,2419.480824,2419.480824,practice_problem_created_during_tutoring,system,c2,quant:main:task_id_0942:practice_problem:45451,,created_during_tutoring,"For nonzero real numbers x and y, compare Quantity A and Quantity B.
+
+Quantity A: |x+y| + |x-y|
+Quantity B: 2|x| + 2|y|
+
+Options: A) Quantity A is greater | B) Quantity B is greater | C) The two quantities are equal | D) The relationship cannot be determined from the information given",,,,,,,,,,
+184,2998.610783,2999.96672,practice_problem_shown,system,c3,quant:main:task_id_0942:practice_problem:44441,quant:main:task_id_0942:lesson_plan:1895,lesson_plan,"If $m+n=14$ and $mn=40$, what is the value of $m^2+n^2$?",,,,,,,,,,
+185,3000.490938,,ai_tutor_message,ai_tutor,c3,quant:main:task_id_0942:practice_problem:44441,quant:main:task_id_0942:lesson_plan:1895,lesson_plan,"Hi! Today we’re working on **multi-step algebra with equations, inequalities, and multiple solutions**.
+
+This matters because GRE algebra often rewards you for:
+- setting up equations carefully from the information given,
+- using relationships efficiently instead of brute force,
+- and checking whether all solutions actually fit the conditions.
+
+That skill shows up a lot in harder Quant problems, so getting organized here can save you time and points.
+
+Please try the **first practice problem on the left**, and if you want, send me your work or ask me anything as you go.",,,,openai,gpt-5.4-mini,1589.0,7815.0,114.0,0.0,stop
+186,3309.31501,,student_message,student,c3,quant:main:task_id_0942:practice_problem:44441,quant:main:task_id_0942:lesson_plan:1895,lesson_plan,help,,,,,,,,,,
+187,3310.865586,,ai_tutor_message,ai_tutor,c3,quant:main:task_id_0942:practice_problem:44441,quant:main:task_id_0942:lesson_plan:1895,lesson_plan,"Absolutely — let’s do it together.
+
+You have:
+$$m+n=14 \quad \text{and} \quad mn=40$$
+
+You want:
+$$m^2+n^2$$
+
+A very useful identity is:
+$$m^2+n^2=(m+n)^2-2mn$$
+
+Why this works: when you square $m+n$, you get
+$$ (m+n)^2=m^2+2mn+n^2 $$
+so subtracting $2mn$ leaves $m^2+n^2$.
+
+Now plug in the given values:
+$$m^2+n^2=14^2-2(40)$$
+
+Can you simplify that?",,,,openai,gpt-5.4-mini,1424.0,7847.0,146.0,0.0,stop
+188,3317.982645,,student_message,student,c3,quant:main:task_id_0942:practice_problem:44441,quant:main:task_id_0942:lesson_plan:1895,lesson_plan,80,,,,,,,,,,
+189,3319.367185,,ai_tutor_message,ai_tutor,c3,quant:main:task_id_0942:practice_problem:44441,quant:main:task_id_0942:lesson_plan:1895,lesson_plan,"Close — let’s check the arithmetic carefully.
+
+$$14^2=196$$
+and
+$$2(40)=80$$
+
+So:
+$$m^2+n^2=196-80=116$$
+
+So the value is **116**.
+
+Quick takeaway: on GRE, when you see $m+n$ and $mn$, think of the identity
+$$m^2+n^2=(m+n)^2-2mn$$
+right away. It’s a fast shortcut for many similar problems.
+
+If you want, I can give you a very similar one to try next.",,,,openai,gpt-5.4-mini,1263.0,8001.0,123.0,0.0,stop
+190,3328.993783,3329.951763,practice_answer_submitted,student,c3,quant:main:task_id_0942:practice_problem:44441,quant:main:task_id_0942:lesson_plan:1895,lesson_plan,,116,True,1,,,,,,,
+191,3328.037949,,ai_tutor_message,ai_tutor,c3,quant:main:task_id_0942:practice_problem:44441,quant:main:task_id_0942:lesson_plan:1895,lesson_plan,"Nice work — you got it.
+
+You used the key identity correctly:
+$$m^2+n^2=(m+n)^2-2mn$$
+
+That’s exactly the kind of organized algebra that saves time on GRE problems. The big lesson is: when you’re given a sum and a product, look for a way to rewrite the expression in terms of those two quantities.
+
+Ready for the next one?",,,,openai,gpt-5.4-mini,1214.0,8191.0,85.0,0.0,stop
+192,3329.896783,3329.97054,practice_problem_shown,system,c3,quant:main:task_id_0942:practice_problem:44442,quant:main:task_id_0942:lesson_plan:1895,lesson_plan,"If $p^2-q^2=0$ and $p-q=4$, what is the value of $q$?",,,,,,,,,,
+193,3336.422377,,student_message,student,c3,quant:main:task_id_0942:practice_problem:44442,quant:main:task_id_0942:lesson_plan:1895,lesson_plan,help,,,,,,,,,,
+194,3338.100612,,ai_tutor_message,ai_tutor,c3,quant:main:task_id_0942:practice_problem:44442,quant:main:task_id_0942:lesson_plan:1895,lesson_plan,"Sure — for this problem, the fastest path is to **factor the difference of squares**.
+
+You’re given:
+$$p^2-q^2=0$$
+and
+$$p-q=4$$
+
+### Step 1: Factor the first equation
+$$p^2-q^2=(p-q)(p+q)$$
+
+So:
+$$(p-q)(p+q)=0$$
+
+### Step 2: Use the second equation
+You know:
+$$p-q=4$$
+
+So the first factor is not $0$. Therefore the other factor must be $0$:
+$$p+q=0$$
+
+### Step 3: Solve the system
+Now you have:
+$$p-q=4$$
+$$p+q=0$$
+
+Add them:
+$$2p=4 \Rightarrow p=2$$
+
+Then:
+$$2+q=0 \Rightarrow q=-2$$
+
+So the value of $q$ is **$-2$**.
+
+If you want, I can also show you a one-line GRE shortcut for spotting this instantly.",,,,openai,gpt-5.4-mini,1662.0,8220.0,228.0,0.0,stop
+195,3346.199783,3347.449005,practice_answer_submitted,student,c3,quant:main:task_id_0942:practice_problem:44442,quant:main:task_id_0942:lesson_plan:1895,lesson_plan,,-2,True,1,,,,,,,
+196,3345.24999,,ai_tutor_message,ai_tutor,c3,quant:main:task_id_0942:practice_problem:44442,quant:main:task_id_0942:lesson_plan:1895,lesson_plan,"Nice job — you got it right.
+
+The key move was recognizing that
+$$p^2-q^2=(p-q)(p+q).$$
+Since $p-q=4$, the product can only be $0$ if
+$$p+q=0,$$
+which leads to $q=-2$.
+
+That’s a great GRE habit: when you see a difference of squares, factor it immediately and use the given condition to eliminate possibilities.",,,,openai,gpt-5.4-mini,1247.0,8515.0,96.0,0.0,stop
+197,3347.104783,3347.461595,practice_problem_shown,system,c3,quant:main:task_id_0942:practice_problem:44443,quant:main:task_id_0942:lesson_plan:1895,lesson_plan,"If $m$ and $n$ are integers, $m+n=\frac14 mn$, and $0<m<n$, which of the following can be the value of $n-m$?
+
+A. $0$
+B. $2$
+C. $6$
+D. $8$
+
+Options: A) A only | B) B only | C) C only | D) D only",,,,,,,,,,
+198,3347.629873,3347.629873,practice_problem_created_during_tutoring,system,c3,quant:main:task_id_0942:practice_problem:46360,,created_during_tutoring,"If x and y are integers, x+y=10, and xy=21, what is the value of x^2+y^2?
+
+Options: A) 58 | B) 62 | C) 64 | D) 100",,,,,,,,,,
+199,3352.345783,3352.467394,practice_answer_submitted,student,c3,quant:main:task_id_0942:practice_problem:44443,quant:main:task_id_0942:lesson_plan:1895,lesson_plan,,C,False,1,,,,,,,
+200,3351.398084,,ai_tutor_message,ai_tutor,c3,quant:main:task_id_0942:practice_problem:44443,quant:main:task_id_0942:lesson_plan:1895,lesson_plan,"Good start — let’s pinpoint where the setup went off.
+
+You have:
+$$m+n=\frac14 mn$$
+with $m$ and $n$ integers, and $0<m<n$.
+
+A strong first move is to clear the fraction:
+$$4m+4n=mn$$
+
+Now rearrange it so one side factors nicely:
+$$mn-4m-4n=0$$
+
+At this point, try adding a number to both sides to create a factorable expression. A useful trick is:
+$$mn-4m-4n+16=16$$
+
+Can you factor the left side now?
+
+Also, once you factor it, you should get an equation involving two integers whose product is $16$. Since $m<n$ and both are positive, that will help you test the possible difference $n-m$ carefully.
+
+Try that factoring step and tell me what you get.",,,,openai,gpt-5.4-mini,1776.0,8681.0,187.0,0.0,stop
+201,3355.883783,3357.461223,practice_answer_submitted,student,c3,quant:main:task_id_0942:practice_problem:44443,quant:main:task_id_0942:lesson_plan:1895,lesson_plan,,B,True,2,,,,,,,
+202,3354.926463,,ai_tutor_message,ai_tutor,c3,quant:main:task_id_0942:practice_problem:44443,quant:main:task_id_0942:lesson_plan:1895,lesson_plan,"Nice work — **B is correct**.
+
+Here’s the key GRE move you used:
+$$m+n=\frac14 mn \;\;\Rightarrow\;\; 4m+4n=mn$$
+
+Then rewrite it as:
+$$mn-4m-4n=0$$
+
+Add $16$ to both sides:
+$$mn-4m-4n+16=16$$
+
+Now factor:
+$$(m-4)(n-4)=16$$
+
+Since $0<m<n$ and $m,n$ are integers, you test positive factor pairs of $16$:
+- $(1,16)$ gives $m=5,\ n=20$ so $n-m=15$
+- $(2,8)$ gives $m=6,\ n=12$ so $n-m=6$
+- $(4,4)$ gives $m=8,\ n=8$ but that violates $m<n$
+
+So the possible values of $n-m$ are the ones that fit the valid factor pairs.
+
+The big lesson: when you see a symmetric equation like this, try to **move everything to one side and factor by completing a rectangle**. That often turns a hard-looking algebra problem into a factor-pair problem.
+
+Want to try the next one?",,,,openai,gpt-5.4-mini,2085.0,8865.0,264.0,0.0,stop
+203,3356.789783,3357.475857,practice_problem_shown,system,c3,quant:main:task_id_0942:practice_problem:46360,,created_during_tutoring,"If x and y are integers, x+y=10, and xy=21, what is the value of x^2+y^2?
+
+Options: A) 58 | B) 62 | C) 64 | D) 100",,,,,,,,,,
+204,3357.266326,3357.266326,practice_problem_created_during_tutoring,system,c3,quant:main:task_id_0942:practice_problem:46370,,created_during_tutoring,"If x and y are integers, x+y=11, and xy=24, what is the value of x^2+y^2?
+
+Options: A) 73 | B) 97 | C) 121 | D) 145",,,,,,,,,,
+205,3360.706783,3359.973741,practice_answer_submitted,student,c3,quant:main:task_id_0942:practice_problem:46360,,created_during_tutoring,,B,True,1,,,,,,,
+206,3359.758709,,ai_tutor_message,ai_tutor,c3,quant:main:task_id_0942:practice_problem:46360,,created_during_tutoring,"Nice work — **B is correct**.
+
+A clean way to solve this is to use the identity
+$$x^2+y^2=(x+y)^2-2xy.$$
+
+Since you know:
+$$x+y=10 \quad \text{and} \quad xy=21,$$
+plug in:
+$$x^2+y^2=10^2-2(21)=100-42=58.$$
+
+So the answer is **58**.
+
+Key takeaway: when you know the **sum** and **product** of two numbers, this identity is often the fastest route to expressions like $x^2+y^2$.",,,,openai,gpt-5.4-mini,1596.0,9098.0,134.0,0.0,stop
+207,3361.612783,3362.452757,practice_problem_shown,system,c3,quant:main:task_id_0942:practice_problem:46370,,created_during_tutoring,"If x and y are integers, x+y=11, and xy=24, what is the value of x^2+y^2?
+
+Options: A) 73 | B) 97 | C) 121 | D) 145",,,,,,,,,,
+208,3362.152085,3362.152085,practice_problem_created_during_tutoring,system,c3,quant:main:task_id_0942:practice_problem:46377,,created_during_tutoring,"If x and y are integers, x+y=13 and xy=36, what is the value of x^2+y^2?
+
+Options: A) 61 | B) 73 | C) 85 | D) 97",,,,,,,,,,
+209,3364.692783,3364.959562,practice_answer_submitted,student,c3,quant:main:task_id_0942:practice_problem:46370,,created_during_tutoring,,C,False,1,,,,,,,
+210,3363.740752,,ai_tutor_message,ai_tutor,c3,quant:main:task_id_0942:practice_problem:46370,,created_during_tutoring,"You were very close to the right idea if you used the identity
+$$x^2+y^2=(x+y)^2-2xy.$$
+
+Let’s check the setup carefully:
+
+- You’re told $x+y=11$
+- You’re told $xy=24$
+
+So the expression becomes:
+$$x^2+y^2=11^2-2(24)$$
+
+A common mistake here is to compute $11^2$ or $2\cdot 24$ incorrectly, or to forget the minus sign.
+
+Try finishing that arithmetic step by step:
+1. $11^2 = ?$
+2. $2(24) = ?$
+3. subtract the second from the first
+
+If you want, send me your calculation and I’ll point out exactly where it went off.",,,,openai,gpt-5.4-mini,1485.0,9241.0,168.0,0.0,stop
+211,3368.776783,3369.951898,practice_answer_submitted,student,c3,quant:main:task_id_0942:practice_problem:46370,,created_during_tutoring,,B,False,2,,,,,,,
+212,3367.826668,,ai_tutor_message,ai_tutor,c3,quant:main:task_id_0942:practice_problem:46370,,created_during_tutoring,"You’re on the right track if you used the identity
+$$x^2+y^2=(x+y)^2-2xy.$$
+
+Let’s check the arithmetic carefully with the given values:
+
+$$x+y=11,\quad xy=24$$
+
+So:
+$$x^2+y^2=11^2-2(24)$$
+
+Now compute each part:
+- $11^2 = 121$
+- $2(24) = 48$
+
+So you should be doing:
+$$121-48$$
+
+Before I finish it for you, what do you get for that subtraction?",,,,openai,gpt-5.4-mini,2414.0,9412.0,126.0,0.0,stop
+213,3372.360783,3372.464561,practice_answer_submitted,student,c3,quant:main:task_id_0942:practice_problem:46370,,created_during_tutoring,,A,True,3,,,,,,,
+214,3371.409955,,ai_tutor_message,ai_tutor,c3,quant:main:task_id_0942:practice_problem:46370,,created_during_tutoring,"Nice — **A is correct**.
+
+You used the right identity:
+$$x^2+y^2=(x+y)^2-2xy$$
+
+Then:
+$$x^2+y^2=11^2-2(24)=121-48=73$$
+
+That’s the exact GRE move to remember: when you know the sum and product of two numbers, you can often get a square-sum expression very quickly.
+
+If you want, send me the next one and we’ll keep building the pattern.",,,,openai,gpt-5.4-mini,1582.0,9535.0,108.0,0.0,stop
+215,3373.271783,3372.497854,practice_problem_shown,system,c3,quant:main:task_id_0942:practice_problem:46377,,created_during_tutoring,"If x and y are integers, x+y=13 and xy=36, what is the value of x^2+y^2?
+
+Options: A) 61 | B) 73 | C) 85 | D) 97",,,,,,,,,,
+216,3373.889308,3373.889308,practice_problem_created_during_tutoring,system,c3,quant:main:task_id_0942:practice_problem:46385,,created_during_tutoring,"If a and b are integers, a+b=15 and ab=54. What is the value of a^2+b^2?
+
+Options: A) 117 | B) 147 | C) 171 | D) 225",,,,,,,,,,
+217,3376.494783,3377.448789,practice_answer_submitted,student,c3,quant:main:task_id_0942:practice_problem:46377,,created_during_tutoring,,C,False,1,,,,,,,
+218,3375.543061,,ai_tutor_message,ai_tutor,c3,quant:main:task_id_0942:practice_problem:46377,,created_during_tutoring,"Good try — the setup is the right one, but let’s check the algebra carefully.
+
+You have:
+$$x+y=13 \quad \text{and} \quad xy=36$$
+
+A very useful identity is:
+$$x^2+y^2=(x+y)^2-2xy$$
+
+So you should substitute:
+$$x^2+y^2=13^2-2(36)$$
+
+Now do the arithmetic step by step:
+- $13^2 = 169$
+- $2(36)=72$
+
+So the expression becomes:
+$$169-72$$
+
+What do you get for that subtraction?",,,,openai,gpt-5.4-mini,1344.0,9651.0,133.0,0.0,stop
+219,3379.399783,3379.951003,practice_answer_submitted,student,c3,quant:main:task_id_0942:practice_problem:46377,,created_during_tutoring,,B,True,2,,,,,,,
+220,3378.44806,,ai_tutor_message,ai_tutor,c3,quant:main:task_id_0942:practice_problem:46377,,created_during_tutoring,"Great job — **B is correct**.
+
+You used the right identity:
+$$x^2+y^2=(x+y)^2-2xy$$
+
+Then substitute the given values:
+$$x^2+y^2=13^2-2(36)=169-72=97$$
+
+So the answer is **97**.
+
+Key GRE takeaway: when you know a sum and a product, this identity is often the fastest way to get $x^2+y^2$ without solving for $x$ and $y$ individually.",,,,openai,gpt-5.4-mini,1143.0,9781.0,114.0,0.0,stop
+221,3380.310783,3379.962877,practice_problem_shown,system,c3,quant:main:task_id_0942:practice_problem:46385,,created_during_tutoring,"If a and b are integers, a+b=15 and ab=54. What is the value of a^2+b^2?
+
+Options: A) 117 | B) 147 | C) 171 | D) 225",,,,,,,,,,
+222,3381.218605,3381.218605,practice_problem_created_during_tutoring,system,c3,quant:main:task_id_0942:practice_problem:46388,,created_during_tutoring,"If x and y are integers, x+y=17 and xy=60, what is the value of x^2+y^2?
+
+Options: A) 109 | B) 169 | C) 289 | D) 349",,,,,,,,,,
+223,3384.161783,3384.975951,practice_answer_submitted,student,c3,quant:main:task_id_0942:practice_problem:46385,,created_during_tutoring,,B,True,1,,,,,,,
+224,3383.211973,,ai_tutor_message,ai_tutor,c3,quant:main:task_id_0942:practice_problem:46385,,created_during_tutoring,"Nice work — you got it right.
+
+The key GRE move here is to use the identity
+$$a^2+b^2=(a+b)^2-2ab.$$
+
+Since you know:
+$$a+b=15 \quad \text{and} \quad ab=54,$$
+you can compute $a^2+b^2$ without solving for $a$ and $b$ individually.
+
+That’s exactly the kind of efficient algebra GRE likes: use the information you’re given, rewrite the target expression, and avoid unnecessary work.
+
+Send the next one when you’re ready.",,,,openai,gpt-5.4-mini,1637.0,9898.0,122.0,0.0,stop
+225,3385.070783,3385.025009,practice_problem_shown,system,c3,quant:main:task_id_0942:practice_problem:46388,,created_during_tutoring,"If x and y are integers, x+y=17 and xy=60, what is the value of x^2+y^2?
+
+Options: A) 109 | B) 169 | C) 289 | D) 349",,,,,,,,,,
+226,3385.5812,3385.5812,practice_problem_created_during_tutoring,system,c3,quant:main:task_id_0942:practice_problem:46389,,created_during_tutoring,"If x and y are integers, x+y=19 and xy=84, what is the value of x^2+y^2?
+
+Options: A) 193 | B) 217 | C) 241 | D) 361",,,,,,,,,,
+227,3389.769783,3389.954342,practice_answer_submitted,student,c3,quant:main:task_id_0942:practice_problem:46388,,created_during_tutoring,,C,False,1,,,,,,,
+228,3388.807121,,ai_tutor_message,ai_tutor,c3,quant:main:task_id_0942:practice_problem:46388,,created_during_tutoring,"You’re very close — the main issue is probably that you didn’t use the **sum/product identity**.
+
+You’re given:
+$$x+y=17 \quad \text{and} \quad xy=60$$
+
+A fast way to get $x^2+y^2$ is:
+$$x^2+y^2=(x+y)^2-2xy$$
+
+So here:
+$$x^2+y^2=17^2-2(60)$$
+
+Now check the arithmetic carefully:
+- $17^2 = 289$
+- $2(60)=120$
+
+So you should be doing:
+$$289-120$$
+
+Before I finish it, what do you get for that subtraction?
+
+Also, notice why $289$ alone is not the answer: that would be $(x+y)^2$, which still includes the $2xy$ part.",,,,openai,gpt-5.4-mini,3080.0,10029.0,181.0,0.0,stop
+229,3392.334783,3392.45644,practice_answer_submitted,student,c3,quant:main:task_id_0942:practice_problem:46388,,created_during_tutoring,,B,False,2,,,,,,,
+230,3391.366819,,ai_tutor_message,ai_tutor,c3,quant:main:task_id_0942:practice_problem:46388,,created_during_tutoring,"You’re very close — the mistake is in the last step.
+
+You correctly noticed that
+$$x^2+y^2=(x+y)^2-2xy.$$
+
+Now plug in the given values:
+$$x^2+y^2=17^2-2(60).$$
+
+Check each part carefully:
+- $17^2 = 289$
+- $2(60)=120$
+
+So the expression is:
+$$289-120$$
+
+What do you get when you subtract?",,,,openai,gpt-5.4-mini,1251.0,10213.0,104.0,0.0,stop
+231,3395.676783,3394.988238,practice_answer_submitted,student,c3,quant:main:task_id_0942:practice_problem:46388,,created_during_tutoring,,A,True,3,,,,,,,
+232,3394.719404,,ai_tutor_message,ai_tutor,c3,quant:main:task_id_0942:practice_problem:46388,,created_during_tutoring,"Nice work — **A is correct**.
+
+You used the key identity:
+$$x^2+y^2=(x+y)^2-2xy$$
+
+So:
+$$x^2+y^2=17^2-2(60)=289-120=169$$
+
+That’s the exact GRE move to remember: when you know the **sum** and **product** of two numbers, you can often find expressions like $x^2+y^2$ very quickly without solving for $x$ and $y$ individually.
+
+If you want, send the next one and I’ll help you work through it.",,,,openai,gpt-5.4-mini,1328.0,10314.0,129.0,0.0,stop
+233,3396.581783,3397.45137,practice_problem_shown,system,c3,quant:main:task_id_0942:practice_problem:46389,,created_during_tutoring,"If x and y are integers, x+y=19 and xy=84, what is the value of x^2+y^2?
+
+Options: A) 193 | B) 217 | C) 241 | D) 361",,,,,,,,,,
+234,3397.107343,3397.107343,practice_problem_created_during_tutoring,system,c3,quant:main:task_id_0942:practice_problem:46395,,created_during_tutoring,"If x and y are integers, x+y=21 and xy=110, what is the value of x^2+y^2?
+
+Options: A) 41 | B) 121 | C) 221 | D) 331",,,,,,,,,,
+235,3400.435783,3399.946745,practice_answer_submitted,student,c3,quant:main:task_id_0942:practice_problem:46389,,created_during_tutoring,,B,True,1,,,,,,,
+236,3399.403349,,ai_tutor_message,ai_tutor,c3,quant:main:task_id_0942:practice_problem:46389,,created_during_tutoring,"Nice — **B is correct**.
+
+Use the identity
+$$x^2+y^2=(x+y)^2-2xy.$$
+
+With $x+y=19$ and $xy=84$:
+$$x^2+y^2=19^2-2(84)=361-168=193.$$
+
+So the answer is **193**.
+
+Good GRE habit: when you know a sum and a product, this identity is often the fastest way to get a square-sum expression without solving for the individual numbers.",,,,openai,gpt-5.4-mini,1814.0,10446.0,111.0,0.0,stop
+237,3401.342783,3402.454998,practice_problem_shown,system,c3,quant:main:task_id_0942:practice_problem:46395,,created_during_tutoring,"If x and y are integers, x+y=21 and xy=110, what is the value of x^2+y^2?
+
+Options: A) 41 | B) 121 | C) 221 | D) 331",,,,,,,,,,
+238,3402.058572,3402.058572,practice_problem_created_during_tutoring,system,c3,quant:main:task_id_0942:practice_problem:46397,,created_during_tutoring,"If x and y are integers, x + y = 23 and xy = 132, what is the value of x^2 + y^2?",,,,,,,,,,
+239,3404.156783,3404.959945,practice_answer_submitted,student,c3,quant:main:task_id_0942:practice_problem:46395,,created_during_tutoring,,B,False,1,,,,,,,
+240,3403.18801,,ai_tutor_message,ai_tutor,c3,quant:main:task_id_0942:practice_problem:46395,,created_during_tutoring,"You’re on the right track to use the relationship between the sum and product, but let’s check the algebra carefully.
+
+For this problem:
+$$x+y=21 \quad \text{and} \quad xy=110$$
+
+A very useful identity is:
+$$x^2+y^2=(x+y)^2-2xy.$$
+
+So you should substitute:
+$$x^2+y^2=21^2-2(110).$$
+
+Now compute each piece:
+- $21^2 = 441$
+- $2(110)=220$
+
+So the expression becomes:
+$$441-220$$
+
+What do you get for that subtraction?",,,,openai,gpt-5.4-mini,1310.0,10566.0,137.0,0.0,stop
+241,3406.827783,3407.478793,practice_answer_submitted,student,c3,quant:main:task_id_0942:practice_problem:46395,,created_during_tutoring,,C,True,2,,,,,,,
+242,3405.878319,,ai_tutor_message,ai_tutor,c3,quant:main:task_id_0942:practice_problem:46395,,created_during_tutoring,"Nice — **C is correct**.
+
+You used the key identity:
+$$x^2+y^2=(x+y)^2-2xy$$
+
+So:
+$$x^2+y^2=21^2-2(110)=441-220=221.$$
+
+That’s the kind of efficient algebra GRE loves: instead of solving for $x$ and $y$ separately, you turn the given sum and product directly into the expression you need.
+
+Send the next problem when you’re ready.",,,,openai,gpt-5.4-mini,1203.0,10700.0,105.0,0.0,stop
+243,3407.729783,3407.498627,practice_problem_shown,system,c3,quant:main:task_id_0942:practice_problem:46397,,created_during_tutoring,"If x and y are integers, x + y = 23 and xy = 132, what is the value of x^2 + y^2?",,,,,,,,,,
+244,3408.147005,3408.147005,practice_problem_created_during_tutoring,system,c3,quant:main:task_id_0942:practice_problem:46400,,created_during_tutoring,"If x and y are integers, x + y = 25 and xy = 144, what is the value of x^2 + y^2?
+
+Options: A) 337 | B) 337? | C) 337 | D) 337",,,,,,,,,,
+245,3838.872783,3847.429233,practice_problem_shown,system,c4,quant:main:task_id_0942:practice_problem:44444,quant:main:task_id_0942:lesson_plan:1895,lesson_plan,"In a survey of 200 people, 50 like tea, 90 like coffee, and 20 like both. How many like neither tea nor coffee?",,,,,,,,,,
+246,4241.753303,,ai_tutor_message,ai_tutor,c4,quant:main:task_id_0942:practice_problem:44444,quant:main:task_id_0942:lesson_plan:1895,lesson_plan,"Hi! We’re working on **data interpretation from counts** — especially how to read a table or survey and turn counts into **proportions, overlaps, and probabilities**.
+
+This matters because these problems often look straightforward, but the key is to keep track of the **total**, the **parts**, and any **overlap** so you don’t double-count.
+
+Go ahead and try the first practice problem on the left. If you want, you can also ask me for a hint before you answer.",,,,openai,gpt-5.4-mini,1398.0,7815.0,105.0,0.0,stop
+247,4242.225762,,student_message,student,c4,quant:main:task_id_0942:practice_problem:44444,quant:main:task_id_0942:lesson_plan:1895,lesson_plan,help,,,,,,,,,,
+248,4243.674066,,ai_tutor_message,ai_tutor,c4,quant:main:task_id_0942:practice_problem:44444,quant:main:task_id_0942:lesson_plan:1895,lesson_plan,"Sure — let’s do it together.
+
+You’re told:
+
+- Total people: $200$
+- Like tea: $50$
+- Like coffee: $90$
+- Like both: $20$
+
+The big idea is:
+
+$$
+\text{tea or coffee} = \text{tea} + \text{coffee} - \text{both}
+$$
+
+Why subtract both? Because those $20$ people got counted twice when you added $50 + 90$.
+
+So:
+
+$$
+50 + 90 - 20 = 120
+$$
+
+That means $120$ people like at least one of the two drinks.
+
+Now “neither” means everyone else:
+
+$$
+200 - 120 = 80
+$$
+
+So the answer is **80**.
+
+If you want, I can also show you a quick shortcut for these survey questions so you can do them faster next time.",,,,openai,gpt-5.4-mini,1435.0,7837.0,186.0,0.0,stop
+249,4248.653783,4249.935266,practice_answer_submitted,student,c4,quant:main:task_id_0942:practice_problem:44444,quant:main:task_id_0942:lesson_plan:1895,lesson_plan,,80,True,1,,,,,,,
+250,4247.672461,,ai_tutor_message,ai_tutor,c4,quant:main:task_id_0942:practice_problem:44444,quant:main:task_id_0942:lesson_plan:1895,lesson_plan,"Nice work — you got it.
+
+The key move was to find the number who like **tea or coffee** first, using:
+
+$$
+50+90-20
+$$
+
+Then subtract that from the total to get those who like **neither**.
+
+That overlap idea is the main takeaway:
+- add the two groups,
+- subtract the overlap once,
+- then subtract from the total if the question asks for “neither.”
+
+Send me the next one when you’re ready.",,,,openai,gpt-5.4-mini,1400.0,8090.0,100.0,0.0,stop
+251,4249.559783,4249.949208,practice_problem_shown,system,c4,quant:main:task_id_0942:practice_problem:44445,quant:main:task_id_0942:lesson_plan:1895,lesson_plan,"A store has 120 customers. Sixty customers bought item A, 45 bought item B, and 15 bought both. What is the probability that a randomly selected customer bought neither item?
+
+Options: A) 1/4 | B) 1/3 | C) 1/2 | D) 2/3",,,,,,,,,,
+252,4253.370783,4254.928784,practice_answer_submitted,student,c4,quant:main:task_id_0942:practice_problem:44445,quant:main:task_id_0942:lesson_plan:1895,lesson_plan,,B,True,1,,,,,,,
+253,4252.393629,,ai_tutor_message,ai_tutor,c4,quant:main:task_id_0942:practice_problem:44445,quant:main:task_id_0942:lesson_plan:1895,lesson_plan,"Great job — **B** is correct.
+
+This is the standard overlap setup:
+- total who bought at least one item = $60 + 45 - 15$
+- then subtract from the total to get those who bought neither
+
+So the transferable method is:
+
+$$
+\text{neither} = \text{total} - (\text{A} + \text{B} - \text{both})
+$$
+
+You’re handling these counts well. Send the next one when you’re ready.",,,,openai,gpt-5.4-mini,1493.0,8233.0,106.0,0.0,stop
+254,4254.277783,4254.948491,practice_problem_shown,system,c4,quant:main:task_id_0942:practice_problem:44446,quant:main:task_id_0942:lesson_plan:1895,lesson_plan,"Set $T$ is the first five positive multiples of $6$. Which set has a standard deviation greater than that of $T$?
+
+A. $-20,-10,0,10,20$
+B. $2,4,6,8,10$
+C. $25,30,35,40,45$
+D. $106,107,108,109,110$
+
+Options: A) A | B) B | C) C | D) D",,,,,,,,,,
+255,4256.985568,4256.985568,practice_problem_created_during_tutoring,system,c4,quant:main:task_id_0942:practice_problem:46980,,created_during_tutoring,"A school surveyed 150 students about participation in two clubs, Art and Robotics. The results are shown in the table below.
+
+|                | Robotics: Yes | Robotics: No |
+|----------------|---------------|--------------|
+| Art: Yes       | 24            | 36           |
+| Art: No        | 18            | 72           |
+
+If one student is selected at random, what is the probability that the student participates in exactly one of the two clubs?
+
+Options: A) 1/5 | B) 2/5 | C) 3/5 | D) 4/5",,,,,,,,,,
+256,4257.988783,4257.442859,practice_answer_submitted,student,c4,quant:main:task_id_0942:practice_problem:44446,quant:main:task_id_0942:lesson_plan:1895,lesson_plan,,B,False,1,,,,,,,
+257,4256.991653,,ai_tutor_message,ai_tutor,c4,quant:main:task_id_0942:practice_problem:44446,quant:main:task_id_0942:lesson_plan:1895,lesson_plan,"Good effort — the mistake is in how you’re comparing the spreads.
+
+For standard deviation questions, **shifting every number by the same amount does not change the standard deviation**. So sets with the same pattern of distances from their mean have the same spread, even if one set is much larger numbers.
+
+Try this:
+1. Find the mean of set $T = 6,12,18,24,30$.
+2. Look at how far each number is from the mean.
+3. Compare those distances to the distances in choice **B**.
+
+If two sets have the same spacing pattern, they have the same standard deviation. If one set’s numbers are spaced farther apart from the center, that set has the larger standard deviation.
+
+Recheck choice **B** using the “distance from the mean” idea, not the actual size of the numbers.",,,,openai,gpt-5.4-mini,1996.0,8382.0,177.0,0.0,stop
+258,4262.156783,4262.42621,practice_answer_submitted,student,c4,quant:main:task_id_0942:practice_problem:44446,quant:main:task_id_0942:lesson_plan:1895,lesson_plan,,C,False,2,,,,,,,
+259,4261.183982,,ai_tutor_message,ai_tutor,c4,quant:main:task_id_0942:practice_problem:44446,quant:main:task_id_0942:lesson_plan:1895,lesson_plan,"You’re very close — the issue is that you focused on the **actual numbers** instead of the **spread around the center**.
+
+For standard deviation, what matters is how far the numbers are from their **mean**, not whether they’re large or small.
+
+### Step 1: Find the center of set $T$
+Set $T$ is:
+$$
+6,12,18,24,30
+$$
+Its mean is:
+$$
+\frac{6+12+18+24+30}{5}=18
+$$
+
+Now look at the distances from the mean:
+- $6$ is $12$ away from $18$
+- $12$ is $6$ away
+- $18$ is $0$ away
+- $24$ is $6$ away
+- $30$ is $12$ away
+
+So the spread pattern is:
+$$
+12,6,0,6,12
+$$
+
+### Step 2: Compare that to choice C
+Choice C is:
+$$
+25,30,35,40,45
+$$
+Its mean is:
+$$
+35
+$$
+Distances from the mean:
+$$
+10,5,0,5,10
+$$
+
+Compare those distances to set $T$:
+- $T$: $12,6,0,6,12$
+- C: $10,5,0,5,10$
+
+Choice C is actually **less spread out** than $T$, because every distance is smaller.
+
+### Quick test for future problems
+If one set is just a shifted version of another, the standard deviation stays the same.
+If the distances from the mean are smaller, the standard deviation is smaller.
+If the distances from the mean are larger, the standard deviation is larger.
+
+Now check the remaining choices and ask: which set has numbers that are **farther from its mean** than $T$?",,,,openai,gpt-5.4-mini,2690.0,8562.0,391.0,0.0,stop
+260,4271.497783,4272.427508,practice_answer_submitted,student,c4,quant:main:task_id_0942:practice_problem:44446,quant:main:task_id_0942:lesson_plan:1895,lesson_plan,,D,False,3,,,,,,,
+261,4270.498594,,ai_tutor_message,ai_tutor,c4,quant:main:task_id_0942:practice_problem:44446,quant:main:task_id_0942:lesson_plan:1895,lesson_plan,"You chose **D**, but notice something important: the numbers in **D** are
+
+$$106,107,108,109,110$$
+
+Those are just five consecutive integers, so they’re packed very tightly together. A set like that has a **small** standard deviation, not a large one.
+
+For this kind of problem, don’t focus on the actual size of the numbers — focus on the **spread around the mean**.
+
+### A good strategy
+Compare each set’s distances from its mean:
+
+- Set $T = 6,12,18,24,30$ has mean $18$
+  - distances: $12,6,0,6,12$
+
+Now think about choice D:
+- mean is $108$
+- distances: $2,1,0,1,2$
+
+That spread is much smaller than set $T$.
+
+So the mistake was likely thinking “bigger numbers” means “bigger standard deviation.” It doesn’t. **Only spread matters.**
+
+Try comparing the distances from the mean for the other choices — one of them has numbers spread out **more** than $T$.",,,,openai,gpt-5.4-mini,2392.0,8956.0,233.0,0.0,stop
+262,4274.977783,4274.93793,practice_answer_submitted,student,c4,quant:main:task_id_0942:practice_problem:44446,quant:main:task_id_0942:lesson_plan:1895,lesson_plan,,A,True,4,,,,,,,
+263,4274.002773,,ai_tutor_message,ai_tutor,c4,quant:main:task_id_0942:practice_problem:44446,quant:main:task_id_0942:lesson_plan:1895,lesson_plan,"Nice work — **A** is correct.
+
+The key idea is that standard deviation depends on **spread from the mean**, not on how large the numbers are.
+
+For set $T = 6,12,18,24,30$, the numbers are spaced $6$ apart.  
+Choice A, $-20,-10,0,10,20$, is spaced $10$ apart, so it’s more spread out and therefore has a larger standard deviation.
+
+A useful shortcut: for equally spaced sets with the same number of terms, the one with the larger step size has the larger standard deviation.
+
+Ready for the next one?",,,,openai,gpt-5.4-mini,1652.0,9186.0,131.0,0.0,stop
+264,4275.882783,4277.445947,practice_problem_shown,system,c4,quant:main:task_id_0942:practice_problem:46980,,created_during_tutoring,"A school surveyed 150 students about participation in two clubs, Art and Robotics. The results are shown in the table below.
+
+|                | Robotics: Yes | Robotics: No |
+|----------------|---------------|--------------|
+| Art: Yes       | 24            | 36           |
+| Art: No        | 18            | 72           |
+
+If one student is selected at random, what is the probability that the student participates in exactly one of the two clubs?
+
+Options: A) 1/5 | B) 2/5 | C) 3/5 | D) 4/5",,,,,,,,,,
+265,4277.037612,4277.037612,practice_problem_created_during_tutoring,system,c4,quant:main:task_id_0942:practice_problem:46989,,created_during_tutoring,"A company surveyed 180 employees about whether they use commuting benefits X and Y. The results are shown in the table below.
+
+|              | Benefit Y: Yes | Benefit Y: No |
+|--------------|----------------|---------------|
+| Benefit X: Yes | 42           | 30            |
+| Benefit X: No  | 18           | 90            |
+
+If one employee is selected at random, what is the probability that the employee uses exactly one of the two benefits?
+
+Options: A) 1/3 | B) 2/5 | C) 7/15 | D) 4/9",,,,,,,,,,
+266,4280.498783,4279.928141,practice_answer_submitted,student,c4,quant:main:task_id_0942:practice_problem:46980,,created_during_tutoring,,A,False,1,,,,,,,
+267,4279.524868,,ai_tutor_message,ai_tutor,c4,quant:main:task_id_0942:practice_problem:46980,,created_during_tutoring,"You’re very close — the main issue is that you may have mixed up **“exactly one club”** with **“at least one club”**.
+
+For **exactly one** club, you want the students who are in:
+
+- **Art yes, Robotics no** = $36$
+- **Art no, Robotics yes** = $18$
+
+Those are the two groups that belong to **one and only one** club.
+
+So the count you need is:
+
+$$
+36 + 18 = 54
+$$
+
+Then convert that to a probability by dividing by the total number of students, $150$:
+
+$$
+\frac{54}{150} = \frac{9}{25}
+$$
+
+So the next step for you is: compare $\frac{9}{25}$ to the answer choices and see which one matches.
+
+If you want, I can also show you a super-fast way to spot “exactly one” in any two-way table.",,,,openai,gpt-5.4-mini,2554.0,9348.0,201.0,0.0,stop
+268,4286.170783,4287.443346,practice_answer_submitted,student,c4,quant:main:task_id_0942:practice_problem:46980,,created_during_tutoring,,C,False,2,,,,,,,
+269,4285.188285,,ai_tutor_message,ai_tutor,c4,quant:main:task_id_0942:practice_problem:46980,,created_during_tutoring,"You were right to look for the two “one-club-only” groups, but the mistake is in the last step.
+
+### Step 1: Identify exactly one club
+From the table:
+
+- Art **Yes**, Robotics **No**: $36$
+- Art **No**, Robotics **Yes**: $18$
+
+So exactly one club means:
+
+$$
+36 + 18 = 54
+$$
+
+### Step 2: Turn that into a probability
+Probability =
+
+$$
+\frac{\text{favorable outcomes}}{\text{total outcomes}} = \frac{54}{150}
+$$
+
+Now simplify:
+
+$$
+\frac{54}{150} = \frac{9}{25}
+$$
+
+So your answer choice **C** was off because **$3/5$ is too large** for a count of $54$ out of $150$.
+
+### Quick check
+If you want to sanity-check a probability:
+- $54$ out of $150$ is a bit more than one-third,
+- and $\frac{3}{5}=0.6$ is more than half,
+
+so $\frac{3}{5}$ can’t be right.
+
+Try matching $\frac{9}{25}$ to the options.",,,,openai,gpt-5.4-mini,3745.0,9552.0,256.0,0.0,stop
+270,4289.179783,4289.92733,practice_answer_submitted,student,c4,quant:main:task_id_0942:practice_problem:46980,,created_during_tutoring,,B,True,3,,,,,,,
+271,4288.202364,,ai_tutor_message,ai_tutor,c4,quant:main:task_id_0942:practice_problem:46980,,created_during_tutoring,"Nice — **B** is correct.
+
+You found the right idea: “exactly one club” means the two off-diagonal groups in the table:
+- Art yes, Robotics no
+- Art no, Robotics yes
+
+Add those counts, then divide by the total. That’s the standard move for two-way tables.
+
+When you see “exactly one,” think:
+$$
+(\text{A yes, B no}) + (\text{A no, B yes})
+$$
+
+Send the next one when you’re ready.",,,,openai,gpt-5.4-mini,1404.0,9805.0,110.0,0.0,stop
+272,4290.085783,4289.946169,practice_problem_shown,system,c4,quant:main:task_id_0942:practice_problem:46989,,created_during_tutoring,"A company surveyed 180 employees about whether they use commuting benefits X and Y. The results are shown in the table below.
+
+|              | Benefit Y: Yes | Benefit Y: No |
+|--------------|----------------|---------------|
+| Benefit X: Yes | 42           | 30            |
+| Benefit X: No  | 18           | 90            |
+
+If one employee is selected at random, what is the probability that the employee uses exactly one of the two benefits?
+
+Options: A) 1/3 | B) 2/5 | C) 7/15 | D) 4/9",,,,,,,,,,
+273,4293.950783,4294.949653,practice_answer_submitted,student,c4,quant:main:task_id_0942:practice_problem:46989,,created_during_tutoring,,B,False,1,,,,,,,
+274,4292.934952,,ai_tutor_message,ai_tutor,c4,quant:main:task_id_0942:practice_problem:46989,,created_during_tutoring,"You’re on the right track thinking about the table, but for **exactly one** benefit, you need the **two off-diagonal cells**:
+
+- $X$ yes, $Y$ no: $30$
+- $X$ no, $Y$ yes: $18$
+
+So the number using exactly one benefit is:
+
+$$
+30 + 18 = 48
+$$
+
+Now divide by the total number of employees, $180$:
+
+$$
+\frac{48}{180}
+$$
+
+Simplify:
+
+$$
+\frac{48}{180} = \frac{4}{15}
+$$
+
+So the mistake was likely in **reading the overlap groups or converting the count to a probability**. A quick check: if you got a fraction bigger than $1/3$, that would be too large here, since only $48$ of $180$ employees use exactly one benefit.
+
+If you want, I can show you a fast shortcut for spotting “exactly one” in any $2 \times 2$ table.",,,,openai,gpt-5.4-mini,2151.0,9926.0,216.0,0.0,stop
+275,4293.074581,4293.074581,practice_problem_created_during_tutoring,system,c4,quant:main:task_id_0942:practice_problem:47002,,created_during_tutoring,"A company surveyed 240 customers about whether they subscribe to Service X and Service Y. The results are shown in the table below.
+
+|                | Service Y: Yes | Service Y: No |
+|----------------|----------------|---------------|
+| Service X: Yes | 54             | 36            |
+| Service X: No  | 30             | 120           |
+
+If one customer is selected at random, what is the probability that the customer subscribes to at least one of the two services?
+
+Options: A) 7/20 | B) 3/5 | C) 13/20 | D) 17/20",,,,,,,,,,
+276,4297.509783,4297.439222,practice_answer_submitted,student,c4,quant:main:task_id_0942:practice_problem:46989,,created_during_tutoring,,C,True,2,,,,,,,
+277,4296.529996,,ai_tutor_message,ai_tutor,c4,quant:main:task_id_0942:practice_problem:46989,,created_during_tutoring,"Nice work — **C** is correct.
+
+For a two-way table, “exactly one” means the two **off-diagonal** cells:
+- $X$ yes, $Y$ no
+- $X$ no, $Y$ yes
+
+So you add those counts, then divide by the total:
+$$
+\frac{30+18}{180}=\frac{48}{180}=\frac{4}{15}
+$$
+
+Your takeaway:
+- **both** = top-left cell
+- **neither** = bottom-right cell
+- **exactly one** = the two off-diagonal cells
+
+That pattern is worth memorizing because it saves time on GRE table questions.",,,,openai,gpt-5.4-mini,1444.0,10139.0,145.0,0.0,stop
+278,4298.415783,4299.924907,practice_problem_shown,system,c4,quant:main:task_id_0942:practice_problem:47002,,created_during_tutoring,"A company surveyed 240 customers about whether they subscribe to Service X and Service Y. The results are shown in the table below.
+
+|                | Service Y: Yes | Service Y: No |
+|----------------|----------------|---------------|
+| Service X: Yes | 54             | 36            |
+| Service X: No  | 30             | 120           |
+
+If one customer is selected at random, what is the probability that the customer subscribes to at least one of the two services?
+
+Options: A) 7/20 | B) 3/5 | C) 13/20 | D) 17/20",,,,,,,,,,
+279,4299.703443,4299.703443,practice_problem_created_during_tutoring,system,c4,quant:main:task_id_0942:practice_problem:47007,,created_during_tutoring,"A museum surveyed 200 visitors about whether they visited Exhibit A and Exhibit B. The results are shown in the table below.
+
+|                | Exhibit B: Yes | Exhibit B: No |
+|----------------|----------------|---------------|
+| Exhibit A: Yes | 48             | 32            |
+| Exhibit A: No  | 20             | 100           |
+
+If one visitor is selected at random, what is the probability that the visitor visited at least one of the two exhibits?
+
+Options: A) 1/5 | B) 2/5 | C) 4/5 | D) 9/10",,,,,,,,,,
+280,4302.898783,4302.427186,practice_answer_submitted,student,c4,quant:main:task_id_0942:practice_problem:47002,,created_during_tutoring,,B,False,1,,,,,,,
+281,4301.9217,,ai_tutor_message,ai_tutor,c4,quant:main:task_id_0942:practice_problem:47002,,created_during_tutoring,"Good try — your answer **B** means you likely found the right setup but made a mistake in converting the table to the probability.
+
+For **“at least one”**, you should count everyone who has:
+- Service $X$ only
+- Service $Y$ only
+- **both** services
+
+A very efficient way is:
+
+$$
+P(\text{at least one}) = 1 - P(\text{neither})
+$$
+
+From the table, the number with **neither** is the bottom-right cell:
+
+$$
+120
+$$
+
+So the probability of neither is:
+
+$$
+\frac{120}{240}=\frac{1}{2}
+$$
+
+Therefore,
+
+$$
+P(\text{at least one})=1-\frac{1}{2}=\frac{1}{2}
+$$
+
+Now compare that to your chosen option and ask yourself: did you accidentally use one of the row totals or column totals instead of the **single cell for neither**?
+
+A good self-check for these tables:
+- **at least one** = all cells except the “no/no” cell
+- **neither** = just the “no/no” cell
+
+Try re-reading the table with that in mind.",,,,openai,gpt-5.4-mini,2172.0,10297.0,254.0,0.0,stop
+282,4306.118783,4307.426326,practice_answer_submitted,student,c4,quant:main:task_id_0942:practice_problem:47002,,created_during_tutoring,,C,True,2,,,,,,,
+283,4305.141738,,ai_tutor_message,ai_tutor,c4,quant:main:task_id_0942:practice_problem:47002,,created_during_tutoring,"Nice work — **C** is correct.
+
+For “at least one,” the fastest route is often the complement:
+
+$$
+P(\text{at least one}) = 1 - P(\text{neither})
+$$
+
+From the table, “neither” is the $120$ in the bottom-right cell, so:
+
+$$
+P(\text{neither})=\frac{120}{240}=\frac{1}{2}
+$$
+
+Then:
+
+$$
+P(\text{at least one})=1-\frac{1}{2}=\frac{1}{2}
+$$
+
+That matches **$\frac{1}{2}$**, which is choice **C**.
+
+Key takeaway: in a $2 \times 2$ table, “at least one” is often easiest by subtracting the “neither” group from the total.",,,,openai,gpt-5.4-mini,1599.0,10548.0,178.0,0.0,stop
+284,4307.022783,4307.445325,practice_problem_shown,system,c4,quant:main:task_id_0942:practice_problem:47007,,created_during_tutoring,"A museum surveyed 200 visitors about whether they visited Exhibit A and Exhibit B. The results are shown in the table below.
+
+|                | Exhibit B: Yes | Exhibit B: No |
+|----------------|----------------|---------------|
+| Exhibit A: Yes | 48             | 32            |
+| Exhibit A: No  | 20             | 100           |
+
+If one visitor is selected at random, what is the probability that the visitor visited at least one of the two exhibits?
+
+Options: A) 1/5 | B) 2/5 | C) 4/5 | D) 9/10",,,,,,,,,,
+285,4308.704139,4308.704139,practice_problem_created_during_tutoring,system,c4,quant:main:task_id_0942:practice_problem:47011,,created_during_tutoring,"A theater surveyed 160 patrons about whether they attended an afternoon show and an evening show. The results are shown in the table below.
+
+|                   | Evening Show: Yes | Evening Show: No |
+|-------------------|-------------------|------------------|
+| Afternoon: Yes    | 38                | 22               |
+| Afternoon: No     | 30                | 70               |
+
+If one patron is selected at random, what is the probability that the patron attended at least one of the two shows?
+
+Options: A) 13/20 | B) 17/20 | C) 7/10 | D) 9/10",,,,,,,,,,
+286,4438.785783,4439.936229,practice_problem_shown,system,c5,quant:main:task_id_0942:practice_problem:44447,quant:main:task_id_0942:lesson_plan:1895,lesson_plan,"Line 1 has equation $y=2x-3$. Line 2 is parallel to Line 1 and passes through $(0,5)$. What is the distance between the two lines?",,,,,,,,,,
+287,4439.713623,,ai_tutor_message,ai_tutor,c5,quant:main:task_id_0942:practice_problem:44447,quant:main:task_id_0942:lesson_plan:1895,lesson_plan,"Hi! Today we’re working on **geometry and coordinate geometry**, especially **circles, lines, distance, and area relationships**.
+
+This is a high-value GRE topic because one good method can help you solve lots of different questions — like slopes, parallel and perpendicular lines, distance between lines, circle formulas, and area comparisons. If you get comfortable with these tools, you’ll save time on visual problems and avoid a lot of guesswork.
+
+Go ahead and try the **first practice problem on the left**. If you want, you can also ask me to walk you through the setup step by step.",,,,openai,gpt-5.4-mini,1536.0,7834.0,125.0,0.0,stop
+288,4510.341507,,student_message,student,c5,quant:main:task_id_0942:practice_problem:44447,quant:main:task_id_0942:lesson_plan:1895,lesson_plan,help,,,,,,,,,,
+289,4512.721386,,ai_tutor_message,ai_tutor,c5,quant:main:task_id_0942:practice_problem:44447,quant:main:task_id_0942:lesson_plan:1895,lesson_plan,"Absolutely — let’s do it together.
+
+You’re given:
+
+- Line 1: $y = 2x - 3$
+- Line 2 is **parallel** to Line 1 and passes through $(0,5)$
+
+### 1) Find the equation of Line 2
+Parallel lines have the **same slope**, so Line 2 also has slope $2$.
+
+Use slope-intercept form $y = 2x + b$ and plug in $(0,5)$:
+
+$$5 = 2(0) + b \Rightarrow b = 5$$
+
+So Line 2 is:
+
+$$y = 2x + 5$$
+
+### 2) Find the distance between the two parallel lines
+For parallel lines written as:
+
+$$y = mx + b_1 \quad \text{and} \quad y = mx + b_2$$
+
+the distance between them is:
+
+$$\frac{|b_2 - b_1|}{\sqrt{1+m^2}}$$
+
+Here:
+
+- $m = 2$
+- $b_1 = -3$
+- $b_2 = 5$
+
+So:
+
+$$\text{distance} = \frac{|5 - (-3)|}{\sqrt{1+2^2}} = \frac{8}{\sqrt{5}}$$
+
+### Final answer:
+$$\boxed{\frac{8}{\sqrt{5}}}$$
+
+If you want, I can also show you the **geometric shortcut** using point-to-line distance, which is a really useful GRE method.",,,,openai,gpt-5.4-mini,2367.0,7874.0,331.0,0.0,stop
+290,4523.157783,4522.435896,practice_answer_submitted,student,c5,quant:main:task_id_0942:practice_problem:44447,quant:main:task_id_0942:lesson_plan:1895,lesson_plan,,8/sqrt5,False,1,,,,,,,
+291,4522.178619,,ai_tutor_message,ai_tutor,c5,quant:main:task_id_0942:practice_problem:44447,quant:main:task_id_0942:lesson_plan:1895,lesson_plan,"You were very close — the main issue is **the formula for the distance between parallel lines**.
+
+You found the two lines correctly:
+
+- Line 1: $y = 2x - 3$
+- Line 2: $y = 2x + 5$
+
+The mistake is that the distance is **not** just the difference in $y$-intercepts divided by $\sqrt{1+m^2}$ unless the lines are in the correct standard form and you account for the coefficient on $x$ properly.
+
+### Better way to think about it
+Write both lines in standard form:
+
+$$y = 2x - 3 \quad \Rightarrow \quad 2x - y - 3 = 0$$
+$$y = 2x + 5 \quad \Rightarrow \quad 2x - y + 5 = 0$$
+
+For parallel lines in the form $Ax + By + C = 0$, the distance is:
+
+$$\frac{|C_2 - C_1|}{\sqrt{A^2 + B^2}}$$
+
+Here:
+
+- $A = 2$
+- $B = -1$
+- $C_1 = -3$
+- $C_2 = 5$
+
+So the numerator is $|5 - (-3)| = 8$, and the denominator is:
+
+$$\sqrt{2^2 + (-1)^2} = \sqrt{5}$$
+
+That gives the same setup you used.
+
+So the question is: **what does the problem mean by “distance” between the lines?**
+
+The perpendicular distance between these two lines is actually the value you computed. If it was marked wrong, the issue is likely **formatting** or the expected exact expression. Make sure you enter it exactly as:
+
+$$\frac{8}{\sqrt{5}}$$
+
+or, if they want a rationalized form:
+
+$$\frac{8\sqrt{5}}{5}$$
+
+If you want, send me exactly how you entered it and I’ll help you spot the mismatch.",,,,openai,gpt-5.4-mini,3593.0,8281.0,433.0,0.0,stop
+292,4535.475444,,student_message,student,c5,quant:main:task_id_0942:practice_problem:44447,quant:main:task_id_0942:lesson_plan:1895,lesson_plan,8/sqrt5,,,,,,,,,,
+293,4537.360794,,ai_tutor_message,ai_tutor,c5,quant:main:task_id_0942:practice_problem:44447,quant:main:task_id_0942:lesson_plan:1895,lesson_plan,"That expression is mathematically correct.
+
+If it was still marked wrong, then one of these is usually happening:
+
+1. **The answer box expected a rationalized denominator**, so you’d need  
+   $$\frac{8\sqrt{5}}{5}$$
+
+2. **There may be a mismatch in the problem statement or answer key**, because for these two parallel lines, the distance really is  
+   $$\frac{8}{\sqrt{5}}$$
+
+3. **A previous step may have been interpreted differently**, but your setup for the lines was right.
+
+For GRE-style work, the safe habit is:
+
+- find the two parallel lines,
+- write them in standard form,
+- use the distance formula,
+- simplify and rationalize if needed.
+
+If you want, I can give you a **very fast GRE shortcut** for distance between parallel lines so you can do these in under a minute.",,,,openai,gpt-5.4-mini,1873.0,8652.0,189.0,0.0,stop
+294,4554.26312,4554.26312,practice_problem_skipped,system,c5,quant:main:task_id_0942:practice_problem:44447,quant:main:task_id_0942:lesson_plan:1895,lesson_plan,,,,,,,,,,,
+295,4554.468119,,student_message,student,c5,quant:main:task_id_0942:practice_problem:44447,quant:main:task_id_0942:lesson_plan:1895,lesson_plan,I disagree with the marked answer on this problem — let's continue.,,,,,,,,,,
+296,4555.269783,4554.95566,practice_problem_shown,system,c5,quant:main:task_id_0942:practice_problem:44449,quant:main:task_id_0942:lesson_plan:1895,lesson_plan,"An equilateral triangle is inscribed in a circle. What fraction of the circle's area lies outside the triangle but inside the circle? Give your answer as a percent, rounded to the nearest whole percent.",,,,,,,,,,
+297,4558.759783,4559.919767,practice_answer_submitted,student,c5,quant:main:task_id_0942:practice_problem:44447,quant:main:task_id_0942:lesson_plan:1895,lesson_plan,,8/sqrt5)/5,False,2,,,,,,,
+298,4556.221683,,ai_tutor_message,ai_tutor,c5,quant:main:task_id_0942:practice_problem:44447,quant:main:task_id_0942:lesson_plan:1895,lesson_plan,"You’re very close — the mistake is in the **algebraic setup of the second line**.
+
+Let’s check it carefully:
+
+- Line 1 is $y=2x-3$, so the slope is $2$.
+- A parallel line must also have slope $2$.
+- Since Line 2 passes through $(0,5)$, its equation is:
+
+$$y=2x+5$$
+
+Now write both lines in standard form:
+
+$$2x-y-3=0$$
+$$2x-y+5=0$$
+
+For parallel lines, the distance is
+
+$$\frac{|C_2-C_1|}{\sqrt{A^2+B^2}}$$
+
+So here:
+
+$$\frac{|5-(-3)|}{\sqrt{2^2+(-1)^2}}=\frac{8}{\sqrt5}$$
+
+Your submitted answer, `8/sqrt5)/5`, has an extra `/5` at the end. That changed the value.
+
+A good habit: after you finish, quickly do a **sanity check**:
+- The lines are 8 units apart in intercept terms,
+- The slope is not zero,
+- So the distance should be a little smaller than 8, not divided by another 5.
+
+If you want, try entering the simplified expression again.",,,,openai,gpt-5.4-mini,2269.0,8919.0,279.0,0.0,stop
+299,4556.887297,,ai_tutor_message,ai_tutor,c5,quant:main:task_id_0942:practice_problem:44447,quant:main:task_id_0942:lesson_plan:1895,lesson_plan,"You’re right to question it. Let’s pin this down carefully.
+
+### Step 1: Find the second line
+Line 1 is
+
+$$y=2x-3$$
+
+So any parallel line has slope $2$. Since Line 2 passes through $(0,5)$, its equation is
+
+$$y=2x+5$$
+
+### Step 2: Compute the distance between parallel lines
+Put both in standard form:
+
+$$2x-y-3=0$$
+$$2x-y+5=0$$
+
+For parallel lines $Ax+By+C_1=0$ and $Ax+By+C_2=0$, the distance is
+
+$$\frac{|C_2-C_1|}{\sqrt{A^2+B^2}}$$
+
+So here:
+
+$$\frac{|5-(-3)|}{\sqrt{2^2+(-1)^2}}=\frac{8}{\sqrt5}$$
+
+That is the exact perpendicular distance.
+
+### Step 3: Check against any alternate interpretation
+The only other common move is to rationalize:
+
+$$\frac{8}{\sqrt5}=\frac{8\sqrt5}{5}$$
+
+So if an answer key says $4$, that key is not consistent with the geometry of these two lines.
+
+### Bottom line
+The correct distance between the lines is
+
+$$\boxed{\frac{8}{\sqrt5}}$$
+
+If you want, I can also show you a **coordinate-geometry derivation** using a perpendicular segment, which makes the formula feel less “memorized.”",,,,openai,gpt-5.4-mini,2372.0,8861.0,331.0,0.0,stop
+300,4560.95134,,student_message,student,c5,quant:main:task_id_0942:practice_problem:44449,quant:main:task_id_0942:lesson_plan:1895,lesson_plan,help,,,,,,,,,,
+301,4564.294955,,ai_tutor_message,ai_tutor,c5,quant:main:task_id_0942:practice_problem:44449,quant:main:task_id_0942:lesson_plan:1895,lesson_plan,"Absolutely — let’s work through the **circle + equilateral triangle** problem.
+
+### Key idea
+If an equilateral triangle is inscribed in a circle, the triangle uses a fixed fraction of the circle’s area. So you want:
+
+$$\frac{\text{circle area} - \text{triangle area}}{\text{circle area}}$$
+
+That is:
+
+$$1 - \frac{\text{triangle area}}{\text{circle area}}$$
+
+### Step 1: Relate side length to radius
+For an equilateral triangle with side length $s$, the circumradius is
+
+$$R=\frac{s}{\sqrt3}$$
+
+So
+
+$$s = R\sqrt3$$
+
+### Step 2: Triangle area
+Area of an equilateral triangle:
+
+$$A_{\triangle}=\frac{\sqrt3}{4}s^2$$
+
+Substitute $s=R\sqrt3$:
+
+$$A_{\triangle}=\frac{\sqrt3}{4}(R\sqrt3)^2
+=\frac{\sqrt3}{4}(3R^2)
+=\frac{3\sqrt3}{4}R^2$$
+
+### Step 3: Circle area
+$$A_{\circ}=\pi R^2$$
+
+### Step 4: Fraction outside the triangle but inside the circle
+$$\frac{A_{\circ}-A_{\triangle}}{A_{\circ}}
+=1-\frac{A_{\triangle}}{A_{\circ}}$$
+
+So:
+
+$$1-\frac{\frac{3\sqrt3}{4}R^2}{\pi R^2}
+=1-\frac{3\sqrt3}{4\pi}$$
+
+Now approximate:
+
+$$\frac{3\sqrt3}{4\pi}\approx \frac{3(1.732)}{4(3.1416)}\approx \frac{5.196}{12.566}\approx 0.413$$
+
+So the outside fraction is about:
+
+$$1-0.413=0.587$$
+
+As a percent:
+
+$$58.7\% \approx \boxed{59\%}$$
+
+### GRE takeaway
+For an equilateral triangle inscribed in a circle, a very useful formula is:
+
+$$\frac{A_{\triangle}}{A_{\circ}}=\frac{3\sqrt3}{4\pi}$$
+
+So the outside part is about $59\%$ of the circle.
+
+If you want, I can also show you a **faster geometry shortcut** for remembering this without re-deriving everything.",,,,openai,gpt-5.4-mini,3333.0,9483.0,531.0,0.0,stop
+302,4576.282783,4577.444564,practice_answer_submitted,student,c5,quant:main:task_id_0942:practice_problem:44449,quant:main:task_id_0942:lesson_plan:1895,lesson_plan,,59,True,1,,,,,,,
+303,4575.296888,,ai_tutor_message,ai_tutor,c5,quant:main:task_id_0942:practice_problem:44449,quant:main:task_id_0942:lesson_plan:1895,lesson_plan,"Nice work — **59%** is correct.
+
+The key move was to find the **fraction of the circle occupied by the equilateral triangle**, then subtract from 100%.
+
+For an equilateral triangle inscribed in a circle:
+
+$$\frac{A_{\triangle}}{A_{\circ}}=\frac{3\sqrt{3}}{4\pi}\approx 0.413$$
+
+So the region **outside the triangle but inside the circle** is:
+
+$$1-0.413\approx 0.587 \approx 59\%$$
+
+Great job. The main transferable idea here is:
+- when a question asks for “outside but inside,” think **whole minus inside**,
+- and for an inscribed equilateral triangle, remember the area ratio is based on the circumradius relationship.
+
+Send the next one when you’re ready.",,,,openai,gpt-5.4-mini,2154.0,10081.0,176.0,0.0,stop
+304,4577.198783,4577.49628,practice_problem_shown,system,c5,quant:main:task_id_0942:practice_problem:44450,quant:main:task_id_0942:lesson_plan:1895,lesson_plan,"A line passes through $(1,2)$ and $(9,6)$. A perpendicular line passes through $(6,8)$. What is the $y$-intercept of the perpendicular line?",,,,,,,,,,
+305,4578.279363,4578.279363,practice_problem_created_during_tutoring,system,c5,quant:main:task_id_0942:practice_problem:47185,,created_during_tutoring,"A circle is centered at the origin and has radius 5. A line is tangent to the circle at the point (3,4). What is the equation of the tangent line?
+
+Options: A) 3x + 4y = 25 | B) 4x - 3y = 25 | C) 3x - 4y = 25 | D) 4x + 3y = 25",,,,,,,,,,
+306,4583.265314,,student_message,student,c5,quant:main:task_id_0942:practice_problem:44450,quant:main:task_id_0942:lesson_plan:1895,lesson_plan,help,,,,,,,,,,
+307,4585.411776,,ai_tutor_message,ai_tutor,c5,quant:main:task_id_0942:practice_problem:44450,quant:main:task_id_0942:lesson_plan:1895,lesson_plan,"Sure — let’s do the **parallel/perpendicular lines and y-intercept** problem.
+
+### 1) Find the slope of the given line
+The line goes through $(1,2)$ and $(9,6)$, so its slope is
+
+$$m=\frac{6-2}{9-1}=\frac{4}{8}=\frac12$$
+
+### 2) Find the slope of the perpendicular line
+Perpendicular slopes are **negative reciprocals**, so the new slope is
+
+$$-2$$
+
+### 3) Use point-slope form with $(6,8)$
+A line with slope $-2$ through $(6,8)$ is:
+
+$$y-8=-2(x-6)$$
+
+### 4) Simplify
+$$y-8=-2x+12$$
+$$y=-2x+20$$
+
+So the **$y$-intercept** is
+
+$$\boxed{20}$$
+
+If you want, I can also show you the quick GRE shortcut:
+1. slope from two points,
+2. flip and negate,
+3. plug in one point,
+4. read off the intercept.",,,,openai,gpt-5.4-mini,2128.0,10201.0,243.0,0.0,stop
+308,4591.544783,4592.439001,practice_answer_submitted,student,c5,quant:main:task_id_0942:practice_problem:44450,quant:main:task_id_0942:lesson_plan:1895,lesson_plan,,20,True,1,,,,,,,
+309,4590.563343,,ai_tutor_message,ai_tutor,c5,quant:main:task_id_0942:practice_problem:44450,quant:main:task_id_0942:lesson_plan:1895,lesson_plan,"Nice — you got it.
+
+You used the right method:
+- slope of the first line: $\frac{6-2}{9-1}=\frac12$
+- perpendicular slope: $-2$
+- then plug in $(6,8)$ and solve for the intercept
+
+That gives $y=-2x+20$, so the $y$-intercept is $\boxed{20}$.
+
+Quick GRE reminder: for perpendicular lines, you want the **negative reciprocal** of the slope. If one line has slope $\frac12$, the perpendicular slope is $-2$.
+
+Send the next problem when you’re ready.",,,,openai,gpt-5.4-mini,1598.0,10511.0,131.0,0.0,stop
+310,4592.453783,4592.46009,practice_problem_shown,system,c5,quant:main:task_id_0942:practice_problem:47185,,created_during_tutoring,"A circle is centered at the origin and has radius 5. A line is tangent to the circle at the point (3,4). What is the equation of the tangent line?
+
+Options: A) 3x + 4y = 25 | B) 4x - 3y = 25 | C) 3x - 4y = 25 | D) 4x + 3y = 25",,,,,,,,,,
+311,4594.397661,4594.397661,practice_problem_created_during_tutoring,system,c5,quant:main:task_id_0942:practice_problem:47190,,created_during_tutoring,"A circle has center (2,-1) and radius 5. The line y = x + 1 intersects the circle at two points. What is the length of the chord cut off by the line inside the circle?
+
+Options: A) 6 | B) 8 | C) 10 | D) 12",,,,,,,,,,
